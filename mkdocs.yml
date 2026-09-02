@@ -1,0 +1,102 @@
+site_name: Kubernetes Mastery Path
+site_description: A structured, module-wise Kubernetes training program from entry level to master level.
+site_url: https://sigilipelli.github.io/kubernetes-mastery-path/
+repo_url: https://github.com/SIGILIPELLI/kubernetes-mastery-path
+repo_name: kubernetes-mastery-path
+
+theme:
+  name: material
+  favicon: assets/favicon.svg
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Privacy Policy: privacy.md
+  - "Level 1 · Entry":
+      - Overview: level-1/index.md
+      - "01 · What Is Kubernetes & Why Orchestration?": level-1/01-what-is-kubernetes.md
+      - "02 · Kubernetes Architecture": level-1/02-architecture.md
+      - "03 · Installing a Local Cluster (minikube/kind)": level-1/03-local-cluster-setup.md
+      - "04 · kubectl Basics": level-1/04-kubectl-basics.md
+      - "05 · Pods": level-1/05-pods.md
+      - "06 · Deployments & ReplicaSets": level-1/06-deployments-replicasets.md
+      - "07 · Services & Networking Basics": level-1/07-services-networking.md
+      - "08 · ConfigMaps & Secrets": level-1/08-configmaps-secrets.md
+      - "09 · Namespaces & YAML Manifests": level-1/09-namespaces-manifests.md
+      - "10 · Project — Multi-Container App": level-1/10-project-multi-container-app.md
+  - "Level 2 · Intermediate":
+      - Overview: level-2/index.md
+      - "01 · Volumes & Persistent Storage": level-2/01-volumes-persistent-storage.md
+      - "02 · Ingress & Load Balancing": level-2/02-ingress-load-balancing.md
+      - "03 · Resource Requests, Limits & Scheduling": level-2/03-resource-requests-limits.md
+      - "04 · Health Checks (Liveness & Readiness Probes)": level-2/04-health-checks-probes.md
+      - "05 · Rolling Updates & Rollbacks": level-2/05-rolling-updates-rollbacks.md
+      - "06 · Helm Basics (Charts & Values)": level-2/06-helm-basics.md
+      - "07 · Multi-Environment Configuration": level-2/07-multi-environment-config.md
+      - "08 · Jobs & CronJobs": level-2/08-jobs-cronjobs.md
+      - "09 · Debugging & Troubleshooting Workloads": level-2/09-debugging-troubleshooting.md
+      - "10 · Project — Ingress-Fronted Helm App": level-2/10-project-helm-ingress-app.md
+  - "Level 3 · Advanced":
+      - Overview: level-3/index.md
+      - "01 · StatefulSets & DaemonSets": level-3/01-statefulsets-daemonsets.md
+      - "02 · RBAC & Service Accounts": level-3/02-rbac-service-accounts.md
+      - "03 · Network Policies": level-3/03-network-policies.md
+      - "04 · Autoscaling (HPA & VPA Concepts)": level-3/04-autoscaling-hpa-vpa.md
+      - "05 · Observability: Metrics & Logging": level-3/05-observability-metrics-logging.md
+      - "06 · Probes & Health at Scale": level-3/06-probes-at-scale.md
+      - "07 · Multi-Cluster & Multi-Tenancy Concepts": level-3/07-multi-cluster-multi-tenancy.md
+      - "08 · Admission Control & Policy Enforcement": level-3/08-admission-control-policy.md
+      - "09 · Cluster Networking Deep Dive (CNI)": level-3/09-cluster-networking-cni.md
+      - "10 · Project — Resilient Stateful Service": level-3/10-project-resilient-stateful-service.md
+  - "Level 4 · Master":
+      - Overview: level-4/index.md
+      - "01 · Operators & CRDs": level-4/01-operators-crds.md
+      - "02 · GitOps Patterns (ArgoCD/Flux Concepts)": level-4/02-gitops-argocd-flux.md
+      - "03 · Cluster Upgrades & Maintenance": level-4/03-cluster-upgrades-maintenance.md
+      - "04 · Security Hardening (Pod Security Standards)": level-4/04-security-hardening.md
+      - "05 · Image Scanning & Supply Chain Security": level-4/05-image-scanning-supply-chain.md
+      - "06 · Designing Production-Grade Cluster Architecture": level-4/06-production-cluster-architecture.md
+      - "07 · Disaster Recovery & Backup Strategies": level-4/07-disaster-recovery-backup.md
+      - "08 · Cost Optimization & Capacity Planning": level-4/08-cost-optimization-capacity.md
+      - "09 · Platform Engineering on Kubernetes": level-4/09-platform-engineering.md
+      - "10 · Capstone Project": level-4/10-capstone-project.md
