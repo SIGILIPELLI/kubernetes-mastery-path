@@ -923,6 +923,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2393,6 +2404,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2575,6 +2597,43 @@ commands default to the <code>default</code> namespace unless you say otherwise.
 <a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="c1"># NAME                  READY   STATUS    RESTARTS   AGE</span>
 <a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="c1"># web-7d8f9c6b7d-2xk9p  1/1     Running   0          8s</span>
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Every <code>kubectl</code> command is a thin REST/JSON client — understanding the
+request it actually sends demystifies most "why didn't that work" moments:</p>
+<ul>
+<li><strong><code>get</code>/<code>describe</code>/<code>delete</code> are HTTP verbs against a REST resource
+  path.</strong> <code>kubectl get pods -n foo</code> performs <code>GET
+  /api/v1/namespaces/foo/pods</code>; <code>kubectl describe</code> does the equivalent
+  <code>GET</code> on the object plus a separate <code>GET</code> for related Events
+  (<code>/api/v1/namespaces/foo/events?fieldSelector=involvedObject.name=...</code>)
+  and stitches them together client-side — there is no single
+  "describe" API, it's kubectl composing multiple calls into readable
+  text.</li>
+<li><strong><code>apply</code> computes a three-way merge patch, not an overwrite.</strong>
+  <code>kubectl apply</code> stores the last-applied configuration as JSON in the
+  <code>kubectl.kubernetes.io/last-applied-configuration</code> annotation on the
+  live object. On the next <code>apply</code>, it diffs three things — the
+  last-applied config, your new local file, and the current live
+  object on the server — to figure out which fields you intentionally
+  removed (present in last-applied, absent in new file) versus fields
+  something else changed that you should leave alone (present in live
+  object but never mentioned by you). <code>create</code>, by contrast, is a
+  simple <code>POST</code> that fails outright if the object already exists.</li>
+<li><strong><code>logs</code> and <code>exec</code> don't go through etcd at all.</strong> These commands
+  have the API server open a streaming connection (an upgraded
+  HTTP/SPDY or WebSocket connection) directly to the kubelet on the
+  node hosting the Pod, which in turn asks the container runtime (via
+  CRI's <code>Exec</code>/<code>Attach</code> or the container's log file on disk) to stream
+  the output back. This is why <code>logs</code>/<code>exec</code> fail with a distinct
+  "error dialing backend" class of error when the node is unreachable,
+  even though <code>kubectl get pod</code> for that same Pod succeeds (get only
+  needs etcd/API server, not the node).</li>
+<li><strong><code>--watch</code> keeps the same long-lived watch connection described in
+  Module 01</strong> rather than polling — this is why watched output appears
+  event-by-event with no fixed delay, and why killing the network
+  briefly causes kubectl to silently reconnect and resync via a fresh
+  <code>List</code> + <code>Watch</code> rather than losing events.</li>
+</ul>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Against your local cluster from Module 03: create a Deployment imperatively
 (<code>kubectl create deployment demo --image=nginx:alpine</code>), then practice

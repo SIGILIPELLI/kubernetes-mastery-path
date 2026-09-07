@@ -935,6 +935,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2464,6 +2486,45 @@ Deployment created, not something you'll author directly.</p>
 <p>Labels are how nearly everything in Kubernetes — Deployments selecting
 Pods, Services routing to Pods, <code>kubectl</code> filtering — finds the right
 objects. There's no hidden parent/child pointer; it's all label matching.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A Deployment never touches Pods directly — it manages through a chain of
+owner references, and the <code>pod-template-hash</code> label you saw above is the
+load-bearing detail that makes rolling updates possible:</p>
+<ul>
+<li><strong>Three objects, three controllers, one chain.</strong> A Deployment object is
+  watched by the Deployment controller, which creates/updates a
+  ReplicaSet; that ReplicaSet is watched by the ReplicaSet controller,
+  which creates/deletes Pods. Each level sets an <code>ownerReferences</code> entry
+  on the object it creates, pointing back to its owner's UID — this is
+  what makes <code>kubectl delete deployment</code> cascade (the garbage collector
+  controller watches for owner deletion and deletes dependents) and
+  what <code>kubectl get pods -o yaml</code> reveals in <code>metadata.ownerReferences</code>.</li>
+<li><strong><code>pod-template-hash</code> is a real hash, computed by the Deployment
+  controller.</strong> It hashes the Pod template (the <code>spec.template</code> field,
+  after normalizing it) to a short string, and uses that hash both as a
+  label on the ReplicaSet and as a <code>selector</code> the ReplicaSet uses to
+  claim only Pods generated from that exact template version. This is
+  the actual mechanism that lets multiple ReplicaSets (old and new)
+  coexist under one Deployment during a rolling update without their
+  Pod sets overlapping — change the template even slightly and you get
+  a new hash, hence a brand-new ReplicaSet, never a mutation of the old
+  one.</li>
+<li><strong>The ReplicaSet controller's reconciliation is a label-selector
+  count-and-diff, exactly as in Module 01.</strong> On every relevant watch
+  event, it lists Pods matching <code>spec.selector</code>, counts how many are
+  not terminating, and compares that count to <code>spec.replicas</code>. Too few:
+  it issues that many <code>Pod</code> create calls (via the API server, which then
+  triggers the scheduler). Too many: it deletes the newest Pods first by
+  default. Because this is selector-based rather than identity-based, if
+  you manually attach a matching label to an unrelated Pod, the
+  ReplicaSet controller will "adopt" it (and may delete one of its own
+  Pods to keep the count correct) — exactly why label hygiene matters.</li>
+<li><strong>Scaling (<code>kubectl scale</code>) is just a <code>PATCH</code> to <code>spec.replicas</code>.</strong>
+  There's no separate "scaling subsystem" — it's the same reconciliation
+  loop reacting to a spec change like any other, which is also why
+  scaling and healing use identical code paths and are indistinguishable
+  to the controller.</li>
+</ul>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Apply the <code>web</code> Deployment above with 3 replicas. Use <code>kubectl get pods -l
 app=web --watch</code> in one terminal while you delete one Pod in another and

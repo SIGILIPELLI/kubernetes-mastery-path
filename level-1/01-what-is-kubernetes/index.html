@@ -784,6 +784,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2441,6 +2463,45 @@ Pod spec should exist") to the API server, which is then continuously
 reconciled by controllers running in the control plane — if a Pod dies five
 minutes later, a controller notices the actual count (2) no longer matches
 the desired count (3) and creates a replacement, with no human involved.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>"Desired state reconciliation" is not a slogan — it's a specific, repeated
+mechanical loop, and every controller in Kubernetes (there are dozens, all
+built the same way) runs it:</p>
+<ol>
+<li><strong>Watch, don't poll.</strong> A controller opens a long-lived HTTP connection to
+   the API server and issues a <code>watch</code> request on the resource it cares
+   about (e.g. ReplicaSets). The API server doesn't send this by scanning a
+   database on a timer — etcd (the cluster's key-value store) exposes its
+   own internal <code>Watch</code> gRPC stream keyed by revision number, and the API
+   server's watch cache subscribes to that stream and fans it out to every
+   client watching the same resource type. When a write happens, the
+   notification is pushed to the controller within milliseconds, not on
+   the next poll interval.</li>
+<li><strong>Compare desired vs. observed.</strong> Each controller keeps an in-memory
+   cache (an "informer") of the objects it watches, built by a <code>List</code> on
+   startup followed by the <code>Watch</code> stream applying deltas. On every
+   relevant event, the controller's reconcile function reads the object's
+   <code>spec</code> (desired state, e.g. <code>replicas: 3</code>) and compares it to the
+   observed cluster state (how many Pods actually exist with matching
+   labels and are <code>Running</code>).</li>
+<li><strong>Take one corrective action, then stop.</strong> The reconcile function is
+   deliberately not "make everything perfect in one pass" — it computes
+   the <em>smallest</em> next action (e.g. "create 1 Pod") and issues it as a
+   normal write to the API server, then returns. This is what makes
+   controllers safe to run concurrently and to crash-restart: reconciling
+   is idempotent, so re-running it against the same state is a no-op.</li>
+<li><strong>Level-triggered, not edge-triggered.</strong> Because the controller always
+   recomputes from current state rather than reacting to "a Pod died"
+   as a discrete event, a missed or duplicate event is harmless — the
+   controller will simply reconcile again on its periodic full resync
+   (typically every 30s by default) and notice the mismatch on its own,
+   even if the watch stream briefly dropped a notification.</li>
+</ol>
+<p>This is why <code>kubectl apply</code> returns almost instantly even though the actual
+work (scheduling, pulling images, starting containers) takes seconds to
+minutes: the command only writes desired state into etcd via the API
+server and returns; everything after that is asynchronous reconciliation
+by controllers you never directly invoke.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Without touching a cluster yet, write down (in a notes file or scratch
 document) your own one-paragraph answer to: "Why would a team running 15

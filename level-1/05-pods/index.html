@@ -907,6 +907,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2501,6 +2523,44 @@ containers are passing their readiness checks — a container can be
 kubelet keeps restarting it with growing backoff delays — this is the
 expected, documented behavior for <code>restartPolicy: Always</code> (the default for
 bare Pods).</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A Pod is a kubelet-managed abstraction, not a kernel or runtime concept —
+here is the actual machinery behind the phases and behavior you just saw:</p>
+<ul>
+<li><strong>The pause (infra) container is what makes a Pod "one thing."</strong>
+  Before starting any of your containers, the kubelet's CRI call chain
+  creates a hidden container running a <code>pause</code> binary that does nothing
+  but hold open Linux namespaces (network, IPC, and optionally PID).
+  Every real container in the Pod is then started joined to <em>that</em>
+  container's namespaces (<code>--net=container:&lt;pause-id&gt;</code> in Docker terms),
+  which is the actual mechanism behind "containers in a Pod share an IP
+  and can reach each other on localhost" — it's namespace sharing, not
+  magic.</li>
+<li><strong>Restart backoff is exponential and per-container, tracked by the
+  kubelet locally.</strong> On each container exit, the kubelet computes the
+  next restart delay as <code>min(10 * 2^n, 300)</code> seconds where <code>n</code> is the
+  consecutive-failure count for that specific container, resetting once
+  the container has stayed <code>Running</code> for 10 minutes. This state lives
+  in the kubelet's own memory/status, not in etcd — which is why the
+  displayed <code>RESTARTS</code> count and backoff timer are exactly what that
+  node's kubelet has observed, and why deleting/recreating the Pod
+  resets the counter.</li>
+<li><strong>Pod phase is a coarse summary the kubelet computes, not something
+  you set.</strong> <code>Pending</code> means the Pod is accepted by the API server but
+  at least one container's image/volumes/scheduling isn't ready yet;
+  <code>Running</code> means the Pod has been bound to a node and at least one
+  container is running; the kubelet derives this from the much more
+  granular per-container <code>state</code> (<code>Waiting</code>/<code>Running</code>/<code>Terminated</code>) that
+  <code>kubectl describe</code> shows you, which in turn come directly from CRI
+  <code>ContainerStatus</code> calls to containerd.</li>
+<li><strong><code>kubectl logs --previous</code> reads a file, not a live stream.</strong> The
+  container runtime writes each container's stdout/stderr to a log file
+  under <code>/var/log/pods/&lt;uid&gt;/&lt;container&gt;/</code> on the node, and rotates a
+  new file per container instantiation; <code>--previous</code> simply has the
+  kubelet serve the log file from the prior instantiation before it was
+  restarted, which is why it survives the crash even though that
+  process no longer exists.</li>
+</ul>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Apply the <code>hello-pod</code> manifest above, <code>describe</code> it and read the Events
 section, then <code>exec</code> into it (<code>kubectl exec -it hello-pod -- sh</code>) and run

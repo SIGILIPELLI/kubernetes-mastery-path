@@ -1069,6 +1069,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tearing-down" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2360,6 +2371,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tearing-down" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2636,6 +2658,40 @@ since <code>kind</code> doesn't expose node IPs directly to your host by default
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># still works -- the frontend never needed to know the api Pods changed,</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># because it always talks to the stable "api" Service, not a Pod IP</span>
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>This project exercises the full request path across every control-plane
+component covered so far — worth tracing end to end for one request:</p>
+<ol>
+<li>When you <code>curl</code> the NodePort, the kernel on whichever node received the
+   packet applies the iptables/IPVS DNAT rules kube-proxy programmed for
+   that NodePort (Module 07), rewriting the destination to one of the
+   <code>frontend</code> Pod IPs recorded in its EndpointSlice.</li>
+<li>The nginx proxy Pod resolves <code>api.capstone.svc.cluster.local</code> via
+   CoreDNS, which returns the <code>api</code> Service's ClusterIP — a name lookup
+   that only works because both Pods are reconciled into the same
+   namespace's DNS zone (Module 09) and because CoreDNS's Service watch
+   already picked up that ClusterIP when the Service was created.</li>
+<li>The proxy's request to that ClusterIP is DNAT'd again, this time to one
+   of the backend Pods, by the exact same kube-proxy kernel-rule mechanism
+   — a second, independent instance of the same load-balancing logic, not
+   a special "east-west" path.</li>
+<li>When you delete the <code>api</code> Pods, three reconciliation loops fire in
+   sequence, each unaware of the others' existence: the ReplicaSet
+   controller notices the count drop below desired and creates
+   replacements (Module 06); the scheduler binds each new Pod to a node
+   (Module 02); the Endpoints/EndpointSlice controller notices the new
+   Pods become <code>Ready</code> and updates the <code>api</code> Service's backend list
+   (Module 07) — only after that last step do kube-proxy's kernel rules
+   change, which is the actual reason there's a brief window of latency
+   before traffic reaches the replacements, not "eventually consistent"
+   handwaving.</li>
+<li><code>kubectl delete namespace capstone</code> cascades through the garbage
+   collector exactly as in Module 09: Services, Deployments, ConfigMaps,
+   and the Secret are all deleted first (triggering ReplicaSet and Pod
+   cleanup via owner references), and only once every namespaced object
+   is gone does the Namespace's finalizer clear and the object itself
+   disappear from etcd.</li>
+</ol>
 <h2 id="tearing-down">Tearing down<a class="headerlink" href="#tearing-down" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>namespace<span class="w"> </span>capstone
 </code></pre></div>

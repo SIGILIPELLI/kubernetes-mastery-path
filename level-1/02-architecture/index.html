@@ -890,6 +890,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2439,6 +2450,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2587,6 +2609,57 @@ control-plane and worker roles, but the same logical components (API
 server, scheduler, controller-manager, kubelet, kube-proxy) are all present
 and doing their jobs — you can see most of them as Pods in the <code>kube-system</code>
 namespace with <code>kubectl get pods -n kube-system</code>.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Each control-plane component has a distinct internal mechanism worth
+knowing precisely, because most debugging eventually points at one of them:</p>
+<ul>
+<li><strong>etcd</strong> stores every object as a key under a path like
+  <code>/registry/pods/&lt;namespace&gt;/&lt;name&gt;</code>, using the Raft consensus algorithm
+  across an odd number of members (3 or 5 in production) so that a
+  majority quorum must agree before a write is committed. Every write
+  gets a monotonically increasing <code>revision</code> number — this revision is
+  what watch streams use to resume exactly where they left off after a
+  disconnect, and it's also what powers optimistic concurrency: every
+  object carries a <code>resourceVersion</code> (derived from that revision), and a
+  write that doesn't match the version it read against is rejected with a
+  409 Conflict rather than silently overwriting a concurrent change.</li>
+<li><strong>kube-apiserver</strong> is the only component that talks to etcd directly.
+  Every request — from <code>kubectl</code>, from controllers, from kubelets — goes
+  through a fixed pipeline: authentication (who are you), authorization
+  (RBAC — are you allowed to do this verb on this resource),
+  admission control (mutating webhooks that can modify the object, then
+  validating webhooks that can reject it), and only then a read/write to
+  etcd. This is why the API server, not etcd, is the single source of
+  truth for validation logic and the only safe integration point.</li>
+<li><strong>kube-scheduler</strong> does not get invoked directly by anything creating a
+  Pod. It runs its own watch loop specifically for Pods whose
+  <code>spec.nodeName</code> is empty, then for each one runs a <strong>filter phase</strong>
+  (predicates: does the node have enough allocatable CPU/memory, does it
+  satisfy nodeSelector/affinity/taints-tolerations) to produce a feasible
+  set, followed by a <strong>score phase</strong> (priorities: spread pods across
+  nodes, prefer nodes with more free resources, etc.) that ranks the
+  survivors — the highest-scoring node wins, and the scheduler commits
+  the decision with a <code>Bind</code> API call that sets <code>spec.nodeName</code>, which
+  is itself just a normal write back to the API server/etcd.</li>
+<li><strong>kube-controller-manager</strong> runs many independent control loops
+  (Node controller, ReplicaSet controller, Endpoints controller, and
+  dozens more) in one process, each watching only the object types it
+  owns and reconciling toward desired state as described in Module 01.</li>
+<li><strong>kubelet</strong> on each worker node doesn't just "run containers" — it
+  reconciles the set of Pods assigned to its node (<code>spec.nodeName ==
+  &lt;this node&gt;</code>) against the container runtime via the <strong>CRI</strong>
+  (Container Runtime Interface), a gRPC API implemented by containerd or
+  CRI-O. It also runs the periodic liveness/readiness probe loop and
+  reports node/Pod status back to the API server roughly every 10
+  seconds (<code>--node-status-update-frequency</code>), which is what
+  <code>kubectl describe node</code> is actually displaying.</li>
+<li><strong>kube-proxy</strong> doesn't proxy traffic in the literal sense on most
+  clusters — it watches Service and EndpointSlice objects and
+  translates them into either iptables NAT rules or IPVS virtual server
+  entries directly in the Linux kernel's networking stack, so that a
+  packet to a Service's ClusterIP is DNAT'd to a Pod IP by the kernel
+  itself with no proxy process in the data path at all.</li>
+</ul>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Draw (on paper or in a text file) the control-plane/worker-node diagram from
 memory: boxes for API server, etcd, scheduler, controller-manager on one

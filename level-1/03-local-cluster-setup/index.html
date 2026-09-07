@@ -829,6 +829,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2415,6 +2437,42 @@ should return the default nginx welcome page, confirming the cluster can
 pull images, schedule Pods, and route traffic. Clean up:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>deployment<span class="w"> </span>hello
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>minikube and kind take different mechanical approaches to giving you
+"a Kubernetes cluster" on a single machine, and knowing the difference
+explains most of the quirks you'll hit:</p>
+<ul>
+<li><strong>minikube</strong> typically provisions a real (or driver-backed) VM — or a
+  single Docker container acting as the node when using <code>--driver=docker</code>
+  — and inside it runs a full kubeadm-style control plane: kube-apiserver,
+  etcd, scheduler, and controller-manager as static Pods defined by
+  manifest files that the kubelet reads directly from
+  <code>/etc/kubernetes/manifests/</code> on that node, rather than being scheduled
+  through the normal API server pipeline (this is a deliberate
+  bootstrapping trick — the kubelet can start the API server as a
+  "static Pod" before an API server exists to schedule anything).</li>
+<li><strong>kind</strong> ("Kubernetes IN Docker") runs each cluster "node" as a Docker
+  container, and inside that container runs a full systemd + containerd +
+  kubelet stack, with the control plane again started as static Pods.
+  Because everything is nested inside one Docker container per node,
+  kind clusters start in seconds and networking is simpler to reason
+  about, but you're one extra virtualization layer removed from bare
+  metal (container-in-container) compared to minikube's Docker driver.</li>
+<li><strong>Your kubectl context is just a client-side pointer.</strong> <code>kubectl</code> reads
+  <code>~/.kube/config</code>, finds the <code>current-context</code>, resolves it to a
+  <code>cluster</code> (an API server URL + CA certificate) and a <code>user</code> (a client
+  certificate or token), and uses those to open an HTTPS connection
+  straight to that cluster's API server on its exposed port — nothing
+  about switching contexts touches the cluster itself, it only changes
+  which server your next command talks to.</li>
+<li><strong>Image pulls stay local when you expect them not to.</strong> A common
+  first-run confusion: an image you built locally with <code>docker build</code>
+  is invisible to the cluster's container runtime unless you explicitly
+  load it in (<code>kind load docker-image</code> or <code>minikube image load</code>), because
+  the cluster's containerd is a separate daemon/namespace from your host
+  Docker — the kubelet's CRI calls only ever reach that cluster-internal
+  runtime, never your host's Docker Engine.</li>
+</ul>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Install either minikube or kind, bring up a cluster, and run
 <code>kubectl get nodes</code> and <code>kubectl get pods -A</code> (all namespaces) to see the

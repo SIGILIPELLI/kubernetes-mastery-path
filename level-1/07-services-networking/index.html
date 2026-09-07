@@ -941,6 +941,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2437,6 +2459,43 @@ short name alone resolves relative to your own namespace's search domain.</p>
 (other Pods, an Ingress in Level 2) keeps using the same stable name/IP,
 completely unaffected by the fact that the underlying Pod IPs changed
 underneath it.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A Service has no process of its own — "the Service" is really three
+separate mechanisms cooperating:</p>
+<ul>
+<li><strong>The Endpoints/EndpointSlice controller does the label-matching.</strong>
+  It watches Pods and Services; whenever a Pod's labels or a Service's
+  selector changes, it recomputes the set of Pod IPs (only ones that are
+  <code>Ready</code>, per readiness probes) matching that selector and writes them
+  into an EndpointSlice object. This is a plain reconciliation loop like
+  any other — the Service object itself never lists Pod IPs; it only
+  holds the selector.</li>
+<li><strong>kube-proxy turns EndpointSlices into kernel rules — no process
+  proxies the traffic.</strong> In iptables mode, kube-proxy watches Services
+  and EndpointSlices and programs <code>iptables</code> NAT chains such that a
+  packet destined for the Service's ClusterIP hits a chain that does
+  randomized destination-NAT to one of the backend Pod IPs, chosen via
+  iptables' built-in probabilistic jump (<code>--probability</code>), directly in
+  the kernel netfilter path. In IPVS mode it instead configures a real
+  Linux virtual server with a chosen scheduling algorithm (round-robin
+  by default) via the kernel's IPVS module — faster at scale because
+  IPVS uses a hash table lookup instead of iptables' linear rule chain.
+  Either way, the actual load balancing happens in kernel space on the
+  node that originated the packet, before it ever leaves that node.</li>
+<li><strong>ClusterIP itself is not attached to any interface.</strong> It's a virtual
+  IP that only has meaning because every node's kube-proxy has installed
+  matching NAT/IPVS rules for it — this is why a ClusterIP is
+  unreachable from outside the cluster (no routing exists to it beyond
+  those per-node kernel rules) and why <code>kubectl get endpoints</code> is the
+  actual ground truth of "who will traffic go to," not the Service
+  spec.</li>
+<li><strong>DNS resolution is a separate reconciling controller too.</strong> CoreDNS
+  (running as its own Deployment in <code>kube-system</code>) also watches Services
+  and, for each one, serves an A/AAAA record at
+  <code>&lt;service&gt;.&lt;namespace&gt;.svc.cluster.local</code> resolving to the ClusterIP —
+  this is populated by CoreDNS's Kubernetes plugin polling the API
+  server's Service list, not by any special DNS-to-Service protocol.</li>
+</ul>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Apply the 3-replica <code>web</code> Deployment from Module 06 plus the <code>ClusterIP</code>
 Service above. From a temporary debug Pod (<code>kubectl run tmp --rm -it
