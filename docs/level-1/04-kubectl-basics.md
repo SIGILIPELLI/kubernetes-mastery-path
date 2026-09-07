@@ -162,6 +162,44 @@ kubectl get pods --watch
 # web-7d8f9c6b7d-2xk9p  1/1     Running   0          8s
 ```
 
+## How It Actually Works
+
+Every `kubectl` command is a thin REST/JSON client — understanding the
+request it actually sends demystifies most "why didn't that work" moments:
+
+- **`get`/`describe`/`delete` are HTTP verbs against a REST resource
+  path.** `kubectl get pods -n foo` performs `GET
+  /api/v1/namespaces/foo/pods`; `kubectl describe` does the equivalent
+  `GET` on the object plus a separate `GET` for related Events
+  (`/api/v1/namespaces/foo/events?fieldSelector=involvedObject.name=...`)
+  and stitches them together client-side — there is no single
+  "describe" API, it's kubectl composing multiple calls into readable
+  text.
+- **`apply` computes a three-way merge patch, not an overwrite.**
+  `kubectl apply` stores the last-applied configuration as JSON in the
+  `kubectl.kubernetes.io/last-applied-configuration` annotation on the
+  live object. On the next `apply`, it diffs three things — the
+  last-applied config, your new local file, and the current live
+  object on the server — to figure out which fields you intentionally
+  removed (present in last-applied, absent in new file) versus fields
+  something else changed that you should leave alone (present in live
+  object but never mentioned by you). `create`, by contrast, is a
+  simple `POST` that fails outright if the object already exists.
+- **`logs` and `exec` don't go through etcd at all.** These commands
+  have the API server open a streaming connection (an upgraded
+  HTTP/SPDY or WebSocket connection) directly to the kubelet on the
+  node hosting the Pod, which in turn asks the container runtime (via
+  CRI's `Exec`/`Attach` or the container's log file on disk) to stream
+  the output back. This is why `logs`/`exec` fail with a distinct
+  "error dialing backend" class of error when the node is unreachable,
+  even though `kubectl get pod` for that same Pod succeeds (get only
+  needs etcd/API server, not the node).
+- **`--watch` keeps the same long-lived watch connection described in
+  Module 01** rather than polling — this is why watched output appears
+  event-by-event with no fixed delay, and why killing the network
+  briefly causes kubectl to silently reconnect and resync via a fresh
+  `List` + `Watch` rather than losing events.
+
 ## Exercise
 
 Against your local cluster from Module 03: create a Deployment imperatively

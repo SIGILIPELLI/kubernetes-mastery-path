@@ -227,6 +227,38 @@ screen-shares/logs.
   periodically), but your app still needs to notice and reload — a common
   pattern is a sidecar or app-level file-watcher for hot-reload.
 
+## How It Actually Works
+
+The caveats above all trace back to two very different delivery
+mechanisms hiding behind what looks like one feature:
+
+- **Env vars are injected once, at container-create time, by the
+  kubelet — not refreshed.** When the kubelet builds the CRI
+  `CreateContainerRequest` for a Pod, it resolves every
+  `valueFrom.configMapKeyRef`/`secretKeyRef` by making a synchronous
+  `GET` to the API server at that moment and bakes the resolved values
+  into the container's environment. This happens exactly once per
+  container start, which is precisely why editing the source
+  ConfigMap/Secret afterward has zero effect until the Pod is
+  recreated — there's no live binding, only a one-time copy.
+- **Mounted ConfigMaps/Secrets are a live, syncing volume, not a
+  copy.** The kubelet mounts these as a `tmpfs`-backed volume using its
+  built-in **configmap**/**secret** volume plugin, which runs a
+  periodic sync loop (governed by `--sync-frequency`, and capped by a
+  TTL cache default of ~60 seconds via `ConfigMapAndSecretChangeDetectionStrategy`)
+  that re-fetches the object from the API server and rewrites the files
+  in place using an atomic symlink swap (write to a new temp directory,
+  then swap the `..data` symlink) so your application never observes a
+  half-written file, only an old-complete or new-complete version.
+- **Base64 in `Secret.data` is a wire-format requirement, not a security
+  boundary.** The Kubernetes API schema requires all `Secret` string
+  values to be valid within JSON, so `data` fields are base64-encoded
+  purely for that reason; at rest, unless the cluster is configured with
+  **encryption-at-rest** (an `EncryptionConfiguration` on the API server
+  that encrypts values before etcd ever writes them to disk — off by
+  default on most clusters), a Secret sits in etcd as base64-decoded-able
+  plaintext, protected only by RBAC on who can `get`/`list` it.
+
 ## Exercise
 
 Create the `web-config` ConfigMap and `db-credentials` Secret above. Deploy

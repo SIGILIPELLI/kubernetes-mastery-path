@@ -156,6 +156,46 @@ Labels are how nearly everything in Kubernetes — Deployments selecting
 Pods, Services routing to Pods, `kubectl` filtering — finds the right
 objects. There's no hidden parent/child pointer; it's all label matching.
 
+## How It Actually Works
+
+A Deployment never touches Pods directly — it manages through a chain of
+owner references, and the `pod-template-hash` label you saw above is the
+load-bearing detail that makes rolling updates possible:
+
+- **Three objects, three controllers, one chain.** A Deployment object is
+  watched by the Deployment controller, which creates/updates a
+  ReplicaSet; that ReplicaSet is watched by the ReplicaSet controller,
+  which creates/deletes Pods. Each level sets an `ownerReferences` entry
+  on the object it creates, pointing back to its owner's UID — this is
+  what makes `kubectl delete deployment` cascade (the garbage collector
+  controller watches for owner deletion and deletes dependents) and
+  what `kubectl get pods -o yaml` reveals in `metadata.ownerReferences`.
+- **`pod-template-hash` is a real hash, computed by the Deployment
+  controller.** It hashes the Pod template (the `spec.template` field,
+  after normalizing it) to a short string, and uses that hash both as a
+  label on the ReplicaSet and as a `selector` the ReplicaSet uses to
+  claim only Pods generated from that exact template version. This is
+  the actual mechanism that lets multiple ReplicaSets (old and new)
+  coexist under one Deployment during a rolling update without their
+  Pod sets overlapping — change the template even slightly and you get
+  a new hash, hence a brand-new ReplicaSet, never a mutation of the old
+  one.
+- **The ReplicaSet controller's reconciliation is a label-selector
+  count-and-diff, exactly as in Module 01.** On every relevant watch
+  event, it lists Pods matching `spec.selector`, counts how many are
+  not terminating, and compares that count to `spec.replicas`. Too few:
+  it issues that many `Pod` create calls (via the API server, which then
+  triggers the scheduler). Too many: it deletes the newest Pods first by
+  default. Because this is selector-based rather than identity-based, if
+  you manually attach a matching label to an unrelated Pod, the
+  ReplicaSet controller will "adopt" it (and may delete one of its own
+  Pods to keep the count correct) — exactly why label hygiene matters.
+- **Scaling (`kubectl scale`) is just a `PATCH` to `spec.replicas`.**
+  There's no separate "scaling subsystem" — it's the same reconciliation
+  loop reacting to a spec change like any other, which is also why
+  scaling and healing use identical code paths and are indistinguishable
+  to the controller.
+
 ## Exercise
 
 Apply the `web` Deployment above with 3 replicas. Use `kubectl get pods -l

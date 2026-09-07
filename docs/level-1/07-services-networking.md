@@ -154,6 +154,44 @@ This is the entire point of a Service: everything that talks to `web`
 completely unaffected by the fact that the underlying Pod IPs changed
 underneath it.
 
+## How It Actually Works
+
+A Service has no process of its own — "the Service" is really three
+separate mechanisms cooperating:
+
+- **The Endpoints/EndpointSlice controller does the label-matching.**
+  It watches Pods and Services; whenever a Pod's labels or a Service's
+  selector changes, it recomputes the set of Pod IPs (only ones that are
+  `Ready`, per readiness probes) matching that selector and writes them
+  into an EndpointSlice object. This is a plain reconciliation loop like
+  any other — the Service object itself never lists Pod IPs; it only
+  holds the selector.
+- **kube-proxy turns EndpointSlices into kernel rules — no process
+  proxies the traffic.** In iptables mode, kube-proxy watches Services
+  and EndpointSlices and programs `iptables` NAT chains such that a
+  packet destined for the Service's ClusterIP hits a chain that does
+  randomized destination-NAT to one of the backend Pod IPs, chosen via
+  iptables' built-in probabilistic jump (`--probability`), directly in
+  the kernel netfilter path. In IPVS mode it instead configures a real
+  Linux virtual server with a chosen scheduling algorithm (round-robin
+  by default) via the kernel's IPVS module — faster at scale because
+  IPVS uses a hash table lookup instead of iptables' linear rule chain.
+  Either way, the actual load balancing happens in kernel space on the
+  node that originated the packet, before it ever leaves that node.
+- **ClusterIP itself is not attached to any interface.** It's a virtual
+  IP that only has meaning because every node's kube-proxy has installed
+  matching NAT/IPVS rules for it — this is why a ClusterIP is
+  unreachable from outside the cluster (no routing exists to it beyond
+  those per-node kernel rules) and why `kubectl get endpoints` is the
+  actual ground truth of "who will traffic go to," not the Service
+  spec.
+- **DNS resolution is a separate reconciling controller too.** CoreDNS
+  (running as its own Deployment in `kube-system`) also watches Services
+  and, for each one, serves an A/AAAA record at
+  `<service>.<namespace>.svc.cluster.local` resolving to the ClusterIP —
+  this is populated by CoreDNS's Kubernetes plugin polling the API
+  server's Service list, not by any special DNS-to-Service protocol.
+
 ## Exercise
 
 Apply the 3-replica `web` Deployment from Module 06 plus the `ClusterIP`

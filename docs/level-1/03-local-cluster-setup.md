@@ -175,6 +175,43 @@ pull images, schedule Pods, and route traffic. Clean up:
 kubectl delete deployment hello
 ```
 
+## How It Actually Works
+
+minikube and kind take different mechanical approaches to giving you
+"a Kubernetes cluster" on a single machine, and knowing the difference
+explains most of the quirks you'll hit:
+
+- **minikube** typically provisions a real (or driver-backed) VM — or a
+  single Docker container acting as the node when using `--driver=docker`
+  — and inside it runs a full kubeadm-style control plane: kube-apiserver,
+  etcd, scheduler, and controller-manager as static Pods defined by
+  manifest files that the kubelet reads directly from
+  `/etc/kubernetes/manifests/` on that node, rather than being scheduled
+  through the normal API server pipeline (this is a deliberate
+  bootstrapping trick — the kubelet can start the API server as a
+  "static Pod" before an API server exists to schedule anything).
+- **kind** ("Kubernetes IN Docker") runs each cluster "node" as a Docker
+  container, and inside that container runs a full systemd + containerd +
+  kubelet stack, with the control plane again started as static Pods.
+  Because everything is nested inside one Docker container per node,
+  kind clusters start in seconds and networking is simpler to reason
+  about, but you're one extra virtualization layer removed from bare
+  metal (container-in-container) compared to minikube's Docker driver.
+- **Your kubectl context is just a client-side pointer.** `kubectl` reads
+  `~/.kube/config`, finds the `current-context`, resolves it to a
+  `cluster` (an API server URL + CA certificate) and a `user` (a client
+  certificate or token), and uses those to open an HTTPS connection
+  straight to that cluster's API server on its exposed port — nothing
+  about switching contexts touches the cluster itself, it only changes
+  which server your next command talks to.
+- **Image pulls stay local when you expect them not to.** A common
+  first-run confusion: an image you built locally with `docker build`
+  is invisible to the cluster's container runtime unless you explicitly
+  load it in (`kind load docker-image` or `minikube image load`), because
+  the cluster's containerd is a separate daemon/namespace from your host
+  Docker — the kubelet's CRI calls only ever reach that cluster-internal
+  runtime, never your host's Docker Engine.
+
 ## Exercise
 
 Install either minikube or kind, bring up a cluster, and run

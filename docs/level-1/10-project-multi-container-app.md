@@ -267,6 +267,41 @@ curl http://192.168.49.2:30080/api/get
 # because it always talks to the stable "api" Service, not a Pod IP
 ```
 
+## How It Actually Works
+
+This project exercises the full request path across every control-plane
+component covered so far — worth tracing end to end for one request:
+
+1. When you `curl` the NodePort, the kernel on whichever node received the
+   packet applies the iptables/IPVS DNAT rules kube-proxy programmed for
+   that NodePort (Module 07), rewriting the destination to one of the
+   `frontend` Pod IPs recorded in its EndpointSlice.
+2. The nginx proxy Pod resolves `api.capstone.svc.cluster.local` via
+   CoreDNS, which returns the `api` Service's ClusterIP — a name lookup
+   that only works because both Pods are reconciled into the same
+   namespace's DNS zone (Module 09) and because CoreDNS's Service watch
+   already picked up that ClusterIP when the Service was created.
+3. The proxy's request to that ClusterIP is DNAT'd again, this time to one
+   of the backend Pods, by the exact same kube-proxy kernel-rule mechanism
+   — a second, independent instance of the same load-balancing logic, not
+   a special "east-west" path.
+4. When you delete the `api` Pods, three reconciliation loops fire in
+   sequence, each unaware of the others' existence: the ReplicaSet
+   controller notices the count drop below desired and creates
+   replacements (Module 06); the scheduler binds each new Pod to a node
+   (Module 02); the Endpoints/EndpointSlice controller notices the new
+   Pods become `Ready` and updates the `api` Service's backend list
+   (Module 07) — only after that last step do kube-proxy's kernel rules
+   change, which is the actual reason there's a brief window of latency
+   before traffic reaches the replacements, not "eventually consistent"
+   handwaving.
+5. `kubectl delete namespace capstone` cascades through the garbage
+   collector exactly as in Module 09: Services, Deployments, ConfigMaps,
+   and the Secret are all deleted first (triggering ReplicaSet and Pod
+   cleanup via owner references), and only once every namespaced object
+   is gone does the Namespace's finalizer clear and the object itself
+   disappear from etcd.
+
 ## Tearing down
 
 ```bash

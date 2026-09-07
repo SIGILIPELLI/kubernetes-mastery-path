@@ -209,6 +209,49 @@ kubectl apply -f manifests/
 `kubectl apply -f <dir>` applies every YAML file in the directory
 (non-recursively by default; add `-R` to recurse into subdirectories).
 
+## How It Actually Works
+
+Namespaces and manifests both boil down to how the API server keys and
+scopes objects internally:
+
+- **A namespace is not a network boundary — it's a key prefix.** Every
+  namespaced object is stored in etcd under a path like
+  `/registry/<resource>/<namespace>/<name>`. This means uniqueness is
+  only enforced within that prefix (`web` can exist in both `dev` and
+  `staging` simultaneously with zero conflict), and it's also why
+  cluster-scoped resources (Nodes, PersistentVolumes, Namespaces
+  themselves, ClusterRoles) live at `/registry/<resource>/<name>` with
+  no namespace segment at all — there's genuinely nowhere for a
+  namespace to attach. Pod-to-Pod network reachability across namespaces
+  is unaffected by any of this; that's governed separately by
+  NetworkPolicy (Level 3), which is off (fully permeable) by default.
+- **Deleting a namespace triggers cascading finalizer-driven cleanup,
+  not an instant wipe.** `kubectl delete namespace` first sets
+  `status.phase: Terminating` and stamps the object with a `kubernetes`
+  finalizer; a namespace controller then lists every API resource type
+  and deletes every object scoped to that namespace one by one (in
+  dependency order, driven by the same owner-reference garbage collector
+  from Module 06), and only removes the finalizer — letting the
+  Namespace object itself finally disappear — once that sweep confirms
+  nothing is left. A namespace stuck in `Terminating` almost always
+  means one object in it has its own finalizer that nothing is running
+  to satisfy.
+- **`kubectl apply -f <dir>` applies each file as an independent
+  request, in filename-sorted order, not as one transaction.** There is
+  no atomicity across the batch — if file 3 of 5 fails validation, files
+  1 and 2 are already committed to etcd. This is exactly why manifests
+  are conventionally ordered so dependencies (Namespace, then
+  ConfigMap/Secret, then Deployment, then Service) sort correctly by
+  filename: the API server processes whatever kubectl sends it in
+  sequence, and kubectl sends them in the order it read the directory.
+- **YAML's `apiVersion`/`kind` are how the API server picks a schema and
+  validator, not decoration.** The API server maintains a discovery
+  document mapping every `(group, version, kind)` to a specific REST
+  endpoint and Go struct; submitting a `kind` that doesn't match the
+  registered schema for that `apiVersion` fails at admission before any
+  business logic runs, which is the actual reason a typo'd `apiVersion`
+  produces "no matches for kind" rather than a more specific error.
+
 ## Exercise
 
 Create a `staging` namespace. Write a directory `manifests/` containing

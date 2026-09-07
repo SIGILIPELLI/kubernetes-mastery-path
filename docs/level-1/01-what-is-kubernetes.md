@@ -112,6 +112,47 @@ reconciled by controllers running in the control plane — if a Pod dies five
 minutes later, a controller notices the actual count (2) no longer matches
 the desired count (3) and creates a replacement, with no human involved.
 
+## How It Actually Works
+
+"Desired state reconciliation" is not a slogan — it's a specific, repeated
+mechanical loop, and every controller in Kubernetes (there are dozens, all
+built the same way) runs it:
+
+1. **Watch, don't poll.** A controller opens a long-lived HTTP connection to
+   the API server and issues a `watch` request on the resource it cares
+   about (e.g. ReplicaSets). The API server doesn't send this by scanning a
+   database on a timer — etcd (the cluster's key-value store) exposes its
+   own internal `Watch` gRPC stream keyed by revision number, and the API
+   server's watch cache subscribes to that stream and fans it out to every
+   client watching the same resource type. When a write happens, the
+   notification is pushed to the controller within milliseconds, not on
+   the next poll interval.
+2. **Compare desired vs. observed.** Each controller keeps an in-memory
+   cache (an "informer") of the objects it watches, built by a `List` on
+   startup followed by the `Watch` stream applying deltas. On every
+   relevant event, the controller's reconcile function reads the object's
+   `spec` (desired state, e.g. `replicas: 3`) and compares it to the
+   observed cluster state (how many Pods actually exist with matching
+   labels and are `Running`).
+3. **Take one corrective action, then stop.** The reconcile function is
+   deliberately not "make everything perfect in one pass" — it computes
+   the *smallest* next action (e.g. "create 1 Pod") and issues it as a
+   normal write to the API server, then returns. This is what makes
+   controllers safe to run concurrently and to crash-restart: reconciling
+   is idempotent, so re-running it against the same state is a no-op.
+4. **Level-triggered, not edge-triggered.** Because the controller always
+   recomputes from current state rather than reacting to "a Pod died"
+   as a discrete event, a missed or duplicate event is harmless — the
+   controller will simply reconcile again on its periodic full resync
+   (typically every 30s by default) and notice the mismatch on its own,
+   even if the watch stream briefly dropped a notification.
+
+This is why `kubectl apply` returns almost instantly even though the actual
+work (scheduling, pulling images, starting containers) takes seconds to
+minutes: the command only writes desired state into etcd via the API
+server and returns; everything after that is asynchronous reconciliation
+by controllers you never directly invoke.
+
 ## Exercise
 
 Without touching a cluster yet, write down (in a notes file or scratch

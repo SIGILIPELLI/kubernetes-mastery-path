@@ -146,6 +146,58 @@ server, scheduler, controller-manager, kubelet, kube-proxy) are all present
 and doing their jobs — you can see most of them as Pods in the `kube-system`
 namespace with `kubectl get pods -n kube-system`.
 
+## How It Actually Works
+
+Each control-plane component has a distinct internal mechanism worth
+knowing precisely, because most debugging eventually points at one of them:
+
+- **etcd** stores every object as a key under a path like
+  `/registry/pods/<namespace>/<name>`, using the Raft consensus algorithm
+  across an odd number of members (3 or 5 in production) so that a
+  majority quorum must agree before a write is committed. Every write
+  gets a monotonically increasing `revision` number — this revision is
+  what watch streams use to resume exactly where they left off after a
+  disconnect, and it's also what powers optimistic concurrency: every
+  object carries a `resourceVersion` (derived from that revision), and a
+  write that doesn't match the version it read against is rejected with a
+  409 Conflict rather than silently overwriting a concurrent change.
+- **kube-apiserver** is the only component that talks to etcd directly.
+  Every request — from `kubectl`, from controllers, from kubelets — goes
+  through a fixed pipeline: authentication (who are you), authorization
+  (RBAC — are you allowed to do this verb on this resource),
+  admission control (mutating webhooks that can modify the object, then
+  validating webhooks that can reject it), and only then a read/write to
+  etcd. This is why the API server, not etcd, is the single source of
+  truth for validation logic and the only safe integration point.
+- **kube-scheduler** does not get invoked directly by anything creating a
+  Pod. It runs its own watch loop specifically for Pods whose
+  `spec.nodeName` is empty, then for each one runs a **filter phase**
+  (predicates: does the node have enough allocatable CPU/memory, does it
+  satisfy nodeSelector/affinity/taints-tolerations) to produce a feasible
+  set, followed by a **score phase** (priorities: spread pods across
+  nodes, prefer nodes with more free resources, etc.) that ranks the
+  survivors — the highest-scoring node wins, and the scheduler commits
+  the decision with a `Bind` API call that sets `spec.nodeName`, which
+  is itself just a normal write back to the API server/etcd.
+- **kube-controller-manager** runs many independent control loops
+  (Node controller, ReplicaSet controller, Endpoints controller, and
+  dozens more) in one process, each watching only the object types it
+  owns and reconciling toward desired state as described in Module 01.
+- **kubelet** on each worker node doesn't just "run containers" — it
+  reconciles the set of Pods assigned to its node (`spec.nodeName ==
+  <this node>`) against the container runtime via the **CRI**
+  (Container Runtime Interface), a gRPC API implemented by containerd or
+  CRI-O. It also runs the periodic liveness/readiness probe loop and
+  reports node/Pod status back to the API server roughly every 10
+  seconds (`--node-status-update-frequency`), which is what
+  `kubectl describe node` is actually displaying.
+- **kube-proxy** doesn't proxy traffic in the literal sense on most
+  clusters — it watches Service and EndpointSlice objects and
+  translates them into either iptables NAT rules or IPVS virtual server
+  entries directly in the Linux kernel's networking stack, so that a
+  packet to a Service's ClusterIP is DNAT'd to a Pod IP by the kernel
+  itself with no proxy process in the data path at all.
+
 ## Exercise
 
 Draw (on paper or in a text file) the control-plane/worker-node diagram from

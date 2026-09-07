@@ -168,6 +168,45 @@ kubelet keeps restarting it with growing backoff delays — this is the
 expected, documented behavior for `restartPolicy: Always` (the default for
 bare Pods).
 
+## How It Actually Works
+
+A Pod is a kubelet-managed abstraction, not a kernel or runtime concept —
+here is the actual machinery behind the phases and behavior you just saw:
+
+- **The pause (infra) container is what makes a Pod "one thing."**
+  Before starting any of your containers, the kubelet's CRI call chain
+  creates a hidden container running a `pause` binary that does nothing
+  but hold open Linux namespaces (network, IPC, and optionally PID).
+  Every real container in the Pod is then started joined to *that*
+  container's namespaces (`--net=container:<pause-id>` in Docker terms),
+  which is the actual mechanism behind "containers in a Pod share an IP
+  and can reach each other on localhost" — it's namespace sharing, not
+  magic.
+- **Restart backoff is exponential and per-container, tracked by the
+  kubelet locally.** On each container exit, the kubelet computes the
+  next restart delay as `min(10 * 2^n, 300)` seconds where `n` is the
+  consecutive-failure count for that specific container, resetting once
+  the container has stayed `Running` for 10 minutes. This state lives
+  in the kubelet's own memory/status, not in etcd — which is why the
+  displayed `RESTARTS` count and backoff timer are exactly what that
+  node's kubelet has observed, and why deleting/recreating the Pod
+  resets the counter.
+- **Pod phase is a coarse summary the kubelet computes, not something
+  you set.** `Pending` means the Pod is accepted by the API server but
+  at least one container's image/volumes/scheduling isn't ready yet;
+  `Running` means the Pod has been bound to a node and at least one
+  container is running; the kubelet derives this from the much more
+  granular per-container `state` (`Waiting`/`Running`/`Terminated`) that
+  `kubectl describe` shows you, which in turn come directly from CRI
+  `ContainerStatus` calls to containerd.
+- **`kubectl logs --previous` reads a file, not a live stream.** The
+  container runtime writes each container's stdout/stderr to a log file
+  under `/var/log/pods/<uid>/<container>/` on the node, and rotates a
+  new file per container instantiation; `--previous` simply has the
+  kubelet serve the log file from the prior instantiation before it was
+  restarted, which is why it survives the crash even though that
+  process no longer exists.
+
 ## Exercise
 
 Apply the `hello-pod` manifest above, `describe` it and read the Events
