@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 04 · Autoscaling (HPA & VPA Concepts)
 
 !!! info "Coming soon"

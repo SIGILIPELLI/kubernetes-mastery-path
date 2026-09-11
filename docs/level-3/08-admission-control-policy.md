@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 08 · Admission Control & Policy Enforcement
 
 !!! info "Coming soon"

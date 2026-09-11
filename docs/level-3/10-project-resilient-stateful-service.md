@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 10 · Project — Resilient Stateful Service
 
 !!! info "Coming soon"

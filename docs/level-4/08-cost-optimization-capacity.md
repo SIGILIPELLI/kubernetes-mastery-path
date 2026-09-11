@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 08 · Cost Optimization & Capacity Planning
 
 !!! info "Coming soon"

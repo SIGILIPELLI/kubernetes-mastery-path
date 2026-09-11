@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 05 · Observability: Metrics & Logging
 
 !!! info "Coming soon"

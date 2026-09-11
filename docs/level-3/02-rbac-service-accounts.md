@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 02 · RBAC & Service Accounts
 
 !!! info "Coming soon"

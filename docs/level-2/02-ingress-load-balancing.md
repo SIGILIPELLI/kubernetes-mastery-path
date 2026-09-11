@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 02 · Ingress & Load Balancing
 
 !!! info "Coming soon"

@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 03 · Network Policies
 
 !!! info "Coming soon"

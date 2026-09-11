@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 05 · Image Scanning & Supply Chain Security
 
 !!! info "Coming soon"

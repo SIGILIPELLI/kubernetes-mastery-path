@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 08 · Jobs & CronJobs
 
 !!! info "Coming soon"

@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 10 · Project — Ingress-Fronted Helm App
 
 !!! info "Coming soon"

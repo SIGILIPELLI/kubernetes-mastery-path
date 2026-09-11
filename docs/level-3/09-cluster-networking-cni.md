@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 09 · Cluster Networking Deep Dive (CNI)
 
 !!! info "Coming soon"

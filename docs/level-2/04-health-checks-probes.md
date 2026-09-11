@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 04 · Health Checks (Liveness & Readiness Probes)
 
 !!! info "Coming soon"

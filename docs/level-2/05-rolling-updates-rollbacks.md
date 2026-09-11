@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 05 · Rolling Updates & Rollbacks
 
 !!! info "Coming soon"

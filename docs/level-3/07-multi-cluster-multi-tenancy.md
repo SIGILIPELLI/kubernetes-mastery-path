@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 07 · Multi-Cluster & Multi-Tenancy Concepts
 
 !!! info "Coming soon"

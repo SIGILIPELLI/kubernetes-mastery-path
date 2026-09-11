@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 06 · Helm Basics (Charts & Values)
 
 !!! info "Coming soon"

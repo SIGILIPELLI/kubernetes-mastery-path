@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 03 · Cluster Upgrades & Maintenance
 
 !!! info "Coming soon"

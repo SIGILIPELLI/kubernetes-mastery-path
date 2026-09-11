@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 04 · Security Hardening (Pod Security Standards)
 
 !!! info "Coming soon"

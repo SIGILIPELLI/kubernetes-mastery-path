@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 07 · Multi-Environment Configuration
 
 !!! info "Coming soon"

@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 09 · Debugging & Troubleshooting Workloads
 
 !!! info "Coming soon"

@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 09 · Platform Engineering on Kubernetes
 
 !!! info "Coming soon"

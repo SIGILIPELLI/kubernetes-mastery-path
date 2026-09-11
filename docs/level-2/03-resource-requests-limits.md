@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 03 · Resource Requests, Limits & Scheduling
 
 !!! info "Coming soon"

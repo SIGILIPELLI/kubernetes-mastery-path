@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 07 · Disaster Recovery & Backup Strategies
 
 !!! info "Coming soon"

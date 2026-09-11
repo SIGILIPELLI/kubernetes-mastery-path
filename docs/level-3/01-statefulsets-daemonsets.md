@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 01 · StatefulSets & DaemonSets
 
 !!! info "Coming soon"

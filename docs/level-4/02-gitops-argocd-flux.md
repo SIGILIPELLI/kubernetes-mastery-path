@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 02 · GitOps Patterns (ArgoCD/Flux Concepts)
 
 !!! info "Coming soon"

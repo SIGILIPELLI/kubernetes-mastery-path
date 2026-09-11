@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 01 · Operators & CRDs
 
 !!! info "Coming soon"

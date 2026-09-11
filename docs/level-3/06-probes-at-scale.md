@@ -1,3 +1,7 @@
+---
+robots: noindex, follow
+---
+
 # 06 · Probes & Health at Scale
 
 !!! info "Coming soon"
