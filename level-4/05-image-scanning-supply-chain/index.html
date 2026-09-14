@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1910,6 +1908,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Image Scanning & Supply Chain Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1926,6 +1942,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-supply-chain-has-three-attack-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The supply chain has three attack surfaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scanning-images-with-trivy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scanning images with Trivy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signing-images-with-cosign-sigstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing images with Cosign (Sigstore)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcing-signaturescan-policy-at-admission-time-with-kyverno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcing signature/scan policy at admission time with Kyverno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-an-enforced-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: an enforced pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-supply-chain-has-three-attack-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The supply chain has three attack surfaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scanning-images-with-trivy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scanning images with Trivy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signing-images-with-cosign-sigstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing images with Cosign (Sigstore)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcing-signaturescan-policy-at-admission-time-with-kyverno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcing signature/scan policy at admission time with Kyverno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-an-enforced-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: an enforced pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,151 @@
 
 
 <h1 id="05-image-scanning-supply-chain-security">05 · Image Scanning &amp; Supply Chain Security<a class="headerlink" href="#05-image-scanning-supply-chain-security" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover vulnerability scanning, image provenance/signing, and securing the software supply chain for container images.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Tool output and admission behavior below follow documented Trivy/Cosign/
+Kyverno behavior; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-supply-chain-has-three-attack-surfaces">The supply chain has three attack surfaces<a class="headerlink" href="#the-supply-chain-has-three-attack-surfaces" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Build-time</strong> — vulnerable base images, vulnerable dependencies baked
+   into the image.</li>
+<li><strong>Distribution</strong> — a compromised registry, or a tag silently
+   repointed to different content after review.</li>
+<li><strong>Runtime</strong> — a cluster pulling and running an image whose contents no
+   one actually verified matches what was reviewed.</li>
+</ol>
+<p>Image scanning addresses (1); image signing/provenance addresses (2) and
+(3).</p>
+<h2 id="scanning-images-with-trivy">Scanning images with Trivy<a class="headerlink" href="#scanning-images-with-trivy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>trivy<span class="w"> </span>image<span class="w"> </span>registry.example.com/api:v1.4.2
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Total: 14 (CRITICAL: 1, HIGH: 4, MEDIUM: 6, LOW: 3)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># CVE-2024-XXXX  openssl  CRITICAL  3.0.2  fixed: 3.0.13</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>trivy<span class="w"> </span>image<span class="w"> </span>--severity<span class="w"> </span>CRITICAL,HIGH<span class="w"> </span>--exit-code<span class="w"> </span><span class="m">1</span><span class="w"> </span>registry.example.com/api:v1.4.2
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># exits non-zero if CRITICAL/HIGH found — designed to fail a CI pipeline</span>
+</code></pre></div>
+<p>Wiring this into CI as a required check (<code>exit-code 1</code> on
+CRITICAL/HIGH) is what turns scanning from a dashboard nobody reads into
+an actual gate — a scan that only reports, without failing the build,
+gets ignored under deadline pressure.</p>
+<h2 id="signing-images-with-cosign-sigstore">Signing images with Cosign (Sigstore)<a class="headerlink" href="#signing-images-with-cosign-sigstore" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cosign<span class="w"> </span>sign<span class="w"> </span>--key<span class="w"> </span>cosign.key<span class="w"> </span>registry.example.com/api:v1.4.2
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Pushes a detached signature as a separate OCI artifact alongside the image</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>cosign<span class="w"> </span>verify<span class="w"> </span>--key<span class="w"> </span>cosign.pub<span class="w"> </span>registry.example.com/api:v1.4.2
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Verification for registry.example.com/api:v1.4.2 --</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># The following checks were performed on each of these signatures:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># - The cosign claims were validated</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># - The signatures were verified against the specified public key</span>
+</code></pre></div>
+<p>Keyless signing (Sigstore's Fulcio/Rekor) ties the signature to an OIDC
+identity (e.g. "this exact GitHub Actions workflow, on this exact repo,
+built this image") instead of a long-lived private key that itself
+becomes a thing to protect:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cosign<span class="w"> </span>sign<span class="w"> </span>registry.example.com/api:v1.4.2<span class="w">   </span><span class="c1"># no --key: keyless flow via OIDC + Fulcio + Rekor transparency log</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>cosign<span class="w"> </span>verify<span class="w"> </span>--certificate-identity-regexp<span class="w"> </span><span class="s1">'.*github.com/example/api.*'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--certificate-oidc-issuer<span class="w"> </span>https://token.actions.githubusercontent.com<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>registry.example.com/api:v1.4.2
+</code></pre></div>
+<h2 id="enforcing-signaturescan-policy-at-admission-time-with-kyverno">Enforcing signature/scan policy at admission time with Kyverno<a class="headerlink" href="#enforcing-signaturescan-policy-at-admission-time-with-kyverno" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kyverno.io/v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterPolicy</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">require-signed-images</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">validationFailureAction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enforce</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">verify-signature</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">match</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">          </span><span class="nt">kinds</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"Pod"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nt">verifyImages</span><span class="p">:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">imageReferences</span><span class="p">:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"registry.example.com/*"</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">          </span><span class="nt">attestors</span><span class="p">:</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">entries</span><span class="p">:</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">keys</span><span class="p">:</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">                    </span><span class="nt">publicKeys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|-</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">                      </span><span class="no">-----BEGIN PUBLIC KEY-----</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">                      </span><span class="no">...</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                      </span><span class="no">-----END PUBLIC KEY-----</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>run<span class="w"> </span>unsigned<span class="w"> </span>--image<span class="o">=</span>registry.example.com/api:v1.4.9-unsigned
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Error from server: admission webhook "validate.kyverno.svc" denied the request:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># image verification failed for registry.example.com/api:v1.4.9-unsigned:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># .attestors[0].entries[0].keys: failed to verify signature</span>
+</code></pre></div>
+<p>This is the step that actually closes the loop: scanning and signing at
+build time are advisory unless something at deploy time refuses to run an
+image that wasn't verifiably produced by the pipeline you trust.</p>
+<h2 id="worked-example-an-enforced-pipeline">Worked example: an enforced pipeline<a class="headerlink" href="#worked-example-an-enforced-pipeline" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>1. CI builds image, tags it with the Git SHA.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>2. trivy image --exit-code 1 --severity CRITICAL,HIGH  -&gt; fails build on critical CVEs
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>3. cosign sign (keyless, tied to the CI OIDC identity)  -&gt; signs the passing image
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>4. Push to registry.
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>5. Deploy manifest references the image by digest, not by mutable tag:
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>     image: registry.example.com/api@sha256:9f2a...
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>6. Kyverno ClusterPolicy verifies the Cosign signature at admission time.
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>7. Any image that skipped steps 2-3 (or was retagged after the fact) is
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>   rejected by step 6, regardless of who or what tries to deploy it.
+</code></pre></div>
+<p>Pinning by digest (step 5) matters independent of signing: a mutable tag
+like <code>:v1.4.2</code> can be repointed at the registry to different content after
+review without changing the manifest at all; a digest reference cannot be
+silently swapped.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Vulnerability scanners work from SBOM-equivalent package
+  manifests extracted from image layers, not from executing any code in
+  the image.</strong> Trivy walks each layer's filesystem diff, identifies
+  installed package databases (<code>dpkg</code>/<code>rpm</code>/<code>apk</code> status files, language
+  lockfiles like <code>package-lock.json</code>/<code>go.sum</code> baked into the image), and
+  matches package name+version against a vulnerability database (mirrored
+  from NVD and vendor advisories) — this is why scan results are only as
+  current as the last database update and why a scan can miss a
+  vulnerability in a statically-linked binary with no package-manager
+  record at all.</li>
+<li><strong>Cosign's keyless signing anchors trust in a short-lived certificate
+  and a public transparency log, not a stored secret.</strong> Fulcio issues a
+  10-minute X.509 certificate binding the signer's OIDC identity (e.g. a
+  specific GitHub Actions workflow run) to a freshly generated keypair
+  used only for that one signature; Rekor then records the signature in
+  an append-only, publicly auditable Merkle-tree log. Verification later
+  checks the certificate chain plus a Rekor inclusion proof rather than
+  trusting a long-lived key file that would itself need protecting and
+  rotating.</li>
+<li><strong>Kyverno's <code>verifyImages</code> runs as a mutating-then-validating admission
+  webhook pair, not a plain validating check.</strong> It first mutates the Pod
+  spec to resolve any mutable tag reference to its immutable digest (so
+  what actually gets scheduled is pinned to the exact content that was
+  verified, closing the tag-repoint gap), then validates that the
+  signature/attestation over that digest checks out against the
+  configured attestors — rejecting at this stage means the object is
+  never persisted to etcd at all, unlike a scanner that only flags an
+  already-running Pod after the fact.</li>
+<li><strong>A digest reference (<code>@sha256:...</code>) is resolved by the kubelet's image
+  service via CRI, and the digest itself is a hash of the image
+  manifest, not of the raw layer bytes.</strong> This is why two identically-built
+  images can have different digests if manifest metadata (like the
+  media-type list or an extra annotation) differs, and why "pin by digest"
+  is a strictly stronger guarantee than "pin by tag" — the registry cannot
+  serve different bytes for the same digest without every puller detecting
+  a hash mismatch and refusing the pull.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Pick a public image (e.g. <code>nginx:1.25</code>), run <code>trivy image</code> against it and
+identify the highest-severity CVE reported. Then install Cosign, generate
+a local keypair, sign a test image you push to a local registry, and
+verify it. Finally write a Kyverno <code>ClusterPolicy</code> (or read one from
+Kyverno's policy library) that would have rejected an unsigned version of
+that same image.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

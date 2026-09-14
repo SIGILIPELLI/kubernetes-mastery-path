@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1966,6 +1964,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Disaster Recovery & Backup Strategies
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1982,6 +1998,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-actually-needs-backing-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What actually needs backing up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backing-up-etcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backing up etcd
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restoring-etcd-from-a-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restoring etcd from a snapshot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backing-up-applicationpv-data-with-velero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backing up application/PV data with Velero
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restoring-with-velero-including-cross-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restoring with Velero (including cross-cluster)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-full-dr-runbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a full DR runbook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-actually-needs-backing-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What actually needs backing up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backing-up-etcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backing up etcd
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restoring-etcd-from-a-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restoring etcd from a snapshot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backing-up-applicationpv-data-with-velero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backing up application/PV data with Velero
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restoring-with-velero-including-cross-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restoring with Velero (including cross-cluster)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-full-dr-runbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a full DR runbook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,162 @@
 
 
 <h1 id="07-disaster-recovery-backup-strategies">07 · Disaster Recovery &amp; Backup Strategies<a class="headerlink" href="#07-disaster-recovery-backup-strategies" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover backing up etcd and application state, and designing recovery procedures for cluster and workload failures.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Commands and restore procedures below follow documented etcd/Velero
+behavior; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="what-actually-needs-backing-up">What actually needs backing up<a class="headerlink" href="#what-actually-needs-backing-up" title="Permanent link">&para;</a></h2>
+<p>Kubernetes state lives in two very different places, and a DR plan has to
+cover both:</p>
+<ol>
+<li><strong>etcd</strong> — every API object (Deployments, Services, Secrets, RBAC,
+   CRDs — the entire declared cluster state).</li>
+<li><strong>Application/PersistentVolume data</strong> — the actual bytes a database or
+   stateful workload has written, which lives outside etcd entirely on
+   whatever storage backend backs the PVs.</li>
+</ol>
+<p>Restoring etcd alone gets you back a cluster that <em>declares</em> the right
+Deployments and PVCs — it does <strong>not</strong> restore a corrupted database's
+rows. Both halves need independent, tested backup and restore procedures.</p>
+<h2 id="backing-up-etcd">Backing up etcd<a class="headerlink" href="#backing-up-etcd" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>etcdctl<span class="w"> </span>snapshot<span class="w"> </span>save<span class="w"> </span>/backup/etcd-snapshot-<span class="k">$(</span>date<span class="w"> </span>+%F-%H%M<span class="k">)</span>.db<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--endpoints<span class="o">=</span>https://127.0.0.1:2379<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--cacert<span class="o">=</span>/etc/kubernetes/pki/etcd/ca.crt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--cert<span class="o">=</span>/etc/kubernetes/pki/etcd/server.crt<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--key<span class="o">=</span>/etc/kubernetes/pki/etcd/server.key
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>etcdctl<span class="w"> </span>snapshot<span class="w"> </span>status<span class="w"> </span>/backup/etcd-snapshot-2026-09-14-0200.db<span class="w"> </span>--write-out<span class="o">=</span>table
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># +----------+----------+------------+------------+</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># |   HASH   | REVISION | TOTAL KEYS | TOTAL SIZE |</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># | 8f2a1c9d |    48213 |       9871 |    112 MB  |</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># a cron job on a control-plane node (or a CronJob with hostPath access + etcd certs mounted):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="m">0</span><span class="w"> </span>*/6<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>etcdctl<span class="w"> </span>snapshot<span class="w"> </span>save<span class="w"> </span>/backup/etcd-<span class="k">$(</span>date<span class="w"> </span>+<span class="se">\%</span>F-<span class="se">\%</span>H<span class="se">\%</span>M<span class="k">)</span>.db<span class="w"> </span>...<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">            </span>aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>/backup/etcd-<span class="k">$(</span>date<span class="w"> </span>+<span class="se">\%</span>F-<span class="se">\%</span>H<span class="se">\%</span>M<span class="k">)</span>.db<span class="w"> </span>s3://cluster-backups/etcd/
+</code></pre></div>
+<p>Snapshots must ship off-node immediately (to S3/GCS/etc.) — a snapshot
+sitting only on the control-plane node's disk is not a disaster-recovery
+backup, it's a copy that dies with the same disk in a real disaster.</p>
+<h2 id="restoring-etcd-from-a-snapshot">Restoring etcd from a snapshot<a class="headerlink" href="#restoring-etcd-from-a-snapshot" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>etcdctl<span class="w"> </span>snapshot<span class="w"> </span>restore<span class="w"> </span>/backup/etcd-snapshot-2026-09-14-0200.db<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--data-dir<span class="o">=</span>/var/lib/etcd-restored<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--name<span class="o">=</span>control-plane-1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--initial-cluster<span class="o">=</span>control-plane-1<span class="o">=</span>https://10.0.1.5:2380<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--initial-advertise-peer-urls<span class="o">=</span>https://10.0.1.5:2380
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># stop the kubelet's static-pod-managed etcd, point its manifest at the restored data-dir:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s#/var/lib/etcd#/var/lib/etcd-restored#'</span><span class="w"> </span>/etc/kubernetes/manifests/etcd.yaml
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># kubelet detects the manifest change and restarts etcd against the restored data</span>
+</code></pre></div>
+<p>Restoring is a <strong>full replace</strong>, not a merge — any object created after
+the snapshot was taken is gone once the restore completes. This is why
+snapshot frequency (every 6 hours above) directly bounds the recovery
+point objective (RPO): a restore from a 6-hour-old snapshot loses up to 6
+hours of API object changes.</p>
+<h2 id="backing-up-applicationpv-data-with-velero">Backing up application/PV data with Velero<a class="headerlink" href="#backing-up-applicationpv-data-with-velero" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>velero<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--provider<span class="w"> </span>aws<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>--plugins<span class="w"> </span>velero/velero-plugin-for-aws:v1.9.0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--bucket<span class="w"> </span>cluster-backups<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>--backup-location-config<span class="w"> </span><span class="nv">region</span><span class="o">=</span>us-east-1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>--snapshot-location-config<span class="w"> </span><span class="nv">region</span><span class="o">=</span>us-east-1
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>velero<span class="w"> </span>backup<span class="w"> </span>create<span class="w"> </span>payments-daily<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span>--include-namespaces<span class="w"> </span>payments<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span>--snapshot-volumes<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span>--ttl<span class="w"> </span>720h0m0s
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>velero<span class="w"> </span>schedule<span class="w"> </span>create<span class="w"> </span>payments-nightly<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span>--schedule<span class="o">=</span><span class="s2">"0 2 * * *"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span>--include-namespaces<span class="w"> </span>payments<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span>--snapshot-volumes
+</code></pre></div>
+<p>Velero backs up both the namespace's API objects (like etcd, but scoped
+and portable across clusters) <strong>and</strong> triggers cloud-provider volume
+snapshots for any PVs referenced by those objects (<code>--snapshot-volumes</code>)
+— covering the second half of the DR problem that a raw etcd snapshot
+does not.</p>
+<h2 id="restoring-with-velero-including-cross-cluster">Restoring with Velero (including cross-cluster)<a class="headerlink" href="#restoring-with-velero-including-cross-cluster" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>velero<span class="w"> </span>restore<span class="w"> </span>create<span class="w"> </span>--from-backup<span class="w"> </span>payments-daily
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>velero<span class="w"> </span>restore<span class="w"> </span>describe<span class="w"> </span>payments-daily-20260914020000
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Phase: Completed</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Warnings: 0</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Errors: 0</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>payments
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pvc<span class="w"> </span>-n<span class="w"> </span>payments<span class="w">   </span><span class="c1"># PVCs re-bound to restored volume snapshots</span>
+</code></pre></div>
+<p>Because Velero backups are self-contained (object manifests + volume
+snapshot references, stored in object storage independent of the source
+cluster), the same backup can restore into a <strong>different</strong> cluster
+entirely — the actual DR test for "we lost the whole cluster/region," not
+just "we deleted one namespace by mistake."</p>
+<h2 id="worked-example-a-full-dr-runbook">Worked example: a full DR runbook<a class="headerlink" href="#worked-example-a-full-dr-runbook" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>1. etcd snapshots every 6h, shipped to S3, cross-region replicated.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>2. Velero backup of all namespaces nightly + on-demand before risky changes,
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>   snapshotting PVs, shipped to a separate S3 bucket in a second region.
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>3. Quarterly DR drill: stand up a fresh cluster in the DR region,
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>   `velero restore create --from-backup &lt;latest&gt;`, verify application
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>   health checks pass, measure time-to-restore against the target RTO.
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>4. Document actual RTO/RPO achieved in the drill (not the theoretical
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>   number) and feed it back into backup frequency decisions.
+</code></pre></div>
+<p>Step 3 is the part most real incidents reveal was skipped — a backup that
+has never been restored in anger is a hypothesis, not a DR plan.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><code>etcdctl snapshot save</code> works by opening etcd's own bbolt (B+tree)
+  data file through etcd's internal snapshot API and streaming a
+  point-in-time consistent copy, not by simply copying files off disk.</strong>
+  This is why it's safe to run against a live, serving etcd member without
+  stopping it — etcd's Raft/MVCC storage layer already maintains
+  historical revisions internally, and the snapshot mechanism reads a
+  single consistent revision through that same interface rather than
+  risking a torn read of files being concurrently written.</li>
+<li><strong>Restore is destructive to member identity, which is why
+  <code>--name</code>/<code>--initial-cluster</code> must be respecified.</strong> A restored etcd data
+  directory starts a <em>brand new</em> single-member Raft cluster with a fresh
+  cluster ID — it cannot simply rejoin the old Raft group's peer set,
+  because the old peers' logs and the restored snapshot now disagree about
+  history; this is why a full etcd restore, for a multi-member control
+  plane, means tearing down and re-initializing every member from the same
+  snapshot rather than restoring just one node into the existing quorum.</li>
+<li><strong>Velero's PV backup depends entirely on the cloud provider's volume
+  snapshot API — it does not read PV bytes itself.</strong> The Velero plugin
+  for a given cloud calls that cloud's native snapshot API (an EBS
+  snapshot, a GCE persistent disk snapshot) referenced from the backed-up
+  PVC/PV objects; this means Velero's actual data-consistency guarantee is
+  only as good as the underlying snapshot API's guarantee (typically
+  crash-consistent, not application-consistent) — a database that needs a
+  quiesced/flushed state before snapshotting needs an explicit pre-backup
+  hook (<code>velero backup create --the pre-hook running</code>.</li>
+<li><strong>A cross-cluster Velero restore re-resolves storage classes and
+  admission-time defaults on the destination cluster, not on the source.</strong>
+  Because the restore replays object manifests through the destination
+  API server's normal create path, anything the destination cluster's
+  admission chain would inject or reject (a different default
+  StorageClass, a stricter Pod Security Admission policy) applies to the
+  restored objects exactly as it would to any newly created object — a
+  restore into a cluster with <code>restricted</code> Pod Security enforcement can
+  fail on Pods that were perfectly valid in the (less strict) source
+  cluster.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>On a local kind or minikube cluster, take an etcd snapshot with
+<code>etcdctl snapshot save</code>, then deliberately delete a namespace and
+everything in it with <code>kubectl delete namespace</code>. Restore the snapshot
+into a fresh data directory and point a test etcd instance at it (or, more
+simply, install Velero with a local MinIO backend, back up a namespace,
+delete it, and restore from the Velero backup) — confirm the deleted
+objects reappear and note how much, if any, state created after the
+backup was lost.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

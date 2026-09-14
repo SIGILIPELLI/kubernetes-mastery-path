@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -2022,6 +2020,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Platform Engineering on Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2038,6 +2054,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-platform-engineering-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why platform engineering exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#golden-path-abstraction-a-crossplane-composite-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Golden-path abstraction: a Crossplane Composite Resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-portal-surface-backstage-software-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer portal surface: Backstage software catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-service-scaffolding-a-backstage-software-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-service scaffolding: a Backstage software template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-request-to-running-service-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: request-to-running-service flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-platform-engineering-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why platform engineering exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#golden-path-abstraction-a-crossplane-composite-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Golden-path abstraction: a Crossplane Composite Resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-portal-surface-backstage-software-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer portal surface: Backstage software catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-service-scaffolding-a-backstage-software-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-service scaffolding: a Backstage software template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-request-to-running-service-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: request-to-running-service flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,202 @@
 
 
 <h1 id="09-platform-engineering-on-kubernetes">09 · Platform Engineering on Kubernetes<a class="headerlink" href="#09-platform-engineering-on-kubernetes" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover building internal developer platforms on top of Kubernetes (self-service tooling, golden paths, internal Kubernetes-as-a-platform).</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and CLI output below follow documented Crossplane/Backstage
+behavior; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="why-platform-engineering-exists">Why platform engineering exists<a class="headerlink" href="#why-platform-engineering-exists" title="Permanent link">&para;</a></h2>
+<p>Once an organization has more than a handful of teams deploying to
+Kubernetes, exposing raw <code>kubectl</code>/YAML to every developer creates two
+opposing failure modes: either every team reinvents its own
+Deployment/Ingress/monitoring boilerplate (inconsistent, insecure,
+expensive to support), or a central platform team becomes a ticket queue
+manually provisioning things for everyone (slow, doesn't scale with
+headcount). <strong>Platform engineering</strong> is the practice of building a
+self-service layer — a golden path — so developers get safe, consistent
+infrastructure without either extreme.</p>
+<h2 id="golden-path-abstraction-a-crossplane-composite-resource">Golden-path abstraction: a Crossplane Composite Resource<a class="headerlink" href="#golden-path-abstraction-a-crossplane-composite-resource" title="Permanent link">&para;</a></h2>
+<p>Crossplane lets a platform team define a simplified custom API
+(<code>XRD</code> — Composite Resource Definition) that developers use, which expands
+into the full set of real Kubernetes/cloud resources underneath.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># platform team defines the developer-facing API:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apiextensions.crossplane.io/v1</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CompositeResourceDefinition</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xdatabases.platform.example.com</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">platform.example.com</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">names</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">XDatabase</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">plural</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xdatabases</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">claimNames</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DatabaseClaim</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">plural</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">databaseclaims</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1alpha1</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="nt">served</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">referenceable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="nt">schema</span><span class="p">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nt">openAPIV3Schema</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">          </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">              </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">              </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">                </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span><span class="nt"> enum</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"small"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"medium"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"large"</span><span class="p p-Indicator">]}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span><span class="nt"> enum</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"postgres"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"mysql"</span><span class="p p-Indicator">]}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># a developer's entire interaction with cloud provisioning:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">platform.example.com/v1alpha1</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DatabaseClaim</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments-db</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>payments-db-claim.yaml
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>databaseclaim<span class="w"> </span>payments-db<span class="w"> </span>-n<span class="w"> </span>payments
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># NAME          SYNCED   READY   CONNECTION-SECRET</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># payments-db   True     True    payments-db-conn</span>
+</code></pre></div>
+<p>Behind that one <code>DatabaseClaim</code>, the platform team's <code>Composition</code> (not
+shown) provisions whatever the real cloud resources are (an RDS instance,
+security groups, a connection Secret) — the developer never touches
+Terraform, cloud IAM, or VPC configuration, and the platform team can
+change the underlying implementation (swap RDS for CloudSQL, change
+instance sizing defaults) without any developer-facing API change.</p>
+<h2 id="developer-portal-surface-backstage-software-catalog">Developer portal surface: Backstage software catalog<a class="headerlink" href="#developer-portal-surface-backstage-software-catalog" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># catalog-info.yaml, checked into each service's repo</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">backstage.io/v1alpha1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Component</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments-api</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">backstage.io/kubernetes-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments-api</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">lifecycle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">production</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-payments</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="nt">dependsOn</span><span class="p">:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resource:default/payments-db</span>
+</code></pre></div>
+<p>Backstage aggregates every service's <code>catalog-info.yaml</code> into a searchable
+catalog with ownership, dependency graphs, and (via its Kubernetes plugin)
+live cluster status — the goal is a developer can find "who owns this
+service, what does it depend on, is it healthy right now" without needing
+<code>kubectl</code> access or tribal knowledge of who to ask.</p>
+<h2 id="self-service-scaffolding-a-backstage-software-template">Self-service scaffolding: a Backstage software template<a class="headerlink" href="#self-service-scaffolding-a-backstage-software-template" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scaffolder.backstage.io/v1beta3</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">new-microservice</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service details</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="nt">steps</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fetch-base</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fetch:template</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="nt">input</span><span class="p">:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skeleton</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="nt">values</span><span class="p">:</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"${{</span><span class="nv"> </span><span class="s">parameters.name</span><span class="nv"> </span><span class="s">}}"</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">publish</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">publish:github</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">      </span><span class="nt">input</span><span class="p">:</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="nt">repoUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"github.com?repo=${{</span><span class="nv"> </span><span class="s">parameters.name</span><span class="nv"> </span><span class="s">}}"</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">register</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">      </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">catalog:register</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">      </span><span class="nt">input</span><span class="p">:</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">        </span><span class="nt">catalogInfoPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/catalog-info.yaml</span>
+</code></pre></div>
+<p>This is the "golden path" made concrete: a developer fills out a form,
+gets a new repo with CI, a Dockerfile, base Kubernetes manifests, RBAC,
+and observability wiring already correct by construction — the platform
+team's opinions about "how services should be built" are encoded once, in
+the template, instead of re-explained per team per onboarding.</p>
+<h2 id="worked-example-request-to-running-service-flow">Worked example: request-to-running-service flow<a class="headerlink" href="#worked-example-request-to-running-service-flow" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>1. Developer runs "new-microservice" Backstage template -&gt; new repo scaffolded,
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   registered in the catalog, CI pipeline wired automatically.
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>2. Developer's first commit triggers CI: build, trivy scan, cosign sign
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>   (Module 05), push image.
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>3. GitOps controller (Module 02) picks up the new manifest in Git, deploys
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>   into a namespace already governed by a Pod Security Standard (Module 04)
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>   and network policy the platform team set as a default.
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>4. Developer needs a database: applies a `DatabaseClaim` (Crossplane) instead
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>   of filing a ticket or writing Terraform.
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>5. Backstage catalog shows the new service, its owner, its dependency on the
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>   claimed database, and live health from the cluster.
+</code></pre></div>
+<p>None of steps 2-5 require the platform team to be paged or to click
+anything — every step after the initial template run is self-service,
+governed by policy encoded in the platform rather than enforced by a human
+gatekeeper per request.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Crossplane's <code>Composition</code> mechanism is itself just a Kubernetes
+  controller pattern layered on CRDs — "Composite Resources" (XRs) are
+  real custom resources, and Crossplane's core controller reconciles them
+  the same way any operator reconciles its CRD.</strong> When a <code>DatabaseClaim</code>
+  is created, Crossplane's claim controller creates a corresponding <code>XDatabase</code>
+  composite resource; the Composition (a template mapping XR fields to a
+  set of "managed resources," each itself a CRD representing one real
+  cloud API object, e.g. <code>RDSInstance</code>) drives the actual provider
+  controller (Crossplane's AWS/GCP provider, running its own reconcile
+  loop against the cloud API) — the entire chain is composed of ordinary
+  Kubernetes control loops, several layers deep, each unaware of the
+  layers around it.</li>
+<li><strong>The claim/composite split exists specifically for namespace
+  isolation and RBAC.</strong> <code>DatabaseClaim</code> is namespaced (so a team's RBAC
+  can be scoped to claims in their own namespace, the normal Kubernetes
+  RBAC boundary) while the underlying <code>XDatabase</code> composite and the real
+  cloud-provider managed resources are cluster-scoped — this lets the
+  platform team keep the powerful, cluster-wide provisioning objects out
+  of reach of individual developer RBAC roles while still letting those
+  developers create and own claims freely within their namespace.</li>
+<li><strong>Backstage's catalog is a static-ish graph built from repository
+  metadata plus periodic Kubernetes plugin polling — it is not itself
+  a Kubernetes controller and has no admission-time enforcement power.</strong>
+  <code>catalog-info.yaml</code> files are discovered by Backstage's catalog
+  processor (via configured integrations — GitHub search, a static
+  location list) and re-ingested on a polling interval; the Kubernetes
+  plugin separately queries the cluster's API server (scoped via a
+  service account) for live status keyed by the
+  <code>backstage.io/kubernetes-id</code> label/annotation. This means catalog
+  freshness lags real cluster state by the poll interval, and a
+  service running in the cluster without a matching <code>catalog-info.yaml</code>
+  is simply invisible to the portal — the catalog reflects what's been
+  registered, not what's actually deployed.</li>
+<li><strong>A scaffolder template's <code>publish</code> and <code>register</code> steps chain
+  ordinary external API calls (GitHub's REST API, the Backstage catalog's
+  own ingestion API) inside a Backstage-managed workflow engine — no
+  Kubernetes object is created until the developer's first CI run
+  actually deploys something.</strong> This is why "self-service scaffolding"
+  and "GitOps deployment" are separate systems that happen to compose:
+  the template produces a Git repo and a catalog entry; only the
+  subsequent CI/CD pipeline (wired into the scaffolded repo by the
+  template) is what eventually causes any actual Kubernetes resource to
+  exist.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Design (in YAML, no live cluster required) a Crossplane <code>CompositeResourceDefinition</code>
+and a matching <code>DatabaseClaim</code> example for a "cache" abstraction (e.g. a
+managed Redis instance) that exposes only <code>size</code> and lets the platform
+team's <code>Composition</code> decide the actual cloud resource, instance class, and
+network configuration. Then sketch a <code>catalog-info.yaml</code> for a service
+that depends on that cache resource, and describe what a developer would
+see in a Backstage catalog page for it.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

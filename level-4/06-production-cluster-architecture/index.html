@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1938,6 +1936,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Designing Production-Grade Cluster Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1954,6 +1970,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-shape-of-a-production-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The shape of a production cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-plane-odd-numbered-multi-az-etcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control plane: odd-numbered, multi-AZ etcd
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worker-node-pools-by-workload-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker node pools by workload shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spreading-workloads-across-zones-for-real-ha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spreading workloads across zones for real HA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingress-and-load-balancing-at-the-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingress and load-balancing at the edge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-sizing-a-reference-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: sizing a reference cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-shape-of-a-production-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The shape of a production cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-plane-odd-numbered-multi-az-etcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control plane: odd-numbered, multi-AZ etcd
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worker-node-pools-by-workload-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker node pools by workload shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spreading-workloads-across-zones-for-real-ha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spreading workloads across zones for real HA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingress-and-load-balancing-at-the-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingress and load-balancing at the edge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-sizing-a-reference-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: sizing a reference cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,192 @@
 
 
 <h1 id="06-designing-production-grade-cluster-architecture">06 · Designing Production-Grade Cluster Architecture<a class="headerlink" href="#06-designing-production-grade-cluster-architecture" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover putting it all together into a reference production cluster architecture: networking, multi-AZ, security, and scaling design.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Topology and manifests below follow documented multi-AZ / control-plane
+design guidance; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-shape-of-a-production-cluster">The shape of a production cluster<a class="headerlink" href="#the-shape-of-a-production-cluster" title="Permanent link">&para;</a></h2>
+<p>A production Kubernetes deployment is a set of deliberate answers to
+questions the earlier levels mostly sidestepped for simplicity:</p>
+<ul>
+<li>How many control-plane nodes, and across how many availability zones?</li>
+<li>How is etcd deployed and how is it backed up?</li>
+<li>How are worker nodes pooled (general-purpose vs. specialized) and
+  spread across zones?</li>
+<li>What enforces security, cost, and reliability policy cluster-wide
+  rather than per-team?</li>
+</ul>
+<h2 id="control-plane-odd-numbered-multi-az-etcd">Control plane: odd-numbered, multi-AZ etcd<a class="headerlink" href="#control-plane-odd-numbered-multi-az-etcd" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>AZ-a: control-plane-1 (etcd member 1)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>AZ-b: control-plane-2 (etcd member 2)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>AZ-c: control-plane-3 (etcd member 3)
+</code></pre></div>
+<p>etcd is a Raft-based cluster and needs an <strong>odd</strong> member count so a
+majority (quorum) is always mathematically well-defined — 3 members
+tolerate 1 failure, 5 tolerate 2. Spreading the 3 control-plane nodes
+across 3 AZs means a single AZ outage still leaves 2 members, a quorum, so
+the cluster keeps writing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>componentstatuses<span class="w">   </span><span class="c1"># deprecated but illustrative on older clusters</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>etcdctl<span class="w"> </span>--endpoints<span class="o">=</span>https://10.0.1.5:2379,https://10.0.2.5:2379,https://10.0.3.5:2379<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>endpoint<span class="w"> </span>status<span class="w"> </span>--write-out<span class="o">=</span>table
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># +----------------+------------------+---------+</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># |    ENDPOINT    |        ID        | IS LEADER |</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># | 10.0.1.5:2379  | 8211f1d0f64f3269 | true      |</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># | 10.0.2.5:2379  | 91bc3c398fb3c146 | false     |</span>
+</code></pre></div>
+<h2 id="worker-node-pools-by-workload-shape">Worker node pools by workload shape<a class="headerlink" href="#worker-node-pools-by-workload-shape" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Node</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">worker-gpu-1</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">node-pool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">topology.kubernetes.io/zone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-east-1a</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">taints</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia.com/gpu</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NoSchedule</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># workloads that need the GPU pool must explicitly tolerate the taint:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="nt">tolerations</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia.com/gpu</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exists</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">          </span><span class="nt">effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NoSchedule</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="nt">nodeSelector</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">node-pool</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpu</span>
+</code></pre></div>
+<p>Taints on specialized pools (GPU, high-memory, spot/preemptible) plus
+matching tolerations on the Pods that need them is the standard pattern —
+it prevents ordinary workloads from accidentally landing on expensive or
+unstable specialized capacity, while still letting the scheduler place
+everything else freely across the general pool.</p>
+<h2 id="spreading-workloads-across-zones-for-real-ha">Spreading workloads across zones for real HA<a class="headerlink" href="#spreading-workloads-across-zones-for-real-ha" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nt">topologySpreadConstraints</span><span class="p">:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">maxSkew</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">          </span><span class="nt">topologyKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">topology.kubernetes.io/zone</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">          </span><span class="nt">whenUnsatisfiable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DoNotSchedule</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">          </span><span class="nt">labelSelector</span><span class="p">:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">            </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">              </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+</code></pre></div>
+<p>Without <code>topologySpreadConstraints</code>, the scheduler's default behavior can
+still legally place 5 of 6 replicas in one zone — nothing prevents it.
+<code>maxSkew: 1</code> with <code>DoNotSchedule</code> forces at most a 1-replica imbalance
+between the fullest and emptiest zone, which is what actually survives a
+zone outage without an availability cliff.</p>
+<h2 id="ingress-and-load-balancing-at-the-edge">Ingress and load-balancing at the edge<a class="headerlink" href="#ingress-and-load-balancing-at-the-edge" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Internet -&gt; Cloud L4 LoadBalancer (per-zone, health-checked)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>         -&gt; Ingress Controller Pods (spread across zones via topologySpreadConstraints)
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>         -&gt; Service (ClusterIP) -&gt; backend Pods
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-ingress</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">nginx.ingress.kubernetes.io/ssl-redirect</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"api.example.com"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-tls</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.example.com</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">      </span><span class="nt">http</span><span class="p">:</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="nt">paths</span><span class="p">:</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">            </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">            </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">              </span><span class="nt">service</span><span class="p">:</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">                </span><span class="nt">port</span><span class="p">:</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">                  </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+</code></pre></div>
+<h2 id="worked-example-sizing-a-reference-cluster">Worked example: sizing a reference cluster<a class="headerlink" href="#worked-example-sizing-a-reference-cluster" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Control plane: 3 x m5.xlarge, one per AZ (us-east-1a/b/c)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>etcd: co-located on control-plane nodes, dedicated SSD-backed volume, backed
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>      up via etcdctl snapshot every 15 min (see Module 07)
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>General worker pool: 6-30 x m5.2xlarge, cluster-autoscaler managed,
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>      topologySpreadConstraints across the 3 AZs
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>GPU pool: 0-4 x g5.xlarge, tainted, scaled from 0 via a separate
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>      autoscaler node group, only used by ML workloads that tolerate the taint
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Ingress: 3 nginx-ingress-controller replicas, one per AZ, behind a
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>      cloud L4 load balancer with cross-zone health checks
+</code></pre></div>
+<p>This shape (odd multi-AZ control plane, tainted specialized pools,
+zone-spread ingress and workloads, autoscaled general pool) is the
+recurring reference architecture that the rest of Level 4's modules
+(upgrades, DR, cost, platform engineering) all assume as the starting
+point.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>etcd's quorum requirement comes directly from the Raft consensus
+  algorithm's majority-vote rule, not from a Kubernetes-specific
+  design choice.</strong> A Raft write is only committed once a majority of
+  members have durably persisted it to their local WAL (write-ahead log);
+  with 3 members, 2 constitutes a majority, so 1 member can be lost with
+  zero write unavailability, while with an even count like 4, losing 2
+  members still leaves exactly 2 — not a majority — meaning an even-sized
+  cluster gains no extra fault tolerance over the next-lower odd size while
+  paying for an extra member's write latency (every write waits on a
+  majority ack across all members).</li>
+<li><strong>Zone-aware scheduling relies entirely on the <code>topology.kubernetes.io/zone</code>
+  node label being populated correctly by the cloud provider's
+  cloud-controller-manager, not by kubelet itself.</strong> kubelet reports basic
+  node info at registration, but zone/region labels are set by the
+  cloud-controller-manager querying the cloud API's instance metadata for
+  each node — on a bare-metal or misconfigured cloud-integration cluster
+  this label is simply absent, silently making every
+  <code>topologySpreadConstraints</code>/zone-aware feature a no-op rather than an
+  error.</li>
+<li><strong><code>topologySpreadConstraints</code> is evaluated by a scheduler plugin during
+  the Filter/Score phases of the scheduling framework, computed fresh per
+  Pod at schedule time — it is not a standing invariant the control plane
+  continuously re-enforces.</strong> The plugin counts existing matching Pods per
+  topology domain at the moment a new Pod is being scheduled and
+  rejects placements that would exceed <code>maxSkew</code>; if zone distribution
+  later becomes skewed through independent events (a zone's nodes all
+  failing and Pods rescheduling elsewhere), nothing proactively rebalances
+  already-running Pods back — the constraint only governs future placement
+  decisions.</li>
+<li><strong>A cloud L4 load balancer's per-zone health checks are what actually
+  provide "zone outage tolerance" for the ingress path, not Kubernetes.</strong>
+  The cloud LB independently health-checks each ingress-controller Pod's
+  node/target; if an entire zone's targets stop responding, the LB simply
+  stops routing traffic there at the cloud infrastructure layer — this
+  happens outside etcd, the scheduler, and any Kubernetes control loop
+  entirely, which is why ingress-controller replica placement (spread
+  across zones) matters even though Kubernetes itself has no concept of
+  "zone health."</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Sketch (in YAML) a control-plane and worker-node topology for a
+hypothetical 3-AZ production cluster serving a workload that needs 99.9%
+availability. Include: control-plane node count and AZ placement, at least
+one worker pool with a taint and a matching toleration, and a Deployment
+with <code>topologySpreadConstraints</code> set to tolerate the loss of one full AZ
+without dropping below 2/3 of its replica count.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

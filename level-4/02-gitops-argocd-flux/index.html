@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1826,6 +1824,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · GitOps Patterns (ArgoCD/Flux Concepts)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1842,6 +1858,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea-git-as-the-single-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The core idea: Git as the single source of truth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argocd-the-application-crd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ArgoCD: the Application CRD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flux-reconciliation-via-kustomizationhelmrelease" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux: reconciliation via Kustomization/HelmRelease
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-promoting-a-change-through-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: promoting a change through environments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2200,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea-git-as-the-single-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The core idea: Git as the single source of truth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argocd-the-application-crd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ArgoCD: the Application CRD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flux-reconciliation-via-kustomizationhelmrelease" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flux: reconciliation via Kustomization/HelmRelease
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-promoting-a-change-through-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: promoting a change through environments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2293,162 @@
 
 
 <h1 id="02-gitops-patterns-argocdflux-concepts">02 · GitOps Patterns (ArgoCD/Flux Concepts)<a class="headerlink" href="#02-gitops-patterns-argocdflux-concepts" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover GitOps principles and how tools like ArgoCD and Flux continuously reconcile cluster state from a Git repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and CLI output below follow documented ArgoCD/Flux behavior;
+not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-core-idea-git-as-the-single-source-of-truth">The core idea: Git as the single source of truth<a class="headerlink" href="#the-core-idea-git-as-the-single-source-of-truth" title="Permanent link">&para;</a></h2>
+<p>GitOps flips the normal deployment flow. Instead of a CI pipeline running
+<code>kubectl apply</code> against a cluster (a <strong>push</strong> model), a controller running
+<em>inside</em> the cluster continuously watches a Git repository and reconciles
+the live cluster state to match what's declared there (a <strong>pull</strong> model).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Push model:  CI pipeline --kubectl apply--&gt; Cluster
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Pull model:  Git repo &lt;--watches-- GitOps controller (in-cluster) --reconciles--&gt; Cluster
+</code></pre></div>
+<p>The distinction matters operationally: in the pull model, nothing outside
+the cluster needs write credentials to it — the controller already runs
+with a service account inside the cluster, and CI only needs push access to
+Git. Drift (someone running <code>kubectl edit</code> by hand) gets corrected
+automatically on the next reconcile loop instead of silently persisting.</p>
+<h2 id="argocd-the-application-crd">ArgoCD: the Application CRD<a class="headerlink" href="#argocd-the-application-crd" title="Permanent link">&para;</a></h2>
+<p>ArgoCD models each deployed thing as an <code>Application</code> custom resource that
+points at a Git path and a destination cluster/namespace:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Application</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments-api</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argocd</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">source</span><span class="p">:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">repoURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/example/payments-api-manifests.git</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">targetRevision</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overlays/production</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">destination</span><span class="p">:</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://kubernetes.default.svc</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nt">syncPolicy</span><span class="p">:</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">automated</span><span class="p">:</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="nt">prune</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">       </span><span class="c1"># delete resources removed from Git</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">      </span><span class="nt">selfHeal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">     </span><span class="c1"># revert manual cluster edits back to Git state</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">syncOptions</span><span class="p">:</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CreateNamespace=true</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>payments-api-application.yaml<span class="w"> </span>-n<span class="w"> </span>argocd
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>argocd<span class="w"> </span>app<span class="w"> </span>get<span class="w"> </span>payments-api
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Health Status:  Healthy</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Sync Status:    Synced</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>argocd<span class="w"> </span>app<span class="w"> </span>sync<span class="w"> </span>payments-api<span class="w">   </span><span class="c1"># manual sync if automated is off</span>
+</code></pre></div>
+<p><code>prune: true</code> and <code>selfHeal: true</code> together are what make ArgoCD
+enforce Git as the <em>only</em> legitimate source of change — without them,
+ArgoCD only reports drift ("OutOfSync") rather than correcting it.</p>
+<h2 id="flux-reconciliation-via-kustomizationhelmrelease">Flux: reconciliation via Kustomization/HelmRelease<a class="headerlink" href="#flux-reconciliation-via-kustomizationhelmrelease" title="Permanent link">&para;</a></h2>
+<p>Flux (v2, "Flux CD") is built as a set of composable CRD-driven
+controllers rather than one Application object. A <code>GitRepository</code> source
+defines what to watch; a <code>Kustomization</code> defines what to apply from it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments-api</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flux-system</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/example/payments-api-manifests.git</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nn">---</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kustomize.toolkit.fluxcd.io/v1</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kustomization</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments-api</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flux-system</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">"./overlays/production"</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="nt">prune</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="nt">sourceRef</span><span class="p">:</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">payments-api</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>flux<span class="w"> </span>get<span class="w"> </span>sources<span class="w"> </span>git
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>flux<span class="w"> </span>get<span class="w"> </span>kustomizations
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># NAME           READY   MESSAGE</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># payments-api   True    Applied revision: main@sha1:8f2a1c</span>
+</code></pre></div>
+<p>The <code>GitRepository</code>/<code>Kustomization</code> split lets one Git source feed
+multiple Kustomizations (e.g. staging and production overlays pointed at
+different paths of the same repo) — a composition ArgoCD achieves with
+separate <code>Application</code> objects instead.</p>
+<h2 id="worked-example-promoting-a-change-through-environments">Worked example: promoting a change through environments<a class="headerlink" href="#worked-example-promoting-a-change-through-environments" title="Permanent link">&para;</a></h2>
+<p>A typical GitOps repo layout separates environment overlays (Kustomize)
+so promotion is a Git operation, not a pipeline deploy step:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>manifests/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  base/
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    deployment.yaml
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    service.yaml
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  overlays/
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    staging/kustomization.yaml     (replicas: 2, image tag: staging-latest)
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    production/kustomization.yaml  (replicas: 6, image tag: v1.4.2)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># CI, on merge to main, updates only the image tag via a tool like `kustomize edit`:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">cd</span><span class="w"> </span>manifests/overlays/production
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>kustomize<span class="w"> </span>edit<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>payments-api<span class="o">=</span>registry.example.com/payments-api:v1.4.3
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"bump payments-api to v1.4.3"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># ArgoCD/Flux notices the new commit within its poll interval (or via webhook)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># and reconciles the live Deployment's image field to match — no kubectl needed.</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>argocd<span class="w"> </span>app<span class="w"> </span>diff<span class="w"> </span>payments-api<span class="w">   </span><span class="c1"># confirms what changed before/if manual sync</span>
+</code></pre></div>
+<p>Promoting to production is then just merging the same commit (or a PR)
+into the production overlay's branch/path — the full deployment history is
+the Git log, and rollback is <code>git revert</code> plus a reconcile.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The reconciliation loop is a standard Kubernetes controller pattern,
+  not something GitOps-specific.</strong> ArgoCD's <code>application-controller</code> and
+  Flux's <code>kustomize-controller</code> are both just controllers watching their
+  own CRDs (<code>Application</code>, <code>Kustomization</code>) the same way the built-in
+  <code>kube-controller-manager</code> watches Deployments — a control loop that
+  computes desired state (rendered manifests from Git) vs. observed state
+  (live cluster objects via the API server) and calls <code>Apply</code>/<code>Patch</code> to
+  close the gap, repeating on a timer (<code>interval</code>) and on webhook-triggered
+  wakeups.</li>
+<li><strong>Drift detection relies on comparing live object state to a
+  re-rendered manifest, field by field, not on a checksum of the whole
+  object.</strong> Both tools compute a structured diff so that fields Kubernetes
+  itself sets (<code>status</code>, <code>resourceVersion</code>, defaulted fields added by
+  admission webhooks) are excluded — this is why "OutOfSync" specifically
+  means a field <em>you</em> declared in Git differs from the live cluster, not
+  that any byte of the object changed.</li>
+<li><strong><code>selfHeal</code>/pruning re-triggers on watch events, not only on the poll
+  timer.</strong> ArgoCD additionally watches the destination cluster's resources
+  (via its own informer against the target API server) so a manual
+  <code>kubectl edit</code> is detected and reverted almost immediately, independent
+  of the Git-repo poll interval — this is the mechanism that actually
+  enforces "no manual changes survive," not just periodic re-sync.</li>
+<li><strong>Multi-tenancy in ArgoCD is enforced via the <code>AppProject</code> CRD, which
+  is a policy object the application-controller consults before every
+  sync, not a Kubernetes RBAC construct.</strong> <code>AppProject</code> restricts which
+  Git repos, destination clusters/namespaces, and resource kinds an
+  <code>Application</code> in that project may reference; this lets one shared ArgoCD
+  instance safely serve many teams without giving each team cluster-wide
+  RBAC — the enforcement point is inside ArgoCD's own reconcile logic, in
+  addition to (not instead of) the service account's real Kubernetes RBAC.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Install ArgoCD (or Flux) into a local kind/minikube cluster, point it at a
+public Git repo containing a simple Deployment manifest, and confirm it
+syncs. Then run <code>kubectl scale</code> or <code>kubectl edit</code> directly against the
+resulting Deployment to introduce drift, and observe (via <code>argocd app get</code>
+or <code>flux get kustomizations</code>) how quickly and by what mechanism the
+controller reverts your manual change back to the Git-declared state.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1854,6 +1852,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Cluster Upgrades & Maintenance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1870,6 +1886,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-version-skew-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The version-skew policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-a-kubeadm-managed-control-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrading a kubeadm-managed control plane
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#draining-and-upgrading-a-worker-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Draining and upgrading a worker node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poddisruptionbudgets-make-drains-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PodDisruptionBudgets make drains safe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-rolling-multi-node-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a rolling multi-node upgrade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-version-skew-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The version-skew policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-a-kubeadm-managed-control-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrading a kubeadm-managed control plane
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#draining-and-upgrading-a-worker-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Draining and upgrading a worker node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poddisruptionbudgets-make-drains-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PodDisruptionBudgets make drains safe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-rolling-multi-node-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a rolling multi-node upgrade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,148 @@
 
 
 <h1 id="03-cluster-upgrades-maintenance">03 · Cluster Upgrades &amp; Maintenance<a class="headerlink" href="#03-cluster-upgrades-maintenance" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover safely upgrading Kubernetes versions, draining/cordoning nodes, and planning maintenance windows.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Commands and version-skew rules below follow the documented Kubernetes
+upgrade policy; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-version-skew-policy">The version-skew policy<a class="headerlink" href="#the-version-skew-policy" title="Permanent link">&para;</a></h2>
+<p>Kubernetes supports upgrading components independently within strict skew
+limits, and every upgrade plan starts from these rules:</p>
+<ul>
+<li><strong>kube-apiserver</strong> is the ceiling — no other component may run a newer
+  minor version than it.</li>
+<li><strong>kubelet / kube-proxy</strong> may be up to <strong>3 minor versions older</strong> than
+  kube-apiserver (as of recent Kubernetes releases; historically 2).</li>
+<li><strong>kube-controller-manager / kube-scheduler / cloud-controller-manager</strong>
+  may be up to <strong>1 minor version older</strong> than kube-apiserver.</li>
+<li><strong>kubectl</strong> may be one minor version newer or older than the
+  apiserver.</li>
+</ul>
+<p>This is why the mandated upgrade order is always <strong>control plane first,
+then nodes</strong>, one minor version at a time (never skip a minor version) —
+upgrading a kubelet past the apiserver's version, even briefly, violates
+skew and is unsupported.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1.27 --&gt; 1.28 --&gt; 1.29   (never 1.27 --&gt; 1.29 directly)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Order per hop: apiserver -&gt; controller-manager/scheduler -&gt; kubelet/kube-proxy
+</code></pre></div>
+<h2 id="upgrading-a-kubeadm-managed-control-plane">Upgrading a kubeadm-managed control plane<a class="headerlink" href="#upgrading-a-kubeadm-managed-control-plane" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># on the first control-plane node</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">kubeadm</span><span class="o">=</span><span class="m">1</span>.29.1-1.1
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>kubeadm<span class="w"> </span>upgrade<span class="w"> </span>plan
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># shows: "Upgrade to the latest version in the v1.29 series: v1.29.1" and any warnings</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>kubeadm<span class="w"> </span>upgrade<span class="w"> </span>apply<span class="w"> </span>v1.29.1
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># upgrades static pod manifests for apiserver/controller-manager/scheduler in place</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">kubelet</span><span class="o">=</span><span class="m">1</span>.29.1-1.1<span class="w"> </span><span class="nv">kubectl</span><span class="o">=</span><span class="m">1</span>.29.1-1.1
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>systemctl<span class="w"> </span>daemon-reload<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>kubelet
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># on each additional control-plane node:</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>kubeadm<span class="w"> </span>upgrade<span class="w"> </span>node
+</code></pre></div>
+<p><code>kubeadm upgrade apply</code> rewrites the static Pod manifests in
+<code>/etc/kubernetes/manifests/</code>; kubelet, which watches that directory,
+restarts the affected control-plane Pods automatically — no separate
+"restart apiserver" step is needed or possible via <code>kubectl</code> (static Pods
+aren't API objects kubelet takes deletion commands for from the API
+server).</p>
+<h2 id="draining-and-upgrading-a-worker-node">Draining and upgrading a worker node<a class="headerlink" href="#draining-and-upgrading-a-worker-node" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>cordon<span class="w"> </span>node-3
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># marks node-3 unschedulable: no NEW Pods will be placed there</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>kubectl<span class="w"> </span>drain<span class="w"> </span>node-3<span class="w"> </span>--ignore-daemonsets<span class="w"> </span>--delete-emptydir-data<span class="w"> </span>--timeout<span class="o">=</span>300s
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># evicts existing Pods (via the Eviction API, respecting PodDisruptionBudgets)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># --ignore-daemonsets: DaemonSet pods aren't evicted (they're meant to run on every node)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># --delete-emptydir-data: required if any Pod uses emptyDir (data is node-local, will be lost)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># now safe to patch the OS / upgrade kubelet on node-3:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="nv">kubelet</span><span class="o">=</span><span class="m">1</span>.29.1-1.1<span class="w"> </span><span class="nv">kubectl</span><span class="o">=</span><span class="m">1</span>.29.1-1.1
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kubelet
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>kubectl<span class="w"> </span>uncordon<span class="w"> </span>node-3
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># marks node-3 schedulable again; existing Pods are NOT rescheduled back automatically</span>
+</code></pre></div>
+<h2 id="poddisruptionbudgets-make-drains-safe">PodDisruptionBudgets make drains safe<a class="headerlink" href="#poddisruptionbudgets-make-drains-safe" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">policy/v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PodDisruptionBudget</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-pdb</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">minAvailable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+</code></pre></div>
+<p>With this PDB in place, <code>kubectl drain</code> will refuse to evict a Pod if
+doing so would drop <code>api</code>'s available replica count below 2 — the drain
+command polls and retries rather than force-evicting, so a drain can
+legitimately stall on a PDB that's too strict for the number of nodes
+being drained concurrently. This is the single most common cause of
+"drain hangs forever" in real upgrades.</p>
+<h2 id="worked-example-a-rolling-multi-node-upgrade">Worked example: a rolling multi-node upgrade<a class="headerlink" href="#worked-example-a-rolling-multi-node-upgrade" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">for</span><span class="w"> </span>node<span class="w"> </span><span class="k">in</span><span class="w"> </span>node-1<span class="w"> </span>node-2<span class="w"> </span>node-3<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>kubectl<span class="w"> </span>cordon<span class="w"> </span><span class="s2">"</span><span class="nv">$node</span><span class="s2">"</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>kubectl<span class="w"> </span>drain<span class="w"> </span><span class="s2">"</span><span class="nv">$node</span><span class="s2">"</span><span class="w"> </span>--ignore-daemonsets<span class="w"> </span>--delete-emptydir-data<span class="w"> </span>--timeout<span class="o">=</span>300s
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>ssh<span class="w"> </span><span class="s2">"</span><span class="nv">$node</span><span class="s2">"</span><span class="w"> </span><span class="s2">"apt-get install -y kubelet=1.29.1-1.1 &amp;&amp; systemctl restart kubelet"</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>kubectl<span class="w"> </span>uncordon<span class="w"> </span><span class="s2">"</span><span class="nv">$node</span><span class="s2">"</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span>kubectl<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>--for<span class="o">=</span><span class="nv">condition</span><span class="o">=</span>Ready<span class="w"> </span><span class="s2">"node/</span><span class="nv">$node</span><span class="s2">"</span><span class="w"> </span>--timeout<span class="o">=</span>120s
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">done</span>
+</code></pre></div>
+<p>Doing this one node at a time (not all three cordoned simultaneously)
+keeps enough capacity live for PDBs to be satisfiable and for the
+remaining nodes to absorb evicted Pods — draining all nodes at once with a
+strict PDB will deadlock the drain entirely.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><code>kubeadm upgrade apply</code> does not touch the etcd or kubelet
+  configuration directly — it re-renders static Pod manifests and lets
+  kubelet's file-watch loop do the actual restart.</strong> kubeadm computes the
+  new manifest content for <code>kube-apiserver.yaml</code>,
+  <code>kube-controller-manager.yaml</code>, and <code>kube-scheduler.yaml</code> under
+  <code>/etc/kubernetes/manifests/</code>, writes them atomically, and then simply
+  waits — kubelet's static-Pod source (a filesystem watcher, one of
+  several Pod sources kubelet supports alongside the API server) detects
+  the changed file hash and recreates the container, which is why a
+  control-plane "upgrade" causes a brief apiserver restart per node
+  without any scheduler-driven Pod eviction.</li>
+<li><strong><code>kubectl drain</code>'s eviction path goes through the Eviction API
+  subresource, not a plain Pod delete — this is what makes it
+  PDB-aware.</strong> <code>POST /api/v1/namespaces/{ns}/pods/{name}/eviction</code>
+  triggers the <code>disruption controller</code>'s admission check against any
+  matching PDB's <code>status.disruptionsAllowed</code> counter; a plain <code>kubectl
+  delete pod</code> bypasses this check entirely (PDBs only protect against
+  voluntary disruption initiated through the Eviction API — a node dying
+  outright ignores PDBs by necessity).</li>
+<li><strong>Version skew is enforced at connection time via each component's
+  <code>--version</code>-negotiated API compatibility, not by a central admission
+  check.</strong> kubelet reports its version on every <code>NodeStatus</code> update; the
+  API server doesn't reject an out-of-skew kubelet outright, but
+  behavior becomes officially unsupported and can silently break features
+  gated on newer API fields the older kubelet doesn't understand — the
+  skew policy is a support boundary from upstream, enforced by convention
+  and tooling (<code>kubeadm upgrade plan</code> warnings) rather than a hard runtime
+  gate.</li>
+<li><strong>Uncordon does not trigger rebalancing.</strong> <code>kubectl cordon</code>/<code>uncordon</code>
+  only flip the <code>spec.unschedulable</code> field on the Node object, which the
+  scheduler's node-filtering predicate checks when placing <em>new</em> Pods —
+  Kubernetes has no built-in rebalancer that moves already-running Pods
+  back onto a freshly uncordoned node, which is why nodes can stay
+  unevenly loaded after a rolling upgrade until natural Pod churn (or a
+  tool like the Descheduler) redistributes them.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>On a local kind cluster with 3 worker nodes, create a Deployment with 4
+replicas and a <code>PodDisruptionBudget</code> with <code>minAvailable: 3</code>. Attempt to
+drain two of the three worker nodes at the same time and observe how the
+second drain behaves relative to the PDB. Then drain them sequentially,
+one at a time, and compare.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
