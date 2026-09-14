@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1450,6 +1448,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · RBAC & Service Accounts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1466,6 +1482,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-separate-questions-who-are-you-and-what-can-you-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two separate questions: who are you, and what can you do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccounts-identity-for-pods-not-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServiceAccounts: identity for Pods, not people
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-and-rolebinding-namespace-scoped-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role and RoleBinding: namespace-scoped permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clusterrole-and-clusterrolebinding-cluster-wide-or-reusable-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ClusterRole and ClusterRoleBinding: cluster-wide (or reusable) permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verbs-and-the-principle-of-least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verbs and the principle of least privilege
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-ci-pipeline-serviceaccount-scoped-to-one-namespace-one-verb-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a CI pipeline ServiceAccount scoped to one namespace, one verb set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-separate-questions-who-are-you-and-what-can-you-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two separate questions: who are you, and what can you do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccounts-identity-for-pods-not-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServiceAccounts: identity for Pods, not people
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-and-rolebinding-namespace-scoped-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role and RoleBinding: namespace-scoped permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clusterrole-and-clusterrolebinding-cluster-wide-or-reusable-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ClusterRole and ClusterRoleBinding: cluster-wide (or reusable) permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verbs-and-the-principle-of-least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verbs and the principle of least privilege
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-ci-pipeline-serviceaccount-scoped-to-one-namespace-one-verb-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a CI pipeline ServiceAccount scoped to one namespace, one verb set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,202 @@
 
 
 <h1 id="02-rbac-service-accounts">02 · RBAC &amp; Service Accounts<a class="headerlink" href="#02-rbac-service-accounts" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover Roles, RoleBindings, ClusterRoles, ClusterRoleBindings, and ServiceAccounts for controlling who/what can do what.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented RBAC authorization
+behavior; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="two-separate-questions-who-are-you-and-what-can-you-do">Two separate questions: who are you, and what can you do<a class="headerlink" href="#two-separate-questions-who-are-you-and-what-can-you-do" title="Permanent link">&para;</a></h2>
+<p>Every request to the API server goes through <strong>authentication</strong> (who is
+making this request — a user's client cert, a bearer token, a
+ServiceAccount token) and then <strong>authorization</strong> (is that identity allowed
+to do <em>this specific</em> thing). <strong>RBAC (Role-Based Access Control)</strong> is the
+standard authorization mechanism: you grant permissions to a <em>Role</em>, then
+bind that Role to a <em>subject</em> (a user, group, or ServiceAccount).</p>
+<h2 id="serviceaccounts-identity-for-pods-not-people">ServiceAccounts: identity for Pods, not people<a class="headerlink" href="#serviceaccounts-identity-for-pods-not-people" title="Permanent link">&para;</a></h2>
+<p>Every Pod runs as a ServiceAccount — if you don't specify one, it gets the
+namespace's <code>default</code> ServiceAccount, which by design has essentially zero
+permissions on its own.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-reader</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-tool</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-reader</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tool</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-tool:1.0</span>
+</code></pre></div>
+<h2 id="role-and-rolebinding-namespace-scoped-permissions">Role and RoleBinding: namespace-scoped permissions<a class="headerlink" href="#role-and-rolebinding-namespace-scoped-permissions" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-log-reader</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"pods/log"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RoleBinding</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-reader-binding</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">subjects</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log-reader</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nt">roleRef</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-log-reader</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span>
+</code></pre></div>
+<p>A <code>Role</code>+<code>RoleBinding</code> pair only grants access <strong>within one namespace</strong> —
+<code>log-reader</code> can list/watch Pods and read logs in <code>prod</code>, and nothing at
+all in <code>staging</code>, even though it's the exact same rule set.</p>
+<h2 id="clusterrole-and-clusterrolebinding-cluster-wide-or-reusable-permissions">ClusterRole and ClusterRoleBinding: cluster-wide (or reusable) permissions<a class="headerlink" href="#clusterrole-and-clusterrolebinding-cluster-wide-or-reusable-permissions" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-reader</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"nodes"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRoleBinding</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-reader-binding</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nt">subjects</span><span class="p">:</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nt">roleRef</span><span class="p">:</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-reader</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span>
+</code></pre></div>
+<p>Nodes, PersistentVolumes, and Namespaces themselves are cluster-scoped
+resources — a namespaced <code>Role</code> cannot grant access to them at all; only a
+<code>ClusterRole</code> can. A <code>ClusterRole</code> can also be bound with a <code>RoleBinding</code>
+(not just <code>ClusterRoleBinding</code>) to grant its permissions within just <em>one</em>
+namespace — a common pattern for reusing one well-defined ClusterRole
+(like the built-in <code>view</code>/<code>edit</code>/<code>admin</code>) across many namespaces without
+duplicating rule definitions.</p>
+<h2 id="verbs-and-the-principle-of-least-privilege">Verbs and the principle of least privilege<a class="headerlink" href="#verbs-and-the-principle-of-least-privilege" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get</code></td>
+<td>Fetch one named object</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>Fetch a collection</td>
+</tr>
+<tr>
+<td><code>watch</code></td>
+<td>Stream changes to a collection</td>
+</tr>
+<tr>
+<td><code>create</code> / <code>update</code> / <code>patch</code> / <code>delete</code></td>
+<td>Mutating operations</td>
+</tr>
+<tr>
+<td><code>deletecollection</code></td>
+<td>Bulk delete</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>delete<span class="w"> </span>pods<span class="w"> </span>--as<span class="o">=</span>system:serviceaccount:prod:log-reader<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># no</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>list<span class="w"> </span>pods<span class="w"> </span>--as<span class="o">=</span>system:serviceaccount:prod:log-reader<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># yes</span>
+</code></pre></div>
+<p><code>kubectl auth can-i</code> is the fastest way to check effective permissions
+without trial-and-error against real workloads, and works for any
+subject via <code>--as</code>/<code>--as-group</code>.</p>
+<h2 id="worked-example-a-ci-pipeline-serviceaccount-scoped-to-one-namespace-one-verb-set">Worked example: a CI pipeline ServiceAccount scoped to one namespace, one verb set<a class="headerlink" href="#worked-example-a-ci-pipeline-serviceaccount-scoped-to-one-namespace-one-verb-set" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>serviceaccount<span class="w"> </span>ci-deployer<span class="w"> </span>-n<span class="w"> </span>staging
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>kubectl<span class="w"> </span>create<span class="w"> </span>role<span class="w"> </span>deployer<span class="w"> </span>-n<span class="w"> </span>staging<span class="w"> </span>--verb<span class="o">=</span>get,list,watch,create,update,patch<span class="w"> </span>--resource<span class="o">=</span>deployments,services
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>kubectl<span class="w"> </span>create<span class="w"> </span>rolebinding<span class="w"> </span>ci-deployer-binding<span class="w"> </span>-n<span class="w"> </span>staging<span class="w"> </span>--role<span class="o">=</span>deployer<span class="w"> </span>--serviceaccount<span class="o">=</span>staging:ci-deployer
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>delete<span class="w"> </span>deployments<span class="w"> </span>--as<span class="o">=</span>system:serviceaccount:staging:ci-deployer<span class="w"> </span>-n<span class="w"> </span>staging
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># no</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>create<span class="w"> </span>deployments<span class="w"> </span>--as<span class="o">=</span>system:serviceaccount:staging:ci-deployer<span class="w"> </span>-n<span class="w"> </span>staging
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># yes</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>create<span class="w"> </span>deployments<span class="w"> </span>--as<span class="o">=</span>system:serviceaccount:staging:ci-deployer<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># no -- RoleBinding is namespace-scoped to staging only</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>RBAC authorization is one pluggable module in a chain the API server
+  runs on every single request, after authentication, before admission.</strong>
+  The API server's authorizer chain (RBAC is the default/most common one,
+  often combined with Node authorization for kubelets) receives the
+  authenticated identity, the verb, the resource, and the namespace for
+  <em>every</em> API call, and RBAC's implementation is simply: gather every
+  Role/ClusterRole reachable via any RoleBinding/ClusterRoleBinding bound
+  to this subject (or a group it belongs to), union their rules, and check
+  whether any single rule matches — RBAC never <em>denies</em>, only grants; there
+  is no explicit-deny rule type, so the effective permission set is always
+  the union of everything bound to you.</li>
+<li><strong>A ServiceAccount's credential is a projected, auto-rotated JWT mounted
+  into the Pod, verified by the API server against the cluster's service
+  account issuer key — not a static secret by default in modern
+  Kubernetes.</strong> Since the <code>BoundServiceAccountTokenVolume</code> feature (stable
+  since 1.22), kubelet requests a short-lived, audience-bound token from
+  the API server's TokenRequest API and mounts it at
+  <code>/var/run/secrets/kubernetes.io/serviceaccount/token</code>, refreshing it
+  before expiry; the API server's authenticator verifies the JWT signature
+  and its <code>sub</code> claim
+  (<code>system:serviceaccount:&lt;namespace&gt;:&lt;name&gt;</code>) becomes the authenticated
+  identity RBAC then evaluates rules against — this is exactly the string
+  <code>kubectl auth can-i --as=system:serviceaccount:...</code> impersonates.</li>
+<li><strong><code>kubectl auth can-i</code> doesn't run any real request — it calls the
+  <code>SelfSubjectAccessReview</code> (or <code>SubjectAccessReview</code> with <code>--as</code>) API,
+  which runs the <em>same</em> authorizer chain the API server would use for a
+  real request, without performing it.</strong> This is why it's a reliable,
+  side-effect-free way to test permissions: it exercises the identical RBAC
+  evaluation code path, just short-circuited before the actual verb is
+  executed.</li>
+<li><strong>RoleBindings/ClusterRoleBindings are immutable in their <code>roleRef</code> by
+  design.</strong> You cannot edit a RoleBinding's <code>roleRef</code> field after creation
+  (the API server rejects the patch) — this exists because changing what
+  Role a binding points to would silently and retroactively change granted
+  permissions for every already-bound subject; the intended pattern is to
+  delete and recreate the binding, making the permission change an
+  explicit, auditable act.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Create a ServiceAccount <code>ci-deployer</code> in a <code>staging</code> namespace with a Role
+granting only <code>get</code>, <code>list</code>, <code>create</code>, <code>update</code> on <code>deployments</code>. Bind it
+with a RoleBinding scoped to <code>staging</code>. Use <code>kubectl auth can-i ... --as</code>
+to confirm it can create/update Deployments in <code>staging</code>, cannot delete
+them, and cannot do anything at all in a <code>prod</code> namespace — all without
+ever actually running a Pod as that ServiceAccount.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1562,6 +1560,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Probes & Health at Scale
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1578,6 +1594,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#beyond-a-single-probe-health-as-a-system-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beyond a single probe: health as a system property
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cascading-probe-failures-the-thundering-herd-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cascading probe failures: the thundering herd problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poddisruptionbudgets-protecting-availability-during-voluntary-disruption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PodDisruptionBudgets: protecting availability during voluntary disruption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probe-cost-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probe cost at scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-pdb-stops-a-drain-from-taking-down-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: PDB stops a drain from taking down a service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#beyond-a-single-probe-health-as-a-system-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beyond a single probe: health as a system property
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cascading-probe-failures-the-thundering-herd-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cascading probe failures: the thundering herd problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poddisruptionbudgets-protecting-availability-during-voluntary-disruption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PodDisruptionBudgets: protecting availability during voluntary disruption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probe-cost-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probe cost at scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-pdb-stops-a-drain-from-taking-down-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: PDB stops a drain from taking down a service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,145 @@
 
 
 <h1 id="06-probes-health-at-scale">06 · Probes &amp; Health at Scale<a class="headerlink" href="#06-probes-health-at-scale" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover designing probe strategy across many services, PodDisruptionBudgets, and graceful shutdown handling.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented kubelet/PDB behavior; not
+executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="beyond-a-single-probe-health-as-a-system-property">Beyond a single probe: health as a system property<a class="headerlink" href="#beyond-a-single-probe-health-as-a-system-property" title="Permanent link">&para;</a></h2>
+<p>Level 2, Module 04 covered liveness/readiness/startup probes on one Pod.
+At scale, the questions shift: how do you avoid an entire fleet failing
+its health check simultaneously (a "thundering herd" of restarts), how do
+you protect <em>availability</em> during voluntary disruptions (node drains,
+rollouts), and how do you make probes cheap enough to run against hundreds
+of replicas without becoming load themselves.</p>
+<h2 id="cascading-probe-failures-the-thundering-herd-problem">Cascading probe failures: the thundering herd problem<a class="headerlink" href="#cascading-probe-failures-the-thundering-herd-problem" title="Permanent link">&para;</a></h2>
+<p>If every replica's readiness probe depends on a shared downstream (a
+database, a cache), a brief blip in that dependency can flip <em>every</em>
+replica unready at once — the Service loses all backends simultaneously,
+which is strictly worse than a single Pod being briefly unavailable.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">readinessProbe</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">httpGet</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> path</span><span class="p">:</span><span class="w"> </span><span class="nv">/ready</span><span class="p p-Indicator">,</span><span class="nt"> port</span><span class="p">:</span><span class="w"> </span><span class="nv">8080</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</code></pre></div>
+<p>A shallow <code>/ready</code> that only checks "is the HTTP server listening" avoids
+this coupling; a deep <code>/ready</code> that pings the database on every probe
+couples the <em>entire fleet's</em> availability to that single dependency's
+health. The common resolution: keep readiness shallow (or check a
+locally-cached "last known good" status updated asynchronously) and handle
+downstream failures with retries/circuit breakers in application code
+instead of via the probe.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">livenessProbe</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">httpGet</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> path</span><span class="p">:</span><span class="w"> </span><span class="nv">/healthz</span><span class="p p-Indicator">,</span><span class="nt"> port</span><span class="p">:</span><span class="w"> </span><span class="nv">8080</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="c1"># jitter isn't a native field -- stagger initialDelaySeconds per replica via a Helm range or similar</span>
+</code></pre></div>
+<p>Jittering <code>initialDelaySeconds</code> (or accepting the natural staggering from
+rolling-update timing) avoids every replica's probe firing in the exact
+same tick, which matters more as fleet size grows and probes themselves
+start to add measurable load.</p>
+<h2 id="poddisruptionbudgets-protecting-availability-during-voluntary-disruption">PodDisruptionBudgets: protecting availability during voluntary disruption<a class="headerlink" href="#poddisruptionbudgets-protecting-availability-during-voluntary-disruption" title="Permanent link">&para;</a></h2>
+<p>Probes protect against <em>involuntary</em> failure (a crash). A
+<strong>PodDisruptionBudget (PDB)</strong> protects against <em>voluntary</em> disruption — a
+node drain, a cluster upgrade — ensuring the cluster won't evict so many
+replicas at once that the app effectively goes down.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">policy/v1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PodDisruptionBudget</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web-pdb</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">minAvailable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">          </span><span class="c1"># or maxUnavailable: 1</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">web</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>web-pdb.yaml
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>kubectl<span class="w"> </span>drain<span class="w"> </span>node-1<span class="w"> </span>--ignore-daemonsets
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># evicting pod default/web-abc123</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># evicting pod default/web-def456</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># error when evicting pod "web-ghi789": Cannot evict pod as it would violate the pod's disruption budget.</span>
+</code></pre></div>
+<p><code>drain</code> (and any tool using the Eviction API — cluster autoscalers, managed
+node upgrades) respects the PDB automatically; it will evict Pods one at a
+time, waiting for replacements to become Ready, and outright refuses an
+eviction that would breach <code>minAvailable</code>. A PDB has <strong>zero effect</strong> on
+involuntary disruption — a node crashing outright doesn't ask permission.</p>
+<h2 id="probe-cost-at-scale">Probe cost at scale<a class="headerlink" href="#probe-cost-at-scale" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">readinessProbe</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">httpGet</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> path</span><span class="p">:</span><span class="w"> </span><span class="nv">/ready</span><span class="p p-Indicator">,</span><span class="nt"> port</span><span class="p">:</span><span class="w"> </span><span class="nv">8080</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span><span class="w">   </span><span class="c1"># not 1s -- 200 replicas probing every second is real, avoidable load</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div>
+<p>At 200 replicas with <code>periodSeconds: 1</code>, that's 200 requests/second of pure
+overhead against the app before it serves a single real user — tuning
+<code>periodSeconds</code> upward (with a correspondingly lower <code>failureThreshold</code> if
+faster reaction is needed) is a real, easily overlooked cost lever.</p>
+<h2 id="worked-example-pdb-stops-a-drain-from-taking-down-a-service">Worked example: PDB stops a drain from taking down a service<a class="headerlink" href="#worked-example-pdb-stops-a-drain-from-taking-down-a-service" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>web
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># 3/3 ready</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>web-pdb.yaml<span class="w">   </span><span class="c1"># minAvailable: 2</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>kubectl<span class="w"> </span>drain<span class="w"> </span>node-1<span class="w"> </span>--ignore-daemonsets
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>web<span class="w"> </span>-o<span class="w"> </span>wide<span class="w"> </span>-w
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># one Pod evicted and rescheduled at a time -- PDB blocks the second eviction</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># until the first replacement Pod is Ready, never dropping below 2 available</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>A PDB is enforced by the Eviction subresource's admission check, not
+  by intercepting <code>kubectl delete</code>.</strong> <code>kubectl drain</code> (and the cluster
+  autoscaler, and managed-node-group upgrade tooling) calls the
+  <code>pods/eviction</code> subresource rather than a plain delete; the API server's
+  eviction handling consults the <code>disruption-controller</code>'s continuously
+  maintained <code>PodDisruptionBudget.status.disruptionsAllowed</code> count for any
+  PDB selecting that Pod and rejects the eviction request outright if
+  granting it would push <code>disruptionsAllowed</code> below zero — a plain
+  <code>kubectl delete pod</code> bypasses this entirely, which is why PDBs only ever
+  protect <em>eviction-based</em> workflows, never direct deletion.</li>
+<li><strong><code>disruptionsAllowed</code> is computed the same way readiness feeds into
+  EndpointSlices — the disruption controller counts currently-Ready Pods
+  matching the PDB's selector and subtracts the <code>minAvailable</code> (or applies
+  <code>maxUnavailable</code>) on every reconcile tick, independent of any actual
+  drain in progress.</strong> This is why a PDB can already show
+  <code>disruptionsAllowed: 0</code> even before anyone tries to drain anything — if a
+  replica is already unready for unrelated reasons (a bad rollout, a
+  crash), the budget for <em>voluntary</em> disruption is already spent by an
+  <em>involuntary</em> one.</li>
+<li><strong>Readiness-probe coupling failures cascade because EndpointSlice
+  updates are eventually consistent and identical for every replica hitting
+  the same downstream at the same moment — there's no built-in
+  jitter or circuit-breaking at the platform level.</strong> kubelet on every node
+  independently runs its own probe schedule against its own Pods with no
+  cross-node coordination; if all replicas share a probe implementation
+  hitting the same failing dependency, they will, absent deliberate
+  staggering, converge on failing within one probe period of each other —
+  Kubernetes provides the <em>mechanism</em> (readiness gates traffic) but no
+  protection against a badly designed probe <em>body</em>.</li>
+<li><strong><code>kubectl drain</code>'s eviction loop is a client-side retry loop, not a
+  server-side queued operation.</strong> <code>drain</code> repeatedly attempts eviction of
+  remaining Pods on the node, backing off and retrying on
+  <code>TooManyRequests</code>/PDB-violation responses, until either all Pods are
+  evicted or a timeout is hit — there is no server-side "drain job" object;
+  killing the <code>kubectl drain</code> process mid-drain simply stops further
+  evictions with the node left partially drained and no in-cluster memory
+  that a drain was ever in progress.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy a 4-replica <code>web</code> Deployment with a <code>minAvailable: 3</code> PDB, then
+attempt <code>kubectl drain</code> on a node hosting 2 of its replicas. Observe that
+the drain evicts one Pod, waits for its replacement to become Ready, then
+proceeds to the second — never allowing available replicas to drop below
+3. Then scale <code>web</code> down to 3 replicas first (so all 3 must stay available)
+and confirm the same drain now fails outright with a PDB violation error
+for any of the two Pods being drained.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

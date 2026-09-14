@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1130,6 +1128,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Health Checks (Liveness & Readiness Probes)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1146,6 +1162,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-container-is-running-isnt-container-is-healthy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why "container is running" isn't "container is healthy"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liveness-probes-restart-if-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liveness probes: restart if stuck
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readiness-probes-pull-out-of-service-traffic-without-restarting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Readiness probes: pull out of Service traffic without restarting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup-probes-protect-slow-starting-apps-from-premature-liveness-kills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Startup probes: protect slow-starting apps from premature liveness kills
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probe-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probe mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-readiness-failure-removes-a-pod-without-restarting-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: readiness failure removes a Pod without restarting it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-container-is-running-isnt-container-is-healthy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why "container is running" isn't "container is healthy"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liveness-probes-restart-if-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liveness probes: restart if stuck
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readiness-probes-pull-out-of-service-traffic-without-restarting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Readiness probes: pull out of Service traffic without restarting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup-probes-protect-slow-starting-apps-from-premature-liveness-kills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Startup probes: protect slow-starting apps from premature liveness kills
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probe-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probe mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-readiness-failure-removes-a-pod-without-restarting-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: readiness failure removes a Pod without restarting it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,171 @@
 
 
 <h1 id="04-health-checks-liveness-readiness-probes">04 · Health Checks (Liveness &amp; Readiness Probes)<a class="headerlink" href="#04-health-checks-liveness-readiness-probes" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover liveness, readiness, and startup probes -- HTTP, TCP, and exec probe types and their failure/restart semantics.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented kubelet probe behavior; not
+executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="why-container-is-running-isnt-container-is-healthy">Why "container is running" isn't "container is healthy"<a class="headerlink" href="#why-container-is-running-isnt-container-is-healthy" title="Permanent link">&para;</a></h2>
+<p>kubelet's default health signal is just "is the process still alive" — a
+container can be running and yet deadlocked, stuck waiting on a dependency
+forever, or still warming up a cache and unable to serve traffic. <strong>Probes</strong>
+let kubelet ask the application itself whether it's actually working.</p>
+<h2 id="liveness-probes-restart-if-stuck">Liveness probes: restart if stuck<a class="headerlink" href="#liveness-probes-restart-if-stuck" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:1.4</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">livenessProbe</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">httpGet</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/healthz</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div>
+<p>If <code>/healthz</code> fails 3 consecutive times (<code>failureThreshold</code>), kubelet kills
+the container and the container runtime restarts it, subject to the Pod's
+<code>restartPolicy</code>. This is for <em>unrecoverable-without-a-restart</em> states —
+deadlocks, poisoned in-memory state — not for transient upstream issues,
+which would just cause a restart loop without fixing anything.</p>
+<h2 id="readiness-probes-pull-out-of-service-traffic-without-restarting">Readiness probes: pull out of Service traffic without restarting<a class="headerlink" href="#readiness-probes-pull-out-of-service-traffic-without-restarting" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">      </span><span class="nt">readinessProbe</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="nt">httpGet</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/ready</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</code></pre></div>
+<p>A failing readiness probe does <strong>not</strong> restart the container — it removes
+the Pod's IP from the Service's EndpointSlice so traffic stops being routed
+to it, resuming automatically once the probe succeeds again. This is the
+correct tool for "temporarily can't serve" (e.g. a downstream database
+connection dropped) where restarting would be pointless or disruptive.</p>
+<h2 id="startup-probes-protect-slow-starting-apps-from-premature-liveness-kills">Startup probes: protect slow-starting apps from premature liveness kills<a class="headerlink" href="#startup-probes-protect-slow-starting-apps-from-premature-liveness-kills" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">      </span><span class="nt">startupProbe</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="nt">httpGet</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/healthz</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">   </span><span class="c1"># up to 300s to start before liveness kicks in</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="nt">livenessProbe</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="nt">httpGet</span><span class="p">:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/healthz</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</code></pre></div>
+<p>While a <code>startupProbe</code> is defined and hasn't yet succeeded, kubelet disables
+the liveness <em>and</em> readiness probes entirely. This solves the classic
+"JVM app takes 90s to boot but my liveness probe's <code>initialDelaySeconds</code> is
+only 30s, so it gets killed before it ever finishes starting" problem
+without having to loosen the liveness probe's steady-state timing.</p>
+<h2 id="probe-mechanisms">Probe mechanisms<a class="headerlink" href="#probe-mechanisms" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">livenessProbe</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">exec</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"cat"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"/tmp/healthy"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nn">---</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">livenessProbe</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">tcpSocket</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5432</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nn">---</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">livenessProbe</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">grpc</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9090</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Success condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>httpGet</code></td>
+<td>Response status <code>200–399</code></td>
+</tr>
+<tr>
+<td><code>tcpSocket</code></td>
+<td>TCP connection to the port succeeds</td>
+</tr>
+<tr>
+<td><code>exec</code></td>
+<td>Command exits <code>0</code></td>
+</tr>
+<tr>
+<td><code>grpc</code></td>
+<td>gRPC health-checking protocol responds <code>SERVING</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="worked-example-readiness-failure-removes-a-pod-without-restarting-it">Worked example: readiness failure removes a Pod without restarting it<a class="headerlink" href="#worked-example-readiness-failure-removes-a-pod-without-restarting-it" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml<span class="w">   </span><span class="c1"># 3 replicas, readiness on /ready</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>endpoints<span class="w"> </span>web
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># 3 IPs</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>deploy/web<span class="w"> </span>--<span class="w"> </span>rm<span class="w"> </span>/tmp/ready-flag<span class="w">   </span><span class="c1"># app now fails /ready</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>web
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># NAME          READY   STATUS    RESTARTS   AGE</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># web-abc123    0/1     Running   0          3m   &lt;- Running, NOT restarted</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>kubectl<span class="w"> </span>get<span class="w"> </span>endpoints<span class="w"> </span>web
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># only 2 IPs now -- unready Pod pulled from rotation, traffic keeps flowing to the other 2</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Probes run entirely from kubelet on the container's own node, on a
+  fixed timer — not event-driven.</strong> Each probe (liveness/readiness/startup)
+  is executed independently by kubelet's <code>probeManager</code> at <code>periodSeconds</code>
+  intervals; <code>httpGet</code>/<code>tcpSocket</code> probes go over the network stack to the
+  Pod's IP (from the node, not from inside the container's netns for
+  <code>exec</code>, which does run inside via the container runtime's exec API) — the
+  API server is not in the loop for the probe itself, only for reporting
+  the resulting status.</li>
+<li><strong>A failing readiness probe changes cluster state via the API server, not
+  locally.</strong> kubelet doesn't touch traffic routing directly; it PATCHes the
+  Pod's <code>status.conditions[Ready]</code> to <code>False</code> via the API server. The
+  EndpointSlice controller, watching Pod readiness, then removes that Pod's
+  IP from the EndpointSlice, and every node's kube-proxy (watching
+  EndpointSlices) reprograms its iptables/IPVS rules to drop it — three
+  separate reconciling components, chained by watches, produce the "traffic
+  stops" effect with real (if small) end-to-end propagation delay across
+  the cluster.</li>
+<li><strong>A failing liveness probe is enforced locally and immediately by
+  kubelet, no API-server round trip needed.</strong> kubelet directly calls the
+  container runtime (containerd/CRI-O via the CRI gRPC API) to stop and
+  restart the specific container — this is why liveness failures act faster
+  and more deterministically than readiness-driven traffic changes, and why
+  a liveness restart doesn't reschedule the Pod (same node, same Pod
+  object, just a fresh container).</li>
+<li><strong><code>failureThreshold</code>/<code>successThreshold</code> add hysteresis so a single blip
+  doesn't flap state.</strong> kubelet tracks consecutive failures/successes per
+  probe type in memory; a probe must fail (or, after failing, succeed)
+  <code>threshold</code> times in a row before kubelet acts — a single dropped TCP
+  packet or one slow response under <code>timeoutSeconds</code> doesn't, by itself,
+  restart anything or pull a Pod from load balancing.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Add a <code>livenessProbe</code> and a separate <code>readinessProbe</code> to a Deployment,
+pointed at two different endpoints on a small app you control (or <code>httpbin</code>,
+using <code>/status/200</code> and a path you can flip to <code>/status/500</code>). Force the
+readiness endpoint to fail and confirm via <code>kubectl get endpoints</code> that the
+Pod is pulled from the Service without a restart; then force the liveness
+endpoint to fail and confirm via <code>kubectl get pod</code> that <code>RESTARTS</code>
+increments instead.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

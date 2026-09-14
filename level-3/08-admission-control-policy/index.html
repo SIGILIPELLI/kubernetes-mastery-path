@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1618,6 +1616,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Admission Control & Policy Enforcement
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1634,6 +1650,124 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-admission-sits-in-a-requests-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where admission sits in a request's lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-admission-plugins-youve-already-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built-in admission plugins you've already used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionwebhook-reject-non-compliant-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ValidatingAdmissionWebhook: reject non-compliant objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutatingadmissionwebhook-rewrite-objects-before-theyre-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MutatingAdmissionWebhook: rewrite objects before they're stored
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy-as-code-opa-gatekeeper-kyverno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy-as-code: OPA Gatekeeper / Kyverno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod-security-admission-the-built-in-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod Security Admission: the built-in baseline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-policy-rejects-a-privileged-pod-at-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a policy rejects a privileged Pod at creation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2233,113 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-admission-sits-in-a-requests-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where admission sits in a request's lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-admission-plugins-youve-already-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built-in admission plugins you've already used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionwebhook-reject-non-compliant-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ValidatingAdmissionWebhook: reject non-compliant objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutatingadmissionwebhook-rewrite-objects-before-theyre-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MutatingAdmissionWebhook: rewrite objects before they're stored
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy-as-code-opa-gatekeeper-kyverno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy-as-code: OPA Gatekeeper / Kyverno
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod-security-admission-the-built-in-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod Security Admission: the built-in baseline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-policy-rejects-a-privileged-pod-at-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a policy rejects a privileged Pod at creation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2359,198 @@
 
 
 <h1 id="08-admission-control-policy-enforcement">08 · Admission Control &amp; Policy Enforcement<a class="headerlink" href="#08-admission-control-policy-enforcement" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover validating/mutating admission webhooks and policy engines (e.g. OPA/Gatekeeper, Kyverno concepts).</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow the documented admission-control
+request flow; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="where-admission-sits-in-a-requests-lifecycle">Where admission sits in a request's lifecycle<a class="headerlink" href="#where-admission-sits-in-a-requests-lifecycle" title="Permanent link">&para;</a></h2>
+<p>Every write request to the API server passes, in order: <strong>authentication</strong>
+(who are you) → <strong>authorization</strong> (RBAC — are you allowed to do this verb
+on this resource) → <strong>admission control</strong> (should this <em>specific object</em>,
+as submitted, be allowed, and should it be modified first) → <strong>persisted
+to etcd</strong>. RBAC answers "can this identity create Pods"; admission answers
+"is <em>this</em> Pod, with <em>these</em> fields, acceptable" — a completely different,
+content-aware check that RBAC has no concept of.</p>
+<h2 id="built-in-admission-plugins-youve-already-used">Built-in admission plugins you've already used<a class="headerlink" href="#built-in-admission-plugins-youve-already-used" title="Permanent link">&para;</a></h2>
+<p><code>ResourceQuota</code> (Module 07), <code>LimitRange</code> (Level 2, Module 03), and the
+<code>DefaultStorageClass</code> plugin (auto-filling <code>storageClassName</code> if a PVC
+omits it) are all built-in admission plugins compiled into the API server
+and enabled via <code>--enable-admission-plugins</code>. They run for every relevant
+request, unconditionally, with no way to add custom logic beyond what's
+compiled in — which is exactly the gap dynamic admission webhooks fill.</p>
+<h2 id="validatingadmissionwebhook-reject-non-compliant-objects">ValidatingAdmissionWebhook: reject non-compliant objects<a class="headerlink" href="#validatingadmissionwebhook-reject-non-compliant-objects" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admissionregistration.k8s.io/v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ValidatingWebhookConfiguration</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">require-resource-limits</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">webhooks</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">require-limits.policy.example.com</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">admissionReviewVersions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"v1"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">sideEffects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">clientConfig</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">service</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">policy-webhook</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">policy-system</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/validate-pods</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">apiVersions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"v1"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">operations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"CREATE"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">failurePolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fail</span>
+</code></pre></div>
+<p>The named Service (<code>policy-webhook</code>) fronts a Pod that implements the
+webhook: the API server sends it an <code>AdmissionReview</code> JSON payload
+containing the object being created, and the webhook responds <code>allowed:
+true/false</code> with an optional reason.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// AdmissionReview response (webhook's own logic, e.g. rejecting a Pod with no resource limits)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"apiVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admission.k8s.io/v1"</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdmissionReview"</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">"allowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"every container must set resources.limits.memory"</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>pod-no-limits.yaml
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Error from server: admission webhook "require-limits.policy.example.com" denied the request:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># every container must set resources.limits.memory</span>
+</code></pre></div>
+<h2 id="mutatingadmissionwebhook-rewrite-objects-before-theyre-stored">MutatingAdmissionWebhook: rewrite objects before they're stored<a class="headerlink" href="#mutatingadmissionwebhook-rewrite-objects-before-theyre-stored" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admissionregistration.k8s.io/v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MutatingWebhookConfiguration</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inject-sidecar</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">webhooks</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sidecar-injector.policy.example.com</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">admissionReviewVersions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"v1"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">sideEffects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">clientConfig</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">sidecar-injector</span><span class="p p-Indicator">,</span><span class="nt"> namespace</span><span class="p">:</span><span class="w"> </span><span class="nv">policy-system</span><span class="p p-Indicator">,</span><span class="nt"> path</span><span class="p">:</span><span class="w"> </span><span class="nv">/mutate</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="nt">apiVersions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"v1"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="nt">operations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"CREATE"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>A mutating webhook returns a <strong>JSONPatch</strong> describing edits, applied by the
+API server to the object before it's persisted — this is exactly how
+service-mesh sidecar injection (Istio, Linkerd) works: every Pod creation
+is intercepted and a proxy container is patched in, with no change needed
+to any Deployment manifest itself. Mutating webhooks always run <strong>before</strong>
+validating ones, so a mutation can itself be checked by subsequent
+validation.</p>
+<h2 id="policy-as-code-opa-gatekeeper-kyverno">Policy-as-code: OPA Gatekeeper / Kyverno<a class="headerlink" href="#policy-as-code-opa-gatekeeper-kyverno" title="Permanent link">&para;</a></h2>
+<p>Hand-writing a webhook server for every rule doesn't scale; policy engines
+let you express rules declaratively and run as the webhook implementation
+for you.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Kyverno ClusterPolicy example</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kyverno.io/v1</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterPolicy</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">require-labels</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">validationFailureAction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enforce</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">require-team-label</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="nt">match</span><span class="p">:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> kinds</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"Pod"</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="nt">validate</span><span class="p">:</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="s">"every</span><span class="nv"> </span><span class="s">Pod</span><span class="nv"> </span><span class="s">must</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">'team'</span><span class="nv"> </span><span class="s">label"</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="nt">pattern</span><span class="p">:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">          </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">            </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">              </span><span class="nt">team</span><span class="p">:</span><span class="w"> </span><span class="s">"?*"</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>pod-no-team-label.yaml
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Error from server: admission webhook "validate.kyverno.svc-fail" denied the request:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># policy require-labels/require-team-label fail: validation error: every Pod must have a 'team' label</span>
+</code></pre></div>
+<p>Kyverno/Gatekeeper register <strong>one</strong> webhook with the API server and
+dispatch internally to however many declarative policies are loaded — this
+is why real clusters run one policy engine rather than dozens of
+hand-rolled webhooks: fewer network hops per admission request, and a
+single, auditable place to see every active rule.</p>
+<h2 id="pod-security-admission-the-built-in-baseline">Pod Security Admission: the built-in baseline<a class="headerlink" href="#pod-security-admission-the-built-in-baseline" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">pod-security.kubernetes.io/enforce</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restricted</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">pod-security.kubernetes.io/audit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restricted</span>
+</code></pre></div>
+<p>Since Kubernetes 1.25, <strong>Pod Security Admission</strong> is a built-in admission
+plugin (no separate webhook install needed) enforcing the <code>privileged</code>,
+<code>baseline</code>, or <code>restricted</code> Pod Security Standards purely via namespace
+labels — Level 4, Module 04 covers what <code>restricted</code> actually requires in
+depth.</p>
+<h2 id="worked-example-a-policy-rejects-a-privileged-pod-at-creation">Worked example: a policy rejects a privileged Pod at creation<a class="headerlink" href="#worked-example-a-policy-rejects-a-privileged-pod-at-creation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>privileged-pod.yaml
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># Error from server: admission webhook "validate.kyverno.svc-fail" denied the request:</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># policy disallow-privileged fail: Privileged mode is disallowed</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># never created -- the API server never persisted the object at all</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Admission runs synchronously, in the request path, with a strict
+  timeout — a slow or down webhook has direct, immediate consequences for
+  every matching request.</strong> The API server calls each applicable webhook
+  over HTTPS (mutual TLS, via the referenced Service, which the API
+  server's in-cluster networking must be able to reach) and blocks
+  completing the request until it responds or <code>timeoutSeconds</code> (max 30s)
+  elapses; <code>failurePolicy: Fail</code> then rejects the request outright on
+  timeout/error, while <code>Ignore</code> lets it through unpoliced — an
+  under-provisioned or crash-looping policy webhook with <code>Fail</code> set can
+  therefore block <em>all</em> matching object creation cluster-wide, which is
+  why webhook availability itself needs the same production rigor as any
+  critical-path service.</li>
+<li><strong>Multiple webhooks for the same resource/operation all run, and all
+  must approve — but mutating webhooks execute serially (each seeing the
+  previous one's patch) while validating webhooks run against the final
+  post-mutation object.</strong> This ordering guarantee (all mutating, then all
+  validating) is why policy engines validate the sidecar-injected version
+  of a Pod, not the version the user originally submitted — a validation
+  rule checking "does this Pod have a resource limit" will see limits a
+  mutating webhook added, correctly, even though the user never wrote them.</li>
+<li><strong>JSONPatch mutations are diffed and applied by the API server itself,
+  not executed as arbitrary code from the webhook.</strong> The webhook's response
+  contains a <code>patch</code> field (base64-encoded JSONPatch operations) and
+  <code>patchType: JSONPatch</code>; the API server applies this patch using the
+  standard JSONPatch RFC 6902 semantics against the object as it existed
+  when the webhook was called — this bounded, declarative patch format is a
+  deliberate security boundary: a webhook can only describe <em>what</em> to
+  change, never directly write to etcd or bypass subsequent validation.</li>
+<li><strong>Gatekeeper implements its policy language (Rego, via OPA) as a
+  library invoked from within its webhook server process — Kubernetes has
+  no native concept of Rego or CEL-based policy at the webhook layer
+  itself (CEL-based <code>ValidatingAdmissionPolicy</code>, a newer built-in
+  alternative, is the one exception, compiled and evaluated directly by
+  the API server with no webhook round-trip at all).</strong> This is a real
+  performance distinction: a <code>ValidatingAdmissionPolicy</code> (stable since
+  1.30) runs in-process in the API server with no network hop, while a
+  Gatekeeper/Kyverno-based policy always costs at least one HTTPS
+  round-trip per admission check.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy Kyverno (or write a minimal validating webhook by hand) with a
+policy requiring every Pod to declare <code>resources.limits.memory</code>. Attempt to
+create a Pod without it and confirm the API server rejects the request with
+the webhook's message before the object is ever persisted (<code>kubectl get
+pods</code> shows nothing created). Then add a mutating policy that injects a
+default <code>team: unspecified</code> label on any Pod missing one, and confirm a
+Pod created without that label ends up with it set after creation.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

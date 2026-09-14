@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1534,6 +1532,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Observability: Metrics & Logging
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1550,6 +1566,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-kubectl-logs-isnt-enough-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why "kubectl logs" isn't enough at scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-the-prometheus-pull-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics: the Prometheus pull model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kube-state-metrics-cluster-object-state-as-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kube-state-metrics: cluster object state as metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-aggregate-at-the-node-ship-centrally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging: aggregate at the node, ship centrally
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-logging-and-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured logging and correlation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-deployments-health-from-both-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a Deployment's health, from both angles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-kubectl-logs-isnt-enough-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why "kubectl logs" isn't enough at scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-the-prometheus-pull-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics: the Prometheus pull model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kube-state-metrics-cluster-object-state-as-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kube-state-metrics: cluster object state as metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-aggregate-at-the-node-ship-centrally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging: aggregate at the node, ship centrally
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-logging-and-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured logging and correlation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-deployments-health-from-both-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a Deployment's health, from both angles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,174 @@
 
 
 <h1 id="05-observability-metrics-logging">05 · Observability: Metrics &amp; Logging<a class="headerlink" href="#05-observability-metrics-logging" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover the metrics pipeline (metrics-server, Prometheus), and centralized logging patterns for containerized workloads.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented Prometheus/Fluent Bit
+deployment patterns; not executed against a live cluster in this
+session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="why-kubectl-logs-isnt-enough-at-scale">Why "kubectl logs" isn't enough at scale<a class="headerlink" href="#why-kubectl-logs-isnt-enough-at-scale" title="Permanent link">&para;</a></h2>
+<p><code>kubectl logs</code> (Level 2, Module 09) works for one Pod you already know is
+broken. It doesn't survive Pod deletion, doesn't aggregate across
+replicas, and gives you no historical trend data. Production observability
+needs three separate pillars: <strong>metrics</strong> (numeric time series — CPU,
+request rate, error rate), <strong>logs</strong> (aggregated, searchable, retained past
+a Pod's lifetime), and (not covered in depth here) <strong>traces</strong>.</p>
+<h2 id="metrics-the-prometheus-pull-model">Metrics: the Prometheus pull model<a class="headerlink" href="#metrics-the-prometheus-pull-model" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">api</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">prometheus.io/scrape</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">prometheus.io/port</span><span class="p">:</span><span class="w"> </span><span class="s">"8080"</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">prometheus.io/path</span><span class="p">:</span><span class="w"> </span><span class="s">"/metrics"</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:1.4</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[{</span><span class="nt"> containerPort</span><span class="p">:</span><span class="w"> </span><span class="nv">8080</span><span class="w"> </span><span class="p p-Indicator">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># prometheus.yaml scrape_config (conceptual)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">scrape_configs</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes-pods</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">kubernetes_sd_configs</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">relabel_configs</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__meta_kubernetes_pod_annotation_prometheus_io_scrape</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">keep</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<p>Prometheus <strong>pulls</strong> — it discovers scrape targets via the Kubernetes API
+(watching Pods/Services/Endpoints, no separate service registry needed) and
+periodically hits each target's <code>/metrics</code> HTTP endpoint. The application
+must expose metrics in Prometheus's text exposition format itself (a
+client library like <code>prom-client</code>/<code>client_golang</code> handles this); Kubernetes
+core components (kubelet, API server, scheduler) already expose <code>/metrics</code>
+this way natively.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>prometheus-deployment.yaml<span class="w"> </span>-n<span class="w"> </span>monitoring
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>svc/prometheus<span class="w"> </span><span class="m">9090</span><span class="w"> </span>-n<span class="w"> </span>monitoring
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># open http://localhost:9090, query: rate(http_requests_total{app="api"}[5m])</span>
+</code></pre></div>
+<h2 id="kube-state-metrics-cluster-object-state-as-metrics"><code>kube-state-metrics</code>: cluster object state as metrics<a class="headerlink" href="#kube-state-metrics-cluster-object-state-as-metrics" title="Permanent link">&para;</a></h2>
+<p><code>metrics-server</code> (Module 04) only exposes current CPU/memory. **
+kube-state-metrics<em><em> is a separate component that watches the API server
+and turns </em>object state</em> (Deployment replica counts, Pod phase, PVC
+binding status) into Prometheus metrics:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kube_deployment_status_replicas_available{deployment="web"} 3
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>kube_pod_status_phase{pod="web-abc",phase="Running"} 1
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>kube_pod_container_status_restarts_total{pod="api-xyz"} 5
+</code></pre></div>
+<p>This is how alerting rules like "a Deployment has had <code>&lt; desired</code> available
+replicas for 10 minutes" get built — from cluster <em>state</em>, not
+resource usage.</p>
+<h2 id="logging-aggregate-at-the-node-ship-centrally">Logging: aggregate at the node, ship centrally<a class="headerlink" href="#logging-aggregate-at-the-node-ship-centrally" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DaemonSet</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fluent-bit</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logging</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> matchLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">fluent-bit</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">fluent-bit</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fluent-bit</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fluent/fluent-bit:3.1</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">varlog</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/log</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">              </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">varlog</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">          </span><span class="nt">hostPath</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> path</span><span class="p">:</span><span class="w"> </span><span class="nv">/var/log</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<p>A log-shipping DaemonSet (Level 3, Module 01) runs one instance per node,
+reading every container's log files from <code>/var/log/pods</code> on that node
+(kubelet's own log directory, the same one <code>kubectl logs</code> reads from) and
+forwarding them to a central store (Elasticsearch/Loki/a cloud logging
+service). This is the standard pattern precisely <em>because</em> it needs no
+per-app code change — it works by tailing files kubelet already writes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>fluent-bit-daemonset.yaml<span class="w"> </span>-n<span class="w"> </span>logging
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>fluent-bit<span class="w"> </span>-n<span class="w"> </span>logging<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># forwarding logs for pod web-abc123_default_app-...</span>
+</code></pre></div>
+<h2 id="structured-logging-and-correlation">Structured logging and correlation<a class="headerlink" href="#structured-logging-and-correlation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="nt">"level"</span><span class="p">:</span><span class="s2">"info"</span><span class="p">,</span><span class="nt">"msg"</span><span class="p">:</span><span class="s2">"order created"</span><span class="p">,</span><span class="nt">"order_id"</span><span class="p">:</span><span class="s2">"o-123"</span><span class="p">,</span><span class="nt">"trace_id"</span><span class="p">:</span><span class="s2">"9f2a..."</span><span class="p">,</span><span class="nt">"pod"</span><span class="p">:</span><span class="s2">"api-7f9d8"</span><span class="p">,</span><span class="nt">"ts"</span><span class="p">:</span><span class="s2">"2026-09-11T02:14:00Z"</span><span class="p">}</span>
+</code></pre></div>
+<p>JSON-structured logs (rather than free text) let the central log store
+index fields for querying (<code>order_id:"o-123"</code>) and, critically, let you
+correlate a single request across services via a shared <code>trace_id</code> —
+without structure, cross-service debugging degenerates into grepping
+timestamps and hoping.</p>
+<h2 id="worked-example-a-deployments-health-from-both-angles">Worked example: a Deployment's health, from both angles<a class="headerlink" href="#worked-example-a-deployments-health-from-both-angles" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># metrics angle</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://prometheus:9090/api/v1/query<span class="w"> </span>--data-urlencode<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="s1">'query=kube_deployment_status_replicas_available{deployment="api"}'</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># value: 2  (expected 3 -- one replica missing)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># logs angle, for WHY</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>api<span class="w"> </span>--since<span class="o">=</span>10m<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>error
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># "panic: connection refused to db:5432"</span>
+</code></pre></div>
+<p>Metrics tell you <em>something</em> is wrong and roughly <em>when</em>; logs tell you
+<em>why</em> — this division of labor is why production setups always run both,
+not one instead of the other.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Prometheus's Kubernetes service discovery re-lists/watches the API
+  server continuously — scrape targets are never a static config file in
+  practice.</strong> The <code>kubernetes_sd_configs</code> mechanism watches Pod (or
+  Endpoints/Service/Node) objects via the API server's watch protocol; a
+  newly created Pod matching the relabel rules becomes a scrape target
+  within one discovery refresh cycle with zero manual registration —
+  relabeling runs entirely client-side in Prometheus against metadata
+  already present on the object (annotations, labels), not against
+  anything the target itself controls at scrape time.</li>
+<li><strong>A DaemonSet log shipper reads container logs via the <em>same</em> on-disk
+  file convention kubelet maintains for <code>kubectl logs</code>, giving both
+  identical (and identically limited) visibility.</strong> Container runtimes
+  write stdout/stderr to <code>/var/log/containers/*.log</code> (symlinked from
+  <code>/var/log/pods/&lt;pod-uid&gt;/&lt;container&gt;/</code>) in a JSON-lines format kubelet
+  defines; both <code>kubectl logs</code> (via the kubelet API) and a DaemonSet-based
+  shipper tail these same files — this is why logs from a Pod deleted
+  <em>and</em> garbage-collected before the shipper caught up are lost by both
+  methods equally; centralizing logs only helps once they're shipped
+  <em>before</em> that GC happens.</li>
+<li><strong><code>kube-state-metrics</code> derives its numbers purely by watching the API
+  server's object cache — it never touches nodes, containers, or cgroups
+  at all.</strong> This is the key distinction from <code>metrics-server</code>: it's
+  reporting the <em>declared/observed state</em> of Kubernetes objects (what the
+  Deployment controller wrote to <code>.status</code>), not live resource
+  consumption — a Deployment showing <code>available: 2</code> when <code>replicas: 3</code>
+  reflects a controller's own reconciliation state, sourced from Pod
+  readiness the same way the EndpointSlice controller (Level 1, Module 07)
+  computes membership.</li>
+<li><strong>Prometheus's pull model creates an inherent trade-off DaemonSet-based
+  logging doesn't share: ephemeral, fast-lived Pods can finish and be
+  garbage-collected between scrape intervals, producing zero metrics
+  data.</strong> A batch Job's Pod that starts and exits in 3 seconds may never be
+  scraped if Prometheus's interval is 15s — this is exactly why short-lived
+  workloads commonly use a <strong>push gateway</strong> pattern instead (the job
+  pushes its final metric values to an intermediary Prometheus can scrape
+  at its own pace) rather than being scraped directly.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy <code>kube-state-metrics</code> and a minimal Prometheus scraping it, then
+query <code>kube_deployment_status_replicas_available</code> for a Deployment you
+intentionally scale past its available capacity (e.g. by setting an
+unsatisfiable resource request on a new replica) to see the gap show up as
+a metric. Separately, deploy a log-shipping DaemonSet and confirm via its
+own logs that it picked up a test Pod's log lines that <code>kubectl logs</code>
+against the (now-deleted) Pod itself would no longer be able to show.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

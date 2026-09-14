@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1046,6 +1044,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Volumes & Persistent Storage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1062,6 +1078,124 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-containers-are-stateless-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem: containers are stateless by default
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emptydir-scratch-space-tied-to-the-pods-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emptyDir: scratch space tied to the Pod's lifetime
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hostpath-binding-to-the-nodes-filesystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hostPath: binding to the node's filesystem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistentvolumes-and-persistentvolumeclaims-storage-that-outlives-the-pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PersistentVolumes and PersistentVolumeClaims: storage that outlives the Pod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storageclasses-dynamic-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StorageClasses: dynamic provisioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-data-survives-pod-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: data survives Pod deletion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2233,113 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-containers-are-stateless-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem: containers are stateless by default
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emptydir-scratch-space-tied-to-the-pods-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emptyDir: scratch space tied to the Pod's lifetime
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hostpath-binding-to-the-nodes-filesystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hostPath: binding to the node's filesystem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistentvolumes-and-persistentvolumeclaims-storage-that-outlives-the-pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PersistentVolumes and PersistentVolumeClaims: storage that outlives the Pod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storageclasses-dynamic-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StorageClasses: dynamic provisioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-data-survives-pod-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: data survives Pod deletion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2359,200 @@
 
 
 <h1 id="01-volumes-persistent-storage">01 · Volumes &amp; Persistent Storage<a class="headerlink" href="#01-volumes-persistent-storage" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover emptyDir vs. hostPath vs. PersistentVolumes/PersistentVolumeClaims, and StorageClasses for dynamic provisioning.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented Volume/PV/PVC behavior; not
+executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-problem-containers-are-stateless-by-default">The problem: containers are stateless by default<a class="headerlink" href="#the-problem-containers-are-stateless-by-default" title="Permanent link">&para;</a></h2>
+<p>A container's writable filesystem lives inside its container runtime layer.
+When the container is restarted (crash, image update, node reschedule), that
+layer is discarded and recreated from the image — anything written to it is
+gone. Kubernetes <strong>Volumes</strong> attach external storage to a Pod so that data
+can survive a container restart, and <strong>PersistentVolumes</strong> let that data
+survive even when the <em>Pod itself</em> is deleted and rescheduled elsewhere.</p>
+<h2 id="emptydir-scratch-space-tied-to-the-pods-lifetime"><code>emptyDir</code>: scratch space tied to the Pod's lifetime<a class="headerlink" href="#emptydir-scratch-space-tied-to-the-pods-lifetime" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cache-pod</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.27</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scratch</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">          </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/cache</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scratch</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">emptyDir</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</code></pre></div>
+<p><code>emptyDir</code> is created empty when the Pod is scheduled to a node and deleted
+permanently when that Pod is removed from the node — a crash and restart of
+the <em>container</em> keeps the data (kubelet doesn't recreate the volume, only the
+container), but deleting the <em>Pod</em> wipes it. It's ideal for sharing files
+between containers in the same Pod (a sidecar writing logs another container
+tails) or as disposable scratch space.</p>
+<h2 id="hostpath-binding-to-the-nodes-filesystem"><code>hostPath</code>: binding to the node's filesystem<a class="headerlink" href="#hostpath-binding-to-the-nodes-filesystem" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-logs</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">hostPath</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/log/myapp</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DirectoryOrCreate</span>
+</code></pre></div>
+<p><code>hostPath</code> mounts a path from the <strong>node's own filesystem</strong> into the Pod.
+It's tied to that specific node — if the Pod reschedules elsewhere, the data
+doesn't follow it, and any file dropped there is directly visible to
+anything else running on that node (a real security concern; Level 3/4
+covers restricting it via Pod Security Standards). Legitimate uses are
+narrow: node-level agents (log collectors, CNI/CSI plugins) that are
+<em>supposed</em> to see the host, not general application storage.</p>
+<h2 id="persistentvolumes-and-persistentvolumeclaims-storage-that-outlives-the-pod">PersistentVolumes and PersistentVolumeClaims: storage that outlives the Pod<a class="headerlink" href="#persistentvolumes-and-persistentvolumeclaims-storage-that-outlives-the-pod" title="Permanent link">&para;</a></h2>
+<p>Real application data needs storage independent of any one Pod or node. Two
+objects split this concern:</p>
+<ul>
+<li>A <strong>PersistentVolume (PV)</strong> represents an actual piece of storage (a cloud
+  disk, an NFS export, a local disk) — created by an admin or dynamically
+  provisioned.</li>
+<li>A <strong>PersistentVolumeClaim (PVC)</strong> is a request for storage made by a
+  workload ("I need 5Gi, ReadWriteOnce") — Kubernetes binds it to a matching
+  PV.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># pvc.yaml</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data-pvc</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadWriteOnce</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">requests</span><span class="p">:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5Gi</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># deployment.yaml (excerpt)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:16</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/postgresql/data</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">          </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">            </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data-pvc</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>pvc.yaml
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pvc<span class="w"> </span>data-pvc
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># NAME       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># data-pvc   Bound    pvc-3f2c1a9e-...                           5Gi        RWO            standard       4s</span>
+</code></pre></div>
+<h2 id="storageclasses-dynamic-provisioning">StorageClasses: dynamic provisioning<a class="headerlink" href="#storageclasses-dynamic-provisioning" title="Permanent link">&para;</a></h2>
+<p>Rather than an admin pre-creating PVs by hand, a <strong>StorageClass</strong> tells
+Kubernetes <em>how</em> to create one on demand when a PVC references it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.k8s.io/v1</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StorageClass</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nt">provisioner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/aws-ebs</span><span class="w">   </span><span class="c1"># or pd.csi.storage.gke.io, disk.csi.azure.com, etc.</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nt">parameters</span><span class="p">:</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gp3</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nt">reclaimPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Delete</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nt">volumeBindingMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WaitForFirstConsumer</span>
+</code></pre></div>
+<p><code>volumeBindingMode: WaitForFirstConsumer</code> delays provisioning until a Pod
+using the PVC is actually scheduled, so the volume gets created in the same
+zone as the node the Pod lands on (a Pod can't mount a disk provisioned in a
+different availability zone).</p>
+<h2 id="access-modes">Access modes<a class="headerlink" href="#access-modes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ReadWriteOnce</code> (RWO)</td>
+<td>Mounted read-write by a single node at a time</td>
+</tr>
+<tr>
+<td><code>ReadOnlyMany</code> (ROX)</td>
+<td>Mounted read-only by many nodes</td>
+</tr>
+<tr>
+<td><code>ReadWriteMany</code> (RWX)</td>
+<td>Mounted read-write by many nodes (needs NFS/EFS-class storage, not typical block disks)</td>
+</tr>
+<tr>
+<td><code>ReadWriteOncePod</code> (RWOP)</td>
+<td>Mounted read-write by a single <em>Pod</em> (stricter than RWO's per-node guarantee)</td>
+</tr>
+</tbody>
+</table>
+<p>Most cloud block storage (EBS, PD, Azure Disk) only supports RWO — this is
+why a single PVC generally can't be shared read-write across replicas of a
+Deployment; StatefulSets (Level 3) instead give each replica its <em>own</em> PVC.</p>
+<h2 id="worked-example-data-survives-pod-deletion">Worked example: data survives Pod deletion<a class="headerlink" href="#worked-example-data-survives-pod-deletion" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>pvc.yaml
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>deploy/app<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'echo hello &gt; /var/lib/postgresql/data/marker'</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>app<span class="w">        </span><span class="c1"># Deployment recreates the Pod</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>deploy/app<span class="w"> </span>--<span class="w"> </span>cat<span class="w"> </span>/var/lib/postgresql/data/marker
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># hello -- the new Pod mounted the SAME PVC/PV, data survived</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The PV/PVC binding is a two-phase controller dance, not a direct
+  mount.</strong> The <code>PersistentVolumeController</code> (in kube-controller-manager)
+  watches PVCs; when a new one appears unbound, it searches existing
+  PVs for one whose capacity, access modes, and StorageClass satisfy the
+  claim (static provisioning) or, if <code>storageClassName</code> references a
+  StorageClass with a provisioner, it does nothing itself and instead the
+  external CSI provisioner sidecar (<code>external-provisioner</code>, watching PVCs
+  via the API server) creates a brand-new PV and its backing cloud volume,
+  then the controller binds the two objects by writing each one's UID into
+  the other's spec.</li>
+<li><strong>Actually attaching and mounting is a kubelet + CSI driver job, done
+  per-node, at Pod start.</strong> Once a Pod referencing the PVC is scheduled,
+  kubelet calls the CSI driver's <code>NodeStageVolume</code>/<code>NodePublishVolume</code> gRPC
+  methods (over a Unix socket) — this is what actually calls the cloud
+  provider's API to attach the block device to the node's instance, formats
+  it if unformatted, mounts it to a staging directory, then bind-mounts it
+  into the container's mount namespace at the path Docker/containerd sets
+  up when creating the container.</li>
+<li><strong><code>WaitForFirstConsumer</code> exists because provisioning and scheduling would
+  otherwise race.</strong> Immediate binding mode creates the PV as soon as the PVC
+  appears, picking a zone with no knowledge of where the Pod will land;
+  <code>WaitForFirstConsumer</code> defers PV creation until the scheduler has already
+  chosen a node, and passes that node's topology labels to the provisioner
+  so the volume is created in a zone the node can actually attach to.</li>
+<li><strong><code>reclaimPolicy</code> runs on PVC <em>deletion</em>, not Pod deletion.</strong> <code>Delete</code>
+  causes the same controller to call the CSI driver's <code>DeleteVolume</code> to
+  destroy the backing cloud disk once the PVC is removed; <code>Retain</code> leaves
+  the PV (and underlying disk) around in a <code>Released</code> state requiring
+  manual cleanup — deliberately chosen for data an admin doesn't want a
+  developer able to destroy with <code>kubectl delete pvc</code>.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Create the <code>standard</code> StorageClass, the <code>data-pvc</code> PVC, and a single-replica
+Deployment mounting it at <code>/data</code>. Write a file into <code>/data</code>, delete the
+Pod, and confirm the ReplicaSet's replacement Pod can still read the file
+back — because it mounts the same PVC/PV, not a fresh <code>emptyDir</code>. Then
+compare by repeating the same steps with an <code>emptyDir</code> volume instead, and
+confirm the file is gone after the Pod is deleted.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

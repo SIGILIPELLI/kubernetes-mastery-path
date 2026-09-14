@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1102,6 +1100,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Resource Requests, Limits & Scheduling
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1118,6 +1134,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-declare-resources-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why declare resources at all
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-scheduler-uses-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the scheduler uses requests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-and-oomkilled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limits and OOMKilled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qos-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QoS classes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitrange-and-resourcequota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LimitRange and ResourceQuota
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-filling-a-small-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: filling a small cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-declare-resources-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why declare resources at all
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-scheduler-uses-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the scheduler uses requests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-and-oomkilled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limits and OOMKilled
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qos-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QoS classes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitrange-and-resourcequota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LimitRange and ResourceQuota
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-filling-a-small-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: filling a small cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,193 @@
 
 
 <h1 id="03-resource-requests-limits-scheduling">03 · Resource Requests, Limits &amp; Scheduling<a class="headerlink" href="#03-resource-requests-limits-scheduling" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover CPU/memory requests and limits, QoS classes, and how the scheduler uses requests to place Pods.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented scheduler/kubelet behavior;
+not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="why-declare-resources-at-all">Why declare resources at all<a class="headerlink" href="#why-declare-resources-at-all" title="Permanent link">&para;</a></h2>
+<p>Without <code>resources</code> set, a container can consume as much CPU/memory as the
+node has free, and the scheduler has no information to decide which node has
+"room" for a new Pod — it would just guess. <strong>Requests</strong> tell the scheduler
+what a container needs to be placed sensibly; <strong>limits</strong> cap what it's
+allowed to actually use once running.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.27</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">requests</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">          </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"250m"</span><span class="w">        </span><span class="c1"># 0.25 of a vCPU core</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">          </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">"128Mi"</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">limits</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">          </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"500m"</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">          </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">"256Mi"</span>
+</code></pre></div>
+<p>CPU is measured in cores (<code>1</code> = one full core) or millicores (<code>250m</code> =
+0.25 core). Memory is measured in bytes, usually written as <code>Mi</code>/<code>Gi</code>
+(mebibytes/gibibytes, base-1024) rather than <code>M</code>/<code>G</code> (base-1000).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>web.yaml
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>node<span class="w"> </span>&lt;node-name&gt;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Allocated resources:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">#   Resource   Requests   Limits</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">#   cpu        250m (12%) 500m (25%)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">#   memory     128Mi (6%) 256Mi (12%)</span>
+</code></pre></div>
+<h2 id="how-the-scheduler-uses-requests">How the scheduler uses requests<a class="headerlink" href="#how-the-scheduler-uses-requests" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>custom-columns<span class="o">=</span>NAME:.metadata.name,CPU:.status.allocatable.cpu,MEM:.status.allocatable.memory
+</code></pre></div>
+<p>The scheduler's <code>NodeResourcesFit</code> predicate filters out any node whose
+<strong>sum of already-scheduled Pods' requests</strong> plus this Pod's requests would
+exceed the node's allocatable capacity — it never looks at <em>actual</em> live
+usage for this decision, only requests. A Pod with no requests set is
+treated as requesting effectively nothing, which is exactly the "unbounded
+guess" problem requests solve.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>web
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Events:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">#   Warning  FailedScheduling  0/3 nodes are available: 3 Insufficient cpu.</span>
+</code></pre></div>
+<h2 id="limits-and-oomkilled">Limits and OOMKilled<a class="headerlink" href="#limits-and-oomkilled" title="Permanent link">&para;</a></h2>
+<p>CPU limits are enforced by <em>throttling</em> (the container is allowed to burst
+briefly but gets CPU time capped over each scheduling period) — it never
+gets killed for exceeding a CPU limit. Memory limits are enforced by
+<em>killing</em> — a container that exceeds its memory limit is terminated
+immediately by the kernel's OOM killer.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>web
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># NAME   READY   STATUS      RESTARTS   AGE</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># web    0/1     OOMKilled   1          2m</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>web
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># Last State: Terminated, Reason: OOMKilled, Exit Code: 137</span>
+</code></pre></div>
+<p>Exit code 137 = 128 + 9 (<code>SIGKILL</code>) — a strong signal it was the kernel OOM
+killer, not the application exiting on its own.</p>
+<h2 id="qos-classes">QoS classes<a class="headerlink" href="#qos-classes" title="Permanent link">&para;</a></h2>
+<p>Kubernetes derives a <strong>Quality of Service class</strong> per Pod purely from how
+requests/limits are set, with no separate field to configure it:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Condition</th>
+<th>Behavior under node pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Guaranteed</code></td>
+<td>Every container sets <code>requests == limits</code> for both CPU and memory</td>
+<td>Evicted last</td>
+</tr>
+<tr>
+<td><code>Burstable</code></td>
+<td>At least one container sets a request or limit, but not equal for all</td>
+<td>Evicted after BestEffort</td>
+</tr>
+<tr>
+<td><code>BestEffort</code></td>
+<td>No requests or limits set on any container</td>
+<td>Evicted first</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>web<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.status.qosClass}'</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Burstable</span>
+</code></pre></div>
+<h2 id="limitrange-and-resourcequota">LimitRange and ResourceQuota<a class="headerlink" href="#limitrange-and-resourcequota" title="Permanent link">&para;</a></h2>
+<p>A <strong>LimitRange</strong> sets defaults/bounds per container within a namespace so
+developers can't forget resources entirely:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LimitRange</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">limits</span><span class="p">:</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">default</span><span class="p">:</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"500m"</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">"256Mi"</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">defaultRequest</span><span class="p">:</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">"128Mi"</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Container</span>
+</code></pre></div>
+<p>A <strong>ResourceQuota</strong> caps the <em>total</em> requests/limits across an entire
+namespace:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceQuota</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a-quota</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">hard</span><span class="p">:</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="nt">requests.cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"4"</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="nt">requests.memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8Gi</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="nt">limits.cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"8"</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="nt">limits.memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16Gi</span>
+</code></pre></div>
+<h2 id="worked-example-filling-a-small-cluster">Worked example: filling a small cluster<a class="headerlink" href="#worked-example-filling-a-small-cluster" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>limitrange.yaml<span class="w"> </span>-n<span class="w"> </span>team-a
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>quota.yaml<span class="w"> </span>-n<span class="w"> </span>team-a
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># a Pod requesting 200m/300Mi with no explicit resources gets the LimitRange defaults applied</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>kubectl<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--image<span class="o">=</span>nginx<span class="w"> </span>-n<span class="w"> </span>team-a
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-n<span class="w"> </span>team-a<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.containers[0].resources}'</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># {"limits":{"cpu":"500m","memory":"256Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>quota<span class="w"> </span>team-a-quota<span class="w"> </span>-n<span class="w"> </span>team-a
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># Used   requests.cpu: 100m   requests.memory: 128Mi  ...</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Requests are consumed as scheduler-side bookkeeping, not as any kernel
+  guarantee by themselves.</strong> The scheduler keeps an in-memory
+  "already-allocated" tally per node built from the requests of Pods bound
+  there; <code>NodeResourcesFit</code> is a filter plugin run per candidate node during
+  scheduling, and once a Pod is bound, the number is never re-checked
+  against real usage — this is why a node can look "full" by requests while
+  its actual CPU sits idle, or conversely why nodes can still get
+  CPU-pressured even with headroom on requests (limits/actual usage are
+  independent of the scheduling decision).</li>
+<li><strong>CPU limits become a cgroup CFS quota; requests become a cgroup CFS
+  share.</strong> kubelet configures each container's cgroup with <code>cpu.cfs_quota_us</code>
+  derived from the limit (throttling once that many microseconds of CPU
+  time are used within each <code>cpu.cfs_period_us</code>, typically 100ms) and
+  <code>cpu.shares</code> derived from the request (a <em>relative</em> weight used only when
+  multiple containers compete for the same idle CPU — it does no throttling
+  by itself).</li>
+<li><strong>Memory limits become a cgroup hard cap enforced by the kernel, not
+  kubelet.</strong> kubelet sets <code>memory.limit_in_bytes</code> (cgroup v1) or
+  <code>memory.max</code> (cgroup v2) on the container's cgroup; when the container's
+  resident memory hits that ceiling, the <em>kernel's</em> cgroup OOM killer sends
+  <code>SIGKILL</code> directly — kubelet only observes this after the fact via the
+  container runtime and reports the <code>OOMKilled</code> reason, it doesn't do the
+  killing itself.</li>
+<li><strong>QoS class also decides <em>eviction</em> order under node memory pressure via
+  <code>oom_score_adj</code>.</strong> kubelet sets a Linux <code>oom_score_adj</code> per container
+  based on QoS class (very negative for Guaranteed, near-max for
+  BestEffort) — when the <em>node itself</em> runs low on memory (not a per-container
+  limit breach), the kernel-wide OOM killer picks victims by score, which is
+  precisely why BestEffort Pods die first: their score biases the kernel to
+  target them before Guaranteed ones.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy a Pod with <code>requests.memory: 64Mi</code> and <code>limits.memory: 128Mi</code>, then
+run a workload inside it that allocates memory past 128Mi (e.g. <code>stress
+--vm 1 --vm-bytes 200M</code>). Confirm via <code>kubectl describe pod</code> that it's
+<code>OOMKilled</code> with exit code 137. Then set a LimitRange in a namespace and
+confirm a Pod created without any <code>resources</code> block picks up the default
+request/limit automatically.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

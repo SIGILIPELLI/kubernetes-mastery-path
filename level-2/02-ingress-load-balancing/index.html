@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1074,6 +1072,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Ingress & Load Balancing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1090,6 +1106,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-services-arent-enough-for-http-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Services aren't enough for HTTP routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-basic-ingress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A basic Ingress
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS termination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-an-ingress-controller-nginx-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing an Ingress controller (NGINX example)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-host-based-routing-to-two-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: host-based routing to two Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-services-arent-enough-for-http-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Services aren't enough for HTTP routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-basic-ingress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A basic Ingress
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS termination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-an-ingress-controller-nginx-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing an Ingress controller (NGINX example)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-host-based-routing-to-two-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: host-based routing to two Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,149 @@
 
 
 <h1 id="02-ingress-load-balancing">02 · Ingress &amp; Load Balancing<a class="headerlink" href="#02-ingress-load-balancing" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover the Ingress resource, ingress controllers (e.g. ingress-nginx), host/path-based routing, and TLS termination.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented Ingress/controller behavior;
+not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="why-services-arent-enough-for-http-routing">Why Services aren't enough for HTTP routing<a class="headerlink" href="#why-services-arent-enough-for-http-routing" title="Permanent link">&para;</a></h2>
+<p>A <code>LoadBalancer</code> Service (Level 1, Module 07) gives one external IP per
+Service — fine for a single app, expensive and unwieldy once you have ten
+HTTP services that all want to live under one domain with path- or
+host-based routing (<code>api.example.com</code>, <code>example.com/admin</code>, TLS
+termination, etc.). An <strong>Ingress</strong> describes that routing as one object;
+an <strong>Ingress controller</strong> (a separate piece of software you install, e.g.
+NGINX Ingress Controller, Traefik, or a cloud-managed one) reads Ingress
+objects and actually implements the routing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Internet --&gt; one LoadBalancer/NodePort --&gt; Ingress controller Pod --&gt; routes by host/path --&gt; Service --&gt; Pods
+</code></pre></div>
+<h2 id="a-basic-ingress">A basic Ingress<a class="headerlink" href="#a-basic-ingress" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web-ingress</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">nginx.ingress.kubernetes.io/rewrite-target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shop.example.com</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="nt">http</span><span class="p">:</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="nt">paths</span><span class="p">:</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">              </span><span class="nt">service</span><span class="p">:</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">                </span><span class="nt">port</span><span class="p">:</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">                  </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/api</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">              </span><span class="nt">service</span><span class="p">:</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">                </span><span class="nt">port</span><span class="p">:</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">                  </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>web-ingress.yaml
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>ingress<span class="w"> </span>web-ingress
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># NAME          CLASS   HOSTS               ADDRESS         PORTS   AGE</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># web-ingress   nginx   shop.example.com    203.0.113.10    80      30s</span>
+</code></pre></div>
+<p><code>ingressClassName: nginx</code> tells Kubernetes <em>which</em> installed controller
+should watch this object — a cluster can run several controllers
+simultaneously (e.g. one internal, one internet-facing), each watching only
+Ingresses that name its <code>IngressClass</code>.</p>
+<h2 id="tls-termination">TLS termination<a class="headerlink" href="#tls-termination" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shop.example.com</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shop-tls</span><span class="w">   </span><span class="c1"># kind: Secret, type: kubernetes.io/tls</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shop.example.com</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="nt">http</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">paths</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">            </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">            </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">              </span><span class="nt">service</span><span class="p">:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">                </span><span class="nt">port</span><span class="p">:</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">                  </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>tls<span class="w"> </span>shop-tls<span class="w"> </span>--cert<span class="o">=</span>cert.pem<span class="w"> </span>--key<span class="o">=</span>key.pem
+</code></pre></div>
+<p>The controller terminates TLS at the edge using the certificate/key in
+<code>shop-tls</code>, then forwards plain HTTP to the backend Service — this is why
+<code>targetPort</code> on the backend Service is usually the plain-HTTP container
+port, not 443. In production, <code>cert-manager</code> (a separate controller) is
+typically layered on top to request and auto-renew these certificates from
+Let's Encrypt.</p>
+<h2 id="installing-an-ingress-controller-nginx-example">Installing an Ingress controller (NGINX example)<a class="headerlink" href="#installing-an-ingress-controller-nginx-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.0/deploy/static/provider/cloud/deploy.yaml
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>ingress-nginx
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># ingress-nginx-controller-... Running</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>-n<span class="w"> </span>ingress-nginx<span class="w"> </span>ingress-nginx-controller
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># TYPE: LoadBalancer -- this is the single external entry point for ALL Ingresses in the cluster</span>
+</code></pre></div>
+<p>An Ingress object with no controller installed just sits there inert —
+<code>kubectl get ingress</code> will show no <code>ADDRESS</code> — because nothing is watching
+it.</p>
+<h2 id="worked-example-host-based-routing-to-two-services">Worked example: host-based routing to two Services<a class="headerlink" href="#worked-example-host-based-routing-to-two-services" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment-web.yaml<span class="w"> </span>deployment-api.yaml<span class="w"> </span>service-web.yaml<span class="w"> </span>service-api.yaml
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>web-ingress.yaml
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Host: shop.example.com"</span><span class="w"> </span>http://203.0.113.10/
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># routed to the "web" Service</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Host: shop.example.com"</span><span class="w"> </span>http://203.0.113.10/api
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># routed to the "api" Service, same external IP, same port 80</span>
+</code></pre></div>
+<p>One external IP, one LoadBalancer, routing decided entirely by HTTP
+<code>Host</code>/path — this is the cost saving Ingress exists for.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The Ingress object is pure declared intent; the controller is a
+  separate reconciliation loop with its own data plane.</strong> The API server
+  stores Ingress objects like any other resource — it does not implement
+  HTTP routing itself. The Ingress controller Deployment runs a watch loop
+  against Ingress, Service, EndpointSlice, and Secret objects and
+  regenerates its <em>own</em> runtime configuration (for NGINX, an actual
+  <code>nginx.conf</code> reloaded via <code>nginx -s reload</code>, or for Envoy-based
+  controllers, an xDS config push) whenever anything relevant changes.</li>
+<li><strong>The controller talks to Pods directly, bypassing kube-proxy in most
+  implementations.</strong> NGINX Ingress Controller reads EndpointSlices and
+  proxies straight to backend Pod IPs rather than routing through the
+  backend Service's ClusterIP — this shaves off one extra hop of NAT and
+  lets it do L7-aware load balancing (least-connections, session affinity)
+  that a Service's random/round-robin L4 balancing can't express.</li>
+<li><strong>The one external IP is a single Service under the hood.</strong> The
+  controller's own Pods sit behind one <code>LoadBalancer</code>-type (or <code>NodePort</code>)
+  Service; every Ingress object in the cluster shares that same entry
+  point, and host/path matching happens entirely inside the controller
+  process after the packet already arrived — the cloud load balancer has
+  no idea Ingress objects exist.</li>
+<li><strong>Ordering and merge semantics for overlapping rules follow the
+  controller's implementation, not a Kubernetes-wide spec.</strong> The Ingress
+  API only weakly specifies conflict resolution (e.g. two Ingresses
+  claiming the same host+path); NGINX Ingress Controller resolves this by
+  Ingress creation timestamp and object name — this is a common source of
+  "why did my Ingress change stop working" surprises when multiple
+  Ingress objects target overlapping routes.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy two simple Services (<code>web</code>, <code>api</code>) and a single Ingress that routes
+<code>/</code> to <code>web</code> and <code>/api</code> to <code>api</code> under one host. Confirm both paths resolve
+to the right backend using <code>curl -H "Host: ..."</code> against the controller's
+external IP. Then add a TLS block referencing a self-signed <code>kubernetes.io/tls</code>
+Secret and confirm <code>curl -k https://...</code> terminates TLS at the Ingress while
+the backend Pods still only speak plain HTTP.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

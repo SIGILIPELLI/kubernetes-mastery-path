@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1270,6 +1268,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Debugging & Troubleshooting Workloads
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1286,6 +1302,124 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-systematic-order-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A systematic order of operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-12-get-and-describe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1–2: get and describe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-logs-especially-previous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: logs, especially --previous
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-exec-into-a-running-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: exec into a running container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-kubectl-debug-for-containers-with-no-shell-or-that-wont-start-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: kubectl debug for containers with no shell, or that won't start at all
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking-specific-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking-specific checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-chasing-a-crashloopbackoff-to-its-cause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: chasing a CrashLoopBackOff to its cause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2233,113 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-systematic-order-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A systematic order of operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-12-get-and-describe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1–2: get and describe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-logs-especially-previous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: logs, especially --previous
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-exec-into-a-running-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: exec into a running container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-kubectl-debug-for-containers-with-no-shell-or-that-wont-start-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: kubectl debug for containers with no shell, or that won't start at all
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking-specific-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking-specific checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-chasing-a-crashloopbackoff-to-its-cause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: chasing a CrashLoopBackOff to its cause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2359,181 @@
 
 
 <h1 id="09-debugging-troubleshooting-workloads">09 · Debugging &amp; Troubleshooting Workloads<a class="headerlink" href="#09-debugging-troubleshooting-workloads" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover a systematic workflow for diagnosing failing Pods, Services, and networking issues using kubectl describe/logs/exec/events.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Commands and output below follow documented kubectl/kubelet behavior;
+not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="a-systematic-order-of-operations">A systematic order of operations<a class="headerlink" href="#a-systematic-order-of-operations" title="Permanent link">&para;</a></h2>
+<p>Random <code>kubectl get</code> commands waste time. A reliable order for "why isn't
+this working":</p>
+<ol>
+<li>Is the object even where you expect it? (<code>kubectl get</code>)</li>
+<li>What does Kubernetes itself say went wrong? (<code>kubectl describe</code>, Events)</li>
+<li>What does the application say? (<code>kubectl logs</code>)</li>
+<li>If you need to see inside the running container: <code>kubectl exec</code>.</li>
+<li>If the container won't even start: <code>kubectl debug</code>.</li>
+</ol>
+<h2 id="step-12-get-and-describe">Step 1–2: <code>get</code> and <code>describe</code><a class="headerlink" href="#step-12-get-and-describe" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># NAME          READY   STATUS             RESTARTS   AGE</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># web-7d9f8c    0/1     ImagePullBackOff   0          2m</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># api-9b2c1a    0/1     CrashLoopBackOff   5          10m</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># worker-3f1e2  0/1     Pending            0          1m</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>web-7d9f8c<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Events:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">#   Warning  Failed   kubelet  Failed to pull image "myapp:1.5.0": not found</span>
+</code></pre></div>
+<p><code>describe</code>'s <strong>Events</strong> section is the single richest source of "why" —
+scheduling failures, image pull errors, probe failures, volume mount
+errors, and OOM kills all surface there before anything shows up in
+container logs (because in many of these cases, the container never even
+started).</p>
+<table>
+<thead>
+<tr>
+<th>STATUS</th>
+<th>Usual cause</th>
+<th>Where to look next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Pending</code></td>
+<td>Can't be scheduled (resources, node affinity, no matching node)</td>
+<td><code>describe pod</code> Events</td>
+</tr>
+<tr>
+<td><code>ImagePullBackOff</code> / <code>ErrImagePull</code></td>
+<td>Wrong image name/tag, private registry auth missing</td>
+<td><code>describe pod</code> Events</td>
+</tr>
+<tr>
+<td><code>CrashLoopBackOff</code></td>
+<td>Container starts then exits repeatedly</td>
+<td><code>logs --previous</code></td>
+</tr>
+<tr>
+<td><code>Pending</code> on PVC</td>
+<td>Nothing satisfies the PVC (no matching StorageClass/PV)</td>
+<td><code>describe pvc</code></td>
+</tr>
+<tr>
+<td><code>Running</code> but <code>0/1 Ready</code></td>
+<td>Readiness probe failing</td>
+<td><code>describe pod</code>, app-level check</td>
+</tr>
+</tbody>
+</table>
+<h2 id="step-3-logs-especially-previous">Step 3: logs, especially <code>--previous</code><a class="headerlink" href="#step-3-logs-especially-previous" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--previous<span class="w">   </span><span class="c1"># the CRASHED container's logs, not the current restart's</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>-c<span class="w"> </span>sidecar<span class="w">    </span><span class="c1"># multi-container Pod: name the container</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>deploy/api<span class="w"> </span>-n<span class="w"> </span>prod<span class="w">            </span><span class="c1"># follow all Pods behind a Deployment (via label selector)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>kubectl<span class="w"> </span>stern<span class="w"> </span>api<span class="w"> </span>-n<span class="w"> </span>prod<span class="w">                     </span><span class="c1"># (if installed) tails multiple Pods with Pod-name prefixes</span>
+</code></pre></div>
+<p><code>--previous</code> is the single most-forgotten flag in a CrashLoopBackOff
+investigation — by the time you run <code>kubectl logs</code>, the container may have
+already restarted into a fresh (and initially quiet) instance, and plain
+<code>logs</code> shows <em>that</em> one, not the one that actually crashed.</p>
+<h2 id="step-4-exec-into-a-running-container">Step 4: exec into a running container<a class="headerlink" href="#step-4-exec-into-a-running-container" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--<span class="w"> </span>sh
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--<span class="w"> </span>env
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--<span class="w"> </span>cat<span class="w"> </span>/etc/resolv.conf<span class="w">   </span><span class="c1"># check DNS config from inside</span>
+</code></pre></div>
+<p><code>exec</code> only works if the container is running <em>and</em> has a shell/binary to
+exec into — a <code>scratch</code>-based distroless image often has neither, which is
+where <code>kubectl debug</code> comes in.</p>
+<h2 id="step-5-kubectl-debug-for-containers-with-no-shell-or-that-wont-start-at-all">Step 5: <code>kubectl debug</code> for containers with no shell, or that won't start at all<a class="headerlink" href="#step-5-kubectl-debug-for-containers-with-no-shell-or-that-wont-start-at-all" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># attach a debug container with a full toolset to a running Pod's network/process namespace</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>kubectl<span class="w"> </span>debug<span class="w"> </span>-it<span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--image<span class="o">=</span>busybox:1.36<span class="w"> </span>--target<span class="o">=</span>api
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># copy a Pod and swap in a shell-having image, for a container that crashes before you can exec</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>kubectl<span class="w"> </span>debug<span class="w"> </span>-it<span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--image<span class="o">=</span>busybox:1.36<span class="w"> </span>--copy-to<span class="o">=</span>api-debug<span class="w"> </span>--container<span class="o">=</span>api<span class="w"> </span>--<span class="w"> </span>sh
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># debug a NODE (runs a privileged Pod chrooted into the node's filesystem)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>kubectl<span class="w"> </span>debug<span class="w"> </span>node/worker-1<span class="w"> </span>-it<span class="w"> </span>--image<span class="o">=</span>busybox:1.36
+</code></pre></div>
+<p><code>--copy-to</code> is the answer for "the container is stuck in
+<code>ImagePullBackOff</code>/<code>CrashLoopBackOff</code> before I can attach anything" — it
+creates a new Pod from the same spec with the target container's image and
+command overridden, letting you reproduce the environment (mounts, env
+vars, service account) without the broken entrypoint.</p>
+<h2 id="networking-specific-checks">Networking-specific checks<a class="headerlink" href="#networking-specific-checks" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>run<span class="w"> </span>tmp<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span>--image<span class="o">=</span>busybox:1.36<span class="w"> </span>--restart<span class="o">=</span>Never<span class="w"> </span>--<span class="w"> </span>sh
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># inside:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>nslookup<span class="w"> </span>web.default.svc.cluster.local<span class="w">   </span><span class="c1"># DNS resolving?</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>wget<span class="w"> </span>-qO-<span class="w"> </span>http://web:80<span class="w">                  </span><span class="c1"># Service reachable?</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>nc<span class="w"> </span>-zv<span class="w"> </span>web<span class="w"> </span><span class="m">80</span><span class="w">                            </span><span class="c1"># raw TCP check</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>kubectl<span class="w"> </span>get<span class="w"> </span>endpoints<span class="w"> </span>web<span class="w">    </span><span class="c1"># are there actually any IPs behind the Service?</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>kubectl<span class="w"> </span>get<span class="w"> </span>networkpolicy<span class="w"> </span>-A<span class="w"> </span><span class="c1"># anything blocking traffic? (Level 3)</span>
+</code></pre></div>
+<h2 id="worked-example-chasing-a-crashloopbackoff-to-its-cause">Worked example: chasing a CrashLoopBackOff to its cause<a class="headerlink" href="#worked-example-chasing-a-crashloopbackoff-to-its-cause" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># api-9b2c1a   0/1   CrashLoopBackOff   5   10m</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Last State: Terminated, Reason: Error, Exit Code: 1</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>api-9b2c1a<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--previous
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># panic: failed to connect to database: dial tcp 10.96.5.2:5432: connect: connection refused</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>db<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>kubectl<span class="w"> </span>get<span class="w"> </span>endpoints<span class="w"> </span>db<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># Endpoints: &lt;none&gt;  &lt;- the actual root cause: the db Deployment's Pods aren't Ready, Service has no backends</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>db<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1"># readiness probe failing -- the real fix is in the db Pod, not api</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Events are ephemeral and namespaced to the object's lifetime, stored
+  as a separate API object with a TTL.</strong> Every <code>Event</code> is its own resource
+  in etcd (visible via <code>kubectl get events</code>), written by whichever
+  component observed something (kubelet, scheduler, controllers), and
+  garbage-collected by the API server after roughly one hour by default —
+  this is why <code>describe</code>-ing a Pod that's been stable for hours often shows
+  no Events at all, not because nothing happened, but because they expired.</li>
+<li><strong><code>kubectl logs</code> reads from the container runtime's log files on the
+  node, streamed through the API server as a proxy — it isn't stored in
+  etcd at all.</strong> kubelet configures containerd/CRI-O to write each
+  container's stdout/stderr to a per-container log file under
+  <code>/var/log/pods/</code> on that node; <code>kubectl logs</code> makes the API server open a
+  connection to that node's kubelet, which tails the file — if the node is
+  unreachable or the Pod has already been deleted and garbage-collected,
+  the logs are simply gone (this is the real motivation for the log
+  aggregation stack in Module 05 of Level 3).</li>
+<li><strong><code>--previous</code> works because kubelet retains one prior terminated
+  container's log file per Pod slot before overwriting it on the next
+  restart.</strong> The container runtime keeps the last-terminated container's
+  filesystem/log association around specifically so <code>--previous</code> has
+  something to point at; after a <em>second</em> restart, the crash-before-last is
+  gone — only one generation back is recoverable this way.</li>
+<li><strong><code>kubectl exec</code> and <code>kubectl debug --target</code> both work by attaching to
+  existing Linux namespaces, not by modifying the running container.</strong>
+  <code>exec</code> calls the CRI <code>ExecSync</code>/<code>Exec</code> RPC, which runs a new process
+  inside the container's existing PID/mount/network namespaces.
+  <code>--target</code> on an ephemeral debug container instead creates a <em>new</em>,
+  separate container that shares the <em>target</em> container's process
+  namespace (<code>shareProcessNamespace</code>-style) and, for node debugging, its
+  network namespace — enough to <code>ps</code>, inspect <code>/proc</code>, or curl loopback
+  services as if you were inside the original container, without ever
+  altering the original container's own filesystem or command.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy an app Pod that depends on a Service (<code>db</code>) whose backing Deployment
+you intentionally misconfigure (e.g. a wrong readiness probe path) so it
+never becomes Ready. Watch the dependent Pod crash-loop, and walk the full
+chain: <code>describe pod</code> on the crashing Pod, <code>logs --previous</code>, then trace the
+root cause to <code>kubectl get endpoints db</code> showing no backends, then <code>describe
+pod</code> on the <code>db</code> Pod itself to find the actual misconfiguration.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

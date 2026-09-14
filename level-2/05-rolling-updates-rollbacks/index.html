@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1158,6 +1156,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Rolling Updates & Rollbacks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1174,6 +1190,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-default-rolling-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The default: rolling updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#watching-a-rollout-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watching a rollout in progress
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollout-history-and-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollout history and rollback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pausing-a-rollout-mid-flight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pausing a rollout mid-flight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-bad-rollout-gets-caught-and-rolled-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a bad rollout gets caught and rolled back
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-default-rolling-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The default: rolling updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#watching-a-rollout-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watching a rollout in progress
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollout-history-and-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollout history and rollback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pausing-a-rollout-mid-flight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pausing a rollout mid-flight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-bad-rollout-gets-caught-and-rolled-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a bad rollout gets caught and rolled back
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,148 @@
 
 
 <h1 id="05-rolling-updates-rollbacks">05 · Rolling Updates &amp; Rollbacks<a class="headerlink" href="#05-rolling-updates-rollbacks" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover Deployment update strategies (maxSurge/maxUnavailable), rollout history, and kubectl rollout undo.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented Deployment controller
+behavior; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-default-rolling-updates">The default: rolling updates<a class="headerlink" href="#the-default-rolling-updates" title="Permanent link">&para;</a></h2>
+<p>When you change a Deployment's Pod template (most commonly the image tag),
+Kubernetes doesn't stop all Pods and start new ones at once — it performs a
+<strong>rolling update</strong>, gradually replacing old Pods with new ones while keeping
+the app available throughout.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">strategy</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RollingUpdate</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">rollingUpdate</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">maxUnavailable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">   </span><span class="c1"># at most 1 of 6 can be down during the rollout</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">maxSurge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">         </span><span class="c1"># at most 1 extra Pod above 6 can exist during the rollout</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:1.4</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">          </span><span class="nt">readinessProbe</span><span class="p">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="nt">httpGet</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> path</span><span class="p">:</span><span class="w"> </span><span class="nv">/ready</span><span class="p p-Indicator">,</span><span class="nt"> port</span><span class="p">:</span><span class="w"> </span><span class="nv">8080</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployment/web<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp:1.5
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/web
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Waiting for deployment "web" rollout to finish: 2 out of 6 new replicas have been updated...</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># deployment "web" successfully rolled out</span>
+</code></pre></div>
+<h2 id="watching-a-rollout-in-progress">Watching a rollout in progress<a class="headerlink" href="#watching-a-rollout-in-progress" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>rs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>web
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># NAME          DESIRED   CURRENT   READY   AGE</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># web-6f9b8c7   5         5         5       10m   &lt;- old ReplicaSet, scaling down</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># web-8a2d1e4   1         1         1       8s    &lt;- new ReplicaSet, scaling up</span>
+</code></pre></div>
+<p>A rolling update never edits the running Deployment's Pods in place — it
+creates a <strong>new ReplicaSet</strong> for the new template and shifts replica counts
+between old and new ReplicaSets step by step, bounded by <code>maxUnavailable</code>
+and <code>maxSurge</code>, until the new one holds all replicas and the old one is
+scaled to zero (but kept around, per <code>revisionHistoryLimit</code>, for rollback).</p>
+<h2 id="rollout-history-and-rollback">Rollout history and rollback<a class="headerlink" href="#rollout-history-and-rollback" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span><span class="nb">history</span><span class="w"> </span>deployment/web
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># REVISION  CHANGE-CAUSE</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 1         kubectl apply -f web.yaml</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 2         kubectl set image deployment/web app=myapp:1.5</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>undo<span class="w"> </span>deployment/web
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># deployment.apps/web rolled back</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>undo<span class="w"> </span>deployment/web<span class="w"> </span>--to-revision<span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+<p><code>CHANGE-CAUSE</code> is only populated if you set the
+<code>kubernetes.io/change-cause</code> annotation (or used <code>--record</code>, deprecated) —
+otherwise history entries show <code>&lt;none&gt;</code>, which is a common surprise when
+you go looking for it later.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">kubernetes.io/change-cause</span><span class="p">:</span><span class="w"> </span><span class="s">"bump</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">myapp:1.5</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">CVE</span><span class="nv"> </span><span class="s">fix"</span>
+</code></pre></div>
+<h2 id="pausing-a-rollout-mid-flight">Pausing a rollout mid-flight<a class="headerlink" href="#pausing-a-rollout-mid-flight" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>pause<span class="w"> </span>deployment/web
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployment/web<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp:1.6
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>resources<span class="w"> </span>deployment/web<span class="w"> </span>-c<span class="w"> </span>app<span class="w"> </span>--limits<span class="o">=</span><span class="nv">cpu</span><span class="o">=</span>500m
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># neither change is rolled out yet -- both batched</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>resume<span class="w"> </span>deployment/web
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># now a single rollout applies both changes together</span>
+</code></pre></div>
+<h2 id="worked-example-a-bad-rollout-gets-caught-and-rolled-back">Worked example: a bad rollout gets caught and rolled back<a class="headerlink" href="#worked-example-a-bad-rollout-gets-caught-and-rolled-back" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span><span class="nb">set</span><span class="w"> </span>image<span class="w"> </span>deployment/web<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp:1.5-broken
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/web<span class="w"> </span>--timeout<span class="o">=</span>60s
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># error: deployment "web" exceeded its progress deadline</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>web
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># new Pods stuck CrashLoopBackOff; old Pods still Running (maxUnavailable protected them)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>undo<span class="w"> </span>deployment/web
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/web
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># deployment "web" successfully rolled out</span>
+</code></pre></div>
+<p>Because <code>maxUnavailable: 1</code> capped how many old Pods could be torn down
+before new ones proved ready, the bad rollout only ever affected a fraction
+of capacity — readiness probes (Module 04) are what make this safety net
+work at all; without them, a broken-but-still-"Running" Pod would look
+ready immediately and the rollout would proceed to completion regardless.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The Deployment controller never touches Pods directly — it only
+  manages ReplicaSets, and ReplicaSets manage Pods.</strong> Editing a Deployment's
+  <code>spec.template</code> causes the Deployment controller to compute a hash of
+  that template (the <code>pod-template-hash</code> label) and either find an existing
+  ReplicaSet with a matching hash (used for rollback — the old ReplicaSet
+  is reused rather than recreated) or create a new one. All replica-count
+  shuffling happens by the Deployment controller PATCHing the <code>.spec.replicas</code>
+  field on the <em>old</em> and <em>new</em> ReplicaSet objects; the ReplicaSet controller
+  is a completely separate reconciliation loop that reacts to those
+  replica-count changes by creating/deleting Pods to match.</li>
+<li><strong><code>maxSurge</code>/<code>maxUnavailable</code> bound two independent inequalities the
+  Deployment controller checks on every reconcile tick.</strong> It computes, from
+  current ready-Pod counts across both ReplicaSets, how many new Pods it's
+  currently allowed to add (bounded by surge) and how many old Pods it's
+  currently allowed to remove (bounded by unavailability), then issues the
+  smallest safe replica-count change — this is why a rollout with a slow
+  readiness probe visibly "stalls" at each step: the controller is polling,
+  waiting for newly-created Pods to actually report Ready before it's
+  permitted to remove more old ones.</li>
+<li><strong>Rollback is not a special code path — it's the same reconcile logic
+  run against a template copied from an old ReplicaSet.</strong> <code>kubectl rollout
+  undo</code> finds the target revision's ReplicaSet (revisions are tracked via
+  the <code>deployment.kubernetes.io/revision</code> annotation on each ReplicaSet),
+  copies its Pod template back into the Deployment's <code>spec.template</code>, and
+  the normal rolling-update machinery takes it from there — treating the
+  "old" version as if it were simply the newly desired one.</li>
+<li><strong><code>revisionHistoryLimit</code> is why rollback has a horizon.</strong> Old
+  ReplicaSets are scaled to 0 but not deleted, up to this many past
+  revisions (default 10); the Deployment controller garbage-collects older
+  ones on each reconcile — <code>kubectl rollout undo --to-revision=N</code> fails
+  with a "cannot get revision" error for anything already collected.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy <code>web</code> with 6 replicas, <code>maxUnavailable: 1</code>, <code>maxSurge: 1</code>, and a
+readiness probe. Trigger a rollout to a deliberately broken image tag and
+watch <code>kubectl get rs</code> and <code>kubectl get pods</code> while it stalls — confirm the
+old ReplicaSet still holds ready Pods throughout. Run <code>kubectl rollout
+undo</code> and confirm it converges back to the last-good revision, then check
+<code>kubectl rollout history</code> to see both revisions recorded.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1590,6 +1588,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Multi-Cluster & Multi-Tenancy Concepts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1606,6 +1622,124 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-different-scaling-problems-often-confused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two different scaling problems, often confused
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soft-multi-tenancy-namespaces-rbac-resourcequota-networkpolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soft multi-tenancy: namespaces + RBAC + ResourceQuota + NetworkPolicy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hard-multi-tenancy-separate-clusters-or-virtual-clusters-per-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard multi-tenancy: separate clusters (or virtual clusters) per tenant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-cluster-why-run-more-than-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-cluster: why run more than one
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-cluster-service-discovery-conceptual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-cluster service discovery (conceptual)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fleet-management-with-kubectl-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fleet management with kubectl contexts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-quota-isolation-catches-a-runaway-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: quota isolation catches a runaway tenant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2233,113 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-different-scaling-problems-often-confused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two different scaling problems, often confused
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soft-multi-tenancy-namespaces-rbac-resourcequota-networkpolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soft multi-tenancy: namespaces + RBAC + ResourceQuota + NetworkPolicy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hard-multi-tenancy-separate-clusters-or-virtual-clusters-per-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard multi-tenancy: separate clusters (or virtual clusters) per tenant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-cluster-why-run-more-than-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-cluster: why run more than one
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-cluster-service-discovery-conceptual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-cluster service discovery (conceptual)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fleet-management-with-kubectl-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fleet management with kubectl contexts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-quota-isolation-catches-a-runaway-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: quota isolation catches a runaway tenant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2359,183 @@
 
 
 <h1 id="07-multi-cluster-multi-tenancy-concepts">07 · Multi-Cluster &amp; Multi-Tenancy Concepts<a class="headerlink" href="#07-multi-cluster-multi-tenancy-concepts" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover patterns for running multiple clusters and isolating tenants within a shared cluster.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented namespace-isolation and
+multi-cluster tooling behavior; not executed against a live cluster in
+this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="two-different-scaling-problems-often-confused">Two different scaling problems, often confused<a class="headerlink" href="#two-different-scaling-problems-often-confused" title="Permanent link">&para;</a></h2>
+<p>"Multi-tenancy" (multiple teams/customers sharing one cluster safely) and
+"multi-cluster" (running several separate clusters and coordinating across
+them) solve different problems and are frequently combined but not the same
+decision. Multi-tenancy is about <strong>isolation within</strong> a cluster; multi-cluster
+is about <strong>blast-radius and locality across</strong> clusters.</p>
+<h2 id="soft-multi-tenancy-namespaces-rbac-resourcequota-networkpolicy">Soft multi-tenancy: namespaces + RBAC + ResourceQuota + NetworkPolicy<a class="headerlink" href="#soft-multi-tenancy-namespaces-rbac-resourcequota-networkpolicy" title="Permanent link">&para;</a></h2>
+<p>The building blocks from earlier modules compose into "soft" (trusted
+tenants, e.g. internal teams) multi-tenancy:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespace</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> tenant</span><span class="p">:</span><span class="w"> </span><span class="nv">team-a</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nn">---</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ResourceQuota</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a-quota</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">hard</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">requests.cpu</span><span class="p">:</span><span class="w"> </span><span class="s">"10"</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">requests.memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20Gi</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">pods</span><span class="p">:</span><span class="w"> </span><span class="s">"50"</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nn">---</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RoleBinding</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a-admin</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nt">subjects</span><span class="p">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Group</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a-engineers</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="nt">roleRef</span><span class="p">:</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span><span class="w">   </span><span class="c1"># built-in ClusterRole, bound namespace-locally</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="nn">---</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkPolicy</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deny-cross-namespace</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-a</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="nt">podSelector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">  </span><span class="nt">policyTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Ingress</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">  </span><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">from</span><span class="p">:</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">namespaceSelector</span><span class="p">:</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">            </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> tenant</span><span class="p">:</span><span class="w"> </span><span class="nv">team-a</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<p>This is "soft" isolation: it stops accidental interference and enforces
+resource fairness, but a cluster-admin-level compromise of the node/kernel
+(a container escape) can still cross tenant boundaries, because all tenants
+share the same kernel, kubelet, and control plane.</p>
+<h2 id="hard-multi-tenancy-separate-clusters-or-virtual-clusters-per-tenant">Hard multi-tenancy: separate clusters (or virtual clusters) per tenant<a class="headerlink" href="#hard-multi-tenancy-separate-clusters-or-virtual-clusters-per-tenant" title="Permanent link">&para;</a></h2>
+<p>For genuinely untrusted tenants (external customers, regulatory
+separation), the stronger boundary is a <strong>separate cluster per tenant</strong>, or
+a <strong>virtual cluster</strong> (e.g. vcluster) giving each tenant its own API server
+and control-plane objects while still scheduling Pods onto a shared
+underlying node pool — trading some resource-sharing efficiency for a much
+stronger isolation guarantee than namespaces alone provide.</p>
+<h2 id="multi-cluster-why-run-more-than-one">Multi-cluster: why run more than one<a class="headerlink" href="#multi-cluster-why-run-more-than-one" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Blast radius</strong> — a control-plane outage, a bad CRD, or a
+  misconfigured admission webhook affects one cluster, not everything.</li>
+<li><strong>Locality/latency</strong> — clusters per region, close to users or data
+  residency requirements.</li>
+<li><strong>Environment separation</strong> — dev/staging/prod as physically separate
+  clusters rather than namespaces in one, so a prod outage can never be
+  caused by a staging experiment sharing the same API server.</li>
+</ul>
+<h2 id="multi-cluster-service-discovery-conceptual">Multi-cluster service discovery (conceptual)<a class="headerlink" href="#multi-cluster-service-discovery-conceptual" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Cilium ClusterMesh / Submariner-style concept, not core Kubernetes API</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1alpha1</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceExport</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+</code></pre></div>
+<p>Multi-cluster Services are <strong>not</strong> part of core Kubernetes — they require
+an add-on (Cilium ClusterMesh, Submariner, or a cloud-managed multi-cluster
+mesh) that establishes cross-cluster networking and republishes a Service
+from one cluster's namespace into another's, typically under a
+<code>&lt;service&gt;.&lt;namespace&gt;.svc.clusterset.local</code>-style name per the (still
+evolving) Multi-Cluster Services API.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>--context<span class="w"> </span>cluster-us<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>api<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kubectl<span class="w"> </span>--context<span class="w"> </span>cluster-eu<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>api<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># with ClusterMesh configured, a Pod in cluster-eu can resolve/reach</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># the "api" Service running in cluster-us transparently</span>
+</code></pre></div>
+<h2 id="fleet-management-with-kubectl-contexts">Fleet management with <code>kubectl</code> contexts<a class="headerlink" href="#fleet-management-with-kubectl-contexts" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>config<span class="w"> </span>get-contexts
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># CURRENT   NAME          CLUSTER    NAMESPACE</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># *         cluster-us    us-east    prod</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">#           cluster-eu    eu-west    prod</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>kubectl<span class="w"> </span>--context<span class="w"> </span>cluster-eu<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>kubectl<span class="w"> </span>config<span class="w"> </span>use-context<span class="w"> </span>cluster-us
+</code></pre></div>
+<p>At small scale, switching <code>--context</code> per cluster is workable; at real
+fleet scale, GitOps tooling (Level 4, Module 02) applying the same
+manifests to N clusters from one source of truth is the standard approach
+rather than manual per-cluster <code>kubectl apply</code>.</p>
+<h2 id="worked-example-quota-isolation-catches-a-runaway-tenant">Worked example: quota isolation catches a runaway tenant<a class="headerlink" href="#worked-example-quota-isolation-catches-a-runaway-tenant" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>team-a-quota.yaml
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>kubectl<span class="w"> </span>run<span class="w"> </span>bulk<span class="w"> </span>--image<span class="o">=</span>busybox<span class="w"> </span>-n<span class="w"> </span>team-a<span class="w"> </span>--replicas<span class="o">=</span><span class="m">100</span><span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-3
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Error from server (Forbidden): exceeded quota: team-a-quota,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># requested: pods=100, used: pods=12, limited: pods=50</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>kubectl<span class="w"> </span>get<span class="w"> </span>resourcequota<span class="w"> </span>team-a-quota<span class="w"> </span>-n<span class="w"> </span>team-a
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># pods: 12/50, requests.cpu: 4/10</span>
+</code></pre></div>
+<p>Team A's runaway deployment is rejected at admission time, before it ever
+consumes cluster-wide capacity that other tenants (team-b, team-c) depend
+on — the isolation held even though all tenants share the same nodes.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Namespace-based isolation is entirely a control-plane construct — the
+  underlying kernel/node resources are still fully shared.</strong> A Pod in
+  <code>team-a</code> and a Pod in <code>team-b</code> can, in the absence of NetworkPolicy and
+  with weak Pod Security Standards (Level 4, Module 04), still see each
+  other's traffic and, with certain kernel vulnerabilities or overly
+  permissive <code>securityContext</code>, escape their container to the shared
+  node — this is the precise technical reason "soft" multi-tenancy is
+  described as trust-based: every enforcement layer (RBAC, quota, network
+  policy) is cooperative software running with shared underlying kernel
+  privilege, not a hardware/hypervisor-level boundary.</li>
+<li><strong>ResourceQuota enforcement happens as an admission plugin at object
+  creation time, tracked against a live running total — not a periodic
+  audit.</strong> The <code>ResourceQuota</code> admission controller intercepts every
+  Pod-creating request in a quota-bound namespace, sums that Pod's
+  requested resources against the quota object's currently-tracked usage
+  (updated transactionally as objects are created/deleted), and rejects
+  the request outright if it would exceed <code>hard</code> limits — this is why
+  quota violations surface as an immediate <code>403 Forbidden</code> on <code>kubectl
+  apply</code>/<code>create</code>, not as a later reconciliation failure.</li>
+<li><strong>Virtual clusters (vcluster-style hard multi-tenancy) work by running a
+  second, nested API server + control plane as a workload inside the host
+  cluster, syncing a subset of objects down to real host-cluster
+  resources.</strong> Tenants interact with what looks like their own full
+  Kubernetes API (their own CRDs, RBAC, even a different Kubernetes
+  version) but Pods they create are transparently synced by the vcluster's
+  syncer component into real Pods in a single namespace of the <em>host</em>
+  cluster — giving strong API-level isolation (a tenant literally cannot
+  see other tenants' objects, because they're not in their API server's
+  storage at all) while still sharing the host's actual compute.</li>
+<li><strong>Multi-cluster Service meshes rely on a shared, cross-cluster identity
+  and routing layer bolted on top of, not replacing, each cluster's own
+  independent control plane.</strong> Cilium ClusterMesh, for instance,
+  establishes direct pod-to-pod tunnels between clusters and synchronizes
+  EndpointSlice-equivalent data across the cluster boundary via each
+  cluster's etcd being watched by the mesh's own agents — each cluster's
+  API server remains fully authoritative for its own objects; there is no
+  single federated etcd or API server spanning clusters in this pattern.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Create two namespaces (<code>team-a</code>, <code>team-b</code>) each with a <code>ResourceQuota</code>
+capping pods at 10 and a NetworkPolicy denying cross-namespace ingress by
+default. Attempt to create 15 Pods in <code>team-a</code> and confirm the quota
+rejects the extra 5 at admission time with a clear error, then confirm via
+<code>kubectl exec</code> that a Pod in <code>team-a</code> cannot reach a Pod in <code>team-b</code> despite
+both running on the same underlying nodes.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

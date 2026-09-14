@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1298,6 +1296,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Ingress-Fronted Helm App
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1314,6 +1330,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-database-tier-pvc-statefulset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The database tier: PVC + StatefulSet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ingress-parameterized-for-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ingress, parameterized for TLS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-dev-then-promoting-to-prod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploying dev, then promoting to prod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-resilience-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying resilience end to end
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-database-tier-pvc-statefulset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The database tier: PVC + StatefulSet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ingress-parameterized-for-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ingress, parameterized for TLS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-dev-then-promoting-to-prod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploying dev, then promoting to prod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-resilience-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying resilience end to end
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,201 @@
 
 
 <h1 id="10-project-ingress-fronted-helm-app">10 · Project — Ingress-Fronted Helm App<a class="headerlink" href="#10-project-ingress-fronted-helm-app" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover packaging the Level 1 capstone as a Helm chart and fronting it with an Ingress instead of a NodePort Service.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented behavior of the components
+used (Helm, Ingress-nginx, PVC); not executed against a live cluster in
+this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
+<p>Package a two-tier app (a <code>web</code> frontend, a <code>postgres</code>-backed <code>api</code>) as a
+Helm chart, deploy it behind an Ingress with TLS, back the database with a
+PersistentVolumeClaim, and parameterize it for dev vs. prod via values
+files — combining Modules 01, 02, 06, and 07.</p>
+<h2 id="chart-layout">Chart layout<a class="headerlink" href="#chart-layout" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>shop/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Chart.yaml
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── values.yaml
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── values-prod.yaml
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── templates/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    ├── deployment-web.yaml
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    ├── deployment-api.yaml
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    ├── service-web.yaml
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    ├── service-api.yaml
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ├── pvc-db.yaml
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    ├── statefulset-db.yaml
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    ├── ingress.yaml
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    └── secret-db.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># values.yaml</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">web</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> repository</span><span class="p">:</span><span class="w"> </span><span class="nv">shop-web</span><span class="p p-Indicator">,</span><span class="nt"> tag</span><span class="p">:</span><span class="w"> </span><span class="s">"1.0.0"</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">api</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> repository</span><span class="p">:</span><span class="w"> </span><span class="nv">shop-api</span><span class="p p-Indicator">,</span><span class="nt"> tag</span><span class="p">:</span><span class="w"> </span><span class="s">"1.0.0"</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">db</span><span class="p">:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5Gi</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shop.local</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># values-prod.yaml</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">web</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">api</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">db</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20Gi</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">shop.example.com</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<h2 id="the-database-tier-pvc-statefulset">The database tier: PVC + StatefulSet<a class="headerlink" href="#the-database-tier-pvc-statefulset" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># templates/statefulset-db.yaml</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StatefulSet</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-db</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-db</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="nv">-db</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="nv">-db</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:16</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">          </span><span class="nt">envFrom</span><span class="p">:</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretRef</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="nv">-db-secret</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/postgresql/data</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="nt">volumeClaimTemplates</span><span class="p">:</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">metadata</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">      </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="nt">accessModes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"ReadWriteOnce"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Values.db.storageClassName</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">          </span><span class="nt">requests</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> storage</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Values.db.storage</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<p>A single-replica StatefulSet is used here (rather than a plain Deployment)
+specifically so the PVC survives Pod rescheduling with a <em>stable</em> name
+(<code>data-shop-db-0</code>) — Level 3, Module 01 covers multi-replica StatefulSets in
+depth; here it's just "Deployment semantics don't fit a Pod holding
+irreplaceable state."</p>
+<h2 id="the-ingress-parameterized-for-tls">The Ingress, parameterized for TLS<a class="headerlink" href="#the-ingress-parameterized-for-tls" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># templates/ingress.yaml</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-ingress</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- if .Values.ingress.tls</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[{{</span><span class="w"> </span><span class="nv">.Values.ingress.host</span><span class="w"> </span><span class="p p-Indicator">}}]</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-tls</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="p p-Indicator">{{</span><span class="nv">- end</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Values.ingress.host</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">      </span><span class="nt">http</span><span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="nt">paths</span><span class="p">:</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">            </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">            </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">              </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="nv">-web</span><span class="p p-Indicator">,</span><span class="nt"> port</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> number</span><span class="p">:</span><span class="w"> </span><span class="nv">80</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/api</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">            </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">            </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">              </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="nv">-api</span><span class="p p-Indicator">,</span><span class="nt"> port</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> number</span><span class="p">:</span><span class="w"> </span><span class="nv">8080</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<h2 id="deploying-dev-then-promoting-to-prod">Deploying dev, then promoting to prod<a class="headerlink" href="#deploying-dev-then-promoting-to-prod" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>helm<span class="w"> </span>install<span class="w"> </span>shop-dev<span class="w"> </span>./shop<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>-n<span class="w"> </span>dev<span class="w"> </span>--create-namespace
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>dev
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># shop-dev-web-...   2/2 Running</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># shop-dev-api-...   2/2 Running</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># shop-dev-db-0      1/1 Running</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>kubectl<span class="w"> </span>get<span class="w"> </span>ingress<span class="w"> </span>-n<span class="w"> </span>dev
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># ADDRESS assigned by the ingress-nginx controller Service</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Host: shop.local"</span><span class="w"> </span>http://&lt;ingress-ip&gt;/
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Host: shop.local"</span><span class="w"> </span>http://&lt;ingress-ip&gt;/api/health
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>helm<span class="w"> </span>install<span class="w"> </span>shop<span class="w"> </span>./shop<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>-f<span class="w"> </span>values-prod.yaml<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--create-namespace
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># shop-web  4/4</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># shop-api  4/4</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>kubectl<span class="w"> </span>get<span class="w"> </span>ingress<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># tls: shop-tls -- confirm HTTPS works</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>curl<span class="w"> </span>-k<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Host: shop.example.com"</span><span class="w"> </span>https://&lt;ingress-ip&gt;/
+</code></pre></div>
+<h2 id="verifying-resilience-end-to-end">Verifying resilience end to end<a class="headerlink" href="#verifying-resilience-end-to-end" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>shop-db-0<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">"insert into orders(id) values (1);"</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>shop-db-0<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>-w
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># shop-db-0 recreated by the StatefulSet, same PVC re-attached</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>shop-db-0<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">"select * from orders;"</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># row 1 still present -- PVC survived Pod deletion</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>shop-web<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--all
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># Ingress keeps serving once ReplicaSet-created replacements pass readiness</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The Ingress, both Services, and the StatefulSet are independent
+  controllers that only agree with each other via labels/selectors —
+  Helm's only role was rendering and submitting them once.</strong> After <code>helm
+  install</code> returns, Helm is out of the loop entirely; the Deployment
+  controller, StatefulSet controller, EndpointSlice controller, and the
+  Ingress controller's own watch loop each independently reconcile their
+  slice of this system continuously, which is why the app keeps working
+  (and self-healing) long after the <code>helm install</code> process has exited.</li>
+<li><strong>The chart's parameterization only changes what gets rendered once, at
+  install/upgrade time — it has no runtime effect.</strong> <code>.Values.web.replicas</code>
+  is substituted into the Deployment's <code>spec.replicas</code> field during <code>helm
+  template</code>; nothing about the running cluster "knows" it came from a
+  values file. Scaling via <code>kubectl scale</code> directly, bypassing Helm, works
+  fine at runtime but will be silently reverted on the next <code>helm upgrade</code>
+  if the values file wasn't also updated — a common source of "why did my
+  manual scale-up disappear" surprises.</li>
+<li><strong>The StatefulSet's <code>volumeClaimTemplates</code> create one PVC per ordinal,
+  named deterministically, and Helm has no special awareness of this.</strong>
+  <code>data-{{release}}-db-0</code> is created once (by the StatefulSet controller,
+  not Helm) and is <em>not</em> deleted when the StatefulSet is scaled down or the
+  release is uninstalled (<code>helm uninstall</code> does not clean up
+  StatefulSet-managed PVCs by design) — this is a deliberate
+  data-loss guardrail, and it means a <code>helm uninstall</code> followed by
+  <code>helm install</code> of the same chart will reattach the <em>same</em> PVC and reuse
+  old data.</li>
+<li><strong>The two Ingress paths (<code>/</code> and <code>/api</code>) are matched independently per
+  request by the Ingress controller's own routing table — there is no
+  cross-talk between them at the Kubernetes level.</strong> Each path maps to a
+  distinct Service/EndpointSlice pair; a failure or full rollout of <code>api</code>
+  has zero effect on the Ingress controller's ability to keep routing <code>/</code>
+  to <code>web</code>, because they are entirely separate reconciliation targets
+  sharing only the same external IP and controller process.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Build this chart (or a smaller two-service version of it) with <code>web</code>,
+<code>api</code>, a StatefulSet-backed <code>db</code>, and an Ingress routing by path. Install it
+with <code>values.yaml</code> into a <code>dev</code> namespace, confirm both paths respond via
+<code>curl -H Host: ...</code>, then delete the <code>db</code> Pod and confirm data written
+before the deletion is still present after the StatefulSet recreates it.
+Finally, install a second release into <code>prod</code> using <code>values-prod.yaml</code> and
+confirm the two releases run with different replica counts without
+interfering with each other.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

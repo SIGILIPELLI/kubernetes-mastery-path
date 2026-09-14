@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1214,6 +1212,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Multi-Environment Configuration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1230,6 +1246,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-dev-staging-and-prod-arent-identical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem: dev, staging, and prod aren't identical
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kustomize-base-overlays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kustomize: base + overlays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helms-equivalent-layered-values-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm's equivalent: layered values files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configmapssecrets-that-vary-per-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConfigMaps/Secrets that vary per environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-same-base-three-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: same base, three environments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-dev-staging-and-prod-arent-identical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem: dev, staging, and prod aren't identical
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kustomize-base-overlays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kustomize: base + overlays
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helms-equivalent-layered-values-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm's equivalent: layered values files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configmapssecrets-that-vary-per-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConfigMaps/Secrets that vary per environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-same-base-three-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: same base, three environments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,163 @@
 
 
 <h1 id="07-multi-environment-configuration">07 · Multi-Environment Configuration<a class="headerlink" href="#07-multi-environment-configuration" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover managing dev/staging/prod config differences with Helm values, Kustomize overlays, and environment-specific manifests.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests/commands below follow documented Kustomize/Helm behavior; not
+executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-problem-dev-staging-and-prod-arent-identical">The problem: dev, staging, and prod aren't identical<a class="headerlink" href="#the-problem-dev-staging-and-prod-arent-identical" title="Permanent link">&para;</a></h2>
+<p>Same application, different replica counts, resource limits, hostnames, and
+feature flags per environment. Maintaining three full copies of every
+manifest invites drift (someone fixes a bug in prod's copy and forgets
+staging's). Two common approaches solve this without duplicating whole
+files: <strong>Kustomize</strong> (overlay-based, built into <code>kubectl</code>) and <strong>Helm
+values files</strong> (Module 06's mechanism, reused here per-environment).</p>
+<h2 id="kustomize-base-overlays">Kustomize: base + overlays<a class="headerlink" href="#kustomize-base-overlays" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>k8s/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── base/
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── deployment.yaml
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── service.yaml
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── kustomization.yaml
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└── overlays/
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    ├── dev/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    │   └── kustomization.yaml
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    ├── staging/
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    │   └── kustomization.yaml
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    └── prod/
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        ├── kustomization.yaml
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        └── replica-patch.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># base/kustomization.yaml</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kustomize.config.k8s.io/v1beta1</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kustomization</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment.yaml</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service.yaml</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># overlays/prod/kustomization.yaml</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kustomize.config.k8s.io/v1beta1</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kustomization</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../../base</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nt">patches</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">replica-patch.yaml</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nt">images</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">newTag</span><span class="p">:</span><span class="w"> </span><span class="s">"1.5.0"</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nt">configMapGenerator</span><span class="p">:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-config</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nt">literals</span><span class="p">:</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LOG_LEVEL=warn</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># overlays/prod/replica-patch.yaml</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>kustomize<span class="w"> </span>overlays/prod<span class="w"> </span><span class="p">|</span><span class="w"> </span>less<span class="w">     </span><span class="c1"># preview the merged output</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>overlays/prod<span class="w">             </span><span class="c1"># apply directly</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>overlays/dev
+</code></pre></div>
+<p>Nothing in <code>base/</code> is duplicated — each overlay references the base and
+layers a small patch/config diff on top, so a fix to <code>base/deployment.yaml</code>
+(a new probe, a new label) propagates to every environment automatically.</p>
+<h2 id="helms-equivalent-layered-values-files">Helm's equivalent: layered values files<a class="headerlink" href="#helms-equivalent-layered-values-files" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>helm<span class="w"> </span>install<span class="w"> </span>shop<span class="w"> </span>./mychart<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>-f<span class="w"> </span>values-prod.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># values.yaml (shared defaults)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">requests</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> cpu</span><span class="p">:</span><span class="w"> </span><span class="nv">100m</span><span class="p p-Indicator">,</span><span class="nt"> memory</span><span class="p">:</span><span class="w"> </span><span class="nv">128Mi</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># values-prod.yaml (overrides only what differs)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">requests</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> cpu</span><span class="p">:</span><span class="w"> </span><span class="nv">500m</span><span class="p p-Indicator">,</span><span class="nt"> memory</span><span class="p">:</span><span class="w"> </span><span class="nv">512Mi</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<p>The mechanism is the same idea as Kustomize overlays — a common base plus a
+small per-environment diff — just implemented via values-file merging
+instead of strategic-merge patches on rendered YAML.</p>
+<h2 id="configmapssecrets-that-vary-per-environment">ConfigMaps/Secrets that vary per environment<a class="headerlink" href="#configmapssecrets-that-vary-per-environment" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">configMapGenerator</span><span class="p">:</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-config</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">literals</span><span class="p">:</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_URL=https://api-staging.example.com</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE_NEW_CHECKOUT=false</span>
+</code></pre></div>
+<p>Kustomize's <code>configMapGenerator</code> appends a content hash to the generated
+ConfigMap's name (e.g. <code>app-config-8f92d6k4</code>) and automatically updates any
+Deployment referencing it by name — this exists specifically so that
+changing a ConfigMap's data <em>forces</em> a new Pod rollout (Kubernetes doesn't
+otherwise restart Pods when a mounted ConfigMap's content changes; Module
+08 covers this pattern's implications in more depth).</p>
+<h2 id="worked-example-same-base-three-environments">Worked example: same base, three environments<a class="headerlink" href="#worked-example-same-base-three-environments" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>overlays/dev
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>web<span class="w"> </span>-n<span class="w"> </span>dev<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.replicas}'</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># 1</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>overlays/prod
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>web<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.replicas}'</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># 10</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>web<span class="w"> </span>-n<span class="w"> </span>dev<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.containers[0].image}'</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># myapp:latest  (dev overlay didn't override the image tag)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>web<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.containers[0].image}'</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1"># myapp:1.5.0</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><code>kubectl apply -k</code> and <code>kubectl kustomize</code> do pure client-side YAML
+  transformation — no Kustomize CRD or controller runs in the cluster.</strong>
+  The kustomize engine loads the base's resources into memory, then applies
+  each overlay's directives in a fixed order (generators first, then
+  patches, then name/namespace/label transformers), producing final plain
+  YAML that's submitted to the API server exactly like a hand-written
+  manifest — this is why <code>kubectl kustomize</code> (no apply) is a safe,
+  side-effect-free way to inspect the exact output before touching a
+  cluster.</li>
+<li><strong>Patches are strategic merge patches by default, not naive
+  overwrites.</strong> A <code>patches</code> entry with <code>kind: Deployment</code> and a partial
+  spec is merged field-by-field against the matching base resource using
+  the same strategic-merge-patch rules the API server itself uses for
+  <code>kubectl apply</code> — scalar fields (like <code>replicas</code>) are replaced, but list
+  fields with defined merge keys (like <code>containers</code>, keyed by <code>name</code>) are
+  merged element-by-element rather than replacing the whole list, so a
+  patch touching only <code>resources</code> on one container doesn't accidentally
+  drop the base's other containers.</li>
+<li><strong><code>configMapGenerator</code>'s hash suffix is what forces a rollout — Kubernetes
+  itself has no "watch this ConfigMap for changes" behavior for Pods.</strong>
+  kubelet only re-syncs a mounted ConfigMap's <em>file contents</em> on its
+  periodic resync (eventually, but with no rollout, restart, or ordering
+  guarantee); by instead generating a <em>new</em> ConfigMap object name derived
+  from a content hash and rewriting the Deployment's
+  <code>volumes[].configMap.name</code> (or <code>envFrom</code> reference) to point at it,
+  Kustomize turns a content change into a Pod-template change, which the
+  Deployment controller <em>does</em> know how to roll out safely.</li>
+<li><strong>Overlay composition is a directed acyclic reference graph, resolved
+  once per invocation.</strong> An overlay's <code>resources: [../../base]</code> is
+  resolved recursively at build time (an overlay can itself be a base for
+  another overlay), and Kustomize refuses cycles — there's no persistent
+  "this overlay is linked to that base" relationship stored anywhere; every
+  <code>kubectl apply -k</code> re-walks and re-renders the whole tree from scratch.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Create a <code>base/</code> with a Deployment (2 replicas) and Service, then <code>dev</code> and
+<code>prod</code> overlays where <code>prod</code> patches <code>replicas</code> to 8 and sets a different
+image tag via <code>images:</code>. Run <code>kubectl kustomize overlays/prod</code> and
+<code>overlays/dev</code> and diff the two outputs to confirm only the intended fields
+differ. Apply both to separate namespaces and verify with <code>kubectl get
+deploy -A</code>.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

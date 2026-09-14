@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1422,6 +1420,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · StatefulSets & DaemonSets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1438,6 +1454,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsets-when-pod-identity-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StatefulSets: when Pod identity matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordered-rollout-and-scale-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordered rollout and scale-down
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsets-exactly-one-pod-per-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DaemonSets: exactly one Pod per node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-losing-an-ordinal-vs-losing-a-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: losing an ordinal vs. losing a node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2200,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsets-when-pod-identity-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StatefulSets: when Pod identity matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordered-rollout-and-scale-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordered rollout and scale-down
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsets-exactly-one-pod-per-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DaemonSets: exactly one Pod per node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-losing-an-ordinal-vs-losing-a-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: losing an ordinal vs. losing a node
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2293,182 @@
 
 
 <h1 id="01-statefulsets-daemonsets">01 · StatefulSets &amp; DaemonSets<a class="headerlink" href="#01-statefulsets-daemonsets" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover StatefulSets for stable identity/storage per replica (e.g. databases), and DaemonSets for one-Pod-per-node workloads.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented controller behavior; not
+executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="statefulsets-when-pod-identity-matters">StatefulSets: when Pod identity matters<a class="headerlink" href="#statefulsets-when-pod-identity-matters" title="Permanent link">&para;</a></h2>
+<p>A Deployment's Pods are interchangeable — any replica can be deleted and
+replaced by an identical one with a new random name and IP, which is fine
+for stateless web tiers. Some workloads (databases, message brokers,
+anything doing peer discovery or leader election) need each replica to have
+a <strong>stable, predictable identity</strong>: the same name, the same DNS entry, the
+same PVC, every time it's recreated.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StatefulSet</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span><span class="w">    </span><span class="c1"># must match a headless Service</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">postgres</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">postgres</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:16</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[{</span><span class="nt"> containerPort</span><span class="p">:</span><span class="w"> </span><span class="nv">5432</span><span class="w"> </span><span class="p p-Indicator">}]</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">data</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/postgresql/data</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nt">volumeClaimTemplates</span><span class="p">:</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">metadata</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">accessModes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"ReadWriteOnce"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> requests</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> storage</span><span class="p">:</span><span class="w"> </span><span class="nv">10Gi</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="nn">---</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">  </span><span class="nt">clusterIP</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">None</span><span class="w">    </span><span class="c1"># headless -- required for StatefulSet DNS</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">postgres</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[{</span><span class="nt"> port</span><span class="p">:</span><span class="w"> </span><span class="nv">5432</span><span class="w"> </span><span class="p p-Indicator">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>statefulset.yaml
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>postgres
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># postgres-0   Running</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># postgres-1   Running   &lt;- created only after postgres-0 is Ready</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># postgres-2   Running   &lt;- created only after postgres-1 is Ready</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pvc
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># data-postgres-0   Bound   10Gi</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># data-postgres-1   Bound   10Gi</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># data-postgres-2   Bound   10Gi</span>
+</code></pre></div>
+<p>Each Pod gets a name of <code>&lt;statefulset&gt;-&lt;ordinal&gt;</code> (<code>postgres-0</code>,
+<code>postgres-1</code>, ...), a stable DNS name via the headless Service
+(<code>postgres-0.postgres.default.svc.cluster.local</code>), and its <strong>own</strong> PVC from
+<code>volumeClaimTemplates</code> — deleting <code>postgres-1</code> recreates a Pod named
+<code>postgres-1</code> that reattaches to the <em>same</em> PVC, not a fresh one.</p>
+<h2 id="ordered-rollout-and-scale-down">Ordered rollout and scale-down<a class="headerlink" href="#ordered-rollout-and-scale-down" title="Permanent link">&para;</a></h2>
+<p>By default, StatefulSets create/update/delete Pods <strong>one at a time, in
+order</strong> (<code>0, 1, 2, ...</code> up; reverse down) — the next ordinal isn't touched
+until the previous one is Ready. This matters for anything doing
+replication where node 0 might be a primary other nodes depend on at
+startup.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl<span class="w"> </span>scale<span class="w"> </span>statefulset<span class="w"> </span>postgres<span class="w"> </span>--replicas<span class="o">=</span><span class="m">1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>postgres<span class="w"> </span>-w
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># postgres-2 terminates first, then postgres-1, postgres-0 stays</span>
+</code></pre></div>
+<p><code>OrderedReady</code> (default) can be relaxed to <code>Parallel</code> for stateless-ish
+uses of StatefulSets that only want stable identity, not ordering:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">podManagementPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Parallel</span>
+</code></pre></div>
+<h2 id="daemonsets-exactly-one-pod-per-node">DaemonSets: exactly one Pod per node<a class="headerlink" href="#daemonsets-exactly-one-pod-per-node" title="Permanent link">&para;</a></h2>
+<p>Some workloads exist to serve <em>the node itself</em> — log shippers, node
+monitoring agents, CNI plugins — and need exactly one instance on every
+(or every matching) node, automatically added/removed as nodes join/leave.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DaemonSet</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-exporter</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">node-exporter</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">node-exporter</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="nt">tolerations</span><span class="p">:</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exists</span><span class="w">    </span><span class="c1"># so it also schedules on tainted/control-plane nodes</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node-exporter</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prom/node-exporter:v1.8.1</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">          </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[{</span><span class="nt"> containerPort</span><span class="p">:</span><span class="w"> </span><span class="nv">9100</span><span class="p p-Indicator">,</span><span class="nt"> hostPort</span><span class="p">:</span><span class="w"> </span><span class="nv">9100</span><span class="w"> </span><span class="p p-Indicator">}]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>daemonset.yaml
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>daemonset<span class="w"> </span>node-exporter
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 3         3         3       3            3           &lt;none&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>node-exporter<span class="w"> </span>-o<span class="w"> </span>wide
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># one Pod per node, regardless of replicas -- there's no replicas field on a DaemonSet at all</span>
+</code></pre></div>
+<p>A DaemonSet has no <code>replicas</code> field — the desired count is implicitly "one
+per node matching <code>spec.template.spec.nodeSelector</code>/affinity," recalculated
+continuously as nodes are added, drained, or removed.</p>
+<h2 id="worked-example-losing-an-ordinal-vs-losing-a-node">Worked example: losing an ordinal vs. losing a node<a class="headerlink" href="#worked-example-losing-an-ordinal-vs-losing-a-node" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>postgres-1
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>postgres
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># postgres-1 recreated, same name, reattaches to data-postgres-1</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>kubectl<span class="w"> </span>cordon<span class="w"> </span>node-3<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>kubectl<span class="w"> </span>drain<span class="w"> </span>node-3<span class="w"> </span>--ignore-daemonsets
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>node-exporter<span class="w"> </span>-o<span class="w"> </span>wide
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># node-exporter Pod on node-3 terminated and NOT rescheduled elsewhere</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># (a DaemonSet Pod's "elsewhere" doesn't exist -- it belongs to that node specifically)</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>A StatefulSet's ordinal identity is implemented by predictable naming
+  and per-ordinal PVC claim names, not by any special scheduling
+  constraint tying a Pod to a specific node.</strong> The StatefulSet controller
+  creates Pods named <code>&lt;name&gt;-0</code>, <code>&lt;name&gt;-1</code>, ... deterministically and, for
+  each, a PVC named <code>&lt;volumeClaimTemplateName&gt;-&lt;name&gt;-&lt;ordinal&gt;</code> — when
+  Pod <code>postgres-1</code> is deleted and recreated, the controller creates a new
+  Pod object with the <em>same</em> name and a <code>volumeClaimTemplate</code> reference
+  that resolves to the <em>same already-existing</em> PVC (it checks for an
+  existing PVC of that name before creating one), and the scheduler is free
+  to place the new Pod on any node the PVC's access mode and topology allow.</li>
+<li><strong>Ordering is enforced by the controller waiting on <code>status.conditions</code>
+  before proceeding, one ordinal at a time — a purely control-loop
+  behavior, not a Kubernetes primitive like <code>dependsOn</code>.</strong> On each
+  reconcile, the StatefulSet controller looks at the lowest-ordinal Pod not
+  yet Ready and does nothing to higher ordinals until it observes that Pod
+  transition to Ready (or Terminated, on scale-down, in reverse) —
+  <code>podManagementPolicy: Parallel</code> simply disables this wait, issuing all
+  create/delete operations at once.</li>
+<li><strong>DaemonSet Pods are scheduled by the DaemonSet controller computing
+  node membership directly — historically bypassing the general scheduler
+  for the "which node" decision, though modern Kubernetes has the default
+  scheduler handle it via a required node affinity the controller
+  injects.</strong> The DaemonSet controller watches the Node list and, for every
+  node matching the DaemonSet's node selector/affinity/tolerations, ensures
+  exactly one Pod exists bound to that node (via a <code>nodeAffinity</code> term
+  naming that specific node, injected into the Pod spec at creation) — a
+  new node joining the cluster triggers exactly one new Pod, and a node
+  being removed triggers that Pod's garbage collection, with no
+  "rescheduling elsewhere" concept because the Pod was never generic to
+  begin with.</li>
+<li><strong><code>kubectl drain --ignore-daemonsets</code> is a client-side flag that changes
+  what <code>drain</code> will evict, not a change to the DaemonSet controller's
+  behavior.</strong> Draining a node evicts ordinary Pods (respecting
+  PodDisruptionBudgets) so they get rescheduled elsewhere; DaemonSet Pods
+  are deliberately skipped by this eviction step because rescheduling them
+  "elsewhere" is meaningless — they still get cleaned up automatically once
+  the node object itself is deleted or marked unschedulable in a way the
+  DaemonSet controller's node-selector logic excludes it.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy the 3-replica <code>postgres</code> StatefulSet with its headless Service and
+confirm <code>postgres-0.postgres.default.svc.cluster.local</code> resolves from a
+debug Pod. Delete <code>postgres-1</code> and verify it comes back with the same name
+and reattaches to <code>data-postgres-1</code> rather than getting a fresh PVC. Then
+deploy the <code>node-exporter</code> DaemonSet and confirm <code>kubectl get pods -o wide</code>
+shows exactly one per node, with no <code>replicas</code> field to configure that
+count directly.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

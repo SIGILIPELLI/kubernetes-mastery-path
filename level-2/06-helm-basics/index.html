@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1186,6 +1184,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Helm Basics (Charts & Values)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1202,6 +1218,124 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-raw-yaml-doesnt-parameterize-or-version-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem: raw YAML doesn't parameterize or version well
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart anatomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-upgrading-rolling-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing, upgrading, rolling back
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overriding-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overriding values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-what-a-chart-will-actually-produce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspecting what a chart will actually produce
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public charts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-chart-install-upgrade-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: chart install, upgrade, rollback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2233,113 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-raw-yaml-doesnt-parameterize-or-version-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem: raw YAML doesn't parameterize or version well
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart anatomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-upgrading-rolling-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing, upgrading, rolling back
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overriding-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overriding values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-what-a-chart-will-actually-produce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspecting what a chart will actually produce
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public charts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-chart-install-upgrade-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: chart install, upgrade, rollback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2359,167 @@
 
 
 <h1 id="06-helm-basics-charts-values">06 · Helm Basics (Charts &amp; Values)<a class="headerlink" href="#06-helm-basics-charts-values" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover Helm chart structure, templating with values.yaml, and installing/upgrading releases.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Commands and output below follow documented Helm v3 behavior; not
+executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-problem-raw-yaml-doesnt-parameterize-or-version-well">The problem: raw YAML doesn't parameterize or version well<a class="headerlink" href="#the-problem-raw-yaml-doesnt-parameterize-or-version-well" title="Permanent link">&para;</a></h2>
+<p>A real app is often a dozen+ manifests (Deployment, Service, Ingress,
+ConfigMap, PVC...) that need slightly different values per environment
+(dev vs. prod replica counts, image tags, hostnames). Copy-pasting and
+hand-editing YAML per environment doesn't scale and has no versioning or
+rollback story of its own. <strong>Helm</strong> packages a set of manifests as a
+templated, versioned unit called a <strong>chart</strong>.</p>
+<h2 id="chart-anatomy">Chart anatomy<a class="headerlink" href="#chart-anatomy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mychart/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Chart.yaml          # name, version, description
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── values.yaml         # default configuration values
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└── templates/
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    ├── deployment.yaml
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    ├── service.yaml
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    └── _helpers.tpl    # reusable template snippets
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Chart.yaml</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mychart</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">appVersion</span><span class="p">:</span><span class="w"> </span><span class="s">"1.4.0"</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># values.yaml</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">image</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">"1.4.0"</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">service</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># templates/deployment.yaml</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-mychart</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Values.replicaCount</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">.Values.image.repository</span><span class="nv"> </span><span class="s">}}:{{</span><span class="nv"> </span><span class="s">.Values.image.tag</span><span class="nv"> </span><span class="s">}}"</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">          </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</code></pre></div>
+<p>Templates use Go's <code>text/template</code> syntax; <code>.Values</code> comes from
+<code>values.yaml</code> (overridable per install), <code>.Release</code> carries install-time
+metadata (name, namespace, revision), <code>.Chart</code> carries <code>Chart.yaml</code>
+fields.</p>
+<h2 id="installing-upgrading-rolling-back">Installing, upgrading, rolling back<a class="headerlink" href="#installing-upgrading-rolling-back" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>install<span class="w"> </span>shop<span class="w"> </span>./mychart
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># NAME: shop</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># STATUS: deployed</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># REVISION: 1</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>shop<span class="w"> </span>./mychart<span class="w"> </span>--set<span class="w"> </span>image.tag<span class="o">=</span><span class="m">1</span>.5.0
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># REVISION: 2</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>helm<span class="w"> </span><span class="nb">history</span><span class="w"> </span>shop
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># REVISION  STATUS      DESCRIPTION</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># 1         superseded  Install complete</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># 2         deployed    Upgrade complete</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>helm<span class="w"> </span>rollback<span class="w"> </span>shop<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1"># REVISION: 3 (a new revision recording "went back to revision 1's config")</span>
+</code></pre></div>
+<p>Every <code>helm install</code>/<code>upgrade</code>/<code>rollback</code> creates a new numbered
+<strong>release revision</strong> — rollback isn't a special undo mechanism, it's just
+another upgrade whose target manifest happens to be an old revision's.</p>
+<h2 id="overriding-values">Overriding values<a class="headerlink" href="#overriding-values" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>helm<span class="w"> </span>install<span class="w"> </span>shop<span class="w"> </span>./mychart<span class="w"> </span>--set<span class="w"> </span><span class="nv">replicaCount</span><span class="o">=</span><span class="m">5</span><span class="w"> </span>--set<span class="w"> </span>image.tag<span class="o">=</span><span class="m">1</span>.5.0
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>helm<span class="w"> </span>install<span class="w"> </span>shop<span class="w"> </span>./mychart<span class="w"> </span>-f<span class="w"> </span>values-prod.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># values-prod.yaml</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">image</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">"1.5.0"</span>
+</code></pre></div>
+<p><code>-f</code> merges on top of the chart's own <code>values.yaml</code>; <code>--set</code> merges on top
+of that — later sources win field-by-field, not whole-file replacement.</p>
+<h2 id="inspecting-what-a-chart-will-actually-produce">Inspecting what a chart will actually produce<a class="headerlink" href="#inspecting-what-a-chart-will-actually-produce" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>helm<span class="w"> </span>template<span class="w"> </span>shop<span class="w"> </span>./mychart<span class="w"> </span>--set<span class="w"> </span><span class="nv">replicaCount</span><span class="o">=</span><span class="m">5</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># renders final YAML to stdout, no cluster contact -- great for reviewing/diffing before applying</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>helm<span class="w"> </span>install<span class="w"> </span>shop<span class="w"> </span>./mychart<span class="w"> </span>--dry-run<span class="w"> </span>--debug
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># renders AND validates against the connected cluster's API without creating anything</span>
+</code></pre></div>
+<h2 id="public-charts">Public charts<a class="headerlink" href="#public-charts" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>bitnami<span class="w"> </span>https://charts.bitnami.com/bitnami
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>bitnami/postgresql<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>helm<span class="w"> </span>install<span class="w"> </span>my-db<span class="w"> </span>bitnami/postgresql<span class="w"> </span>--set<span class="w"> </span>auth.postgresPassword<span class="o">=</span>changeme
+</code></pre></div>
+<h2 id="worked-example-chart-install-upgrade-rollback">Worked example: chart install, upgrade, rollback<a class="headerlink" href="#worked-example-chart-install-upgrade-rollback" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>helm<span class="w"> </span>install<span class="w"> </span>shop<span class="w"> </span>./mychart<span class="w"> </span>--set<span class="w"> </span><span class="nv">replicaCount</span><span class="o">=</span><span class="m">3</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>shop-mychart
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># 3/3 ready</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>shop<span class="w"> </span>./mychart<span class="w"> </span>--set<span class="w"> </span><span class="nv">replicaCount</span><span class="o">=</span><span class="m">3</span>,image.tag<span class="o">=</span><span class="m">1</span>.5.0-broken
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>shop
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># CrashLoopBackOff</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>helm<span class="w"> </span>rollback<span class="w"> </span>shop<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>shop-mychart<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.containers[0].image}'</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># myapp:1.4.0 -- back to the known-good release</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Helm has no in-cluster server component (since v3) — it's a client
+  that renders templates locally and applies plain manifests via the
+  Kubernetes API.</strong> <code>helm install</code> runs the Go template engine against
+  <code>templates/*.yaml</code> with <code>.Values</code>/<code>.Release</code>/<code>.Chart</code> in scope, produces
+  final YAML, and submits it the same way <code>kubectl apply</code> would — Helm adds
+  no controller, no CRD reconciliation, no admission webhook by default.</li>
+<li><strong>A release's state is itself stored as a Kubernetes Secret in the
+  release's namespace.</strong> Each revision is persisted as a Secret (type
+  <code>helm.sh/release.v1</code>, name like <code>sh.helm.release.v1.shop.v2</code>) whose data
+  includes the fully rendered manifest and the values used — <code>helm
+  history</code>/<code>rollback</code> work by reading these Secrets back, not by asking the
+  live objects what they currently look like, which is why deleting these
+  Secrets by hand (or a namespace) silently destroys Helm's memory of a
+  release even if the underlying Deployment/Service objects still exist.</li>
+<li><strong>Upgrade computes a three-way diff, not a blind re-apply.</strong> <code>helm
+  upgrade</code> diffs the <em>previous</em> rendered manifest (from the stored release
+  Secret), the <em>new</em> rendered manifest, and the <em>live</em> cluster state, then
+  issues a strategic merge patch — this is how Helm detects and removes
+  resources that existed in the old release but were deleted from the new
+  chart version (a plain re-<code>apply</code> of only the new templates would leave
+  orphans behind).</li>
+<li><strong>Rollback is possible purely because past fully-rendered manifests are
+  retained, not because Kubernetes tracks "chart history" natively.</strong>
+  <code>helm rollback shop 1</code> re-reads revision 1's stored Secret, takes its
+  already-rendered manifest verbatim, and applies it as a <em>new</em> revision —
+  this is why a chart's <code>templates/</code> directory or <code>values.yaml</code> changing
+  later has zero effect on what a rollback to an old revision produces.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Write a minimal chart with <code>Chart.yaml</code>, <code>values.yaml</code> (image repo/tag,
+replica count), and a <code>templates/deployment.yaml</code> that uses both values.
+Run <code>helm template</code> to inspect the rendered output before installing,
+then <code>helm install</code>, <code>helm upgrade --set image.tag=&lt;bad-tag&gt;</code>, and <code>helm
+rollback</code> back to revision 1 — check <code>helm history</code> after each step to see
+the revision count grow.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

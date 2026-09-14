@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1242,6 +1240,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Jobs & CronJobs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1258,6 +1274,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-just-a-pod-or-a-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why not just a Pod, or a Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-basic-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A basic Job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Jobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjobs-scheduled-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CronJobs: scheduled Jobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-flaky-job-retries-then-a-cronjob-runs-it-nightly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a flaky Job retries, then a CronJob runs it nightly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-just-a-pod-or-a-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why not just a Pod, or a Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-basic-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A basic Job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Jobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjobs-scheduled-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CronJobs: scheduled Jobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-a-flaky-job-retries-then-a-cronjob-runs-it-nightly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: a flaky Job retries, then a CronJob runs it nightly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,164 @@
 
 
 <h1 id="08-jobs-cronjobs">08 · Jobs &amp; CronJobs<a class="headerlink" href="#08-jobs-cronjobs" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover run-to-completion Jobs, parallelism/completions, and scheduled CronJobs.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented Job/CronJob controller
+behavior; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="why-not-just-a-pod-or-a-deployment">Why not just a Pod, or a Deployment<a class="headerlink" href="#why-not-just-a-pod-or-a-deployment" title="Permanent link">&para;</a></h2>
+<p>A bare Pod running a batch task (a DB migration, a report generation
+script) has no retry logic — if it fails, it just sits <code>Failed</code> forever
+unless something else notices. A Deployment is the wrong tool too: it's
+built to keep a process running <em>indefinitely</em>, restarting it forever, which
+is exactly wrong for something meant to run once to completion. A <strong>Job</strong>
+runs a Pod (or several) to successful completion, with retries, and stops.</p>
+<h2 id="a-basic-job">A basic Job<a class="headerlink" href="#a-basic-job" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch/v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Job</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-migrate</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">backoffLimit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">activeDeadlineSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Never</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">migrate</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-migrate:1.4</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"./migrate.sh"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>job.yaml
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># NAME         COMPLETIONS   DURATION   AGE</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># db-migrate   1/1           8s         10s</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>job/db-migrate
+</code></pre></div>
+<p><code>restartPolicy: Never</code> (or <code>OnFailure</code>) is required for a Job's Pod
+template — <code>Always</code> (the Deployment default) makes no sense for something
+meant to terminate. <code>backoffLimit</code> caps retries on failure; exceeding it
+marks the Job <code>Failed</code> rather than retrying forever.</p>
+<h2 id="parallel-jobs">Parallel Jobs<a class="headerlink" href="#parallel-jobs" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch/v1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Job</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch-process</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">completions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">      </span><span class="c1"># total successful Pod completions needed</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">parallelism</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">        </span><span class="c1"># up to 3 running at once</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">completionMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indexed</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Never</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">worker</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch-worker:1.0</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JOB_COMPLETION_INDEX</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metadata.annotations['batch.kubernetes.io/job-completion-index']</span>
+</code></pre></div>
+<p><code>completionMode: Indexed</code> gives each Pod a stable index (0..9) it can use to
+partition work (e.g. "process shard N of the input") — without it
+(<code>NonIndexed</code>, the default), the Job just needs <em>any</em> 10 successful
+completions with no per-Pod identity.</p>
+<h2 id="cronjobs-scheduled-jobs">CronJobs: scheduled Jobs<a class="headerlink" href="#cronjobs-scheduled-jobs" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch/v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CronJob</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nightly-report</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span><span class="w"> </span><span class="s">"0</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span><span class="w">     </span><span class="c1"># 2 AM daily, standard cron syntax, cluster's configured timezone</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">concurrencyPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Forbid</span><span class="w">  </span><span class="c1"># don't start a new run if the previous is still going</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">successfulJobsHistoryLimit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">failedJobsHistoryLimit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">jobTemplate</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nt">backoffLimit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nt">template</span><span class="p">:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">          </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OnFailure</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">          </span><span class="nt">containers</span><span class="p">:</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">              </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report-gen:2.1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>cronjob.yaml
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>cronjobs
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># NAME             SCHEDULE      SUSPEND   ACTIVE   LAST SCHEDULE   AGE</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># nightly-report   0 2 * * *     False     0        &lt;none&gt;          5s</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>kubectl<span class="w"> </span>create<span class="w"> </span>job<span class="w"> </span>--from<span class="o">=</span>cronjob/nightly-report<span class="w"> </span>manual-run-now<span class="w">   </span><span class="c1"># trigger one immediately, for testing</span>
+</code></pre></div>
+<p><code>concurrencyPolicy</code> matters for anything non-idempotent: <code>Allow</code> (default)
+lets overlapping runs pile up, <code>Forbid</code> skips a new run if the last is still
+active, <code>Replace</code> kills the still-running one and starts fresh.</p>
+<h2 id="worked-example-a-flaky-job-retries-then-a-cronjob-runs-it-nightly">Worked example: a flaky Job retries, then a CronJob runs it nightly<a class="headerlink" href="#worked-example-a-flaky-job-retries-then-a-cronjob-runs-it-nightly" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>job.yaml
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span>job-name<span class="o">=</span>db-migrate<span class="w"> </span>--watch
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># db-migrate-x1  0/1  Error   0</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># db-migrate-x2  0/1  Error   0    &lt;- backoffLimit retries create new Pods, not restart the old one</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># db-migrate-x3  1/1  Completed</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>kubectl<span class="w"> </span>get<span class="w"> </span>job<span class="w"> </span>db-migrate
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># COMPLETIONS: 1/1</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>cronjob.yaml
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>kubectl<span class="w"> </span>get<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>-l<span class="w"> </span>job-name<span class="w">  </span><span class="c1"># after 2 AM: nightly-report-28421840 appears, owned by the CronJob</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>A Job's retries create brand-new Pods, not restarted containers.</strong>
+  Unlike a liveness-probe restart (Module 04, same Pod/container), the Job
+  controller watches its owned Pods; on failure (with <code>restartPolicy:
+  Never</code>) it creates an entirely new Pod object counted against
+  <code>backoffLimit</code>, with an exponentially increasing backoff delay between
+  attempts (10s, 20s, 40s... capped at 6 minutes) — this is why
+  <code>kubectl get pods -l job-name=...</code> shows multiple distinct Pod names for
+  one Job, each a full scheduling+creation cycle, not a restart count on
+  one Pod.</li>
+<li><strong>Completion tracking for parallel/indexed Jobs is done via a Pod
+  count and (for Indexed mode) a completion-index bitmap the controller
+  keeps, not by inspecting exit codes beyond success/failure.</strong> The Job
+  controller reconciles by counting currently-succeeded, active, and
+  failed Pods against <code>completions</code>/<code>parallelism</code>; <code>Indexed</code> mode
+  additionally tracks <em>which</em> indices have succeeded (via the annotation)
+  so it only creates replacement Pods for indices that failed, not a whole
+  fresh batch — this is what makes Indexed Jobs suitable for exactly-once
+  partitioned work.</li>
+<li><strong>CronJob is a Job factory driven by a wall-clock reconcile, with no
+  independent scheduler daemon.</strong> The CronJob controller (part of
+  kube-controller-manager) runs on a periodic tick (~10s), computes whether
+  any schedule times have been "missed" since it last checked, and creates
+  a new Job object (owned by the CronJob via <code>ownerReferences</code>) for each
+  due run within its <code>startingDeadlineSeconds</code> window — if the controller
+  itself was down across a scheduled time and the deadline window has
+  passed, that run is simply skipped, not queued.</li>
+<li><strong><code>concurrencyPolicy: Forbid</code>/<code>Replace</code> are enforced by checking
+  currently-Active child Jobs at creation time, which has a real race
+  window.</strong> The controller lists Jobs it owns with <code>status.active &gt; 0</code>
+  before deciding to skip or replace — because this check and the create
+  are not one atomic operation against the API server, extremely
+  fast-firing schedules or controller restarts can, in rare cases, still
+  produce brief overlap; <code>Forbid</code> is a strong deterrent, not an absolute
+  mutual-exclusion guarantee.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Create a Job with <code>backoffLimit: 3</code> running a container that exits
+non-zero the first two times and succeeds the third (a short shell script
+using a file-based counter written to an <code>emptyDir</code> works). Watch
+<code>kubectl get pods -l job-name=...</code> to see distinct Pod names per attempt.
+Then wrap the same Pod template in a CronJob scheduled a couple of minutes
+out and confirm a Job gets auto-created at the scheduled time via <code>kubectl
+get jobs</code>.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

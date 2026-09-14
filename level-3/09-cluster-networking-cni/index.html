@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1646,6 +1644,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Cluster Networking Deep Dive (CNI)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1662,6 +1678,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-networking-problems-kubernetes-requires-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The four networking problems Kubernetes requires solving
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#same-node-pod-networking-veth-pairs-and-a-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same-node Pod networking: veth pairs and a bridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-node-pod-networking-overlay-vs-routed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-node Pod networking: overlay vs. routed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod-cidr-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod CIDR allocation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mtu-and-encapsulation-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MTU and encapsulation overhead
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-tracing-a-cross-node-packet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: tracing a cross-node packet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-networking-problems-kubernetes-requires-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The four networking problems Kubernetes requires solving
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#same-node-pod-networking-veth-pairs-and-a-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same-node Pod networking: veth pairs and a bridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-node-pod-networking-overlay-vs-routed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-node Pod networking: overlay vs. routed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod-cidr-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod CIDR allocation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mtu-and-encapsulation-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MTU and encapsulation overhead
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-tracing-a-cross-node-packet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: tracing a cross-node packet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,146 @@
 
 
 <h1 id="09-cluster-networking-deep-dive-cni">09 · Cluster Networking Deep Dive (CNI)<a class="headerlink" href="#09-cluster-networking-deep-dive-cni" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover the Container Network Interface, Pod networking models, and common CNI plugins.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Diagrams and commands below follow documented CNI/kube-proxy behavior;
+not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="the-four-networking-problems-kubernetes-requires-solving">The four networking problems Kubernetes requires solving<a class="headerlink" href="#the-four-networking-problems-kubernetes-requires-solving" title="Permanent link">&para;</a></h2>
+<p>Kubernetes doesn't implement networking itself — it defines a <strong>model</strong>
+(every Pod gets its own IP; Pods can reach any other Pod's IP without NAT;
+a Pod sees its own IP the same way others see it) and delegates the actual
+implementation to a <strong>CNI (Container Network Interface)</strong> plugin. Four
+distinct problems sit underneath this model:</p>
+<ol>
+<li><strong>Pod-to-Pod on the same node</strong> — a local bridge/veth problem.</li>
+<li><strong>Pod-to-Pod across nodes</strong> — an overlay or routed-network problem.</li>
+<li><strong>Pod-to-Service</strong> — kube-proxy's job (Level 1, Module 07).</li>
+<li><strong>Pod-to-external / external-to-Pod</strong> — NAT gateways and Ingress/LoadBalancer.</li>
+</ol>
+<h2 id="same-node-pod-networking-veth-pairs-and-a-bridge">Same-node Pod networking: veth pairs and a bridge<a class="headerlink" href="#same-node-pod-networking-veth-pairs-and-a-bridge" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Pod A (netns) --veth--&gt; cni0 bridge &lt;--veth-- Pod B (netns)
+</code></pre></div>
+<p>Each Pod gets its own <strong>network namespace</strong>; the CNI plugin creates a
+<strong>veth (virtual ethernet) pair</strong> — one end placed inside the Pod's
+namespace (appearing as <code>eth0</code>), the other left on the host and attached to
+a Linux bridge (<code>cni0</code> for the reference bridge CNI, or an equivalent
+construct for Calico/Cilium). Two Pods on the same node reach each other
+by ordinary Ethernet frames traversing that bridge — no routing needed at
+all for this hop.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># from the node itself:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>veth
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># veth3f2a1c@if4: ... attached to cni0</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>brctl<span class="w"> </span>show<span class="w"> </span>cni0
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># bridge name  bridge id       STP  interfaces</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># cni0         8000...         no   veth3f2a1c, veth9b8e21</span>
+</code></pre></div>
+<h2 id="cross-node-pod-networking-overlay-vs-routed">Cross-node Pod networking: overlay vs. routed<a class="headerlink" href="#cross-node-pod-networking-overlay-vs-routed" title="Permanent link">&para;</a></h2>
+<p>Two node A/node B Pods need packets to cross the underlying physical
+network, which knows nothing about Pod IPs. Two dominant approaches:</p>
+<p><strong>Overlay (VXLAN)</strong> — encapsulate each Pod packet inside a UDP packet
+addressed node-to-node; the receiving node's CNI agent decapsulates it and
+delivers it to the local bridge. Works on any underlying network (no
+changes needed to physical routers) at the cost of encapsulation overhead
+and a slightly larger MTU concern.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ip<span class="w"> </span>-d<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span>flannel.1
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># vxlan id 1 ... — flannel's VXLAN interface, one per node</span>
+</code></pre></div>
+<p><strong>Routed (BGP, e.g. Calico in non-overlay mode)</strong> — each node announces
+its Pod CIDR block to the rest of the network via BGP; no encapsulation
+happens, packets are routed natively, which is faster but requires the
+underlying network (or a route reflector) to support BGP peering.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>calicoctl<span class="w"> </span>node<span class="w"> </span>status
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># IPv4 BGP status</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># +--------------+-------------------+-------+</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># | PEER ADDRESS |     PEER TYPE     | STATE |</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># | 10.0.1.5     | node-to-node mesh | up    |</span>
+</code></pre></div>
+<h2 id="pod-cidr-allocation">Pod CIDR allocation<a class="headerlink" href="#pod-cidr-allocation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{range .items[*]}{.metadata.name}{": "}{.spec.podCIDR}{"\n"}{end}'</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># node-1: 10.244.0.0/24</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># node-2: 10.244.1.0/24</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># node-3: 10.244.2.0/24</span>
+</code></pre></div>
+<p>The cluster's overall Pod CIDR (e.g. <code>10.244.0.0/16</code>) is split into
+per-node subnets by the controller manager (<code>--allocate-node-cidrs</code>); each
+node's CNI plugin only needs to hand out IPs from its own /24, which is
+also exactly why Pod IPs are stable-ish <em>per node</em> but not portable — a Pod
+rescheduled to a different node gets an IP from that node's block.</p>
+<h2 id="mtu-and-encapsulation-overhead">MTU and encapsulation overhead<a class="headerlink" href="#mtu-and-encapsulation-overhead" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span>flannel.1<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>mtu
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># mtu 1450   &lt;- 1500 (typical Ethernet) minus VXLAN's 50-byte overhead</span>
+</code></pre></div>
+<p>Getting this wrong (leaving the Pod interface at 1500 while the underlying
+network's real MTU is 1500 and encapsulation adds bytes) causes silent
+packet fragmentation or drops for larger payloads — a classically hard bug
+because small test traffic works fine and only larger requests fail.</p>
+<h2 id="worked-example-tracing-a-cross-node-packet">Worked example: tracing a cross-node packet<a class="headerlink" href="#worked-example-tracing-a-cross-node-packet" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>web-abc<span class="w"> </span>-o<span class="w"> </span>wide
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># NODE: node-1, IP: 10.244.0.5</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>api-def<span class="w"> </span>-o<span class="w"> </span>wide
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># NODE: node-2, IP: 10.244.1.8</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>web-abc<span class="w"> </span>--<span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">10</span>.244.1.8
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># leaves web-abc's netns via veth -&gt; cni0 bridge on node-1</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># -&gt; node-1 routes 10.244.1.0/24 via node-2's physical IP (or encapsulates via VXLAN)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># -&gt; arrives at node-2, decapsulated if VXLAN, delivered via node-2's cni0 -&gt; api-def's veth</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>kubelet never implements networking itself — it invokes the CNI
+  plugin binary as a subprocess per Pod lifecycle event, per the CNI
+  spec.</strong> When a Pod is scheduled, kubelet (via the container runtime's
+  CRI implementation) calls the configured CNI plugin's <code>ADD</code> command with
+  the Pod's network namespace path as an argument; the plugin (a static
+  binary at <code>/opt/cni/bin/</code>, configured via JSON at
+  <code>/etc/cni/net.d/</code>) is responsible for creating the veth pair, assigning
+  an IP from its IPAM (IP Address Management) plugin, and wiring it to the
+  bridge/overlay — this handoff is the entire integration surface between
+  Kubernetes and the dozens of interchangeable CNI implementations.</li>
+<li><strong>IPAM assignment is typically a separate, chained CNI plugin, not
+  built into the main network plugin.</strong> A CNI config commonly chains a
+  "main" plugin (bridge, calico, cilium) with an IPAM plugin (<code>host-local</code>,
+  which allocates from the node's assigned Pod CIDR range and tracks leases
+  in local files under <code>/var/lib/cni/networks/</code>) — this is why Pod IP
+  exhaustion within a node manifests as <code>host-local</code> running out of free
+  addresses in its local lease file, not as an API-server-visible error.</li>
+<li><strong>BGP-based routed networking (Calico's default mode) relies on each
+  node's kernel routing table being programmed by a userspace BGP daemon
+  (BIRD, in Calico's case) that peers with every other node (or a route
+  reflector) — Kubernetes itself has no involvement in propagating these
+  routes.</strong> Calico's per-node agent (<code>calico-node</code>) watches the Kubernetes
+  API for Pod/IPPool objects to know what to announce, then hands the
+  actual protocol exchange to BIRD, which installs standard kernel routes
+  (<code>ip route</code>) for each remote node's Pod CIDR pointing at that node's
+  physical IP as the next hop — packets then flow at native L3 routing
+  speed with zero encapsulation.</li>
+<li><strong>VXLAN overlay networking's decapsulation happens transparently in the
+  kernel's network stack via a virtual device, not in any userspace
+  proxy process.</strong> The <code>flannel.1</code>-style VXLAN interface is a real Linux
+  network device the kernel treats like any NIC; packets destined for a
+  remote Pod CIDR are routed to this device, which the kernel
+  automatically wraps in a UDP/VXLAN header addressed to the destination
+  node's flanneld-maintained MAC/IP mapping (learned via a small
+  userspace daemon writing to the kernel's FDB, forwarding database) — the
+  receiving node's identical VXLAN device unwraps it just as transparently
+  before handing the inner packet to its local bridge.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>On a multi-node kind or minikube (multi-node profile) cluster, identify
+which CNI is installed (<code>kubectl get pods -n kube-system</code> for
+flannel/calico/cilium Pods) and find each node's <code>podCIDR</code> via <code>kubectl get
+nodes -o jsonpath=...</code>. Schedule two Pods onto different nodes deliberately
+(via <code>nodeName</code> or anti-affinity), ping one from the other, and use <code>ip
+route</code>/<code>ip -d link show</code> on a node to identify whether cross-node traffic is
+being encapsulated (a VXLAN/overlay interface) or routed natively (BGP
+routes with no encapsulating device).</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

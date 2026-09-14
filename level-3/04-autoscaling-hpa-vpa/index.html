@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1506,6 +1504,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Autoscaling (HPA & VPA Concepts)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1522,6 +1538,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-different-axes-of-more-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two different axes of "more resources"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpa-scaling-replica-count-off-live-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HPA: scaling replica count off live metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-and-external-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom and external metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vpa-right-sizing-requestslimits-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VPA: right-sizing requests/limits automatically
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpa-and-vpa-together-usually-not-on-cpumemory-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HPA and VPA together: usually not on CPU/memory at once
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-load-test-drives-a-scale-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: load test drives a scale-out
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2222,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-different-axes-of-more-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two different axes of "more resources"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpa-scaling-replica-count-off-live-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HPA: scaling replica count off live metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-and-external-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom and external metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vpa-right-sizing-requestslimits-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VPA: right-sizing requests/limits automatically
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpa-and-vpa-together-usually-not-on-cpumemory-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HPA and VPA together: usually not on CPU/memory at once
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-load-test-drives-a-scale-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: load test drives a scale-out
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2337,170 @@
 
 
 <h1 id="04-autoscaling-hpa-vpa-concepts">04 · Autoscaling (HPA &amp; VPA Concepts)<a class="headerlink" href="#04-autoscaling-hpa-vpa-concepts" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover the Horizontal Pod Autoscaler (metrics-based replica scaling) and Vertical Pod Autoscaler concepts.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow documented autoscaler behavior; not
+executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="two-different-axes-of-more-resources">Two different axes of "more resources"<a class="headerlink" href="#two-different-axes-of-more-resources" title="Permanent link">&para;</a></h2>
+<p>Scaling a workload means either running <strong>more copies</strong> (horizontal) or
+giving each copy <strong>more CPU/memory</strong> (vertical). Kubernetes has a built-in
+controller for each, and they solve different problems — the
+<strong>HorizontalPodAutoscaler (HPA)</strong> changes <code>replicas</code>; the
+<strong>VerticalPodAutoscaler (VPA)</strong>, a separate add-on, changes
+<code>resources.requests/limits</code>.</p>
+<h2 id="hpa-scaling-replica-count-off-live-metrics">HPA: scaling replica count off live metrics<a class="headerlink" href="#hpa-scaling-replica-count-off-live-metrics" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoscaling/v2</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HorizontalPodAutoscaler</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web-hpa</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">scaleTargetRef</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">minReplicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">maxReplicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Resource</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">resource</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpu</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">target</span><span class="p">:</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Utilization</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">          </span><span class="nt">averageUtilization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">70</span>
+</code></pre></div>
+<p>This requires the <strong>metrics-server</strong> add-on (or a custom metrics adapter)
+to be installed — the HPA controller reads from the <code>metrics.k8s.io</code> API,
+which metrics-server serves by scraping kubelet's resource stats.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>web-hpa.yaml
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>hpa<span class="w"> </span>web-hpa
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># NAME      REFERENCE      TARGETS         MINPODS   MAXPODS   REPLICAS</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># web-hpa   Deployment/web 45%/70%         2         10        3</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>kubectl<span class="w"> </span>top<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>web<span class="w">    </span><span class="c1"># requires metrics-server</span>
+</code></pre></div>
+<p><code>averageUtilization: 70</code> means "keep the average CPU usage across all
+replicas at 70% of each Pod's <strong>CPU request</strong>" — this is exactly why
+setting an accurate <code>requests.cpu</code> (Level 2, Module 03) is a prerequisite
+for HPA to make sensible decisions at all; without a request, utilization
+percentage has no denominator.</p>
+<h2 id="custom-and-external-metrics">Custom and external metrics<a class="headerlink" href="#custom-and-external-metrics" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pods</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="nt">pods</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="nt">metric</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http_requests_per_second</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">target</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AverageValue</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">          </span><span class="nt">averageValue</span><span class="p">:</span><span class="w"> </span><span class="s">"100"</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">External</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">external</span><span class="p">:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="nt">metric</span><span class="p">:</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sqs_queue_depth</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">          </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">            </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> queue</span><span class="p">:</span><span class="w"> </span><span class="nv">orders</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="nt">target</span><span class="p">:</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AverageValue</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">          </span><span class="nt">averageValue</span><span class="p">:</span><span class="w"> </span><span class="s">"30"</span>
+</code></pre></div>
+<p><code>type: Pods</code> reads a metric per-Pod (via a custom metrics adapter, e.g.
+Prometheus Adapter); <code>type: External</code> reads a metric with no direct Pod
+association at all (a queue depth, a metric from a managed cloud service) —
+useful for scaling workers based on backlog rather than their own resource
+usage.</p>
+<h2 id="vpa-right-sizing-requestslimits-automatically">VPA: right-sizing requests/limits automatically<a class="headerlink" href="#vpa-right-sizing-requestslimits-automatically" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoscaling.k8s.io/v1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VerticalPodAutoscaler</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-vpa</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">targetRef</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">updatePolicy</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">updateMode</span><span class="p">:</span><span class="w"> </span><span class="s">"Auto"</span><span class="w">   </span><span class="c1"># or "Off" (recommendation only), "Initial"</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>vpa<span class="w"> </span>api-vpa
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Recommendation:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#   Container: api</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">#     Target: { cpu: 340m, memory: 410Mi }</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#     Lower Bound: { cpu: 200m, memory: 300Mi }</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">#     Upper Bound: { cpu: 600m, memory: 550Mi }</span>
+</code></pre></div>
+<p><code>updateMode: "Auto"</code> doesn't patch a running Pod's resources in place
+(Kubernetes doesn't support that) — it <strong>evicts and recreates</strong> Pods with
+the recommended values applied, meaning VPA in Auto mode causes real,
+disruptive restarts, which is why it's commonly run in <code>"Off"</code> mode purely
+for recommendations that a human (or a CI pipeline) applies deliberately.</p>
+<h2 id="hpa-and-vpa-together-usually-not-on-cpumemory-at-once">HPA and VPA together: usually not on CPU/memory at once<a class="headerlink" href="#hpa-and-vpa-together-usually-not-on-cpumemory-at-once" title="Permanent link">&para;</a></h2>
+<p>Running HPA and VPA on the <em>same</em> metric (CPU) for the same workload is
+explicitly unsupported — they'd fight each other (VPA raising requests
+while HPA reacts to the resulting utilization change). The common safe
+combination is VPA on requests/limits for right-sizing, HPA on a
+<em>different</em> signal (custom app metric, or memory while VPA handles CPU).</p>
+<h2 id="worked-example-load-test-drives-a-scale-out">Worked example: load test drives a scale-out<a class="headerlink" href="#worked-example-load-test-drives-a-scale-out" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>web-hpa.yaml
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>run<span class="w"> </span>load<span class="w"> </span>--image<span class="o">=</span>busybox:1.36<span class="w"> </span>--restart<span class="o">=</span>Never<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>--<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">"while true; do wget -qO- http://web; done"</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>kubectl<span class="w"> </span>get<span class="w"> </span>hpa<span class="w"> </span>web-hpa<span class="w"> </span>-w
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># TARGETS goes 20%/70% -&gt; 85%/70% -&gt; HPA scales replicas 3 -&gt; 5 -&gt; 8</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>web
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># REPLICAS: 8/8</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The HPA controller is a periodic reconciliation loop, not an
+  event-driven reaction to metric spikes.</strong> Every sync period (15s
+  default), the <code>horizontal-pod-autoscaler</code> controller in
+  kube-controller-manager queries the metrics API for current values,
+  computes <code>desiredReplicas = ceil(currentReplicas * (currentMetricValue /
+  desiredMetricValue))</code> for each metric, takes the max across all metrics
+  (never scaling down because one metric is low if another says scale up),
+  and PATCHes the target's <code>.spec.replicas</code> — the actual Pod creation is
+  then, as always, the Deployment/ReplicaSet controllers' job, completely
+  decoupled from the HPA's decision.</li>
+<li><strong>Stabilization windows and scaling policies exist because raw reactive
+  scaling would thrash.</strong> <code>behavior.scaleDown.stabilizationWindowSeconds</code>
+  (default 300s) makes the controller look back over a window and pick the
+  <em>highest</em> recommended replica count seen in that window before scaling
+  down — this deliberately makes scale-down conservative and slow while
+  scale-up (default stabilization 0s) can react immediately, because the
+  cost of being briefly over-provisioned is much lower than the cost of
+  being under-provisioned during a real spike.</li>
+<li><strong><code>metrics-server</code> computes utilization from kubelet's cAdvisor-derived
+  stats, sampled on an interval — not a live, continuous readout.</strong>
+  metrics-server scrapes every kubelet's <code>/stats/summary</code> endpoint roughly
+  every 15-60s and aggregates to the <code>metrics.k8s.io</code> API; this
+  end-to-end latency chain (cAdvisor sampling -&gt; kubelet -&gt; metrics-server
+  scrape -&gt; HPA sync) means an HPA reacting to a sudden spike is
+  realistically tens of seconds to a couple of minutes behind real load,
+  which is exactly why HPA is not a substitute for proper capacity buffer
+  on latency-sensitive services.</li>
+<li><strong>VPA's "Auto" mode is fundamentally an eviction-and-recreate cycle
+  driven by a separate admission webhook, not an in-place patch.</strong> The VPA
+  recommender computes target resources from historical usage (stored in
+  its own aggregated histograms, not raw metrics-server data); the VPA
+  updater evicts Pods whose current resources deviate too far from the
+  recommendation, and a mutating admission webhook (Level 3, Module 08)
+  intercepts the <em>replacement</em> Pod's creation to inject the new
+  resources — meaning VPA can only ever change resources at Pod
+  (re)creation time, never on a live, running container.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Deploy <code>web</code> with an HPA targeting 70% CPU utilization, <code>minReplicas: 2</code>,
+<code>maxReplicas: 8</code>, and confirm <code>kubectl get hpa</code> shows current utilization
+once metrics-server is scraping. Generate load against it (a simple busybox
+loop hitting the Service) and watch <code>kubectl get hpa -w</code> to see
+<code>desiredReplicas</code> climb; stop the load and observe the slower scale-down
+governed by the stabilization window rather than an immediate drop.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

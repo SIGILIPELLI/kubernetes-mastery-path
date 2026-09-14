@@ -94,8 +94,6 @@
   }
   </script>
   
-  <meta name="robots" content="noindex, follow">
-  
 
   </head>
   
@@ -1798,6 +1796,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Operators & CRDs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1814,6 +1830,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extending-the-api-instead-of-working-around-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending the API instead of working around it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-a-crd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining a CRD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-custom-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the custom resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-controller-reconciling-desired-state-into-a-statefulset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The controller: reconciling desired state into a StatefulSet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-the-operator-turns-a-crd-into-running-pods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: the Operator turns a CRD into running Pods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2099,6 +2211,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#extending-the-api-instead-of-working-around-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending the API instead of working around it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-a-crd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining a CRD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-custom-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the custom resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-controller-reconciling-desired-state-into-a-statefulset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The controller: reconciling desired state into a StatefulSet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-the-operator-turns-a-crd-into-running-pods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: the Operator turns a CRD into running Pods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2118,22 +2315,176 @@
 
 
 <h1 id="01-operators-crds">01 · Operators &amp; CRDs<a class="headerlink" href="#01-operators-crds" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and runnable examples are being written next.
-This module will cover Custom Resource Definitions and the Operator pattern for automating application-specific operational knowledge.</p>
+<div class="admonition note">
+<p class="admonition-title">Not run against a live cluster</p>
+<p>Manifests and output below follow the documented CRD/controller-runtime
+machinery; not executed against a live cluster in this session.</p>
 </div>
-<p>In the meantime, <a href="../../level-1/">Level 1 · Entry</a> is fully published —
-start there if you haven't yet.</p>
+<h2 id="extending-the-api-instead-of-working-around-it">Extending the API instead of working around it<a class="headerlink" href="#extending-the-api-instead-of-working-around-it" title="Permanent link">&para;</a></h2>
+<p>Everything so far (Deployments, Services, PVCs) is a <strong>built-in</strong> resource
+the API server knows about natively. A <strong>CustomResourceDefinition (CRD)</strong>
+lets you register an entirely new resource type — with its own schema,
+validation, and <code>kubectl get/apply</code> support — without modifying or
+recompiling the API server at all. An <strong>Operator</strong> pairs a CRD with a
+custom controller that encodes operational knowledge (backup procedures,
+failover logic, version-specific upgrade steps) as code reacting to that
+CRD.</p>
+<h2 id="defining-a-crd">Defining a CRD<a class="headerlink" href="#defining-a-crd" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apiextensions.k8s.io/v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomResourceDefinition</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresclusters.db.example.com</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db.example.com</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">names</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PostgresCluster</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">plural</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresclusters</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">singular</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgrescluster</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">shortNames</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pgc"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">scope</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Namespaced</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">versions</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="nt">served</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">schema</span><span class="p">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">openAPIV3Schema</span><span class="p">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">          </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">              </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">              </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"replicas"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"version"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">              </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">                </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">integer</span><span class="p p-Indicator">,</span><span class="nt"> minimum</span><span class="p">:</span><span class="w"> </span><span class="nv">1</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                </span><span class="nt">storageSize</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span><span class="nt"> default</span><span class="p">:</span><span class="w"> </span><span class="s">"10Gi"</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">      </span><span class="nt">subresources</span><span class="p">:</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>postgrescluster-crd.yaml
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>crd<span class="w"> </span>postgresclusters.db.example.com
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>kubectl<span class="w"> </span>explain<span class="w"> </span>postgrescluster.spec<span class="w">   </span><span class="c1"># works immediately -- schema is self-describing</span>
+</code></pre></div>
+<p>Once the CRD is registered, <code>PostgresCluster</code> behaves like any built-in
+kind: <code>kubectl get pgc</code>, <code>kubectl apply -f</code>, RBAC rules referencing
+<code>db.example.com/postgresclusters</code>, and OpenAPI schema validation on
+<code>kubectl apply</code> (rejecting a missing <code>version</code> field, for instance) all
+work with zero custom code — this comes entirely from the CRD's schema.</p>
+<h2 id="using-the-custom-resource">Using the custom resource<a class="headerlink" href="#using-the-custom-resource" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db.example.com/v1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PostgresCluster</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orders-db</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"16.2"</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">storageSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50Gi</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>orders-db.yaml
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pgc<span class="w"> </span>orders-db<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># NAME        REPLICAS   VERSION   AGE</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># orders-db   3          16.2      5s</span>
+</code></pre></div>
+<p>At this point, nothing has actually happened besides an object being
+stored in etcd — a CRD alone has no behavior. The <strong>Operator's controller</strong>
+is what watches this object and does something about it.</p>
+<h2 id="the-controller-reconciling-desired-state-into-a-statefulset">The controller: reconciling desired state into a StatefulSet<a class="headerlink" href="#the-controller-reconciling-desired-state-into-a-statefulset" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// simplified controller-runtime reconcile loop (Go), illustrating the pattern</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="o">*</span><span class="nx">PostgresClusterReconciler</span><span class="p">)</span><span class="w"> </span><span class="nx">Reconcile</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="nx">ctrl</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">ctrl</span><span class="p">.</span><span class="nx">Result</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">pgc</span><span class="w"> </span><span class="nx">dbv1</span><span class="p">.</span><span class="nx">PostgresCluster</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">NamespacedName</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">pgc</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">ctrl</span><span class="p">.</span><span class="nx">Result</span><span class="p">{},</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">IgnoreNotFound</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nx">desired</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">buildStatefulSet</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">pgc</span><span class="p">)</span><span class="w">      </span><span class="c1">// e.g. replicas/version -&gt; a real StatefulSet spec</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">existing</span><span class="w"> </span><span class="nx">appsv1</span><span class="p">.</span><span class="nx">StatefulSet</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">NamespacedName</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">existing</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">apierrors</span><span class="p">.</span><span class="nx">IsNotFound</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">ctrl</span><span class="p">.</span><span class="nx">Result</span><span class="p">{},</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Create</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">desired</span><span class="p">)</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">DeepEqual</span><span class="p">(</span><span class="nx">existing</span><span class="p">.</span><span class="nx">Spec</span><span class="p">,</span><span class="w"> </span><span class="nx">desired</span><span class="p">.</span><span class="nx">Spec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="nx">existing</span><span class="p">.</span><span class="nx">Spec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">desired</span><span class="p">.</span><span class="nx">Spec</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">ctrl</span><span class="p">.</span><span class="nx">Result</span><span class="p">{},</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Update</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">existing</span><span class="p">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="nx">pgc</span><span class="p">.</span><span class="nx">Status</span><span class="p">.</span><span class="nx">ReadyReplicas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">existing</span><span class="p">.</span><span class="nx">Status</span><span class="p">.</span><span class="nx">ReadyReplicas</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">ctrl</span><span class="p">.</span><span class="nx">Result</span><span class="p">{},</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Status</span><span class="p">().</span><span class="nx">Update</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">pgc</span><span class="p">)</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="p">}</span>
+</code></pre></div>
+<p>This is the exact same reconcile pattern every built-in controller
+(Deployment, StatefulSet, Job) uses: read desired state, read observed
+state, converge the difference, requeue on change. The Operator pattern is
+simply "write your own copy of this loop for a resource type you define,"
+using <code>controller-runtime</code> (the library the Deployment/StatefulSet
+controllers are conceptually built on) to handle watches, work queues, and
+leader election for you.</p>
+<h2 id="worked-example-the-operator-turns-a-crd-into-running-pods">Worked example: the Operator turns a CRD into running Pods<a class="headerlink" href="#worked-example-the-operator-turns-a-crd-into-running-pods" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>postgrescluster-crd.yaml
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>operator-deployment.yaml<span class="w"> </span>-n<span class="w"> </span>operators<span class="w">   </span><span class="c1"># the controller Pod itself</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>orders-db.yaml
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>kubectl<span class="w"> </span>get<span class="w"> </span>statefulset<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># orders-db   3/3   &lt;- created BY the operator, not directly by the user</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>kubectl<span class="w"> </span>patch<span class="w"> </span>pgc<span class="w"> </span>orders-db<span class="w"> </span>-n<span class="w"> </span>prod<span class="w"> </span>--type<span class="o">=</span>merge<span class="w"> </span>-p<span class="w"> </span><span class="s1">'{"spec":{"replicas":5}}'</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>kubectl<span class="w"> </span>get<span class="w"> </span>statefulset<span class="w"> </span>orders-db<span class="w"> </span>-n<span class="w"> </span>prod
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># 5/5 within a few seconds -- the operator's reconcile loop noticed the CRD change and updated the StatefulSet</span>
+</code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>A CRD registers a new resource entirely inside the API server's
+  generic storage machinery — there's no code specific to "PostgresCluster"
+  anywhere in Kubernetes core.</strong> The API server implements a generic
+  <code>apiextensions-apiserver</code> aggregation layer that, given a CRD's OpenAPI
+  schema, dynamically creates REST endpoints (<code>/apis/db.example.com/v1/...</code>)
+  backed by the same etcd storage, watch, and validation machinery every
+  built-in type uses — <code>kubectl explain</code>, schema validation on <code>apply</code>, and
+  <code>kubectl get -o yaml</code> all come for free from this shared machinery, which
+  is why CRDs feel completely native rather than bolted-on.</li>
+<li><strong>The Operator's controller is just another API client using the watch
+  protocol — architecturally indistinguishable from kube-controller-manager
+  itself, just running as a Pod instead of a static binary in the control
+  plane.</strong> <code>controller-runtime</code>'s manager sets up an informer (a
+  local cache kept in sync via the API server's watch stream) for
+  <code>PostgresCluster</code> and any owned resources (StatefulSet, Service); any
+  change enqueues a reconcile key, and the reconcile function runs
+  independently of whatever triggered it — this is why a manual
+  <code>kubectl edit statefulset</code> conflicting with the CRD's desired state gets
+  silently reverted on the next reconcile, exactly like editing a
+  Deployment-owned ReplicaSet by hand does.</li>
+<li><strong><code>subresources: status: {}</code> splits write permission for spec vs.
+  status at the API level, enforced by the API server itself, not by
+  convention.</strong> With this subresource enabled, a <code>kubectl apply</code> (which
+  writes to the main resource) cannot modify <code>.status</code>, and the
+  controller's <code>r.Status().Update()</code> call hits a separate
+  <code>/status</code> endpoint — this prevents a user's <code>kubectl apply</code> from
+  clobbering fields the controller itself owns (like <code>readyReplicas</code>), the
+  same separation built-in controllers rely on for Deployment/Pod status.</li>
+<li><strong><code>ownerReferences</code> on the generated StatefulSet is what ties
+  garbage collection to the CRD object, using the same GC controller every
+  built-in cascading-delete relies on.</strong> The operator sets the
+  <code>PostgresCluster</code> as owner on the StatefulSet it creates; deleting the
+  <code>PostgresCluster</code> object triggers the standard garbage-collector
+  controller (the same one that deletes ReplicaSets when a Deployment is
+  deleted) to cascade-delete the StatefulSet and its Pods — again, no
+  operator-specific cleanup code is needed for this, only the correct
+  owner reference.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Define a minimal CRD (<code>group: example.com</code>, kind <code>EchoService</code>, with
+<code>spec.replicas</code> and <code>spec.message</code>) and apply it with no controller
+running — confirm <code>kubectl get echoservice</code> works and stores the object,
+but nothing else happens. Then sketch (in comments or pseudocode, no need
+to fully implement a Go operator) what a reconcile function would need to
+do to turn that object into a Deployment running an echo server with
+<code>spec.replicas</code> Pods, each printing <code>spec.message</code> — and identify which
+part of that logic the CRD's schema alone could never provide.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
