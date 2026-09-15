@@ -156,6 +156,10 @@ silently swapped.
   serve different bytes for the same digest without every puller detecting
   a hash mismatch and refusing the pull.
 
+## 🔀 Related lessons on other tracks
+
+- [Terraform — 05 · Security Scanning for IaC](https://sigilipelli.github.io/terraform-mastery-path/level-4/05-security-scanning-iac/)
+
 ## Exercise
 
 Pick a public image (e.g. `nginx:1.25`), run `trivy image` against it and

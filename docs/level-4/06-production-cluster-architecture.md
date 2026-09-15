@@ -202,6 +202,12 @@ point.
   across zones) matters even though Kubernetes itself has no concept of
   "zone health."
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — Capstone Project — Production-Grade Cloud Architecture](https://sigilipelli.github.io/aws-mastery-path/level-4/10-capstone-project/)
+- [Docker — 05 · Designing a Containerized Architecture](https://sigilipelli.github.io/docker-mastery-path/level-4/05-containerized-architecture-design/)
+- [GCP — 10 · Capstone Project — Production-Grade Cloud Architecture](https://sigilipelli.github.io/gcp-mastery-path/level-4/10-capstone-project/)
+
 ## Exercise
 
 Sketch (in YAML) a control-plane and worker-node topology for a

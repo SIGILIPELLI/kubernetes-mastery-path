@@ -186,6 +186,10 @@ not one instead of the other.
   pushes its final metric values to an intermediary Prometheus can scrape
   at its own pace) rather than being scraped directly.
 
+## 🔀 Related lessons on other tracks
+
+- [Server Ops — 09 · Observability at Scale (metrics, logs, traces)](https://sigilipelli.github.io/server-ops-mastery-path/level-3/09-observability-at-scale/)
+
 ## Exercise
 
 Deploy `kube-state-metrics` and a minimal Prometheus scraping it, then

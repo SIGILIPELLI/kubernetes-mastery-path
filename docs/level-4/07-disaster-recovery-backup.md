@@ -168,6 +168,12 @@ has never been restored in anger is a hypothesis, not a DR plan.
   fail on Pods that were perfectly valid in the (less strict) source
   cluster.
 
+## 🔀 Related lessons on other tracks
+
+- [Server Ops — 03 · Backup & Disaster Recovery Strategy](https://sigilipelli.github.io/server-ops-mastery-path/level-3/03-backup-disaster-recovery/)
+- [AWS — Multi-Region & Disaster Recovery](https://sigilipelli.github.io/aws-mastery-path/level-3/07-multi-region-disaster-recovery/)
+- [Azure — 07 · High Availability & Disaster Recovery](https://sigilipelli.github.io/azure-mastery-path/level-3/07-ha-disaster-recovery/)
+
 ## Exercise
 
 On a local kind or minikube cluster, take an etcd snapshot with

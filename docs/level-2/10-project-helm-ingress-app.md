@@ -207,6 +207,10 @@ kubectl delete pod -l app=shop-web -n prod --all
   to `web`, because they are entirely separate reconciliation targets
   sharing only the same external IP and controller process.
 
+## 🔀 Related lessons on other tracks
+
+- [Azure — 03 · Advanced AKS (Helm, Ingress, Autoscaling)](https://sigilipelli.github.io/azure-mastery-path/level-3/03-advanced-aks/)
+
 ## Exercise
 
 Build this chart (or a smaller two-service version of it) with `web`,

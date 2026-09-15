@@ -189,6 +189,12 @@ a reclaim) but a poor fit for anything stateful or singleton.
   will see a wide Lower/Upper Bound band precisely because the histogram
   reflects that variance.
 
+## 🔀 Related lessons on other tracks
+
+- [Server Ops — 02 · Capacity Planning](https://sigilipelli.github.io/server-ops-mastery-path/level-4/02-capacity-planning/)
+- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://sigilipelli.github.io/ai-ml-mastery-path/level-4/08-efficient-inference/)
+- [AWS — Cost Optimization at Scale](https://sigilipelli.github.io/aws-mastery-path/level-4/06-cost-optimization-at-scale/)
+
 ## Exercise
 
 On a cluster with `metrics-server` installed, run `kubectl top pod`

@@ -155,6 +155,11 @@ kubectl get endpoints web
   packet or one slow response under `timeoutSeconds` doesn't, by itself,
   restart anything or pull a Pod from load balancing.
 
+## 🔀 Related lessons on other tracks
+
+- [Docker — 06 · Health Checks](https://sigilipelli.github.io/docker-mastery-path/level-2/06-health-checks/)
+- [Server Ops — 01 · High Availability Concepts (redundancy, failover, health checks)](https://sigilipelli.github.io/server-ops-mastery-path/level-3/01-ha-concepts/)
+
 ## Exercise
 
 Add a `livenessProbe` and a separate `readinessProbe` to a Deployment,

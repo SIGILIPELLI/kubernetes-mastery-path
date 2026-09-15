@@ -157,6 +157,10 @@ minutes: the command only writes desired state into etcd via the API
 server and returns; everything after that is asynchronous reconciliation
 by controllers you never directly invoke.
 
+## 🔀 Related lessons on other tracks
+
+- [Docker — 02 · Orchestration Handoff (Kubernetes/Swarm)](https://sigilipelli.github.io/docker-mastery-path/level-4/02-orchestration-handoff/)
+
 ## Exercise
 
 Without touching a cluster yet, write down (in a notes file or scratch

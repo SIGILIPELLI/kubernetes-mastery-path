@@ -182,6 +182,12 @@ kubectl label namespace payments pod-security.kubernetes.io/enforce=restricted -
   boundary is the kernel, which is why a wrong or missing seccomp profile
   can't be fixed by anything short of restarting the container.
 
+## 🔀 Related lessons on other tracks
+
+- [Cybersecurity — 03 · Linux Security Hardening](https://sigilipelli.github.io/cybersecurity-mastery-path/level-2/03-linux-security-hardening/)
+- [Embedded Linux — 08 · Security Hardening & CVE Management](https://sigilipelli.github.io/embedded-linux-mastery-path/level-4/08-security-hardening/)
+- [Embedded Python — Security Hardening — TLS & Secure Storage](https://sigilipelli.github.io/embedded-python-mastery-path/level-4/06-security-hardening/)
+
 ## Exercise
 
 Create a namespace with `pod-security.kubernetes.io/enforce: baseline`,

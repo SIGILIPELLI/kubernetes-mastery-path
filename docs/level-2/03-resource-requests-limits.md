@@ -189,6 +189,10 @@ kubectl describe quota team-a-quota -n team-a
   precisely why BestEffort Pods die first: their score biases the kernel to
   target them before Guaranteed ones.
 
+## 🔀 Related lessons on other tracks
+
+- [Docker — 03 · Resource Limits (CPU/Memory)](https://sigilipelli.github.io/docker-mastery-path/level-3/03-resource-limits/)
+
 ## Exercise
 
 Deploy a Pod with `requests.memory: 64Mi` and `limits.memory: 128Mi`, then

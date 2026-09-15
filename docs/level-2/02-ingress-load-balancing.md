@@ -157,6 +157,12 @@ One external IP, one LoadBalancer, routing decided entirely by HTTP
   "why did my Ingress change stop working" surprises when multiple
   Ingress objects target overlapping routes.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — 02 · Auto Scaling & Load Balancing](https://sigilipelli.github.io/aws-mastery-path/level-2/02-autoscaling-load-balancing/)
+- [GCP — 02 · Autoscaling & Load Balancing](https://sigilipelli.github.io/gcp-mastery-path/level-2/02-autoscaling-load-balancing/)
+- [IBM Cloud — 02 · Load Balancing & Auto Scaling](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-2/02-load-balancing-autoscaling/)
+
 ## Exercise
 
 Deploy two simple Services (`web`, `api`) and a single Ingress that routes

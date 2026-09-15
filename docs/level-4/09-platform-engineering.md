@@ -208,6 +208,10 @@ gatekeeper per request.
   template) is what eventually causes any actual Kubernetes resource to
   exist.
 
+## 🔀 Related lessons on other tracks
+
+- [Server Ops — 09 · Platform Engineering & Internal Developer Experience](https://sigilipelli.github.io/server-ops-mastery-path/level-4/09-platform-engineering-devex/)
+
 ## Exercise
 
 Design (in YAML, no live cluster required) a Crossplane `CompositeResourceDefinition`
