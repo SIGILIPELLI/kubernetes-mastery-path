@@ -1,3 +1,7 @@
+---
+description: "Autoscaling (HPA & VPA Concepts) — Scaling a workload means either running more copies (horizontal) or giving each copy more CPU/memory (vertical).…"
+---
+
 # 04 · Autoscaling (HPA & VPA Concepts)
 
 !!! note "Not run against a live cluster"

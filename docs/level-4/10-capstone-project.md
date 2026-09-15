@@ -1,3 +1,7 @@
+---
+description: "Capstone Project — Design and document a production-grade cluster architecture for a fictional service, 'orders-api', that combines every Level 4 topic…"
+---
+
 # 10 · Capstone Project
 
 !!! note "Not run against a live cluster"

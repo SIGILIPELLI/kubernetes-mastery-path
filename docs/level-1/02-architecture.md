@@ -1,3 +1,7 @@
+---
+description: "Kubernetes Architecture — A Kubernetes cluster has two categories of machines: the control plane (the 'brain') and worker nodes (where your workloads…"
+---
+
 # 02 · Kubernetes Architecture
 
 !!! note "Not run against a live cluster"

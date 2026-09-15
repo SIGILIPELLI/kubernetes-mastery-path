@@ -1,3 +1,7 @@
+---
+description: "Multi-Cluster & Multi-Tenancy Concepts — 'Multi-tenancy' (multiple teams/customers sharing one cluster safely) and 'multi-cluster' (running several…"
+---
+
 # 07 · Multi-Cluster & Multi-Tenancy Concepts
 
 !!! note "Not run against a live cluster"

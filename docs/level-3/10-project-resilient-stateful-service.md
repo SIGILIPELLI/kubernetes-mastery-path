@@ -1,3 +1,7 @@
+---
+description: "Project — Resilient Stateful Service — Build a stateful service that survives node loss, scales safely, stays isolated from other tenants, and can be…"
+---
+
 # 10 · Project — Resilient Stateful Service
 
 !!! note "Not run against a live cluster"

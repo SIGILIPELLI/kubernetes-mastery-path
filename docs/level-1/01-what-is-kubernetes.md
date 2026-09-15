@@ -1,3 +1,7 @@
+---
+description: "What Is Kubernetes & Why Orchestration? — Doing all of this by hand with shell scripts and cron jobs does not scale past a handful of services. Container…"
+---
+
 # 01 · What Is Kubernetes & Why Orchestration?
 
 !!! note "Not run against a live cluster"

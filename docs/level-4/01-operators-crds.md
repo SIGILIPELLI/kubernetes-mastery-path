@@ -1,3 +1,7 @@
+---
+description: "Operators & CRDs — Everything so far (Deployments, Services, PVCs) is a built-in resource the API server knows about natively. A CustomResourceDefinition…"
+---
+
 # 01 · Operators & CRDs
 
 !!! note "Not run against a live cluster"

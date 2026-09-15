@@ -1,3 +1,7 @@
+---
+description: "Cost Optimization & Capacity Planning — Cloud bills for a Kubernetes cluster are driven almost entirely by requested, not used, resources — the scheduler…"
+---
+
 # 08 · Cost Optimization & Capacity Planning
 
 !!! note "Not run against a live cluster"

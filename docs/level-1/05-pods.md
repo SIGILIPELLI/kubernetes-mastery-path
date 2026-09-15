@@ -1,3 +1,7 @@
+---
+description: "Pods — Most Pods run exactly one container — the 'one or more' matters for the sidecar pattern: a small helper container (a log shipper, a proxy, a config…"
+---
+
 # 05 · Pods
 
 !!! note "Not run against a live cluster"

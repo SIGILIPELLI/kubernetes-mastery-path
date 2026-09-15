@@ -1,3 +1,7 @@
+---
+description: "Multi-Environment Configuration — Same application, different replica counts, resource limits, hostnames, and feature flags per environment. Maintaining…"
+---
+
 # 07 · Multi-Environment Configuration
 
 !!! note "Not run against a live cluster"

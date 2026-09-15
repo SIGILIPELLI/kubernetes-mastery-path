@@ -1,3 +1,7 @@
+---
+description: "Jobs & CronJobs — A bare Pod running a batch task (a DB migration, a report generation script) has no retry logic — if it fails, it just sits Failed…"
+---
+
 # 08 · Jobs & CronJobs
 
 !!! note "Not run against a live cluster"

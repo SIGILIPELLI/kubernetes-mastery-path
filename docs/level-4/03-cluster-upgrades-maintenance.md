@@ -1,3 +1,7 @@
+---
+description: "Cluster Upgrades & Maintenance — This is why the mandated upgrade order is always control plane first, then nodes, one minor version at a time (never skip…"
+---
+
 # 03 · Cluster Upgrades & Maintenance
 
 !!! note "Not run against a live cluster"

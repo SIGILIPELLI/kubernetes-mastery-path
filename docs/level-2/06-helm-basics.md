@@ -1,3 +1,7 @@
+---
+description: "Helm Basics (Charts & Values) — A real app is often a dozen+ manifests (Deployment, Service, Ingress, ConfigMap, PVC...) that need slightly different…"
+---
+
 # 06 · Helm Basics (Charts & Values)
 
 !!! note "Not run against a live cluster"

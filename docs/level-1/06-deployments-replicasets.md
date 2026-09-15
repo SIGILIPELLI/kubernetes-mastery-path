@@ -1,3 +1,7 @@
+---
+description: "Deployments & ReplicaSets — In practice, you almost always create a Deployment, not a bare ReplicaSet — the Deployment gives you the ReplicaSet's…"
+---
+
 # 06 · Deployments & ReplicaSets
 
 !!! note "Not run against a live cluster"

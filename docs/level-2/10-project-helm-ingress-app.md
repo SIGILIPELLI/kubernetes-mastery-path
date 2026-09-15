@@ -1,3 +1,7 @@
+---
+description: "Project — Ingress-Fronted Helm App — Package a two-tier app (a web frontend, a postgres-backed api) as a Helm chart, deploy it behind an Ingress with TLS…"
+---
+
 # 10 · Project — Ingress-Fronted Helm App
 
 !!! note "Not run against a live cluster"

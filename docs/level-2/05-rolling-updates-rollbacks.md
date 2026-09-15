@@ -1,3 +1,7 @@
+---
+description: "Rolling Updates & Rollbacks — When you change a Deployment's Pod template (most commonly the image tag), Kubernetes doesn't stop all Pods and start new…"
+---
+
 # 05 · Rolling Updates & Rollbacks
 
 !!! note "Not run against a live cluster"

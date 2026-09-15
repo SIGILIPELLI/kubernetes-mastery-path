@@ -1,3 +1,7 @@
+---
+description: "Cluster Networking Deep Dive (CNI) — Each Pod gets its own network namespace; the CNI plugin creates a veth (virtual ethernet) pair — one end placed…"
+---
+
 # 09 · Cluster Networking Deep Dive (CNI)
 
 !!! note "Not run against a live cluster"

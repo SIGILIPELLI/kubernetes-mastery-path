@@ -1,3 +1,7 @@
+---
+description: "Installing a Local Cluster (minikube/kind) — Either is fine for this course. Examples below show both; pick one."
+---
+
 # 03 · Installing a Local Cluster (minikube/kind)
 
 !!! note "Not run against a live cluster"

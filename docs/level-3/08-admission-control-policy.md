@@ -1,3 +1,7 @@
+---
+description: "Admission Control & Policy Enforcement — Every write request to the API server passes, in order: authentication (who are you) → authorization (RBAC — are…"
+---
+
 # 08 · Admission Control & Policy Enforcement
 
 !!! note "Not run against a live cluster"

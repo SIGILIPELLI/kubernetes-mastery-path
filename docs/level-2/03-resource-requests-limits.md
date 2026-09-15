@@ -1,3 +1,7 @@
+---
+description: "Resource Requests, Limits & Scheduling — Without resources set, a container can consume as much CPU/memory as the node has free, and the scheduler has no…"
+---
+
 # 03 · Resource Requests, Limits & Scheduling
 
 !!! note "Not run against a live cluster"

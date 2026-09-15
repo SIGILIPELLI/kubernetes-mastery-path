@@ -1,3 +1,7 @@
+---
+description: "Debugging & Troubleshooting Workloads — describe's Events section is the single richest source of 'why' — scheduling failures, image pull errors, probe…"
+---
+
 # 09 · Debugging & Troubleshooting Workloads
 
 !!! note "Not run against a live cluster"

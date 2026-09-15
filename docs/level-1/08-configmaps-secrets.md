@@ -1,3 +1,7 @@
+---
+description: "ConfigMaps & Secrets — Both can be consumed by Pods the same two ways: as environment variables or as mounted files."
+---
+
 # 08 · ConfigMaps & Secrets
 
 !!! note "Not run against a live cluster"

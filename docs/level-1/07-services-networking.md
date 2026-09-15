@@ -1,3 +1,7 @@
+---
+description: "Services & Networking Basics — Pods are ephemeral — they get new IP addresses every time they're recreated (a crash, a rollout, a rescheduled node). If…"
+---
+
 # 07 · Services & Networking Basics
 
 !!! note "Not run against a live cluster"

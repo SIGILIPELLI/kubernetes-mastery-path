@@ -1,3 +1,7 @@
+---
+description: "Platform Engineering on Kubernetes — Once an organization has more than a handful of teams deploying to Kubernetes, exposing raw kubectl/YAML to every…"
+---
+
 # 09 · Platform Engineering on Kubernetes
 
 !!! note "Not run against a live cluster"

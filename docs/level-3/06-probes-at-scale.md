@@ -1,3 +1,7 @@
+---
+description: "Probes & Health at Scale — Level 2, Module 04 covered liveness/readiness/startup probes on one Pod. At scale, the questions shift: how do you avoid an…"
+---
+
 # 06 · Probes & Health at Scale
 
 !!! note "Not run against a live cluster"

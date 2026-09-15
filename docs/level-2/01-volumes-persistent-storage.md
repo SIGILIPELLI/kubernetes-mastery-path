@@ -1,3 +1,7 @@
+---
+description: "Volumes & Persistent Storage — A container's writable filesystem lives inside its container runtime layer. When the container is restarted (crash, image…"
+---
+
 # 01 · Volumes & Persistent Storage
 
 !!! note "Not run against a live cluster"

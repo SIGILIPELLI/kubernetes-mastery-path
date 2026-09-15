@@ -1,3 +1,7 @@
+---
+description: "Health Checks (Liveness & Readiness Probes) — kubelet's default health signal is just 'is the process still alive' — a container can be running and yet…"
+---
+
 # 04 · Health Checks (Liveness & Readiness Probes)
 
 !!! note "Not run against a live cluster"

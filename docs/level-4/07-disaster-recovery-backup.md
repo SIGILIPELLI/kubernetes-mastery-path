@@ -1,3 +1,7 @@
+---
+description: "Disaster Recovery & Backup Strategies — Restoring etcd alone gets you back a cluster that declares the right Deployments and PVCs — it does not restore a…"
+---
+
 # 07 · Disaster Recovery & Backup Strategies
 
 !!! note "Not run against a live cluster"

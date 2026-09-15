@@ -1,3 +1,7 @@
+---
+description: "Namespaces & YAML Manifest Structure — A namespace partitions a single physical cluster into multiple virtual clusters. Most namespaced resources (Pods…"
+---
+
 # 09 · Namespaces & YAML Manifest Structure
 
 !!! note "Not run against a live cluster"

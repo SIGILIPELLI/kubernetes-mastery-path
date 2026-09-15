@@ -1,3 +1,7 @@
+---
+description: "GitOps Patterns (ArgoCD/Flux Concepts) — GitOps flips the normal deployment flow. Instead of a CI pipeline running kubectl apply against a cluster (a push…"
+---
+
 # 02 · GitOps Patterns (ArgoCD/Flux Concepts)
 
 !!! note "Not run against a live cluster"

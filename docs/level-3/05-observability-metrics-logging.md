@@ -1,3 +1,7 @@
+---
+description: "Observability: Metrics & Logging — kubectl logs (Level 2, Module 09) works for one Pod you already know is broken. It doesn't survive Pod deletion…"
+---
+
 # 05 · Observability: Metrics & Logging
 
 !!! note "Not run against a live cluster"

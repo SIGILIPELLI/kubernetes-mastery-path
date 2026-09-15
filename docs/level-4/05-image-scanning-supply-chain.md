@@ -1,3 +1,7 @@
+---
+description: "Image Scanning & Supply Chain Security — Image scanning addresses (1); image signing/provenance addresses (2) and (3)."
+---
+
 # 05 · Image Scanning & Supply Chain Security
 
 !!! note "Not run against a live cluster"

@@ -1,3 +1,7 @@
+---
+description: "Project — Multi-Container App — Combine everything from this level into one small, realistic deployment: an API backend and a frontend/proxy running as…"
+---
+
 # 10 · Project — Multi-Container App
 
 !!! note "Not run against a live cluster"

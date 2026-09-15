@@ -1,3 +1,7 @@
+---
+description: "Network Policies — Out of the box, Kubernetes networking is a flat space — any Pod can reach any other Pod's IP on any port, across namespaces, with no…"
+---
+
 # 03 · Network Policies
 
 !!! note "Not run against a live cluster"

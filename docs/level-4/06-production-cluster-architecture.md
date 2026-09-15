@@ -1,3 +1,7 @@
+---
+description: "Designing Production-Grade Cluster Architecture — etcd is a Raft-based cluster and needs an odd member count so a majority (quorum) is always…"
+---
+
 # 06 · Designing Production-Grade Cluster Architecture
 
 !!! note "Not run against a live cluster"

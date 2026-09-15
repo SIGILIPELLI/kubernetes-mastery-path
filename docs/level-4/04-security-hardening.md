@@ -1,3 +1,7 @@
+---
+description: "Security Hardening (Pod Security Standards) — enforce rejects non-compliant Pods at admission time; warn and audit let you roll a stricter policy out…"
+---
+
 # 04 · Security Hardening (Pod Security Standards)
 
 !!! note "Not run against a live cluster"

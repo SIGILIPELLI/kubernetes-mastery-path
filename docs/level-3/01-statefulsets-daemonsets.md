@@ -1,3 +1,7 @@
+---
+description: "StatefulSets & DaemonSets — A Deployment's Pods are interchangeable — any replica can be deleted and replaced by an identical one with a new random name…"
+---
+
 # 01 · StatefulSets & DaemonSets
 
 !!! note "Not run against a live cluster"

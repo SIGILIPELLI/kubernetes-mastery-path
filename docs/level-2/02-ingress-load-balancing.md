@@ -1,3 +1,7 @@
+---
+description: "Ingress & Load Balancing — A LoadBalancer Service (Level 1, Module 07) gives one external IP per Service — fine for a single app, expensive and unwieldy…"
+---
+
 # 02 · Ingress & Load Balancing
 
 !!! note "Not run against a live cluster"

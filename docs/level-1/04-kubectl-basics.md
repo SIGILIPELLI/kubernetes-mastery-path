@@ -1,3 +1,7 @@
+---
+description: "kubectl Basics — kubectl is the command-line client that talks to the Kubernetes API server. Nearly everything you do with Kubernetes goes through it (or…"
+---
+
 # 04 · kubectl Basics
 
 !!! note "Not run against a live cluster"

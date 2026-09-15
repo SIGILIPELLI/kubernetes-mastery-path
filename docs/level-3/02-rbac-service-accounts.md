@@ -1,3 +1,7 @@
+---
+description: "RBAC & Service Accounts — Every request to the API server goes through authentication (who is making this request — a user's client cert, a bearer token…"
+---
+
 # 02 · RBAC & Service Accounts
 
 !!! note "Not run against a live cluster"
