@@ -40,4 +40,23 @@
   {% if page.meta and page.meta.robots %}
   <meta name="robots" content="{{ page.meta.robots }}">
   {% endif %}
+  {% if page.meta and page.meta.description %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": {{ (page.title | default('Kubernetes Mastery Path lesson')) | tojson }},
+    "description": {{ page.meta.description | tojson }},
+    "url": {{ page.canonical_url | tojson }},
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Kubernetes Mastery Path",
+      "url": "https://sigilipelli.github.io/kubernetes-mastery-path/"
+    },
+    "isAccessibleForFree": true,
+    "learningResourceType": "Lesson",
+    "inLanguage": "en"
+  }
+  </script>
+  {% endif %}
 {% endblock %}
