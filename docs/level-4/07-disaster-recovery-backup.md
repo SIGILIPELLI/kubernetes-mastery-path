@@ -170,9 +170,9 @@ has never been restored in anger is a hypothesis, not a DR plan.
 
 ## 🔀 Related lessons on other tracks
 
-- [Server Ops — 03 · Backup & Disaster Recovery Strategy](https://sigilipelli.github.io/server-ops-mastery-path/level-3/03-backup-disaster-recovery/)
-- [AWS — Multi-Region & Disaster Recovery](https://sigilipelli.github.io/aws-mastery-path/level-3/07-multi-region-disaster-recovery/)
-- [Azure — 07 · High Availability & Disaster Recovery](https://sigilipelli.github.io/azure-mastery-path/level-3/07-ha-disaster-recovery/)
+- [Server Ops — 03 · Backup & Disaster Recovery Strategy](https://learnmasterypath.com/server-ops-mastery-path/level-3/03-backup-disaster-recovery/)
+- [AWS — Multi-Region & Disaster Recovery](https://learnmasterypath.com/aws-mastery-path/level-3/07-multi-region-disaster-recovery/)
+- [Azure — 07 · High Availability & Disaster Recovery](https://learnmasterypath.com/azure-mastery-path/level-3/07-ha-disaster-recovery/)
 
 ## Exercise
 

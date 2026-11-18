@@ -209,7 +209,7 @@ kubectl delete pod -l app=shop-web -n prod --all
 
 ## 🔀 Related lessons on other tracks
 
-- [Azure — 03 · Advanced AKS (Helm, Ingress, Autoscaling)](https://sigilipelli.github.io/azure-mastery-path/level-3/03-advanced-aks/)
+- [Azure — 03 · Advanced AKS (Helm, Ingress, Autoscaling)](https://learnmasterypath.com/azure-mastery-path/level-3/03-advanced-aks/)
 
 ## Exercise
 

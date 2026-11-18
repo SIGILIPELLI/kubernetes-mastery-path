@@ -157,8 +157,8 @@ kubectl get endpoints web
 
 ## 🔀 Related lessons on other tracks
 
-- [Docker — 06 · Health Checks](https://sigilipelli.github.io/docker-mastery-path/level-2/06-health-checks/)
-- [Server Ops — 01 · High Availability Concepts (redundancy, failover, health checks)](https://sigilipelli.github.io/server-ops-mastery-path/level-3/01-ha-concepts/)
+- [Docker — 06 · Health Checks](https://learnmasterypath.com/docker-mastery-path/level-2/06-health-checks/)
+- [Server Ops — 01 · High Availability Concepts (redundancy, failover, health checks)](https://learnmasterypath.com/server-ops-mastery-path/level-3/01-ha-concepts/)
 
 ## Exercise
 

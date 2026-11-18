@@ -158,7 +158,7 @@ silently swapped.
 
 ## 🔀 Related lessons on other tracks
 
-- [Terraform — 05 · Security Scanning for IaC](https://sigilipelli.github.io/terraform-mastery-path/level-4/05-security-scanning-iac/)
+- [Terraform — 05 · Security Scanning for IaC](https://learnmasterypath.com/terraform-mastery-path/level-4/05-security-scanning-iac/)
 
 ## Exercise
 

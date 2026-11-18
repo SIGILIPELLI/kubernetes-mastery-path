@@ -188,7 +188,7 @@ not one instead of the other.
 
 ## 🔀 Related lessons on other tracks
 
-- [Server Ops — 09 · Observability at Scale (metrics, logs, traces)](https://sigilipelli.github.io/server-ops-mastery-path/level-3/09-observability-at-scale/)
+- [Server Ops — 09 · Observability at Scale (metrics, logs, traces)](https://learnmasterypath.com/server-ops-mastery-path/level-3/09-observability-at-scale/)
 
 ## Exercise
 

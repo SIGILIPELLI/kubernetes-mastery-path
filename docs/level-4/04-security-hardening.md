@@ -184,9 +184,9 @@ kubectl label namespace payments pod-security.kubernetes.io/enforce=restricted -
 
 ## 🔀 Related lessons on other tracks
 
-- [Cybersecurity — 03 · Linux Security Hardening](https://sigilipelli.github.io/cybersecurity-mastery-path/level-2/03-linux-security-hardening/)
-- [Embedded Linux — 08 · Security Hardening & CVE Management](https://sigilipelli.github.io/embedded-linux-mastery-path/level-4/08-security-hardening/)
-- [Embedded Python — Security Hardening — TLS & Secure Storage](https://sigilipelli.github.io/embedded-python-mastery-path/level-4/06-security-hardening/)
+- [Cybersecurity — 03 · Linux Security Hardening](https://learnmasterypath.com/cybersecurity-mastery-path/level-2/03-linux-security-hardening/)
+- [Embedded Linux — 08 · Security Hardening & CVE Management](https://learnmasterypath.com/embedded-linux-mastery-path/level-4/08-security-hardening/)
+- [Embedded Python — Security Hardening — TLS & Secure Storage](https://learnmasterypath.com/embedded-python-mastery-path/level-4/06-security-hardening/)
 
 ## Exercise
 

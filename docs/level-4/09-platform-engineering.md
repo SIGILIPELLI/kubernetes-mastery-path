@@ -210,7 +210,7 @@ gatekeeper per request.
 
 ## 🔀 Related lessons on other tracks
 
-- [Server Ops — 09 · Platform Engineering & Internal Developer Experience](https://sigilipelli.github.io/server-ops-mastery-path/level-4/09-platform-engineering-devex/)
+- [Server Ops — 09 · Platform Engineering & Internal Developer Experience](https://learnmasterypath.com/server-ops-mastery-path/level-4/09-platform-engineering-devex/)
 
 ## Exercise
 

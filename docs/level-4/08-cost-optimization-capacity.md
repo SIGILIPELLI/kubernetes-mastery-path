@@ -191,9 +191,9 @@ a reclaim) but a poor fit for anything stateful or singleton.
 
 ## 🔀 Related lessons on other tracks
 
-- [Server Ops — 02 · Capacity Planning](https://sigilipelli.github.io/server-ops-mastery-path/level-4/02-capacity-planning/)
-- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://sigilipelli.github.io/ai-ml-mastery-path/level-4/08-efficient-inference/)
-- [AWS — Cost Optimization at Scale](https://sigilipelli.github.io/aws-mastery-path/level-4/06-cost-optimization-at-scale/)
+- [Server Ops — 02 · Capacity Planning](https://learnmasterypath.com/server-ops-mastery-path/level-4/02-capacity-planning/)
+- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://learnmasterypath.com/ai-ml-mastery-path/level-4/08-efficient-inference/)
+- [AWS — Cost Optimization at Scale](https://learnmasterypath.com/aws-mastery-path/level-4/06-cost-optimization-at-scale/)
 
 ## Exercise
 

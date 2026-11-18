@@ -159,7 +159,7 @@ by controllers you never directly invoke.
 
 ## 🔀 Related lessons on other tracks
 
-- [Docker — 02 · Orchestration Handoff (Kubernetes/Swarm)](https://sigilipelli.github.io/docker-mastery-path/level-4/02-orchestration-handoff/)
+- [Docker — 02 · Orchestration Handoff (Kubernetes/Swarm)](https://learnmasterypath.com/docker-mastery-path/level-4/02-orchestration-handoff/)
 
 ## Exercise
 

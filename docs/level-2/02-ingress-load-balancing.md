@@ -159,9 +159,9 @@ One external IP, one LoadBalancer, routing decided entirely by HTTP
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — 02 · Auto Scaling & Load Balancing](https://sigilipelli.github.io/aws-mastery-path/level-2/02-autoscaling-load-balancing/)
-- [GCP — 02 · Autoscaling & Load Balancing](https://sigilipelli.github.io/gcp-mastery-path/level-2/02-autoscaling-load-balancing/)
-- [IBM Cloud — 02 · Load Balancing & Auto Scaling](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-2/02-load-balancing-autoscaling/)
+- [AWS — 02 · Auto Scaling & Load Balancing](https://learnmasterypath.com/aws-mastery-path/level-2/02-autoscaling-load-balancing/)
+- [GCP — 02 · Autoscaling & Load Balancing](https://learnmasterypath.com/gcp-mastery-path/level-2/02-autoscaling-load-balancing/)
+- [IBM Cloud — 02 · Load Balancing & Auto Scaling](https://learnmasterypath.com/ibm-cloud-mastery-path/level-2/02-load-balancing-autoscaling/)
 
 ## Exercise
 

@@ -191,7 +191,7 @@ kubectl describe quota team-a-quota -n team-a
 
 ## 🔀 Related lessons on other tracks
 
-- [Docker — 03 · Resource Limits (CPU/Memory)](https://sigilipelli.github.io/docker-mastery-path/level-3/03-resource-limits/)
+- [Docker — 03 · Resource Limits (CPU/Memory)](https://learnmasterypath.com/docker-mastery-path/level-3/03-resource-limits/)
 
 ## Exercise
 
