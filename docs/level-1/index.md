@@ -1,3 +1,7 @@
+---
+description: "Level 1 (Entry) of the free Kubernetes Mastery Path. Understand why Kubernetes exists, stand up a local cluster, and become fluent with the core objects —…"
+---
+
 # Level 1 · Entry <span class="level-badge">Foundations</span>
 
 Goal: understand why Kubernetes exists, stand up a local cluster, and become

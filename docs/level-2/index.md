@@ -1,3 +1,7 @@
+---
+description: "Level 2 (Intermediate) of the free Kubernetes Mastery Path. Move beyond the basics into what production workloads actually need — persistent storage, proper…"
+---
+
 # Level 2 · Intermediate <span class="level-badge">Building Real Apps</span>
 
 Goal: move beyond the basics into what production workloads actually need —

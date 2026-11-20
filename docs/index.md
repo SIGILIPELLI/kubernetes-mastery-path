@@ -1,6 +1,6 @@
 ---
 title: "Learn Kubernetes Free: Beginner to Master Course"
-description: "Free Kubernetes course from beginner to advanced -- hands-on lessons with runnable manifests, kubectl commands, and real capstone projects. Part of a 40-course free learning library."
+description: "Free Kubernetes course from beginner to advanced -- hands-on lessons with runnable manifests, kubectl commands, and real capstone projects. Part of a 100+ course free learning library."
 ---
 
 # Kubernetes Mastery Path

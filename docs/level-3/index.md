@@ -1,3 +1,7 @@
+---
+description: "Level 3 (Advanced) of the free Kubernetes Mastery Path. Run stateful and node-level workloads correctly, lock down access with RBAC and network policies…"
+---
+
 # Level 3 · Advanced <span class="level-badge">Scaling & Securing</span>
 
 Goal: run stateful and node-level workloads correctly, lock down access

@@ -1,3 +1,7 @@
+---
+description: "Level 4 (Master) of the free Kubernetes Mastery Path. Extend Kubernetes itself (Operators/CRDs), adopt GitOps for delivery, keep clusters upgraded and…"
+---
+
 # Level 4 · Master <span class="level-badge">Production Architecture</span>
 
 Goal: extend Kubernetes itself (Operators/CRDs), adopt GitOps for delivery,
