@@ -53,9 +53,11 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/progress-tracker.css
+  - stylesheets/final-quiz.css
 
 extra_javascript:
   - javascripts/progress-tracker.js
+  - javascripts/final-quiz.js
 
 
 
@@ -127,3 +129,5 @@ nav:
       - "08 · Cost Optimization & Capacity Planning": level-4/08-cost-optimization-capacity.md
       - "09 · Platform Engineering on Kubernetes": level-4/09-platform-engineering.md
       - "10 · Capstone Project": level-4/10-capstone-project.md
+  - "🎯 Final Quiz": quiz.md
+
