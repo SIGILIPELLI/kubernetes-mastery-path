@@ -83,7 +83,7 @@ not_in_nav: |
 
 nav:
   - Home: index.md
-  - "💼 Interview Questions": interview-questions.md
+  - Interview Questions: interview-questions.md
   - "Level 1 · Entry":
       - Overview: level-1/index.md
       - "01 · What Is Kubernetes & Why Orchestration?": level-1/01-what-is-kubernetes.md
@@ -132,5 +132,5 @@ nav:
       - "08 · Cost Optimization & Capacity Planning": level-4/08-cost-optimization-capacity.md
       - "09 · Platform Engineering on Kubernetes": level-4/09-platform-engineering.md
       - "10 · Capstone Project": level-4/10-capstone-project.md
-  - "🎯 Final Quiz": quiz.md
+  - Final Quiz: quiz.md
 
