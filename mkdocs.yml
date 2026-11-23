@@ -77,11 +77,13 @@ extra:
     - name: "Docker"
       url: https://learnmasterypath.com/docker-mastery-path/
 
+not_in_nav: |
+  privacy.md
+  license.md
+
 nav:
   - Home: index.md
   - "💼 Interview Questions": interview-questions.md
-  - Privacy Policy: privacy.md
-  - License: license.md
   - "Level 1 · Entry":
       - Overview: level-1/index.md
       - "01 · What Is Kubernetes & Why Orchestration?": level-1/01-what-is-kubernetes.md
