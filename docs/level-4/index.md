@@ -20,6 +20,3 @@ architecture end to end.
 8. [Cost Optimization & Capacity Planning](08-cost-optimization-capacity.md)
 9. [Platform Engineering on Kubernetes](09-platform-engineering.md)
 10. [Capstone Project](10-capstone-project.md)
-
-This level is being written now — Level 1 · Entry is fully published if you
-want to start there.

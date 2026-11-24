@@ -20,6 +20,3 @@ health checks, safe rollouts, and packaging with Helm.
 8. [Jobs & CronJobs](08-jobs-cronjobs.md)
 9. [Debugging & Troubleshooting Workloads](09-debugging-troubleshooting.md)
 10. [Project — Ingress-Fronted Helm App](10-project-helm-ingress-app.md)
-
-This level is being written now — Level 1 · Entry is fully published if you
-want to start there.

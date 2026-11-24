@@ -20,6 +20,3 @@ into a cluster running many services.
 8. [Admission Control & Policy Enforcement](08-admission-control-policy.md)
 9. [Cluster Networking Deep Dive (CNI)](09-cluster-networking-cni.md)
 10. [Project — Resilient Stateful Service](10-project-resilient-stateful-service.md)
-
-This level is being written now — Level 1 · Entry is fully published if you
-want to start there.
