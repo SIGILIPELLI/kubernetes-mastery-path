@@ -1,0 +1,3948 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="179 Kubernetes interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the Kubernetes Mastery Path.">
+      
+      
+      
+        <link rel="canonical" href="https://learnmasterypath.com/kubernetes-mastery-path/interview-questions/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../level-1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+  
+  <title>Kubernetes Interview Questions and Answers (179 Questions)</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/progress-tracker.css">
+    
+      <link rel="stylesheet" href="../stylesheets/final-quiz.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-05VBGCXN12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-05VBGCXN12');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mastery Path">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Kubernetes Interview Questions and Answers (179 Questions)">
+  <meta property="og:description" content="179 Kubernetes interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the Kubernetes Mastery Path.">
+  <meta property="og:url" content="https://learnmasterypath.com/kubernetes-mastery-path/interview-questions/">
+  <meta property="og:image" content="https://learnmasterypath.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mastery Path: free structured courses, beginner to master">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kubernetes Interview Questions and Answers (179 Questions)">
+  <meta name="twitter:description" content="179 Kubernetes interview questions with answers and explanations, from beginner to advanced, organised by level. Free, from the Kubernetes Mastery Path.">
+  <meta name="twitter:image" content="https://learnmasterypath.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9440969811959397"
+     crossorigin="anonymous"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Mastery Path", "item": "https://learnmasterypath.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Kubernetes Mastery Path", "item": "https://learnmasterypath.com/kubernetes-mastery-path/"},
+      {"@type": "ListItem", "position": 3, "name": "Interview Questions", "item": "https://learnmasterypath.com/kubernetes-mastery-path/interview-questions/"}
+    ]
+  }
+  </script>
+  <style>
+    .md-banner a:hover { text-decoration: underline !important; }
+    .mp-related { margin-top: 2.4rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lightest); font-size: .78rem; }
+    .mp-related h2 { font-size: .9rem; margin: 0 0 .5rem; }
+    .mp-related ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
+    .mp-related li { margin: 0 !important; }
+  </style>
+  <script type="application/json" id="mp-course-meta">{"home": false, "id": "kubernetes-mastery-path", "name": "Kubernetes Mastery Path", "repo": "https://github.com/SIGILIPELLI/kubernetes-mastery-path", "src": "interview-questions.md", "url": "https://learnmasterypath.com/kubernetes-mastery-path/"}</script>
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/learn.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/course.css?v=1">
+  <script src="https://learnmasterypath.com/assets/learn.js" defer></script>
+  <script src="https://learnmasterypath.com/assets/signup.js" defer></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubernetes-interview-questions-and-answers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <a href="https://learnmasterypath.com/" style="color: inherit; text-decoration: none;">
+    &larr; Mastery Path &middot; all 100+ free courses
+  </a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/search/" style="color: inherit; text-decoration: none;">Search all courses</a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/resume/" style="color: inherit; font-weight: 700; text-decoration: none;">
+    Got the skills? Free resume ATS check &rarr;
+  </a>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Kubernetes Mastery Path" class="md-header__button md-logo" aria-label="Kubernetes Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kubernetes Mastery Path
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kubernetes Interview Questions and Answers (179 Questions)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SIGILIPELLI/kubernetes-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubernetes-mastery-path
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interview Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 1 · Entry
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-2/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 2 · Intermediate
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 3 · Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 4 · Master
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quiz/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Final Quiz
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Kubernetes Mastery Path" class="md-nav__button md-logo" aria-label="Kubernetes Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    Kubernetes Mastery Path
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SIGILIPELLI/kubernetes-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubernetes-mastery-path
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-what-is-kubernetes-why-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · What Is Kubernetes &amp; Why Orchestration?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-kubernetes-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Kubernetes Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-installing-a-local-cluster-minikubekind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Installing a Local Cluster (minikube/kind)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-kubectl-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · kubectl Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-pods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Pods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-deployments-replicasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Deployments &amp; ReplicaSets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-services-networking-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Services &amp; Networking Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-configmaps-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · ConfigMaps &amp; Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-namespaces-yaml-manifest-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Namespaces &amp; YAML Manifest Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-multi-container-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Multi-Container App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-volumes-persistent-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Volumes &amp; Persistent Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-ingress-load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Ingress &amp; Load Balancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-resource-requests-limits-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Resource Requests, Limits &amp; Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-health-checks-liveness-readiness-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Health Checks (Liveness &amp; Readiness Probes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rolling-updates-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Rolling Updates &amp; Rollbacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-helm-basics-charts-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Helm Basics (Charts &amp; Values)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-multi-environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Multi-Environment Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-jobs-cronjobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Jobs &amp; CronJobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-debugging-troubleshooting-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Debugging &amp; Troubleshooting Workloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-ingress-fronted-helm-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Ingress-Fronted Helm App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-statefulsets-daemonsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · StatefulSets &amp; DaemonSets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rbac-service-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · RBAC &amp; Service Accounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-network-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Network Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-autoscaling-hpa-vpa-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Autoscaling (HPA &amp; VPA Concepts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-observability-metrics-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Observability: Metrics &amp; Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-probes-health-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Probes &amp; Health at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-multi-cluster-multi-tenancy-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Multi-Cluster &amp; Multi-Tenancy Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-admission-control-policy-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Admission Control &amp; Policy Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-cluster-networking-deep-dive-cni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Cluster Networking Deep Dive (CNI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-resilient-stateful-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Resilient Stateful Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-operators-crds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Operators &amp; CRDs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-gitops-patterns-argocdflux-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · GitOps Patterns (ArgoCD/Flux Concepts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-cluster-upgrades-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Cluster Upgrades &amp; Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-security-hardening-pod-security-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Security Hardening (Pod Security Standards)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-image-scanning-supply-chain-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Image Scanning &amp; Supply Chain Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-designing-production-grade-cluster-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Designing Production-Grade Cluster Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-disaster-recovery-backup-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Disaster Recovery &amp; Backup Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cost-optimization-capacity-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Cost Optimization &amp; Capacity Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-platform-engineering-on-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Platform Engineering on Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-questions-across-all-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed questions across all levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 1 · Entry
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 1 · Entry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/01-what-is-kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · What Is Kubernetes & Why Orchestration?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/02-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Kubernetes Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/03-local-cluster-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Installing a Local Cluster (minikube/kind)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/04-kubectl-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · kubectl Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/05-pods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Pods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/06-deployments-replicasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Deployments & ReplicaSets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/07-services-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Services & Networking Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/08-configmaps-secrets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · ConfigMaps & Secrets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/09-namespaces-manifests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Namespaces & YAML Manifests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/10-project-multi-container-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Multi-Container App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 2 · Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 2 · Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/01-volumes-persistent-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Volumes & Persistent Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/02-ingress-load-balancing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Ingress & Load Balancing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/03-resource-requests-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Resource Requests, Limits & Scheduling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/04-health-checks-probes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Health Checks (Liveness & Readiness Probes)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/05-rolling-updates-rollbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Rolling Updates & Rollbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/06-helm-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Helm Basics (Charts & Values)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/07-multi-environment-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Multi-Environment Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/08-jobs-cronjobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Jobs & CronJobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/09-debugging-troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Debugging & Troubleshooting Workloads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/10-project-helm-ingress-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Ingress-Fronted Helm App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 3 · Advanced
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 3 · Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/01-statefulsets-daemonsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · StatefulSets & DaemonSets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/02-rbac-service-accounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · RBAC & Service Accounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/03-network-policies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Network Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/04-autoscaling-hpa-vpa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Autoscaling (HPA & VPA Concepts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/05-observability-metrics-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Observability: Metrics & Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/06-probes-at-scale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Probes & Health at Scale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/07-multi-cluster-multi-tenancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Multi-Cluster & Multi-Tenancy Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/08-admission-control-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Admission Control & Policy Enforcement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/09-cluster-networking-cni/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Cluster Networking Deep Dive (CNI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/10-project-resilient-stateful-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Resilient Stateful Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 4 · Master
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 4 · Master
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/01-operators-crds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Operators & CRDs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/02-gitops-argocd-flux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · GitOps Patterns (ArgoCD/Flux Concepts)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/03-cluster-upgrades-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Cluster Upgrades & Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/04-security-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Security Hardening (Pod Security Standards)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/05-image-scanning-supply-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Image Scanning & Supply Chain Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/06-production-cluster-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Designing Production-Grade Cluster Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/07-disaster-recovery-backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Disaster Recovery & Backup Strategies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/08-cost-optimization-capacity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Cost Optimization & Capacity Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/09-platform-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Platform Engineering on Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/10-capstone-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Capstone Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-what-is-kubernetes-why-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · What Is Kubernetes &amp; Why Orchestration?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-kubernetes-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Kubernetes Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-installing-a-local-cluster-minikubekind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Installing a Local Cluster (minikube/kind)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-kubectl-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · kubectl Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-pods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Pods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-deployments-replicasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Deployments &amp; ReplicaSets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-services-networking-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Services &amp; Networking Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-configmaps-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · ConfigMaps &amp; Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-namespaces-yaml-manifest-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Namespaces &amp; YAML Manifest Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-multi-container-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Multi-Container App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-volumes-persistent-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Volumes &amp; Persistent Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-ingress-load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Ingress &amp; Load Balancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-resource-requests-limits-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Resource Requests, Limits &amp; Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-health-checks-liveness-readiness-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Health Checks (Liveness &amp; Readiness Probes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rolling-updates-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Rolling Updates &amp; Rollbacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-helm-basics-charts-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Helm Basics (Charts &amp; Values)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-multi-environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Multi-Environment Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-jobs-cronjobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Jobs &amp; CronJobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-debugging-troubleshooting-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Debugging &amp; Troubleshooting Workloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-ingress-fronted-helm-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Ingress-Fronted Helm App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-statefulsets-daemonsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · StatefulSets &amp; DaemonSets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rbac-service-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · RBAC &amp; Service Accounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-network-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Network Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-autoscaling-hpa-vpa-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Autoscaling (HPA &amp; VPA Concepts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-observability-metrics-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Observability: Metrics &amp; Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-probes-health-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Probes &amp; Health at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-multi-cluster-multi-tenancy-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Multi-Cluster &amp; Multi-Tenancy Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-admission-control-policy-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Admission Control &amp; Policy Enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-cluster-networking-deep-dive-cni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Cluster Networking Deep Dive (CNI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-resilient-stateful-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Resilient Stateful Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-operators-crds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Operators &amp; CRDs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-gitops-patterns-argocdflux-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · GitOps Patterns (ArgoCD/Flux Concepts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-cluster-upgrades-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Cluster Upgrades &amp; Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-security-hardening-pod-security-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Security Hardening (Pod Security Standards)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-image-scanning-supply-chain-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Image Scanning &amp; Supply Chain Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-designing-production-grade-cluster-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Designing Production-Grade Cluster Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-disaster-recovery-backup-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Disaster Recovery &amp; Backup Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cost-optimization-capacity-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Cost Optimization &amp; Capacity Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-platform-engineering-on-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Platform Engineering on Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixed-questions-across-all-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed questions across all levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+<h1 id="kubernetes-interview-questions-and-answers">Kubernetes Interview Questions and Answers<a class="headerlink" href="#kubernetes-interview-questions-and-answers" title="Permanent link">&para;</a></h1>
+<p><strong>179 questions</strong> with the correct answer and a short explanation, organised from beginner (Level 1) to advanced (Level 4). Every question comes from a lesson in the free Kubernetes Mastery Path, so you can open the lesson to go deeper.</p>
+<div class="admonition tip">
+<p class="admonition-title">Practise, don't just read</p>
+<p>Each lesson also ends with an interactive quiz, and the <a href="../quiz/">final quiz</a> tests all four levels. Try to answer each question below before reading the answer.</p>
+</div>
+<h2 id="level-1-entry">Level 1 · Entry<a class="headerlink" href="#level-1-entry" title="Permanent link">&para;</a></h2>
+<h3 id="01-what-is-kubernetes-why-orchestration"><a href="../level-1/01-what-is-kubernetes/">01 · What Is Kubernetes &amp; Why Orchestration?</a><a class="headerlink" href="#01-what-is-kubernetes-why-orchestration" title="Permanent link">&para;</a></h3>
+<p><strong>Q1.</strong> What does container orchestration automate?</p>
+<p><strong>Answer:</strong> Scheduling containers onto machines, keeping the desired number running, routing traffic, managing rollouts and reacting to failures</p>
+<p>It does this continuously without a human watching.</p>
+<p><strong>Q2.</strong> What does 'declarative, reconciling control system' mean?</p>
+<p><strong>Answer:</strong> You declare desired state and Kubernetes continuously works to make actual state match it</p>
+<p>This is the control (reconciliation) loop.</p>
+<p><strong>Q3.</strong> Where did Kubernetes come from?</p>
+<p><strong>Answer:</strong> Designed at Google (based on Borg/Omega) and donated to the CNCF in 2015</p>
+<p>It is the de facto standard for containerized workloads at scale.</p>
+<p><strong>Q4.</strong> Why can't shell scripts and cron jobs scale for production?</p>
+<p><strong>Answer:</strong> They don't scale past a handful of services for restarts, rollouts, load balancing and scaling</p>
+<p>Orchestration automates the messy production realities.</p>
+<h3 id="02-kubernetes-architecture"><a href="../level-1/02-architecture/">02 · Kubernetes Architecture</a><a class="headerlink" href="#02-kubernetes-architecture" title="Permanent link">&para;</a></h3>
+<p><strong>Q5.</strong> Which component is the only one that talks directly to etcd?</p>
+<p><strong>Answer:</strong> kube-apiserver</p>
+<p>Every interaction goes through the API server.</p>
+<p><strong>Q6.</strong> What does etcd hold?</p>
+<p><strong>Answer:</strong> The entire cluster state as a consistent key-value store</p>
+<p>If etcd is lost without backup, the cluster's state is lost.</p>
+<p><strong>Q7.</strong> What does the kube-scheduler do?</p>
+<p><strong>Answer:</strong> Picks a node for newly created Pods; it only decides, and the kubelet starts the container</p>
+<p>It weighs resource requests, affinity rules, taints and policy.</p>
+<p><strong>Q8.</strong> What does the controller manager do?</p>
+<p><strong>Answer:</strong> Runs control loops that drive actual state toward desired state</p>
+<p>Examples: the Node controller and the Deployment/ReplicaSet controller.</p>
+<h3 id="03-installing-a-local-cluster-minikubekind"><a href="../level-1/03-local-cluster-setup/">03 · Installing a Local Cluster (minikube/kind)</a><a class="headerlink" href="#03-installing-a-local-cluster-minikubekind" title="Permanent link">&para;</a></h3>
+<p><strong>Q9.</strong> How does kind differ from minikube?</p>
+<p><strong>Answer:</strong> kind runs cluster nodes as Docker containers, making it fast to start and tear down and popular for CI</p>
+<p>minikube runs a node in a VM or container and ships add-ons like dashboard and ingress.</p>
+<p><strong>Q10.</strong> Which command starts a minikube cluster using Docker?</p>
+<p><strong>Answer:</strong> minikube start --driver=docker</p>
+<p>It configures kubectl to point at the new cluster.</p>
+<p><strong>Q11.</strong> How do you tear a minikube cluster down completely?</p>
+<p><strong>Answer:</strong> minikube delete</p>
+<p>minikube stop only stops it without deleting.</p>
+<p><strong>Q12.</strong> What do both tools need as a prerequisite?</p>
+<p><strong>Answer:</strong> A container runtime such as Docker, plus kubectl</p>
+<p>Docker Desktop works as the driver for both.</p>
+<h3 id="04-kubectl-basics"><a href="../level-1/04-kubectl-basics/">04 · kubectl Basics</a><a class="headerlink" href="#04-kubectl-basics" title="Permanent link">&para;</a></h3>
+<p><strong>Q13.</strong> What is the general shape of a kubectl command?</p>
+<p><strong>Answer:</strong> kubectl &lt;verb&gt; &lt;resource-type&gt; [name] [flags]</p>
+<p>For example kubectl describe deployment my-app.</p>
+<p><strong>Q14.</strong> Which section of kubectl describe is usually the fastest way to diagnose why a Pod won't start?</p>
+<p><strong>Answer:</strong> Events</p>
+<p>Image pull errors, failed scheduling, crash loops and failed probes show up there with timestamps.</p>
+<p><strong>Q15.</strong> How do you read logs from a previously crashed container?</p>
+<p><strong>Answer:</strong> kubectl logs &lt;pod&gt; --previous</p>
+<p>-f streams like tail -f.</p>
+<p><strong>Q16.</strong> Which is preferred: create or apply?</p>
+<p><strong>Answer:</strong> apply, declaratively from a YAML file</p>
+<p>create is for quick one-offs.</p>
+<h3 id="05-pods"><a href="../level-1/05-pods/">05 · Pods</a><a class="headerlink" href="#05-pods" title="Permanent link">&para;</a></h3>
+<p><strong>Q17.</strong> What is a Pod?</p>
+<p><strong>Answer:</strong> The smallest deployable unit: one or more containers sharing a network namespace, scheduled together onto one node</p>
+<p>Containers in a Pod can reach each other over localhost.</p>
+<p><strong>Q18.</strong> What is the sidecar pattern?</p>
+<p><strong>Answer:</strong> A small helper container such as a log shipper, proxy or config reloader running alongside the main container in the same Pod</p>
+<p>It's why a Pod can hold more than one container.</p>
+<p><strong>Q19.</strong> Why not create bare Pods for real workloads?</p>
+<p><strong>Answer:</strong> They have no self-healing: nothing recreates one if its node dies or it's deleted</p>
+<p>Use a Deployment, which manages Pods via a ReplicaSet.</p>
+<p><strong>Q20.</strong> Which four top-level fields does every manifest have?</p>
+<p><strong>Answer:</strong> apiVersion, kind, metadata and spec</p>
+<p>spec holds the desired state specific to the kind.</p>
+<h3 id="06-deployments-replicasets"><a href="../level-1/06-deployments-replicasets/">06 · Deployments &amp; ReplicaSets</a><a class="headerlink" href="#06-deployments-replicasets" title="Permanent link">&para;</a></h3>
+<p><strong>Q21.</strong> What does a ReplicaSet ensure?</p>
+<p><strong>Answer:</strong> A specified number of identical Pod replicas is running at all times</p>
+<p>It replaces dead Pods and deletes extras.</p>
+<p><strong>Q22.</strong> What does a Deployment add on top of a ReplicaSet?</p>
+<p><strong>Answer:</strong> Rollouts: a new ReplicaSet shifts replicas gradually from the old one, with history for rollback</p>
+<p>You almost always create a Deployment, not a bare ReplicaSet.</p>
+<p><strong>Q23.</strong> What must spec.selector.matchLabels match?</p>
+<p><strong>Answer:</strong> spec.template.metadata.labels; a mismatch is a validation error</p>
+<p>It's how the Deployment identifies which Pods belong to it.</p>
+<p><strong>Q24.</strong> What triggers a new ReplicaSet and rolling update?</p>
+<p><strong>Answer:</strong> Changing the Pod template, e.g. a new image or env var</p>
+<p>Scaling replicas doesn't create a new ReplicaSet.</p>
+<h3 id="07-services-networking-basics"><a href="../level-1/07-services-networking/">07 · Services &amp; Networking Basics</a><a class="headerlink" href="#07-services-networking-basics" title="Permanent link">&para;</a></h3>
+<p><strong>Q25.</strong> Why do Services exist?</p>
+<p><strong>Answer:</strong> Pods are ephemeral and get new IPs when recreated, so a Service gives a stable IP and DNS name in front of a set of Pods</p>
+<p>It load-balances across the Pods currently matching its selector.</p>
+<p><strong>Q26.</strong> What is the default Service type and its reach?</p>
+<p><strong>Answer:</strong> ClusterIP, reachable only from inside the cluster</p>
+<p>kubectl port-forward can tunnel to it for testing.</p>
+<p><strong>Q27.</strong> Which Service type opens a fixed port in the 30000–32767 range on every node?</p>
+<p><strong>Answer:</strong> NodePort</p>
+<p>It's used for simple external access in dev/test.</p>
+<p><strong>Q28.</strong> What does the Endpoints object hold?</p>
+<p><strong>Answer:</strong> The live list of Pod IPs currently matching the selector</p>
+<p>kube-proxy watches it to program routing rules.</p>
+<h3 id="08-configmaps-secrets"><a href="../level-1/08-configmaps-secrets/">08 · ConfigMaps &amp; Secrets</a><a class="headerlink" href="#08-configmaps-secrets" title="Permanent link">&para;</a></h3>
+<p><strong>Q29.</strong> Why externalize configuration from the image?</p>
+<p><strong>Answer:</strong> Otherwise you rebuild the image for every environment or config change</p>
+<p>ConfigMaps hold non-sensitive data; Secrets hold sensitive data.</p>
+<p><strong>Q30.</strong> How can Pods consume ConfigMaps and Secrets?</p>
+<p><strong>Answer:</strong> As environment variables or as mounted files</p>
+<p>Both objects work the same two ways.</p>
+<p><strong>Q31.</strong> What does envFrom.configMapRef do?</p>
+<p><strong>Answer:</strong> Injects every key in the ConfigMap as an environment variable</p>
+<p>valueFrom.configMapKeyRef pulls in a single named key.</p>
+<p><strong>Q32.</strong> How are Secret values stored?</p>
+<p><strong>Answer:</strong> base64-encoded (encoding, not encryption), with special handling like exclusion from describe output</p>
+<p>They can also be encrypted at rest.</p>
+<h3 id="09-namespaces-yaml-manifest-structure"><a href="../level-1/09-namespaces-manifests/">09 · Namespaces &amp; YAML Manifest Structure</a><a class="headerlink" href="#09-namespaces-yaml-manifest-structure" title="Permanent link">&para;</a></h3>
+<p><strong>Q33.</strong> What does a namespace do?</p>
+<p><strong>Answer:</strong> Partitions one physical cluster into multiple virtual clusters</p>
+<p>Names only need to be unique within a namespace.</p>
+<p><strong>Q34.</strong> Which resources are cluster-scoped rather than namespaced?</p>
+<p><strong>Answer:</strong> Nodes and PersistentVolumes</p>
+<p>Most others live in exactly one namespace.</p>
+<p><strong>Q35.</strong> How do you reach a Service named web in the staging namespace from the default namespace?</p>
+<p><strong>Answer:</strong> http://web.staging (or web.staging.svc.cluster.local)</p>
+<p>The short name works only within the same namespace.</p>
+<p><strong>Q36.</strong> What happens when you delete a namespace?</p>
+<p><strong>Answer:</strong> Everything in it is deleted too (cascade)</p>
+<p>Check before running kubectl delete namespace.</p>
+<h3 id="10-project-multi-container-app"><a href="../level-1/10-project-multi-container-app/">10 · Project — Multi-Container App</a><a class="headerlink" href="#10-project-multi-container-app" title="Permanent link">&para;</a></h3>
+<p><strong>Q37.</strong> How is the frontend exposed to the outside in the project?</p>
+<p><strong>Answer:</strong> Through a NodePort Service</p>
+<p>The backend is exposed internally through a ClusterIP Service.</p>
+<p><strong>Q38.</strong> What does the API backend read for credentials?</p>
+<p><strong>Answer:</strong> A Secret named api-credentials</p>
+<p>Non-sensitive settings live in the api-config ConfigMap.</p>
+<p><strong>Q39.</strong> Why does the project use a httpbin image as the 'API'?</p>
+<p><strong>Answer:</strong> It's a small HTTP-echo test image, so the example runs without custom app code</p>
+<p>Swap in your own image in a real project.</p>
+<p><strong>Q40.</strong> Why does the note say to treat the write-up as expected behavior to verify?</p>
+<p><strong>Answer:</strong> The manifests were reasoned through, not run on a live cluster, so you should apply and verify them yourself</p>
+<p>It's not a guarantee.</p>
+<h2 id="level-2-intermediate">Level 2 · Intermediate<a class="headerlink" href="#level-2-intermediate" title="Permanent link">&para;</a></h2>
+<h3 id="01-volumes-persistent-storage"><a href="../level-2/01-volumes-persistent-storage/">01 · Volumes &amp; Persistent Storage</a><a class="headerlink" href="#01-volumes-persistent-storage" title="Permanent link">&para;</a></h3>
+<p><strong>Q41.</strong> What happens to data in a container's writable layer on restart?</p>
+<p><strong>Answer:</strong> It's discarded and recreated from the image</p>
+<p>Volumes attach external storage so data can survive.</p>
+<p><strong>Q42.</strong> How long does emptyDir data live?</p>
+<p><strong>Answer:</strong> Until the Pod is removed from the node (it survives a container restart but not Pod deletion)</p>
+<p>It's good for sharing files between containers in the same Pod or for scratch space.</p>
+<p><strong>Q43.</strong> Why is hostPath a security concern?</p>
+<p><strong>Answer:</strong> Files dropped there are visible to anything else on that node</p>
+<p>Legitimate uses are narrow, like node-level agents.</p>
+<p><strong>Q44.</strong> How do PV and PVC split responsibilities?</p>
+<p><strong>Answer:</strong> A PV is the actual storage; a PVC is a Pod's request for storage</p>
+<p>This lets data outlive any one Pod or node.</p>
+<h3 id="02-ingress-load-balancing"><a href="../level-2/02-ingress-load-balancing/">02 · Ingress &amp; Load Balancing</a><a class="headerlink" href="#02-ingress-load-balancing" title="Permanent link">&para;</a></h3>
+<p><strong>Q45.</strong> Why isn't one LoadBalancer Service per app enough for HTTP routing?</p>
+<p><strong>Answer:</strong> One external IP per Service gets expensive and unwieldy with many HTTP services under one domain</p>
+<p>Ingress describes host/path routing in one object.</p>
+<p><strong>Q46.</strong> What does an Ingress controller do?</p>
+<p><strong>Answer:</strong> Reads Ingress objects and actually implements the routing</p>
+<p>It's separate software such as NGINX Ingress, Traefik or a cloud-managed one.</p>
+<p><strong>Q47.</strong> What does ingressClassName: nginx do?</p>
+<p><strong>Answer:</strong> Tells Kubernetes which installed controller should watch this Ingress</p>
+<p>A cluster can run several controllers.</p>
+<p><strong>Q48.</strong> How is TLS termination configured in the Ingress?</p>
+<p><strong>Answer:</strong> A tls section with hosts and a secretName pointing to a kubernetes.io/tls Secret</p>
+<p>Create it with kubectl create secret tls --cert --key.</p>
+<h3 id="03-resource-requests-limits-scheduling"><a href="../level-2/03-resource-requests-limits/">03 · Resource Requests, Limits &amp; Scheduling</a><a class="headerlink" href="#03-resource-requests-limits-scheduling" title="Permanent link">&para;</a></h3>
+<p><strong>Q49.</strong> What do requests and limits each do?</p>
+<p><strong>Answer:</strong> Requests tell the scheduler what a container needs; limits cap what it may actually use</p>
+<p>Without them the scheduler is guessing.</p>
+<p><strong>Q50.</strong> How does the scheduler decide whether a Pod fits a node?</p>
+<p><strong>Answer:</strong> By summing requests of already-scheduled Pods plus this Pod's, never looking at live usage</p>
+<p>The NodeResourcesFit predicate filters nodes that would exceed allocatable capacity.</p>
+<p><strong>Q51.</strong> What happens when a container exceeds its CPU limit versus its memory limit?</p>
+<p><strong>Answer:</strong> CPU is throttled; memory exceeding the limit gets the container OOMKilled</p>
+<p>CPU limits never kill a container.</p>
+<p><strong>Q52.</strong> What does cpu: 250m mean?</p>
+<p><strong>Answer:</strong> 0.25 of a vCPU core</p>
+<p>Mi/Gi are base-1024 memory units.</p>
+<h3 id="04-health-checks-liveness-readiness-probes"><a href="../level-2/04-health-checks-probes/">04 · Health Checks (Liveness &amp; Readiness Probes)</a><a class="headerlink" href="#04-health-checks-liveness-readiness-probes" title="Permanent link">&para;</a></h3>
+<p><strong>Q53.</strong> What does a failing liveness probe cause?</p>
+<p><strong>Answer:</strong> kubelet kills the container and the runtime restarts it, subject to restartPolicy</p>
+<p>It's for unrecoverable-without-restart states like deadlocks.</p>
+<p><strong>Q54.</strong> What does a failing readiness probe cause?</p>
+<p><strong>Answer:</strong> The Pod's IP is removed from the Service's endpoints with no restart, resuming when it passes</p>
+<p>It's the right tool for temporarily being unable to serve.</p>
+<p><strong>Q55.</strong> What does a startupProbe do?</p>
+<p><strong>Answer:</strong> Disables liveness and readiness probes until it succeeds, protecting slow-starting apps from premature kills</p>
+<p>The example allows up to 300s to start.</p>
+<p><strong>Q56.</strong> Why isn't 'container is running' the same as 'healthy'?</p>
+<p><strong>Answer:</strong> A container can be deadlocked, stuck on a dependency or still warming up while its process is alive</p>
+<p>Probes let kubelet ask the application itself.</p>
+<h3 id="05-rolling-updates-rollbacks"><a href="../level-2/05-rolling-updates-rollbacks/">05 · Rolling Updates &amp; Rollbacks</a><a class="headerlink" href="#05-rolling-updates-rollbacks" title="Permanent link">&para;</a></h3>
+<p><strong>Q57.</strong> What do maxUnavailable and maxSurge bound?</p>
+<p><strong>Answer:</strong> How many Pods may be down and how many extra Pods may exist during a rollout</p>
+<p>With 6 replicas, maxUnavailable 1 and maxSurge 1.</p>
+<p><strong>Q58.</strong> How does a rolling update change Pods?</p>
+<p><strong>Answer:</strong> It creates a new ReplicaSet and shifts replica counts step by step, never editing Pods in place</p>
+<p>The old ReplicaSet is kept at zero for rollback per revisionHistoryLimit.</p>
+<p><strong>Q59.</strong> How do you roll back to the previous revision?</p>
+<p><strong>Answer:</strong> kubectl rollout undo deployment/web</p>
+<p>Add --to-revision=N for a specific one.</p>
+<p><strong>Q60.</strong> Why does CHANGE-CAUSE show &lt;none&gt;?</p>
+<p><strong>Answer:</strong> It's populated only if you set the kubernetes.io/change-cause annotation</p>
+<p>--record is deprecated.</p>
+<h3 id="06-helm-basics-charts-values"><a href="../level-2/06-helm-basics/">06 · Helm Basics (Charts &amp; Values)</a><a class="headerlink" href="#06-helm-basics-charts-values" title="Permanent link">&para;</a></h3>
+<p><strong>Q61.</strong> What is a Helm chart?</p>
+<p><strong>Answer:</strong> A templated, versioned package of manifests</p>
+<p>It solves the problem of parameterizing and versioning raw YAML across environments.</p>
+<p><strong>Q62.</strong> Where do .Values come from?</p>
+<p><strong>Answer:</strong> values.yaml, overridable per install</p>
+<p>For example --set image.tag=1.5.0.</p>
+<p><strong>Q63.</strong> What is a helm rollback in terms of revisions?</p>
+<p><strong>Answer:</strong> Another upgrade creating a new revision whose target is an old revision's manifest</p>
+<p>Rollback to revision 1 produced revision 3.</p>
+<p><strong>Q64.</strong> What are the three template objects mentioned?</p>
+<p><strong>Answer:</strong> .Values, .Release and .Chart</p>
+<p>Release has install-time metadata; Chart has Chart.yaml fields.</p>
+<h3 id="07-multi-environment-configuration"><a href="../level-2/07-multi-environment-config/">07 · Multi-Environment Configuration</a><a class="headerlink" href="#07-multi-environment-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Q65.</strong> Why not keep three full copies of every manifest for dev, staging and prod?</p>
+<p><strong>Answer:</strong> It invites drift: a fix in one copy gets forgotten in the others</p>
+<p>Use Kustomize overlays or Helm values files instead.</p>
+<p><strong>Q66.</strong> How does Kustomize avoid duplication?</p>
+<p><strong>Answer:</strong> A base plus per-environment overlays that reference it and layer a small patch</p>
+<p>A fix to base/deployment.yaml propagates to every environment.</p>
+<p><strong>Q67.</strong> What does kubectl apply -k overlays/prod do?</p>
+<p><strong>Answer:</strong> Applies the Kustomize output of that overlay directly</p>
+<p>kubectl kustomize previews the merged output.</p>
+<p><strong>Q68.</strong> How does Helm achieve the same idea?</p>
+<p><strong>Answer:</strong> Layered values files, e.g. -f values.yaml -f values-prod.yaml, overriding only what differs</p>
+<p>It is a common base plus a small per-environment diff.</p>
+<h3 id="08-jobs-cronjobs"><a href="../level-2/08-jobs-cronjobs/">08 · Jobs &amp; CronJobs</a><a class="headerlink" href="#08-jobs-cronjobs" title="Permanent link">&para;</a></h3>
+<p><strong>Q69.</strong> Why isn't a Deployment the right tool for a one-time batch task?</p>
+<p><strong>Answer:</strong> It keeps a process running indefinitely and restarts it forever</p>
+<p>A Job runs a Pod to successful completion, with retries, then stops.</p>
+<p><strong>Q70.</strong> What restartPolicy does a Job's Pod template need?</p>
+<p><strong>Answer:</strong> Never or OnFailure; Always makes no sense</p>
+<p>backoffLimit caps retries.</p>
+<p><strong>Q71.</strong> What do completions and parallelism mean in a parallel Job?</p>
+<p><strong>Answer:</strong> Total successful completions needed, and how many Pods may run at once</p>
+<p>10 completions with 3 in parallel.</p>
+<p><strong>Q72.</strong> What does completionMode: Indexed give each Pod?</p>
+<p><strong>Answer:</strong> A stable index (0..N-1) for partitioning work</p>
+<p>NonIndexed just needs any N successful completions.</p>
+<h3 id="09-debugging-troubleshooting-workloads"><a href="../level-2/09-debugging-troubleshooting/">09 · Debugging &amp; Troubleshooting Workloads</a><a class="headerlink" href="#09-debugging-troubleshooting-workloads" title="Permanent link">&para;</a></h3>
+<p><strong>Q73.</strong> What is the recommended order for debugging a workload?</p>
+<p><strong>Answer:</strong> get, describe (Events), logs, exec, then debug if the container won't start</p>
+<p>Random kubectl get commands waste time.</p>
+<p><strong>Q74.</strong> What does CrashLoopBackOff usually mean, and where do you look?</p>
+<p><strong>Answer:</strong> The container starts then exits repeatedly; check logs --previous</p>
+<p>--previous shows the crashed container's logs, not the current restart's.</p>
+<p><strong>Q75.</strong> What does ImagePullBackOff usually mean?</p>
+<p><strong>Answer:</strong> Wrong image name or tag, or missing private registry auth</p>
+<p>The Events section shows the pull failure.</p>
+<p><strong>Q76.</strong> Why does describe's Events section often show a problem before logs do?</p>
+<p><strong>Answer:</strong> In many cases the container never even started, so there are no logs yet</p>
+<p>Scheduling failures, image pulls, probes and OOM kills surface there.</p>
+<h3 id="10-project-ingress-fronted-helm-app"><a href="../level-2/10-project-helm-ingress-app/">10 · Project — Ingress-Fronted Helm App</a><a class="headerlink" href="#10-project-ingress-fronted-helm-app" title="Permanent link">&para;</a></h3>
+<p><strong>Q77.</strong> Why does the project use a single-replica StatefulSet for the database?</p>
+<p><strong>Answer:</strong> So the PVC survives Pod rescheduling with a stable name (data-shop-db-0); Deployment semantics don't fit irreplaceable state</p>
+<p>Multi-replica StatefulSets are covered in Level 3.</p>
+<p><strong>Q78.</strong> How does the chart differ between dev and prod?</p>
+<p><strong>Answer:</strong> values-prod.yaml overrides replicas, storage size, host and TLS</p>
+<p>For example prod has 4 replicas, 20Gi and TLS on.</p>
+<p><strong>Q79.</strong> What does volumeClaimTemplates do?</p>
+<p><strong>Answer:</strong> Creates a PVC for each StatefulSet replica</p>
+<p>It requests storage with ReadWriteOnce from the storageClassName.</p>
+<p><strong>Q80.</strong> Which components does the project combine?</p>
+<p><strong>Answer:</strong> Volumes, Ingress, Helm and multi-environment config</p>
+<p>Modules 01, 02, 06 and 07.</p>
+<h2 id="level-3-advanced">Level 3 · Advanced<a class="headerlink" href="#level-3-advanced" title="Permanent link">&para;</a></h2>
+<h3 id="01-statefulsets-daemonsets"><a href="../level-3/01-statefulsets-daemonsets/">01 · StatefulSets &amp; DaemonSets</a><a class="headerlink" href="#01-statefulsets-daemonsets" title="Permanent link">&para;</a></h3>
+<p><strong>Q81.</strong> When do you need a StatefulSet instead of a Deployment?</p>
+<p><strong>Answer:</strong> When each replica needs a stable name, DNS entry and PVC, as in databases or brokers</p>
+<p>Deployment Pods are interchangeable.</p>
+<p><strong>Q82.</strong> What name do StatefulSet Pods get?</p>
+<p><strong>Answer:</strong> &lt;statefulset&gt;-&lt;ordinal&gt;, e.g. postgres-0, postgres-1</p>
+<p>They also get stable DNS names through the headless Service.</p>
+<p><strong>Q83.</strong> What happens when postgres-1 is deleted?</p>
+<p><strong>Answer:</strong> A Pod named postgres-1 is recreated and reattaches to the same PVC</p>
+<p>Each Pod has its own PVC from volumeClaimTemplates.</p>
+<p><strong>Q84.</strong> Why does a StatefulSet need a headless Service (clusterIP: None)?</p>
+<p><strong>Answer:</strong> It is required for StatefulSet DNS</p>
+<p>serviceName must match it.</p>
+<h3 id="02-rbac-service-accounts"><a href="../level-3/02-rbac-service-accounts/">02 · RBAC &amp; Service Accounts</a><a class="headerlink" href="#02-rbac-service-accounts" title="Permanent link">&para;</a></h3>
+<p><strong>Q85.</strong> What are the two separate questions every API request answers?</p>
+<p><strong>Answer:</strong> Authentication (who are you) then authorization (what can you do)</p>
+<p>RBAC is the standard authorization mechanism.</p>
+<p><strong>Q86.</strong> Which ServiceAccount does a Pod use if none is specified?</p>
+<p><strong>Answer:</strong> The namespace's default one, which has essentially zero permissions</p>
+<p>ServiceAccounts give identity to Pods, not people.</p>
+<p><strong>Q87.</strong> What does a Role plus RoleBinding grant?</p>
+<p><strong>Answer:</strong> Permissions only within one namespace</p>
+<p>log-reader can read Pods in prod but nothing in staging.</p>
+<p><strong>Q88.</strong> When do you use ClusterRole and ClusterRoleBinding?</p>
+<p><strong>Answer:</strong> For cluster-wide resources like nodes or reusable permissions</p>
+<p>The example grants node-reader to a monitoring ServiceAccount.</p>
+<h3 id="03-network-policies"><a href="../level-3/03-network-policies/">03 · Network Policies</a><a class="headerlink" href="#03-network-policies" title="Permanent link">&para;</a></h3>
+<p><strong>Q89.</strong> What is the default Kubernetes networking behavior?</p>
+<p><strong>Answer:</strong> Any Pod can reach any other Pod on any port, across namespaces</p>
+<p>A NetworkPolicy restricts this.</p>
+<p><strong>Q90.</strong> When is a NetworkPolicy actually enforced?</p>
+<p><strong>Answer:</strong> Only if the CNI plugin implements it, such as Calico or Cilium</p>
+<p>On a CNI that ignores it, the object is inert.</p>
+<p><strong>Q91.</strong> What does an empty podSelector with no rules mean in the default-deny policy?</p>
+<p><strong>Answer:</strong> Select every Pod and allow nothing</p>
+<p>Policies are additive, so layer allow policies on top.</p>
+<p><strong>Q92.</strong> What does allow-web-to-api permit?</p>
+<p><strong>Answer:</strong> Inbound TCP 8080 to app: api Pods only from app: web Pods in the same namespace</p>
+<p>Everything else stays blocked by default-deny.</p>
+<h3 id="04-autoscaling-hpa-vpa-concepts"><a href="../level-3/04-autoscaling-hpa-vpa/">04 · Autoscaling (HPA &amp; VPA Concepts)</a><a class="headerlink" href="#04-autoscaling-hpa-vpa-concepts" title="Permanent link">&para;</a></h3>
+<p><strong>Q93.</strong> What does HPA change versus VPA?</p>
+<p><strong>Answer:</strong> HPA changes replicas; VPA changes resource requests/limits</p>
+<p>Horizontal means more copies; vertical means more CPU/memory per copy.</p>
+<p><strong>Q94.</strong> What does HPA need to read CPU utilization?</p>
+<p><strong>Answer:</strong> The metrics-server add-on (or a custom metrics adapter)</p>
+<p>It serves the metrics.k8s.io API from kubelet stats.</p>
+<p><strong>Q95.</strong> What does averageUtilization: 70 mean?</p>
+<p><strong>Answer:</strong> Keep average CPU across replicas at 70% of each Pod's CPU request</p>
+<p>Without a request, the utilization percentage has no denominator.</p>
+<p><strong>Q96.</strong> What is an External metric type used for?</p>
+<p><strong>Answer:</strong> A metric with no direct Pod association, like a queue depth</p>
+<p>Type Pods reads a per-Pod metric through an adapter such as Prometheus Adapter.</p>
+<h3 id="05-observability-metrics-logging"><a href="../level-3/05-observability-metrics-logging/">05 · Observability: Metrics &amp; Logging</a><a class="headerlink" href="#05-observability-metrics-logging" title="Permanent link">&para;</a></h3>
+<p><strong>Q97.</strong> Why isn't kubectl logs enough at scale?</p>
+<p><strong>Answer:</strong> It doesn't survive Pod deletion, doesn't aggregate across replicas and gives no historical trends</p>
+<p>Production observability needs metrics, logs and traces.</p>
+<p><strong>Q98.</strong> How does Prometheus collect metrics?</p>
+<p><strong>Answer:</strong> It pulls: discovers targets via the Kubernetes API and hits each target's /metrics endpoint</p>
+<p>The app exposes Prometheus text format using a client library.</p>
+<p><strong>Q99.</strong> What does kube-state-metrics add over metrics-server?</p>
+<p><strong>Answer:</strong> It turns object state (replica counts, Pod phase, PVC binding) into Prometheus metrics, while metrics-server exposes only current CPU/memory</p>
+<p>For example kube_deployment_status_replicas_available.</p>
+<p><strong>Q100.</strong> What do the prometheus.io/scrape annotations do?</p>
+<p><strong>Answer:</strong> Mark a Pod as a scrape target and say which port and path to use</p>
+<p>The relabel config keeps only Pods annotated scrape: "true".</p>
+<h3 id="06-probes-health-at-scale"><a href="../level-3/06-probes-at-scale/">06 · Probes &amp; Health at Scale</a><a class="headerlink" href="#06-probes-health-at-scale" title="Permanent link">&para;</a></h3>
+<p><strong>Q101.</strong> What is the thundering herd problem with readiness probes?</p>
+<p><strong>Answer:</strong> If every replica's probe depends on a shared downstream, a brief blip can make all replicas unready at once, so the Service loses all backends</p>
+<p>It's strictly worse than one Pod being briefly unavailable.</p>
+<p><strong>Q102.</strong> What is the recommended fix?</p>
+<p><strong>Answer:</strong> Keep readiness shallow and handle downstream failures with retries/circuit breakers in app code</p>
+<p>A deep /ready that pings the database couples the fleet's availability to it.</p>
+<p><strong>Q103.</strong> What does a PodDisruptionBudget protect against?</p>
+<p><strong>Answer:</strong> Voluntary disruption such as node drains and cluster upgrades evicting too many replicas</p>
+<p>Probes handle involuntary failures like crashes.</p>
+<p><strong>Q104.</strong> Why jitter initialDelaySeconds?</p>
+<p><strong>Answer:</strong> So replica probes don't all fire in the same tick, which matters as probes add load at fleet scale</p>
+<p>It isn't a native field; stagger via Helm or rely on rolling-update timing.</p>
+<h3 id="07-multi-cluster-multi-tenancy-concepts"><a href="../level-3/07-multi-cluster-multi-tenancy/">07 · Multi-Cluster &amp; Multi-Tenancy Concepts</a><a class="headerlink" href="#07-multi-cluster-multi-tenancy-concepts" title="Permanent link">&para;</a></h3>
+<p><strong>Q105.</strong> How do multi-tenancy and multi-cluster differ?</p>
+<p><strong>Answer:</strong> Multi-tenancy is isolation within a cluster; multi-cluster is blast-radius and locality across clusters</p>
+<p>They are often combined but are different decisions.</p>
+<p><strong>Q106.</strong> Which building blocks make up soft multi-tenancy?</p>
+<p><strong>Answer:</strong> Namespaces, RBAC, ResourceQuota and NetworkPolicy</p>
+<p>They suit trusted tenants like internal teams.</p>
+<p><strong>Q107.</strong> Why is namespace isolation 'soft'?</p>
+<p><strong>Answer:</strong> All tenants share the same kernel, kubelet and control plane, so a container escape could cross boundaries</p>
+<p>It stops accidental interference and enforces fairness.</p>
+<p><strong>Q108.</strong> What is the stronger option for untrusted tenants?</p>
+<p><strong>Answer:</strong> A separate cluster or a virtual cluster per tenant</p>
+<p>vcluster gives each tenant its own API server on a shared node pool.</p>
+<h3 id="08-admission-control-policy-enforcement"><a href="../level-3/08-admission-control-policy/">08 · Admission Control &amp; Policy Enforcement</a><a class="headerlink" href="#08-admission-control-policy-enforcement" title="Permanent link">&para;</a></h3>
+<p><strong>Q109.</strong> What is the order for write requests to the API server?</p>
+<p><strong>Answer:</strong> Authentication → authorization → admission control → persisted to etcd</p>
+<p>Admission is content-aware, unlike RBAC.</p>
+<p><strong>Q110.</strong> How does admission differ from RBAC?</p>
+<p><strong>Answer:</strong> RBAC asks whether an identity may do a verb; admission asks whether this specific object with these fields is acceptable</p>
+<p>RBAC has no concept of object content.</p>
+<p><strong>Q111.</strong> What gap do dynamic admission webhooks fill?</p>
+<p><strong>Answer:</strong> Custom logic beyond the plugins compiled into the API server</p>
+<p>ResourceQuota, LimitRange and DefaultStorageClass are built-in plugins.</p>
+<p><strong>Q112.</strong> What does a validating webhook respond with?</p>
+<p><strong>Answer:</strong> allowed: true or false with an optional reason, in an AdmissionReview</p>
+<p>The example rejects Pods without memory limits.</p>
+<h3 id="09-cluster-networking-deep-dive-cni"><a href="../level-3/09-cluster-networking-cni/">09 · Cluster Networking Deep Dive (CNI)</a><a class="headerlink" href="#09-cluster-networking-deep-dive-cni" title="Permanent link">&para;</a></h3>
+<p><strong>Q113.</strong> What does the Kubernetes networking model require?</p>
+<p><strong>Answer:</strong> Every Pod gets its own IP, can reach any other Pod's IP without NAT, and sees its own IP as others do</p>
+<p>Kubernetes defines the model; a CNI plugin implements it.</p>
+<p><strong>Q114.</strong> How do two Pods on the same node communicate?</p>
+<p><strong>Answer:</strong> Via veth pairs attached to a Linux bridge such as cni0, with no routing needed</p>
+<p>One veth end is inside the Pod's namespace as eth0.</p>
+<p><strong>Q115.</strong> What does an overlay (VXLAN) do for cross-node traffic?</p>
+<p><strong>Answer:</strong> Encapsulates Pod packets inside UDP packets addressed node-to-node, working on any underlying network at the cost of overhead</p>
+<p>The routed alternative, e.g. Calico with BGP, avoids encapsulation.</p>
+<p><strong>Q116.</strong> Which problem is kube-proxy's job?</p>
+<p><strong>Answer:</strong> Pod-to-Service</p>
+<p>The four problems also include external traffic via NAT, Ingress or LoadBalancer.</p>
+<h3 id="10-project-resilient-stateful-service"><a href="../level-3/10-project-resilient-stateful-service/">10 · Project — Resilient Stateful Service</a><a class="headerlink" href="#10-project-resilient-stateful-service" title="Permanent link">&para;</a></h3>
+<p><strong>Q117.</strong> What do topologySpreadConstraints with maxSkew 1 and DoNotSchedule accomplish?</p>
+<p><strong>Answer:</strong> The scheduler refuses to put a second replica on a node already holding one when enough nodes exist, making 'survives node loss' true</p>
+<p>A StatefulSet alone doesn't guarantee spread.</p>
+<p><strong>Q118.</strong> What does the PodDisruptionBudget add to the project?</p>
+<p><strong>Answer:</strong> The service can be safely drained for maintenance without evicting too many replicas at once</p>
+<p>It protects availability during voluntary disruption.</p>
+<p><strong>Q119.</strong> Which modules does the project combine?</p>
+<p><strong>Answer:</strong> StatefulSets, RBAC, NetworkPolicy, HPA, observability and PDBs</p>
+<p>It builds a resilient 3-node key-value store.</p>
+<p><strong>Q120.</strong> What does podManagementPolicy: OrderedReady do?</p>
+<p><strong>Answer:</strong> Creates Pods one at a time in order, waiting for each to be Ready</p>
+<p>It's the default StatefulSet behavior.</p>
+<h2 id="level-4-master">Level 4 · Master<a class="headerlink" href="#level-4-master" title="Permanent link">&para;</a></h2>
+<h3 id="01-operators-crds"><a href="../level-4/01-operators-crds/">01 · Operators &amp; CRDs</a><a class="headerlink" href="#01-operators-crds" title="Permanent link">&para;</a></h3>
+<p><strong>Q121.</strong> What does a CRD let you do?</p>
+<p><strong>Answer:</strong> Register a new resource type with its own schema and validation, without recompiling the API server</p>
+<p>You get kubectl get/apply support immediately.</p>
+<p><strong>Q122.</strong> What is an Operator?</p>
+<p><strong>Answer:</strong> A CRD paired with a custom controller that encodes operational knowledge as code</p>
+<p>Backups, failover and upgrade steps are examples.</p>
+<p><strong>Q123.</strong> What comes from the CRD's schema with no custom code?</p>
+<p><strong>Answer:</strong> kubectl get, RBAC rules and OpenAPI validation that rejects a missing required field</p>
+<p>The controller adds behavior; the CRD alone is just API.</p>
+<p><strong>Q124.</strong> What does scope: Namespaced mean for the CRD?</p>
+<p><strong>Answer:</strong> Its resources live inside a namespace</p>
+<p>orders-db was created in prod.</p>
+<h3 id="02-gitops-patterns-argocdflux-concepts"><a href="../level-4/02-gitops-argocd-flux/">02 · GitOps Patterns (ArgoCD/Flux Concepts)</a><a class="headerlink" href="#02-gitops-patterns-argocdflux-concepts" title="Permanent link">&para;</a></h3>
+<p><strong>Q125.</strong> How does the GitOps pull model differ from the push model?</p>
+<p><strong>Answer:</strong> A controller inside the cluster watches Git and reconciles, so nothing outside needs write credentials to the cluster</p>
+<p>CI only needs push access to Git.</p>
+<p><strong>Q126.</strong> What do prune: true and selfHeal: true do together in ArgoCD?</p>
+<p><strong>Answer:</strong> Delete resources removed from Git and revert manual cluster edits, enforcing Git as the only source of change</p>
+<p>Without them ArgoCD only reports OutOfSync.</p>
+<p><strong>Q127.</strong> What is an ArgoCD Application?</p>
+<p><strong>Answer:</strong> A custom resource pointing at a Git path and a destination cluster/namespace</p>
+<p>repoURL, targetRevision and path define the source.</p>
+<p><strong>Q128.</strong> How is Flux structured differently?</p>
+<p><strong>Answer:</strong> A set of composable CRD-driven controllers like GitRepository and Kustomization instead of one Application object</p>
+<p>It's Flux v2 (Flux CD).</p>
+<h3 id="03-cluster-upgrades-maintenance"><a href="../level-4/03-cluster-upgrades-maintenance/">03 · Cluster Upgrades &amp; Maintenance</a><a class="headerlink" href="#03-cluster-upgrades-maintenance" title="Permanent link">&para;</a></h3>
+<p><strong>Q129.</strong> What is the mandated upgrade order?</p>
+<p><strong>Answer:</strong> Control plane first, then nodes, one minor version at a time</p>
+<p>For example 1.27 → 1.28 → 1.29, never 1.27 → 1.29 directly.</p>
+<p><strong>Q130.</strong> Which component is the ceiling for version skew?</p>
+<p><strong>Answer:</strong> kube-apiserver</p>
+<p>No other component may run a newer minor version than it.</p>
+<p><strong>Q131.</strong> What does kubectl cordon node-3 do?</p>
+<p><strong>Answer:</strong> Marks the node unschedulable so no new Pods are placed there</p>
+<p>kubectl drain then evicts existing Pods, respecting PodDisruptionBudgets.</p>
+<p><strong>Q132.</strong> How do control-plane Pods restart after kubeadm upgrade apply?</p>
+<p><strong>Answer:</strong> kubelet watches the static Pod manifests directory and restarts them automatically</p>
+<p>Static Pods aren't normal API objects you restart via kubectl.</p>
+<h3 id="04-security-hardening-pod-security-standards"><a href="../level-4/04-security-hardening/">04 · Security Hardening (Pod Security Standards)</a><a class="headerlink" href="#04-security-hardening-pod-security-standards" title="Permanent link">&para;</a></h3>
+<p><strong>Q133.</strong> What are the three Pod Security Standards levels?</p>
+<p><strong>Answer:</strong> Privileged, Baseline and Restricted</p>
+<p>They replace the deprecated PodSecurityPolicy and are enforced by the in-tree Pod Security Admission controller.</p>
+<p><strong>Q134.</strong> How do enforce, warn and audit differ?</p>
+<p><strong>Answer:</strong> enforce rejects non-compliant Pods; warn and audit let you roll out a stricter policy gradually</p>
+<p>Apply warn/audit first, then flip enforce once nothing new violates it.</p>
+<p><strong>Q135.</strong> How is a Pod Security Standard applied to a namespace?</p>
+<p><strong>Answer:</strong> With pod-security.kubernetes.io labels on the Namespace</p>
+<p>For example pod-security.kubernetes.io/enforce: restricted.</p>
+<p><strong>Q136.</strong> Which are Restricted requirements?</p>
+<p><strong>Answer:</strong> Run as non-root, drop all capabilities, forbid privilege escalation and require a seccomp profile</p>
+<p>The compliant Pod spec sets runAsNonRoot, allowPrivilegeEscalation: false and capabilities drop ALL.</p>
+<h3 id="05-image-scanning-supply-chain-security"><a href="../level-4/05-image-scanning-supply-chain/">05 · Image Scanning &amp; Supply Chain Security</a><a class="headerlink" href="#05-image-scanning-supply-chain-security" title="Permanent link">&para;</a></h3>
+<p><strong>Q137.</strong> What are the supply chain's three attack surfaces?</p>
+<p><strong>Answer:</strong> Build-time, distribution and runtime</p>
+<p>Scanning addresses build-time; signing and provenance address distribution and runtime.</p>
+<p><strong>Q138.</strong> What turns Trivy scanning from a dashboard nobody reads into a real gate?</p>
+<p><strong>Answer:</strong> Wiring it into CI with --exit-code 1 on CRITICAL/HIGH so the build fails</p>
+<p>A scan that only reports gets ignored under deadline pressure.</p>
+<p><strong>Q139.</strong> What does keyless Cosign signing tie the signature to?</p>
+<p><strong>Answer:</strong> An OIDC identity (e.g. a specific GitHub Actions workflow), instead of a long-lived private key</p>
+<p>It uses Fulcio and the Rekor transparency log.</p>
+<p><strong>Q140.</strong> What does the Kyverno ClusterPolicy do here?</p>
+<p><strong>Answer:</strong> Enforces at admission time that images are signed (or scanned) before Pods are allowed</p>
+<p>It blocks unverified images at the admission step.</p>
+<h3 id="06-designing-production-grade-cluster-architecture"><a href="../level-4/06-production-cluster-architecture/">06 · Designing Production-Grade Cluster Architecture</a><a class="headerlink" href="#06-designing-production-grade-cluster-architecture" title="Permanent link">&para;</a></h3>
+<p><strong>Q141.</strong> Why does etcd need an odd number of members?</p>
+<p><strong>Answer:</strong> So a majority (quorum) is always well-defined: 3 tolerate 1 failure, 5 tolerate 2</p>
+<p>It's a Raft-based cluster.</p>
+<p><strong>Q142.</strong> Why spread 3 control-plane nodes across 3 AZs?</p>
+<p><strong>Answer:</strong> A single AZ outage still leaves 2 members, a quorum, so the cluster keeps writing</p>
+<p>Each AZ holds one etcd member.</p>
+<p><strong>Q143.</strong> What do taints and tolerations achieve for a GPU node pool?</p>
+<p><strong>Answer:</strong> Ordinary workloads don't land on expensive specialized nodes; only Pods that tolerate the taint do</p>
+<p>The Pod also uses a nodeSelector for the pool.</p>
+<p><strong>Q144.</strong> What questions does a production design answer?</p>
+<p><strong>Answer:</strong> Control plane count and AZs, etcd deployment and backup, worker node pooling and cluster-wide policy</p>
+<p>The earlier levels sidestepped these for simplicity.</p>
+<h3 id="07-disaster-recovery-backup-strategies"><a href="../level-4/07-disaster-recovery-backup/">07 · Disaster Recovery &amp; Backup Strategies</a><a class="headerlink" href="#07-disaster-recovery-backup-strategies" title="Permanent link">&para;</a></h3>
+<p><strong>Q145.</strong> Why does restoring etcd alone not recover a corrupted database?</p>
+<p><strong>Answer:</strong> etcd holds declared API objects, while application data lives on PV storage outside etcd</p>
+<p>Both halves need independent, tested backup and restore procedures.</p>
+<p><strong>Q146.</strong> Why must etcd snapshots ship off-node immediately?</p>
+<p><strong>Answer:</strong> A snapshot only on the control-plane disk dies with that disk in a real disaster</p>
+<p>The cron job copies each snapshot to S3 or GCS.</p>
+<p><strong>Q147.</strong> What does etcdctl snapshot save do?</p>
+<p><strong>Answer:</strong> Writes a point-in-time snapshot of etcd to a file</p>
+<p>etcdctl snapshot status shows its hash, revision, key count and size.</p>
+<p><strong>Q148.</strong> How does the restore procedure make etcd use the restored data?</p>
+<p><strong>Answer:</strong> Point the etcd static Pod manifest at the restored data-dir; kubelet restarts etcd against it</p>
+<p>Restoring is a full replace, not a merge.</p>
+<h3 id="08-cost-optimization-capacity-planning"><a href="../level-4/08-cost-optimization-capacity/">08 · Cost Optimization &amp; Capacity Planning</a><a class="headerlink" href="#08-cost-optimization-capacity-planning" title="Permanent link">&para;</a></h3>
+<p><strong>Q149.</strong> What drives most of a cluster's cost?</p>
+<p><strong>Answer:</strong> Requested, not used, resources</p>
+<p>Nodes are provisioned and billed to satisfy requests whether or not Pods use them.</p>
+<p><strong>Q150.</strong> A Pod requests 500m CPU but uses 45m. What is the problem?</p>
+<p><strong>Answer:</strong> The scheduler reserved about 10x the CPU actually needed, which sits idle and billed</p>
+<p>Over-requesting is the largest source of Kubernetes waste.</p>
+<p><strong>Q151.</strong> Why start VPA with updateMode: "Off"?</p>
+<p><strong>Answer:</strong> It only reports recommendations without evicting Pods, so a human applies new requests deliberately</p>
+<p>Auto mode evicts and recreates Pods, which is disruptive for restart-intolerant workloads.</p>
+<p><strong>Q152.</strong> What does Cluster Autoscaler react to?</p>
+<p><strong>Answer:</strong> Unschedulable (Pending) Pods, scaling a node group up</p>
+<p>The log shows a node group scaled from 6 to 7.</p>
+<h3 id="09-platform-engineering-on-kubernetes"><a href="../level-4/09-platform-engineering/">09 · Platform Engineering on Kubernetes</a><a class="headerlink" href="#09-platform-engineering-on-kubernetes" title="Permanent link">&para;</a></h3>
+<p><strong>Q153.</strong> What two failure modes does platform engineering avoid?</p>
+<p><strong>Answer:</strong> Every team reinventing its own boilerplate, or a central team becoming a ticket queue</p>
+<p>It provides a self-service golden path.</p>
+<p><strong>Q154.</strong> What does a Crossplane Composite Resource Definition (XRD) let a platform team do?</p>
+<p><strong>Answer:</strong> Define a simplified developer-facing API that expands into the real Kubernetes and cloud resources</p>
+<p>A developer writes a small DatabaseClaim; a Composition provisions the real resources.</p>
+<p><strong>Q155.</strong> What does a developer submit in the lesson's example?</p>
+<p><strong>Answer:</strong> A DatabaseClaim with size and engine</p>
+<p>The claim yields a connection Secret.</p>
+<p><strong>Q156.</strong> What is a golden path?</p>
+<p><strong>Answer:</strong> A self-service route that gives developers safe, consistent infrastructure</p>
+<p>Developers don't touch the underlying cloud details.</p>
+<h3 id="10-capstone-project"><a href="../level-4/10-capstone-project/">10 · Capstone Project</a><a class="headerlink" href="#10-capstone-project" title="Permanent link">&para;</a></h3>
+<p><strong>Q157.</strong> What does the capstone introduce?</p>
+<p><strong>Answer:</strong> No new mechanisms: an integration exercise showing how Modules 01–09 fit together for orders-api</p>
+<p>It combines GitOps, security, supply chain, topology, DR, cost and platform surface.</p>
+<p><strong>Q158.</strong> What do topologySpreadConstraints on the zone key do for orders-api?</p>
+<p><strong>Answer:</strong> Spread replicas evenly across the three AZs</p>
+<p>maxSkew 1 with DoNotSchedule enforces even spread.</p>
+<p><strong>Q159.</strong> What access does team-orders get?</p>
+<p><strong>Answer:</strong> The edit ClusterRole, scoped to the orders namespace only</p>
+<p>Every Pod they deploy must also satisfy the restricted Pod Security level.</p>
+<p><strong>Q160.</strong> What does the Kyverno policy require in the orders namespace?</p>
+<p><strong>Answer:</strong> Signed images only, enforced at admission</p>
+<p>It uses verifyImages with validationFailureAction: Enforce.</p>
+<h2 id="mixed-questions-across-all-levels">Mixed questions across all levels<a class="headerlink" href="#mixed-questions-across-all-levels" title="Permanent link">&para;</a></h2>
+<p><strong>Q161.</strong> You deploy a bare Pod for a real workload and its node dies. What happens?</p>
+<p><strong>Answer:</strong> Nothing recreates it; use a Deployment for self-healing</p>
+<p>A bare Pod has no controller behind it.</p>
+<p><strong>Q162.</strong> You change a Deployment's image tag. What does the Deployment controller do?</p>
+<p><strong>Answer:</strong> Creates a new ReplicaSet and gradually shifts replicas from the old one (rolling update)</p>
+<p>The old ReplicaSet is kept at zero for rollback.</p>
+<p><strong>Q163.</strong> A rollout is broken. Which command returns to the previous revision?</p>
+<p><strong>Answer:</strong> kubectl rollout undo deployment/web</p>
+<p>rollout undo reverts to the previous revision; --to-revision picks a specific one.</p>
+<p><strong>Q164.</strong> Pods get new IPs on each recreation, but other services must reach them reliably. What do you create?</p>
+<p><strong>Answer:</strong> A Service with a label selector</p>
+<p>A Service gives a stable IP and DNS name in front of matching Pods.</p>
+<p><strong>Q165.</strong> You need one external domain with path-based routing to ten HTTP services and TLS. What do you use?</p>
+<p><strong>Answer:</strong> An Ingress plus an Ingress controller</p>
+<p>Ingress describes host/path routing; the controller implements it.</p>
+<p><strong>Q166.</strong> A database password must not be baked into the image or stored in plain config. What do you use?</p>
+<p><strong>Answer:</strong> A Secret consumed as an env var or mounted file</p>
+<p>Secrets are for sensitive data (base64-encoded, optionally encrypted at rest).</p>
+<p><strong>Q167.</strong> A container is deadlocked but its process is still running. Which probe restarts it?</p>
+<p><strong>Answer:</strong> Liveness probe</p>
+<p>A failing liveness probe makes kubelet kill and restart the container.</p>
+<p><strong>Q168.</strong> A Pod is temporarily unable to serve because its database connection dropped. What is the right probe response?</p>
+<p><strong>Answer:</strong> Failing readiness removes it from Service endpoints without a restart</p>
+<p>Readiness protects traffic without needless restarts.</p>
+<p><strong>Q169.</strong> A Pod shows OOMKilled. What happened?</p>
+<p><strong>Answer:</strong> It exceeded its memory limit and the kernel OOM killer terminated it</p>
+<p>Memory limits are enforced by killing; CPU limits by throttling.</p>
+<p><strong>Q170.</strong> A Pod is stuck Pending with 'Insufficient cpu'. What does it tell you?</p>
+<p><strong>Answer:</strong> No node has enough unrequested CPU for its requests</p>
+<p>The scheduler compares requests to allocatable capacity.</p>
+<p><strong>Q171.</strong> A pod shows CrashLoopBackOff. Which command shows why the previous container crashed?</p>
+<p><strong>Answer:</strong> kubectl logs &lt;pod&gt; --previous</p>
+<p>--previous shows the crashed container's logs.</p>
+<p><strong>Q172.</strong> You want to run a database migration once, retry on failure and stop. What kind of object?</p>
+<p><strong>Answer:</strong> A Job (restartPolicy Never or OnFailure)</p>
+<p>A Job runs to completion; backoffLimit caps retries.</p>
+<p><strong>Q173.</strong> A database needs stable Pod names, stable DNS and its own PVC per replica. What do you use?</p>
+<p><strong>Answer:</strong> A StatefulSet with a headless Service</p>
+<p>StatefulSets give each replica a stable identity.</p>
+<p><strong>Q174.</strong> You want a service account to read Pod logs only in the prod namespace. What do you create?</p>
+<p><strong>Answer:</strong> A Role and a RoleBinding in prod</p>
+<p>Role + RoleBinding grants permissions within one namespace.</p>
+<p><strong>Q175.</strong> By default any Pod can reach any other Pod. What is the recommended first NetworkPolicy for a namespace?</p>
+<p><strong>Answer:</strong> Default-deny, then allow-list the traffic you need</p>
+<p>Policies are additive; start with deny-all.</p>
+<p><strong>Q176.</strong> You want replicas to scale with CPU, keeping average utilization at 70%. What do you use, and what must be set?</p>
+<p><strong>Answer:</strong> HorizontalPodAutoscaler, with accurate CPU requests and metrics-server</p>
+<p>Utilization is a percentage of the Pod's CPU request.</p>
+<p><strong>Q177.</strong> You must stop a node drain from evicting too many replicas of your app at once. What protects availability?</p>
+<p><strong>Answer:</strong> A PodDisruptionBudget</p>
+<p>PDBs limit voluntary disruptions.</p>
+<p><strong>Q178.</strong> You want to reconcile cluster state continuously from Git, reverting manual edits. What approach and settings?</p>
+<p><strong>Answer:</strong> GitOps (ArgoCD) with prune and selfHeal</p>
+<p>The pull model corrects drift automatically.</p>
+<p><strong>Q179.</strong> You must reject Pods that run as root or lack resource limits across a namespace. Which mechanisms apply?</p>
+<p><strong>Answer:</strong> Pod Security labels (restricted) and admission policy</p>
+<p>Admission control checks the object's content.</p>
+<hr />
+<p>More free practice: the <a href="../">Kubernetes Mastery Path</a> curriculum, the <a href="https://learnmasterypath.com/interview-pack/">Interview Prep Pack</a> and the <a href="https://learnmasterypath.com/resume/">free resume ATS check</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+  <nav class="mp-related" aria-label="Related free courses">
+    <h2>Related free courses</h2>
+    <ul>
+      <li><a href="https://learnmasterypath.com/server-ops-mastery-path/">Server Ops</a></li><li><a href="https://learnmasterypath.com/linux-mastery-path/">Linux</a></li><li><a href="https://learnmasterypath.com/nodemcu-mastery-path/">NodeMCU/IoT</a></li><li><a href="https://learnmasterypath.com/terraform-mastery-path/">Terraform</a></li><li><a href="https://learnmasterypath.com/docker-mastery-path/">Docker</a></li>
+      <li><a href="https://learnmasterypath.com/">All 100+ courses &rarr;</a></li>
+    </ul>
+  </nav>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../level-1/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <div class="mp-foot">
+    <div class="mp-foot-inner">
+      <a class="mp-foot-brand" href="https://learnmasterypath.com/"><svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg><span>Mastery Path</span></a>
+      <nav class="mp-sitelinks" aria-label="Site and legal links">
+        <a href="https://learnmasterypath.com/">All courses</a>
+        <a href="https://learnmasterypath.com/about.html">About</a>
+        <a href="https://learnmasterypath.com/contact.html">Contact</a>
+        <a href="https://learnmasterypath.com/kubernetes-mastery-path/privacy/">Privacy Policy</a>
+        <a href="https://learnmasterypath.com/terms.html">Terms</a>
+        <a href="https://learnmasterypath.com/kubernetes-mastery-path/license/">License</a>
+        <a href="https://learnmasterypath.com/verify/">Verify a certificate</a>
+      </nav>
+    </div>
+    <p class="mp-license-note">
+      © 2026 Vinod Kumar Sigilipelli · Except where otherwise noted, lesson content is licensed under
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and code examples under the
+      <a href="https://opensource.org/license/mit">MIT License</a>.
+    </p>
+  </div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../javascripts/progress-tracker.js"></script>
+      
+        <script src="../javascripts/final-quiz.js"></script>
+      
+    
+  </body>
+</html>
