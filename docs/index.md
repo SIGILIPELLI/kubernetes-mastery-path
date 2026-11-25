@@ -7,8 +7,7 @@ description: "Free Kubernetes course from beginner to advanced -- hands-on lesso
 
 A structured, module-wise Kubernetes training program that takes you from your
 first `kubectl get pods` to designing production-grade cluster architecture —
-with runnable manifests and commands in every module and a hands-on project at
-the end of each level.
+with runnable manifests and commands in every module and a hands-on project at the end of Levels 1–3 and a capstone at the end of Level 4.
 
 ## How the program is organized
 
@@ -25,7 +24,7 @@ the end of each level.
 - Every topic page has runnable YAML manifests and `kubectl` commands — copy
   them into a local file and apply with `kubectl apply -f`, or run against a
   local cluster (minikube/kind).
-- Each level ends with a project that combines everything learned in that level.
+- Levels 1–3 each end with a project that combines everything learned in that level, and Level 4 ends with the course capstone.
 - Use the search bar (top of the page) to jump straight to a topic.
 
 Start here → [Level 1 · Entry](level-1/index.md)
